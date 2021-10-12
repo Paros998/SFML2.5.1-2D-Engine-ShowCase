@@ -10,8 +10,7 @@ import SnakeEngine;
 using namespace engine;
 
 int main(void) {
-	Engine* gameEngine = Engine::getInstance();
-	gameEngine->main();
+	Engine::main();
 
 	return 0;
 }
