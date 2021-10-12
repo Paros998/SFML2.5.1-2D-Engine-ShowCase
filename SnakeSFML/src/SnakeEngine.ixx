@@ -21,13 +21,12 @@ export namespace engine {
 		static void main() {
 			RenderWindow window(VideoMode(200, 200), "SFML works!");
 
-			while (window.isOpen())
-			{
+			while (window.isOpen()) {
 				Event event;
-				while (window.pollEvent(event))
-				{
-					if (event.type == sf::Event::Closed)
+				while (window.pollEvent(event)) {
+					if (event.type == sf::Event::Closed) {
 						window.close();
+					}
 				}
 
 				window.clear();
