@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="general.ixx" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\SnakeEngine.ixx" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
