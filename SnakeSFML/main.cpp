@@ -1,18 +1,20 @@
-#include "SFML/Graphics.hpp";
+import general;
+
+using namespace consts;
+using namespace globalVars;
+
+import <iostream>;
+using namespace std;
+
+import SnakeEngine;
+using namespace engine;
 
 int main(void) {
-    sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
+	Engine* en1 = Engine::getInstance();
+	Engine* en2 = Engine::getInstance();
 
-    while (window.isOpen())
-    {
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-                window.close();
-        }
+	cout << en1 << endl;
+	cout << en2 << endl;
 
         window.clear();
         window.draw(shape);
