@@ -10,11 +10,8 @@ import SnakeEngine;
 using namespace engine;
 
 int main(void) {
-	Engine* en1 = Engine::getInstance();
-	Engine* en2 = Engine::getInstance();
-
-	cout << en1 << endl;
-	cout << en2 << endl;
+	Engine* gameEngine = Engine::getInstance();
+	gameEngine->main();
 
 	return 0;
 }
