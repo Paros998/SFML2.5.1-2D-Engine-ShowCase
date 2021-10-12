@@ -9,7 +9,6 @@ import <fstream>;
 using namespace std;
 using namespace sf;
 
-#define GOLD 255, 215, 0, 255
 
 export namespace consts {
 
@@ -20,6 +19,7 @@ const int START_Y = 120;
 const int END_X = START_X + (64 * (BOARD_WIDTH - 1));
 const int END_Y = START_Y + (64 * (BOARD_HEIGHT - 1));
 const int ROW_SIZE = 64;
+Color gold = Color(255, 215, 0, 255);
 }
 
 export namespace globalVars{
@@ -103,6 +103,12 @@ export namespace music {
 		"assets/MuzykaDzwiekiGra/muzykaPoziom2.ogg",
 		"assets/MuzykaDzwiekiGra/muzykaPoziom3.ogg"
 	};
+	String menuMusic[4] = {
+		"assets/Muzyka/mainMenu.wav",
+		"assets/Muzyka/No More Magic.ogg",
+		"assets/Muzyka/Winds Of Stories.ogg",
+		"assets/Muzyka/Path to Lake Land.ogg"
+	};
 }
 
 export namespace sounds {
@@ -117,6 +123,7 @@ export namespace sounds {
 		"assets/MuzykaDzwiekiGra/teleport.wav",
 		"assets/MuzykaDzwiekiGra/wazWsiebie.ogg"
 	};
+	String menuClickSound = "assets/Muzyka/misc_menu_2.wav";
 }
 
 export namespace animations {
@@ -134,5 +141,22 @@ export namespace menuElements {
 	String menuTexture = "assets/Obrazy menu/menuSnake.png";
 	String logoTexture = "assets/Obrazy menu/logoSnake2.png";
 	String menuPointer = "assets/Obrazy menu/snake_glowa.png";
-
+	String menuHelpers[15] = {
+		"assets/Klawisze/free_button_31.png",
+		"assets/Klawisze/free_button_32.png",
+		"assets/Klawisze/free_button_34.png",
+		"assets/Klawisze/free_button_27.png",
+		"assets/Klawisze/free_button_12.png",
+		"assets/Klawisze/free_button_11.png",
+		"assets/Klawisze/free_button_10.png",
+		"assets/Klawisze/free_button_09.png",
+		"assets/Klawisze/free_button_08.png",
+		"assets/Obrazy menu/jablko_animacja2.png",
+		"assets/Obrazy menu/jablko_animacja2-gold.png",
+		"assets/Sprity do gry/Plansza/dziura.png",
+		"assets/Sprity do gry/Plansza/przeszkoda1.png",
+		"assets/Sprity do gry/Plansza/kamien3.png",
+		"assets/Sprity do gry/Gracz i przedmioty/snake_glowa12.png"
+	};
+	String font = "assets/Czcionki/snap/snap itc.ttf" ;
 }
