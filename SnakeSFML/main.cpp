@@ -1,7 +1,8 @@
-import helloworld;
-using namespace greetings;
+import general;
+using namespace consts;
+using namespace globalVars;
 
 int main(void) {
-	hello();
+	int var = consts::BOARD_WIDTH;
 	return 0;
 }

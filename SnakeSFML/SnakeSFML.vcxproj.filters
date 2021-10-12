@@ -13,12 +13,75 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Pliki zasobów\fonts">
+      <UniqueIdentifier>{0cf0cca6-e913-465e-a79d-a747fb08473f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki zasobów\buttons">
+      <UniqueIdentifier>{e068a14a-af92-4d4c-9673-905ee64b42c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki zasobów\music">
+      <UniqueIdentifier>{5b1f500b-108f-475b-ad4a-521c017223d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki zasobów\sounds">
+      <UniqueIdentifier>{6171f2b4-9db9-4bf3-b0c4-d4dc9d5dff02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki zasobów\levelMusic">
+      <UniqueIdentifier>{a55801e5-b91a-44c8-93f0-b67424fbff74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki zasobów\menuElements">
+      <UniqueIdentifier>{ac3d5a20-772b-4058-a987-3d4babb219d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki zasobów\snakeParts">
+      <UniqueIdentifier>{150624c5-f908-4877-bfe4-27d72311f48c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki zasobów\snakeParts\snakeHeads">
+      <UniqueIdentifier>{9e8a470e-7fa2-45d5-b8f2-ab9b01717d57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki zasobów\snakeParts\snakeBody">
+      <UniqueIdentifier>{a30c98b1-d62a-4d4e-90b3-2eae75400811}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki zasobów\snakeParts\snakeTransparent">
+      <UniqueIdentifier>{a84fe30e-ef3f-45a3-b792-0c3762fd8ac8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki zasobów\apples">
+      <UniqueIdentifier>{c2341205-4514-43e0-93e7-89659ee0c16f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki zasobów\apples\red">
+      <UniqueIdentifier>{27c7856e-7258-4cf2-a6cd-421c81175bbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki zasobów\apples\gold">
+      <UniqueIdentifier>{5e1a9dd3-1a2d-4383-8c6f-82561f324ee2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki zasobów\apples\gold\animation">
+      <UniqueIdentifier>{1b0447f4-b423-4901-8ff3-6528cccdc5a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki zasobów\apples\red\animation">
+      <UniqueIdentifier>{7d640e2f-218e-4dd4-b298-12f35ba0c9e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki zasobów\mapParts">
+      <UniqueIdentifier>{b4965711-1fcb-4273-b375-d4b6a3739365}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki zasobów\mapParts\backgrounds">
+      <UniqueIdentifier>{5ae524be-4fcf-4966-a86e-fbc803ec5427}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki zasobów\prize">
+      <UniqueIdentifier>{b224df9d-7962-409f-a302-983d720dc5ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki zasobów\mapParts\rocks">
+      <UniqueIdentifier>{c957a816-4154-4dc3-8835-6ae74487a48a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki zasobów\mapParts\textures">
+      <UniqueIdentifier>{c1eba20e-e789-443c-83c4-2966e8a73b82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki zasobów\mapParts\holes">
+      <UniqueIdentifier>{b68007aa-d71d-483d-acc2-0ca1acaf2a2e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
-    <ClCompile Include="helloworld.ixx">
+    <ClCompile Include="general.ixx">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
   </ItemGroup>
