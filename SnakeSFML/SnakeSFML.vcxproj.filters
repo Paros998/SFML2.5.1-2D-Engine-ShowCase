@@ -84,5 +84,8 @@
     <ClCompile Include="general.ixx">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
+    <ClCompile Include="animation.ixx">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
