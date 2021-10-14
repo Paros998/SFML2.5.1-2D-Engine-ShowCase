@@ -11,6 +11,5 @@ using namespace engine;
 
 int main(void) {
 	Engine::main();
-
 	return 0;
 }
