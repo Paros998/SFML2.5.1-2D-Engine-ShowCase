@@ -69,6 +69,8 @@ export namespace loadingScreen {
 	int numberOfSpinnerFrames = 24;
 	float spinnerFrameSwitchTime = 1.0f / (float)numberOfSpinnerFrames;
 	Vector2u spinnerImages(24,1);
+	Vector2f spinnerScale(2.0f, 2.0f);
+
 }
 
 
@@ -187,10 +189,10 @@ export namespace animations {
 	enum animationTypes {NORMAL,EATEN};
 }
 
-export namespace menuElements {
+export namespace menuAssets {
 	String menuTexture = "assets/MenuTextures/menuBackground.png";
 	String logoTexture = "assets/MenuTextures/menuLogo.png";
-	String menuPointer = "assets/MenuTextures/pointer.png";
+	String pointerTexture = "assets/MenuTextures/pointer.png";
 
 	String menuHelpersTextures[15] = {
 		"assets/Buttons/plus.png",
@@ -224,7 +226,7 @@ export namespace menuElements {
 		{globalFunctions::findHorizontallyCenteredPositionOfGivenText(menuTipsStrings[TIP6]),750.0f}
 	};
 
-	String font = "assets/Fonts/snap/snap itc.ttf";
+	String fontLocation = "assets/Fonts/snap/snap itc.ttf";
 
 	
 	Vector2f backButtonPosition = { globalFunctions::findHorizontallyCenteredPositionOfGivenText("BACK"),900.0f};
@@ -254,7 +256,7 @@ export namespace menuElements {
 	namespace afterOptions {
 		String optionsButtonsText[3] = { "FULLSCREEN","WINDOWED","BACK" };
 		enum optionsButtonsIndex {FULLSCREEN,WINDOW,BACK};
-		Vector2f optionsButtonsPositionY[3] = { 
+		Vector2f optionsButtonsPosition[3] = { 
 			{960.0f - globalFunctions::getHalfOfSizeOfGivenText(optionsButtonsText[FULLSCREEN]),backButtonPosition.y},
 			{1200.0f - globalFunctions::getHalfOfSizeOfGivenText(optionsButtonsText[WINDOW]),backButtonPosition.y},
 			backButtonPosition 
@@ -262,7 +264,16 @@ export namespace menuElements {
 
 		String optionsText[8] = {"Controls","Move Up","Move Down","Move Right","Move Left","Options","Music","Screen"};
 		enum optionsTextIndex {CONTROLS,UP,DOWN,RIGHT,LEFT,OPTIONS,MUSIC,SCREEN};
-		float optionsTextPositionY[8] = {200.0f,300.0f,350.0f,400.0f,450.0f,550.0f,700.0f,800.0f};
+		Vector2f optionsTextPosition[8] = {
+			{840.0f,200.0f },
+			{840.0f,300.0f },
+			{840.0f,350.0f },
+			{840.0f,400.0f },
+			{840.0f,450.0f },
+			{840.0f,550.0f },
+			{840.0f,700.0f },
+			{840.0f,800.0f }
+		};
 
 		String optionsTextSprites[6] = {
 			menuHelpersTextures[menuHelpersIndex::CONTROLER],
@@ -275,12 +286,12 @@ export namespace menuElements {
 		namespace sprites {
 			enum optionsTextSprites {CONTROLS, UP, DOWN, RIGHT, LEFT, OPTIONS};
 			Vector2f optionsTextSpritesPositions[6] = {
-				{1140.0f,optionsTextPositionY[CONTROLS]},
-				{1140.0f,optionsTextPositionY[UP]},
-				{1140.0f,optionsTextPositionY[DOWN]},
-				{1140.0f,optionsTextPositionY[RIGHT]},
-				{1140.0f,optionsTextPositionY[LEFT]},
-				{1140.0f,optionsTextPositionY[OPTIONS]}
+				{1140.0f,optionsTextPosition[CONTROLS].y},
+				{1140.0f,optionsTextPosition[UP].y},
+				{1140.0f,optionsTextPosition[DOWN].y},
+				{1140.0f,optionsTextPosition[RIGHT].y},
+				{1140.0f,optionsTextPosition[LEFT].y},
+				{1140.0f,optionsTextPosition[OPTIONS].y}
 			};
 
 			String optionsButtonsSprites[2] = { 
@@ -304,9 +315,9 @@ export namespace menuElements {
 	String scoresButtonText = "BACK";
 
 	//After Creators
-	String creatorsText[2] = {"Dominik Grudzie�","Patryk Grzywacz"};
+	String creatorsText[2] = {"Dominik Grudzien","Patryk Grzywacz"};
 	enum creatorsIndex {DOMINIK,PATRYK};
-	Vector2f creatorsTextPositionY[2] = {
+	Vector2f creatorsTextPosition[2] = {
 		{globalFunctions::findHorizontallyCenteredPositionOfGivenText(creatorsText[DOMINIK]),300.0f },
 		{globalFunctions::findHorizontallyCenteredPositionOfGivenText(creatorsText[PATRYK]),400.0f}
 	};
