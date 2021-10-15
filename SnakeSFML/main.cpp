@@ -1,7 +1,9 @@
-import general;
+import GeneralStuff;
+
 
 using namespace consts;
 using namespace globalVars;
+
 
 import <iostream>;
 using namespace std;
@@ -11,6 +13,6 @@ using namespace engine;
 
 int main(void) {
 	Engine::main();
-
+	
 	return 0;
 }
