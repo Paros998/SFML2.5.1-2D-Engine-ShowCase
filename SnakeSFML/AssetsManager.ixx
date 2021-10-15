@@ -11,11 +11,16 @@ using namespace sf;
 using namespace std;
 using namespace loadingScreen;
 using namespace animation;
+using namespace globalFunctions;
 
 export namespace manager {
+
+	bool menuLoadingCompleted;
+	bool gameLoadingCompleted;
+
 	class AssetManager {
-		enum LoadingType {MENU,GAME};
 	private:
+		RenderWindow* gameWindow;
 		Animation* loadingAnimator;
 		sf::Texture loadingBackgroundTexture;
 		Sprite loadingBackgroundSprite;
@@ -23,22 +28,14 @@ export namespace manager {
 		sf::Texture loadingSpinnerTexture;
 		Sprite loadingSpinnerSprite;
 
-		void loadingEnded(int loadingType) {
-			if (loadingType == MENU) {
-				
-			}
-			else {
-
-			}
-
-		}
-
 		void drawLoadingScreen() {
+			//gameWindow->clear();
 
-		}
+			gameWindow->draw(loadingBackgroundSprite);
+			gameWindow->draw(loadingSpinnerSprite);
+			loadingAnimator->update();
 
-		void releaseResources() {
-
+			//gameWindow->display();
 		}
 
 		void releaseMenuResources() {
@@ -49,6 +46,11 @@ export namespace manager {
 
 		}
 
+		void releaseResources() {
+			releaseGameResources();
+			releaseMenuResources();
+		}
+
 		void prepareLoadingScreen() {
 
 			loadingBackgroundTexture.loadFromFile(loadingScreen::backgroundTextureLocation);
@@ -57,72 +59,104 @@ export namespace manager {
 			loadingSpinnerTexture.setSmooth(true);
 
 			loadingBackgroundSprite.setTexture(loadingBackgroundTexture);
+			loadingBackgroundSprite.setPosition(0, 0);
+
 			loadingSpinnerSprite.setTexture(loadingSpinnerTexture);
+			loadingSpinnerSprite.setOrigin(loadingSpinnerSprite.getGlobalBounds().width / 2, loadingSpinnerSprite.getGlobalBounds().height / 2);
+			loadingSpinnerSprite.setPosition(globalFunctions::getCenterOfTheScreen());
 
-			//loadingAnimator = new Animation(loadingSpinnerTexture, Vector2u(1,1), 0.08f);
-
+			loadingAnimator = new Animation(loadingSpinnerTexture,loadingSpinnerSprite, loadingScreen::spinnerImages, loadingScreen::spinnerFrameSwitchTime);
+			loadingAnimator->setStartFrame();
 		}
 		
 	public:
-		AssetManager() {
+		AssetManager(RenderWindow * gameWindow) {
+			this->gameWindow = gameWindow;
 			prepareLoadingScreen();
 			loadMainMenu();
 		};
+
 		~AssetManager() {
 			releaseResources();
 		};
+
 		bool loadMainMenu() {
 			//menuThread.launch();
-			drawLoadingScreen();
+			while(menuLoadingCompleted != true)
+				drawLoadingScreen();
+			menuLoadingCompleted = false;
+			releaseGameResources();
 			return true;
 		};
+
 		bool loadGameLevels() { 
 			//gameThread.launch();
-			drawLoadingScreen();
+			while (gameLoadingCompleted != true)
+				drawLoadingScreen();
+			gameLoadingCompleted = false;
+			releaseMenuResources();
 			return true;
 		};
 		
 		static void loadAssetsForMenu() {
 
+			//After Everything Loaded And Set
+			menuLoadingCompleted = true;
 		}
 
 		static void loadAssetsForGame() {
 
+			//After Everything Loaded And Set
+			gameLoadingCompleted = true;
+		}
+
+		auto getAssetManager() {
+			return this;
 		}
 		
 	};
+
 	namespace menuElements {
+		//Needed everywhere
+		Font font;
+
 		//General
 		Music * menuSongs;
-		Sound menuClickSound;
-		SoundBuffer menuClickSoundBuffer;
-		Font font;
+		Sound  menuClickSound;
+		SoundBuffer  menuClickSoundBuffer;
+		Text backButtonText;
+
+		sf::Texture menuPointerTexture;
+		Sprite menuPointerSprite;
 
 		//Main menu
 		sf::Texture menuBackgroundTexture;
 		Sprite menuBackgroundSprite;
+
 		sf::Texture menuLogoTexture;
 		Sprite menuLogoSprite;
-		sf::Texture menuPointerTexture;
-		Sprite menuPointerSprite;
+
 		Text* menuTextButtons;
 
-		//Options
+		//Start clicked
+		Text* tipsText;
+		Text* startTextButtons;
+
+		//Options clicked
 		sf::Texture* optionsSymbolsTextures;
 		Sprite* optionsSymbolsSprites;
+
+		Text* optionsTextLabels;
+		Text* optionsTextButtons;
+
 
 	}
 	namespace gameLevelsElements {
 
 	}
 	
-	AssetManager assetManager;
 	sf::Thread menuThread(&AssetManager::loadAssetsForMenu);
 	sf::Thread gameThread(&AssetManager::loadAssetsForGame);
-	
-	auto getAssetManager() {
-		return assetManager;
-	}
 
 }
 

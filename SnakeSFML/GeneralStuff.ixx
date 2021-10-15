@@ -66,6 +66,9 @@ export namespace globalFunctions {
 export namespace loadingScreen {
 	String spinnerTextureLocation = "assets/LoadingScreen/spinner.png";
 	String backgroundTextureLocation = "assets/LoadingScreen/background.jpg";
+	int numberOfSpinnerFrames = 24;
+	float spinnerFrameSwitchTime = 1.0f / (float)numberOfSpinnerFrames;
+	Vector2u spinnerImages(24,1);
 }
 
 
@@ -187,7 +190,7 @@ export namespace animations {
 export namespace menuElements {
 	String menuTexture = "assets/MenuTextures/menuBackground.png";
 	String logoTexture = "assets/MenuTextures/menuLogo.png";
-	String menuPointer = "assets/MenuTextures/snakeHead.png";
+	String menuPointer = "assets/MenuTextures/pointer.png";
 
 	String menuHelpersTextures[15] = {
 		"assets/Buttons/plus.png",

@@ -9,21 +9,26 @@ export namespace animation {
 		float changeTime;
 		float deltaTime = 0.0f;
 		Vector2u currentImage, imageNumber;
+		Sprite sprite;
 	public:
-		IntRect imageArea;
+		IntRect textureArea;
 		Clock clock;
 		float fullTime = 0.0f;
 
-		Animation(Texture& texture, Vector2u imageNumber, float changeTime) {
+		Animation(Texture& texture, Sprite& sprite , Vector2u imageNumber, float changeTime) {
 			this->imageNumber = imageNumber;
 			this->changeTime = changeTime;
+			this->sprite = sprite;
 
 			currentImage.x = 0;
 
-			imageArea.width = (int)(texture.getSize().x / (float)(imageNumber.x));
-			imageArea.height = (int)(texture.getSize().y / (float)(imageNumber.y));
+			textureArea.width = (int)(texture.getSize().x / (float)(imageNumber.x));
+			textureArea.height = (int)(texture.getSize().y / (float)(imageNumber.y));
+
+			sprite.setTextureRect(textureArea);
 		}
-		int update(int row) {
+		
+		void update(int row) {
 			deltaTime = clock.restart().asSeconds();
 			currentImage.y = row;
 			fullTime += deltaTime;
@@ -31,15 +36,40 @@ export namespace animation {
 			if (fullTime >= changeTime) {
 				fullTime -= changeTime;
 				currentImage.x++;
-				
-				if (currentImage.x >= imageNumber.x )
+
+				if (currentImage.x >= imageNumber.x)
 					currentImage.x = 0;
 			}
 
-			imageArea.left = currentImage.x * imageArea.width;
-			imageArea.top = currentImage.y * imageArea.height;
+			textureArea.left = currentImage.x * textureArea.width;
+			textureArea.top = currentImage.y * textureArea.height;
 
-			return currentImage.x;
+			sprite.setTextureRect(textureArea);
+		}
+
+		void update() {
+			deltaTime = clock.restart().asSeconds();
+			fullTime += deltaTime;
+
+			if (fullTime >= changeTime) {
+				fullTime -= changeTime;
+				currentImage.x++;
+
+				if (currentImage.x >= imageNumber.x)
+					currentImage.x = 0;
+			}
+			textureArea.left = currentImage.x * textureArea.width;
+			textureArea.top = currentImage.y * textureArea.height;
+
+			sprite.setTextureRect(textureArea);
+		}
+
+		void setStartFrame() {
+			currentImage.x = currentImage.y = 0;
+		}
+
+		IntRect getCurrentFrame() {
+			return textureArea;
 		}
 	};
 }
