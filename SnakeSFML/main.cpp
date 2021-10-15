@@ -1,9 +1,3 @@
-import GeneralStuff;
-
-
-using namespace consts;
-using namespace globalVars;
-
 
 import <iostream>;
 using namespace std;
