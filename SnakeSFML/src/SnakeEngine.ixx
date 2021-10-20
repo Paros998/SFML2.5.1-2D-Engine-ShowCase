@@ -39,7 +39,7 @@ export namespace engine {
 			instance->window->setVerticalSyncEnabled(true);
 			instance->window->setTitle("Snake Game :D");
 
-			//instance->assetManager->loadMainMenu();
+			instance->assetManager->loadMainMenu();
 
 			while (instance->window->isOpen()) {
 				Event event;
