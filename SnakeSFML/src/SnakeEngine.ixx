@@ -7,6 +7,7 @@ using namespace consts;
 
 import AssetsManager;
 using namespace manager;
+using namespace menuElements;
 
 export module SnakeEngine;
 
@@ -16,9 +17,10 @@ export namespace engine {
 		static Engine* instance;
 		manager::AssetManager* assetManager;
 		RenderWindow* window;
+		bool stillLoading = true;
 	public:
 		Engine() {
-			window = new RenderWindow(VideoMode(consts::SCREEN_WIDTH, consts::SCREEN_HEIGHT), "SFML works!");
+			window = new RenderWindow(VideoMode(consts::SCREEN_WIDTH, consts::SCREEN_HEIGHT), "SFML works!",Style::Fullscreen);
 			assetManager = new manager::AssetManager(window);
 		}
 		~Engine() {
@@ -38,9 +40,7 @@ export namespace engine {
 			instance->window->setKeyRepeatEnabled(false);
 			instance->window->setVerticalSyncEnabled(true);
 			instance->window->setTitle("Snake Game :D");
-
-			instance->assetManager->loadMainMenu();
-
+			
 			while (instance->window->isOpen()) {
 				Event event;
 				while (instance->window->pollEvent(event)) {
@@ -52,9 +52,10 @@ export namespace engine {
 						globalVars::screenRatio = Vector2f(size.x / (float) consts::SCREEN_WIDTH , size.y / (float)consts::SCREEN_HEIGHT);
 					}
 				}
-				instance->window->clear();
-
-				
+				if (instance->stillLoading)
+					instance->stillLoading = instance->assetManager->loadMainMenu();
+				else
+					instance->window->draw(menuElements::menuBackgroundSprite);
 
 				instance->window->display();
 			}

@@ -21,7 +21,9 @@ using namespace mainMenu;
 using namespace music;
 using namespace sounds;
 
-
+std::atomic<bool>static menuLoadingCompleted = false;
+std::atomic<bool>static gameLoadingCompleted = false;
+std::atomic<bool>static alreadyLoading = false;
 
 export namespace manager {
 
@@ -75,7 +77,7 @@ export namespace manager {
 		Font font;
 
 	}
-
+	
 	class AssetManager {
 	private:
 		RenderWindow* gameWindow;
@@ -86,21 +88,13 @@ export namespace manager {
 		sf::Texture loadingSpinnerTexture;
 		Sprite loadingSpinnerSprite;
 
-		std::atomic<bool> menuLoadingCompleted = false;
-		std::atomic<bool> gameLoadingCompleted = false;
 
 		void drawLoadingScreen() {
 
-			while (gameWindow->isOpen()) {
-				gameWindow->clear();
-
-				gameWindow->draw(loadingBackgroundSprite);
-				gameWindow->draw(loadingSpinnerSprite);
-				loadingAnimator->update();
-
-				gameWindow->display();
-			}
-
+			gameWindow->draw(loadingBackgroundSprite);
+			gameWindow->draw(loadingSpinnerSprite);
+			loadingAnimator->update();
+			
 		}
 
 		void releaseMenuResources() {
@@ -155,8 +149,9 @@ export namespace manager {
 			loadingSpinnerSprite.setScale(loadingScreen::spinnerScale);
 			loadingSpinnerSprite.setOrigin(loadingSpinnerSprite.getGlobalBounds().width / 2, loadingSpinnerSprite.getGlobalBounds().height / 2);
 			loadingSpinnerSprite.setPosition(globalFunctions::getCenterOfTheScreen());
+			
 
-			loadingAnimator = new Animation(loadingSpinnerTexture,loadingSpinnerSprite, loadingScreen::spinnerImages, loadingScreen::spinnerFrameSwitchTime);
+			loadingAnimator = new Animation(loadingSpinnerTexture,&loadingSpinnerSprite, loadingScreen::spinnerImages, loadingScreen::spinnerFrameSwitchTime);
 			loadingAnimator->setStartFrame();
 		}
 		
@@ -171,12 +166,19 @@ export namespace manager {
 		};
 
 		bool loadMainMenu() {
-			menuThread.detach();
-			while (menuLoadingCompleted != true) {
+			if (alreadyLoading)
+				if (menuLoadingCompleted == false) {
+					drawLoadingScreen();
+				}
+				else {
+					releaseGameResources();
+					return false;
+				}
+			else {
+				alreadyLoading = true;
+				menuThread.detach();
 				drawLoadingScreen();
 			}
-			menuLoadingCompleted = false;
-			releaseGameResources();
 			return true;
 		};
 
@@ -321,7 +323,7 @@ export namespace manager {
 				menuElements::creaditsText[i].setOutlineThickness(1.0f);
 				menuElements::creaditsText[i].setOutlineColor(Color::Red);
 			}
-			menuElements::creaditsText[3] = menuElements::backButtonText;
+			menuElements::creaditsText[2] = menuElements::backButtonText;
 
 			//After Everything Loaded And Set
 			menuLoadingCompleted = true;
