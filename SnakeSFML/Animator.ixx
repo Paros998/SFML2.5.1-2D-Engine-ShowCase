@@ -27,6 +27,8 @@ export namespace animation {
 
 			sprite.setTextureRect(textureArea);
 		}
+		~Animation() {
+		}
 		
 		void update(int row) {
 			deltaTime = clock.restart().asSeconds();

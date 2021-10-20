@@ -1,11 +1,15 @@
 #include <SFML/System.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
+#include <thread>
+#include <future>
+#include <iostream>
 
 import GeneralStuff;
 import animation;
 
 export module AssetsManager;
+
 
 using namespace sf;
 using namespace std;
@@ -70,11 +74,7 @@ export namespace manager {
 		//Needed everywhere
 		Font font;
 
-
 	}
-
-	bool menuLoadingCompleted;
-	bool gameLoadingCompleted;
 
 	class AssetManager {
 	private:
@@ -86,27 +86,59 @@ export namespace manager {
 		sf::Texture loadingSpinnerTexture;
 		Sprite loadingSpinnerSprite;
 
+		std::atomic<bool> menuLoadingCompleted = false;
+		std::atomic<bool> gameLoadingCompleted = false;
+
 		void drawLoadingScreen() {
-			//gameWindow->clear();
 
-			gameWindow->draw(loadingBackgroundSprite);
-			gameWindow->draw(loadingSpinnerSprite);
-			loadingAnimator->update();
+			while (gameWindow->isOpen()) {
+				gameWindow->clear();
 
-			//gameWindow->display();
+				gameWindow->draw(loadingBackgroundSprite);
+				gameWindow->draw(loadingSpinnerSprite);
+				loadingAnimator->update();
+
+				gameWindow->display();
+			}
+
 		}
 
 		void releaseMenuResources() {
-			
+			menuElements::font.~Font();
+			menuElements::menuClickSoundBuffer.~SoundBuffer();
+			menuElements::menuClickSound.~Sound();
+			menuElements::menuPointerSprite.~Sprite();
+			menuElements::menuPointerTexture.~Texture();
+			menuElements::menuBackgroundSprite.~Sprite();
+			menuElements::menuBackgroundTexture.~Texture();
+			menuElements::menuLogoSprite.~Sprite();
+			menuElements::menuLogoTexture.~Texture();
+			delete(menuElements::menuTextButtons);
+			delete(menuElements::tipsText);
+			delete(menuElements::startTextButtons);
+			delete(menuElements::optionsSymbolsSprites);
+			delete(menuElements::optionsSymbolsTextures);
+			delete(menuElements::optionsButtonsSprites);
+			delete(menuElements::optionsButtonsTextures);
+			delete(menuElements::optionsTextLabels);
+			delete(menuElements::optionsTextButtons);
+			menuElements::optionsMusicLevelText.~Text();
+			menuElements::backButtonText.~Text();
+			delete(menuElements::creaditsText);
 		}
 
 		void releaseGameResources() {
-
 		}
 
 		void releaseResources() {
 			releaseGameResources();
 			releaseMenuResources();
+			loadingAnimator->~Animation();
+			loadingBackgroundSprite.~Sprite();
+			loadingBackgroundTexture.~Texture();
+			loadingSpinnerSprite.~Sprite();
+			loadingSpinnerTexture.~Texture();
+
 		}
 
 		void prepareLoadingScreen() {
@@ -132,7 +164,6 @@ export namespace manager {
 		AssetManager(RenderWindow * gameWindow) {
 			this->gameWindow = gameWindow;
 			prepareLoadingScreen();
-			loadMainMenu();
 		};
 
 		~AssetManager() {
@@ -140,16 +171,17 @@ export namespace manager {
 		};
 
 		bool loadMainMenu() {
-			//menuThread.launch();
-			while(menuLoadingCompleted != true)
+			menuThread.detach();
+			while (menuLoadingCompleted != true) {
 				drawLoadingScreen();
+			}
 			menuLoadingCompleted = false;
 			releaseGameResources();
 			return true;
 		};
 
 		bool loadGameLevels() { 
-			//gameThread.launch();
+			gameThread.detach();
 			while (gameLoadingCompleted != true)
 				drawLoadingScreen();
 			gameLoadingCompleted = false;
@@ -157,7 +189,7 @@ export namespace manager {
 			return true;
 		};
 		
-		static void loadAssetsForMenu() {
+		void loadAssetsForMenu() {
 			 
 			menuElements::font.loadFromFile(menuAssets::fontLocation);
 
@@ -250,13 +282,13 @@ export namespace manager {
 
 			menuElements::optionsTextLabels = new Text[8];
 			for (int i = 0; i < 8; i++) {
-				menuElements::optionsTextButtons[i].setString(afterOptions::optionsText[i]);
-				menuElements::optionsTextButtons[i].setPosition(afterOptions::optionsTextPosition[i]);
-				menuElements::optionsTextButtons[i].setCharacterSize(globalVars::fontSize);
-				menuElements::optionsTextButtons[i].setFont(menuElements::font);
-				menuElements::optionsTextButtons[i].setFillColor(Color::Black);
-				menuElements::optionsTextButtons[i].setOutlineThickness(1.0f);
-				menuElements::optionsTextButtons[i].setOutlineColor(Color::Red);
+				menuElements::optionsTextLabels[i].setString(afterOptions::optionsText[i]);
+				menuElements::optionsTextLabels[i].setPosition(afterOptions::optionsTextPosition[i]);
+				menuElements::optionsTextLabels[i].setCharacterSize(globalVars::fontSize);
+				menuElements::optionsTextLabels[i].setFont(menuElements::font);
+				menuElements::optionsTextLabels[i].setFillColor(Color::Black);
+				menuElements::optionsTextLabels[i].setOutlineThickness(1.0f);
+				menuElements::optionsTextLabels[i].setOutlineColor(Color::Red);
 			}
 			menuElements::optionsTextButtons = new Text[3];
 			for (int i = 0; i < 3; i++) {
@@ -293,24 +325,23 @@ export namespace manager {
 
 			//After Everything Loaded And Set
 			menuLoadingCompleted = true;
+			
 		}
 
-		static void loadAssetsForGame() {
-
+		void loadAssetsForGame() {
 			//After Everything Loaded And Set
 			gameLoadingCompleted = true;
 		}
 
-		auto getAssetManager() {
+		AssetManager * getAssetManager() {
 			return this;
 		}
-		
+		private:
+		std::thread menuThread{ &AssetManager::loadAssetsForMenu,this};
+		std::thread gameThread{ &AssetManager::loadAssetsForGame,this};
 	};
 
-	
-	
-	sf::Thread menuThread(&AssetManager::loadAssetsForMenu);
-	sf::Thread gameThread(&AssetManager::loadAssetsForGame);
+
 
 }
 
