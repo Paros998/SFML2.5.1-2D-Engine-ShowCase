@@ -6,10 +6,9 @@
 #include <iostream>
 
 import GeneralStuff;
-import animation;
+import Animation;
 
 export module AssetsManager;
-
 
 using namespace sf;
 using namespace std;
@@ -38,6 +37,7 @@ export namespace manager {
 
 		sf::Texture menuPointerTexture;
 		Sprite menuPointerSprite;
+		Animator* menuPointerAnimator;
 
 		//Main menu
 		sf::Texture menuBackgroundTexture;
@@ -81,7 +81,7 @@ export namespace manager {
 	class AssetManager {
 	private:
 		RenderWindow* gameWindow;
-		Animation* loadingAnimator;
+		Animator* loadingAnimator;
 		sf::Texture loadingBackgroundTexture;
 		Sprite loadingBackgroundSprite;
 		
@@ -90,44 +90,21 @@ export namespace manager {
 
 
 		void drawLoadingScreen() {
-
-			gameWindow->draw(loadingBackgroundSprite);
-			gameWindow->draw(loadingSpinnerSprite);
-			loadingAnimator->update();
 			
-		}
+			if (gameWindow->isOpen()) {
+				gameWindow->clear();
 
-		void releaseMenuResources() {
-			menuElements::font.~Font();
-			menuElements::menuClickSoundBuffer.~SoundBuffer();
-			menuElements::menuClickSound.~Sound();
-			menuElements::menuPointerSprite.~Sprite();
-			menuElements::menuPointerTexture.~Texture();
-			menuElements::menuBackgroundSprite.~Sprite();
-			menuElements::menuBackgroundTexture.~Texture();
-			menuElements::menuLogoSprite.~Sprite();
-			menuElements::menuLogoTexture.~Texture();
-			delete(menuElements::menuTextButtons);
-			delete(menuElements::tipsText);
-			delete(menuElements::startTextButtons);
-			delete(menuElements::optionsSymbolsSprites);
-			delete(menuElements::optionsSymbolsTextures);
-			delete(menuElements::optionsButtonsSprites);
-			delete(menuElements::optionsButtonsTextures);
-			delete(menuElements::optionsTextLabels);
-			delete(menuElements::optionsTextButtons);
-			menuElements::optionsMusicLevelText.~Text();
-			menuElements::backButtonText.~Text();
-			delete(menuElements::creaditsText);
-		}
+				loadingAnimator->update();
+				gameWindow->draw(loadingBackgroundSprite);
+				gameWindow->draw(loadingSpinnerSprite);
+			
+				gameWindow->display();
+			}
 
-		void releaseGameResources() {
 		}
 
 		void releaseResources() {
-			releaseGameResources();
-			releaseMenuResources();
-			loadingAnimator->~Animation();
+			loadingAnimator->~Animator();
 			loadingBackgroundSprite.~Sprite();
 			loadingBackgroundTexture.~Texture();
 			loadingSpinnerSprite.~Sprite();
@@ -151,7 +128,7 @@ export namespace manager {
 			loadingSpinnerSprite.setPosition(globalFunctions::getCenterOfTheScreen());
 			
 
-			loadingAnimator = new Animation(loadingSpinnerTexture,&loadingSpinnerSprite, loadingScreen::spinnerImages, loadingScreen::spinnerFrameSwitchTime);
+			loadingAnimator = new Animator(loadingSpinnerTexture,&loadingSpinnerSprite, loadingScreen::spinnerImages, loadingScreen::spinnerFrameSwitchTime);
 			loadingAnimator->setStartFrame();
 		}
 		
@@ -165,15 +142,53 @@ export namespace manager {
 			releaseResources();
 		};
 
+		void releaseMenuResources() {
+			menuElements::font.~Font();
+			menuElements::menuClickSoundBuffer.~SoundBuffer();
+			menuElements::menuClickSound.~Sound();
+			menuElements::menuPointerSprite.~Sprite();
+			menuElements::menuPointerTexture.~Texture();
+			menuElements::menuPointerAnimator->~Animator();
+			menuElements::menuBackgroundSprite.~Sprite();
+			menuElements::menuBackgroundTexture.~Texture();
+			menuElements::menuLogoSprite.~Sprite();
+			menuElements::menuLogoTexture.~Texture();
+			menuElements::menuTextButtons = nullptr;
+			menuElements::tipsText = nullptr;
+			menuElements::startTextButtons = nullptr;
+			menuElements::optionsSymbolsSprites = nullptr;
+			menuElements::optionsSymbolsTextures = nullptr;
+			menuElements::optionsButtonsSprites = nullptr;
+			menuElements::optionsButtonsTextures = nullptr;
+			menuElements::optionsTextLabels = nullptr;
+			menuElements::optionsTextButtons = nullptr;
+			menuElements::creaditsText = nullptr;
+			delete menuElements::menuTextButtons;
+			delete menuElements::tipsText;
+			delete menuElements::startTextButtons;
+			delete menuElements::optionsSymbolsSprites;
+			delete menuElements::optionsSymbolsTextures;
+			delete menuElements::optionsButtonsSprites;
+			delete menuElements::optionsButtonsTextures;
+			delete menuElements::optionsTextLabels;
+			delete menuElements::optionsTextButtons;
+			menuElements::optionsMusicLevelText.~Text();
+			menuElements::backButtonText.~Text();
+			delete menuElements::creaditsText;
+		}
+
+		void releaseGameResources() {
+		}
+
 		bool loadMainMenu() {
-			if (alreadyLoading)
+			if (alreadyLoading) {
 				if (menuLoadingCompleted == false) {
 					drawLoadingScreen();
 				}
 				else {
-					releaseGameResources();
 					return false;
 				}
+			}
 			else {
 				alreadyLoading = true;
 				menuThread.detach();
@@ -183,11 +198,19 @@ export namespace manager {
 		};
 
 		bool loadGameLevels() { 
-			gameThread.detach();
-			while (gameLoadingCompleted != true)
+			if (alreadyLoading) {
+				if (gameLoadingCompleted == false) {
+					drawLoadingScreen();
+				}
+				else {
+					return false;
+				}
+			}
+			else {
+				alreadyLoading = true;
+				gameThread.detach();
 				drawLoadingScreen();
-			gameLoadingCompleted = false;
-			releaseMenuResources();
+			}
 			return true;
 		};
 		
@@ -205,6 +228,9 @@ export namespace manager {
 				menuElements::menuSongs[i].setVolume(globalVars::musicLevel);
 
 			menuElements::menuClickSoundBuffer.loadFromFile(sounds::menuClickSound);
+			menuElements::menuClickSound.setBuffer(menuElements::menuClickSoundBuffer);
+			menuElements::menuClickSound.setVolume(globalVars::musicLevel);
+
 
 			menuElements::menuPointerTexture.loadFromFile(menuAssets::pointerTexture);
 			menuElements::menuPointerTexture.setSmooth(true);
@@ -213,6 +239,12 @@ export namespace manager {
 			menuElements::menuPointerSprite.setOrigin(
 				menuElements::menuPointerSprite.getGlobalBounds().width / 2,
 				menuElements::menuPointerSprite.getGlobalBounds().height / 2);
+			menuElements::menuPointerAnimator = new Animator(
+				menuElements::menuPointerTexture,
+				&menuElements::menuPointerSprite,
+				menuAssets::pointerImageCount,
+				menuAssets::pointerSwitchTime
+			);
 
 			menuElements::menuBackgroundTexture.loadFromFile(menuAssets::menuTexture);
 			menuElements::menuBackgroundTexture.setSmooth(true);

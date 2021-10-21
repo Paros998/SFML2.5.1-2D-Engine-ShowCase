@@ -2,10 +2,10 @@
 #include <SFML/Graphics.hpp>
 using namespace sf;
 
-export module animation;
+export module Animation;
 
 export namespace animation {
-	class Animation {
+	class Animator {
 		float changeTime;
 		float deltaTime = 0.0f;
 		Vector2u currentImage, imageNumber;
@@ -15,7 +15,7 @@ export namespace animation {
 		Clock clock;
 		float fullTime = 0.0f;
 
-		Animation(Texture& texture, Sprite* sprite , Vector2u imageNumber, float changeTime) {
+		Animator(Texture& texture, Sprite* sprite , Vector2u imageNumber, float changeTime) {
 			this->imageNumber = imageNumber;
 			this->changeTime = changeTime;
 			this->sprite = sprite;
@@ -30,7 +30,7 @@ export namespace animation {
 				this->sprite->getGlobalBounds().width / 2 / this->sprite->getScale().x,
 				this->sprite->getGlobalBounds().height / 2 / this->sprite->getScale().y);
 		}
-		~Animation() {
+		~Animator() {
 		}
 		
 		void update(int row) {
