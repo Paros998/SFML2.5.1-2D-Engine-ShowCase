@@ -193,6 +193,8 @@ export namespace menuAssets {
 	String menuTexture = "assets/MenuTextures/menuBackground.png";
 	String logoTexture = "assets/MenuTextures/menuLogo.png";
 	String pointerTexture = "assets/MenuTextures/pointer.png";
+	Vector2u pointerImageCount = { 20,1 };
+	float pointerSwitchTime = 1.0f / pointerImageCount.x;
 
 	String menuHelpersTextures[15] = {
 		"assets/Buttons/plus.png",

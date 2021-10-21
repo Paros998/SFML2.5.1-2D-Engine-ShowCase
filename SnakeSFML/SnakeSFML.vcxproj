@@ -23,6 +23,7 @@
     <ClCompile Include="AssetsManager.ixx" />
     <ClCompile Include="GeneralStuff.ixx" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Menu.ixx" />
     <ClCompile Include="src\SnakeEngine.ixx" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

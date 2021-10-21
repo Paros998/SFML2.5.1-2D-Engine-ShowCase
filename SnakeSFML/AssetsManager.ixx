@@ -1,9 +1,12 @@
 #include <SFML/System.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
+#include <thread>
+#include <future>
+#include <iostream>
 
 import GeneralStuff;
-import animation;
+import Animation;
 
 export module AssetsManager;
 
@@ -17,7 +20,9 @@ using namespace mainMenu;
 using namespace music;
 using namespace sounds;
 
-
+std::atomic<bool>static menuLoadingCompleted = false;
+std::atomic<bool>static gameLoadingCompleted = false;
+std::atomic<bool>static alreadyLoading = false;
 
 export namespace manager {
 
@@ -32,6 +37,7 @@ export namespace manager {
 
 		sf::Texture menuPointerTexture;
 		Sprite menuPointerSprite;
+		Animator* menuPointerAnimator;
 
 		//Main menu
 		sf::Texture menuBackgroundTexture;
@@ -70,43 +76,40 @@ export namespace manager {
 		//Needed everywhere
 		Font font;
 
-
 	}
-
-	bool menuLoadingCompleted;
-	bool gameLoadingCompleted;
-
+	
 	class AssetManager {
 	private:
 		RenderWindow* gameWindow;
-		Animation* loadingAnimator;
+		Animator* loadingAnimator;
 		sf::Texture loadingBackgroundTexture;
 		Sprite loadingBackgroundSprite;
 		
 		sf::Texture loadingSpinnerTexture;
 		Sprite loadingSpinnerSprite;
 
+
 		void drawLoadingScreen() {
-			//gameWindow->clear();
-
-			gameWindow->draw(loadingBackgroundSprite);
-			gameWindow->draw(loadingSpinnerSprite);
-			loadingAnimator->update();
-
-			//gameWindow->display();
-		}
-
-		void releaseMenuResources() {
 			
-		}
+			if (gameWindow->isOpen()) {
+				gameWindow->clear();
 
-		void releaseGameResources() {
+				loadingAnimator->update();
+				gameWindow->draw(loadingBackgroundSprite);
+				gameWindow->draw(loadingSpinnerSprite);
+			
+				gameWindow->display();
+			}
 
 		}
 
 		void releaseResources() {
-			releaseGameResources();
-			releaseMenuResources();
+			loadingAnimator->~Animator();
+			loadingBackgroundSprite.~Sprite();
+			loadingBackgroundTexture.~Texture();
+			loadingSpinnerSprite.~Sprite();
+			loadingSpinnerTexture.~Texture();
+
 		}
 
 		void prepareLoadingScreen() {
@@ -123,8 +126,9 @@ export namespace manager {
 			loadingSpinnerSprite.setScale(loadingScreen::spinnerScale);
 			loadingSpinnerSprite.setOrigin(loadingSpinnerSprite.getGlobalBounds().width / 2, loadingSpinnerSprite.getGlobalBounds().height / 2);
 			loadingSpinnerSprite.setPosition(globalFunctions::getCenterOfTheScreen());
+			
 
-			loadingAnimator = new Animation(loadingSpinnerTexture,loadingSpinnerSprite, loadingScreen::spinnerImages, loadingScreen::spinnerFrameSwitchTime);
+			loadingAnimator = new Animator(loadingSpinnerTexture,&loadingSpinnerSprite, loadingScreen::spinnerImages, loadingScreen::spinnerFrameSwitchTime);
 			loadingAnimator->setStartFrame();
 		}
 		
@@ -132,32 +136,85 @@ export namespace manager {
 		AssetManager(RenderWindow * gameWindow) {
 			this->gameWindow = gameWindow;
 			prepareLoadingScreen();
-			loadMainMenu();
 		};
 
 		~AssetManager() {
 			releaseResources();
 		};
 
+		void releaseMenuResources() {
+			menuElements::font.~Font();
+			menuElements::menuClickSoundBuffer.~SoundBuffer();
+			menuElements::menuClickSound.~Sound();
+			menuElements::menuPointerSprite.~Sprite();
+			menuElements::menuPointerTexture.~Texture();
+			menuElements::menuPointerAnimator->~Animator();
+			menuElements::menuBackgroundSprite.~Sprite();
+			menuElements::menuBackgroundTexture.~Texture();
+			menuElements::menuLogoSprite.~Sprite();
+			menuElements::menuLogoTexture.~Texture();
+			menuElements::menuTextButtons = nullptr;
+			menuElements::tipsText = nullptr;
+			menuElements::startTextButtons = nullptr;
+			menuElements::optionsSymbolsSprites = nullptr;
+			menuElements::optionsSymbolsTextures = nullptr;
+			menuElements::optionsButtonsSprites = nullptr;
+			menuElements::optionsButtonsTextures = nullptr;
+			menuElements::optionsTextLabels = nullptr;
+			menuElements::optionsTextButtons = nullptr;
+			menuElements::creaditsText = nullptr;
+			delete menuElements::menuTextButtons;
+			delete menuElements::tipsText;
+			delete menuElements::startTextButtons;
+			delete menuElements::optionsSymbolsSprites;
+			delete menuElements::optionsSymbolsTextures;
+			delete menuElements::optionsButtonsSprites;
+			delete menuElements::optionsButtonsTextures;
+			delete menuElements::optionsTextLabels;
+			delete menuElements::optionsTextButtons;
+			menuElements::optionsMusicLevelText.~Text();
+			menuElements::backButtonText.~Text();
+			delete menuElements::creaditsText;
+		}
+
+		void releaseGameResources() {
+		}
+
 		bool loadMainMenu() {
-			//menuThread.launch();
-			while(menuLoadingCompleted != true)
+			if (alreadyLoading) {
+				if (menuLoadingCompleted == false) {
+					drawLoadingScreen();
+				}
+				else {
+					return false;
+				}
+			}
+			else {
+				alreadyLoading = true;
+				menuThread.detach();
 				drawLoadingScreen();
-			menuLoadingCompleted = false;
-			releaseGameResources();
+			}
 			return true;
 		};
 
 		bool loadGameLevels() { 
-			//gameThread.launch();
-			while (gameLoadingCompleted != true)
+			if (alreadyLoading) {
+				if (gameLoadingCompleted == false) {
+					drawLoadingScreen();
+				}
+				else {
+					return false;
+				}
+			}
+			else {
+				alreadyLoading = true;
+				gameThread.detach();
 				drawLoadingScreen();
-			gameLoadingCompleted = false;
-			releaseMenuResources();
+			}
 			return true;
 		};
 		
-		static void loadAssetsForMenu() {
+		void loadAssetsForMenu() {
 			 
 			menuElements::font.loadFromFile(menuAssets::fontLocation);
 
@@ -171,6 +228,9 @@ export namespace manager {
 				menuElements::menuSongs[i].setVolume(globalVars::musicLevel);
 
 			menuElements::menuClickSoundBuffer.loadFromFile(sounds::menuClickSound);
+			menuElements::menuClickSound.setBuffer(menuElements::menuClickSoundBuffer);
+			menuElements::menuClickSound.setVolume(globalVars::musicLevel);
+
 
 			menuElements::menuPointerTexture.loadFromFile(menuAssets::pointerTexture);
 			menuElements::menuPointerTexture.setSmooth(true);
@@ -179,6 +239,12 @@ export namespace manager {
 			menuElements::menuPointerSprite.setOrigin(
 				menuElements::menuPointerSprite.getGlobalBounds().width / 2,
 				menuElements::menuPointerSprite.getGlobalBounds().height / 2);
+			menuElements::menuPointerAnimator = new Animator(
+				menuElements::menuPointerTexture,
+				&menuElements::menuPointerSprite,
+				menuAssets::pointerImageCount,
+				menuAssets::pointerSwitchTime
+			);
 
 			menuElements::menuBackgroundTexture.loadFromFile(menuAssets::menuTexture);
 			menuElements::menuBackgroundTexture.setSmooth(true);
@@ -250,13 +316,13 @@ export namespace manager {
 
 			menuElements::optionsTextLabels = new Text[8];
 			for (int i = 0; i < 8; i++) {
-				menuElements::optionsTextButtons[i].setString(afterOptions::optionsText[i]);
-				menuElements::optionsTextButtons[i].setPosition(afterOptions::optionsTextPosition[i]);
-				menuElements::optionsTextButtons[i].setCharacterSize(globalVars::fontSize);
-				menuElements::optionsTextButtons[i].setFont(menuElements::font);
-				menuElements::optionsTextButtons[i].setFillColor(Color::Black);
-				menuElements::optionsTextButtons[i].setOutlineThickness(1.0f);
-				menuElements::optionsTextButtons[i].setOutlineColor(Color::Red);
+				menuElements::optionsTextLabels[i].setString(afterOptions::optionsText[i]);
+				menuElements::optionsTextLabels[i].setPosition(afterOptions::optionsTextPosition[i]);
+				menuElements::optionsTextLabels[i].setCharacterSize(globalVars::fontSize);
+				menuElements::optionsTextLabels[i].setFont(menuElements::font);
+				menuElements::optionsTextLabels[i].setFillColor(Color::Black);
+				menuElements::optionsTextLabels[i].setOutlineThickness(1.0f);
+				menuElements::optionsTextLabels[i].setOutlineColor(Color::Red);
 			}
 			menuElements::optionsTextButtons = new Text[3];
 			for (int i = 0; i < 3; i++) {
@@ -289,28 +355,27 @@ export namespace manager {
 				menuElements::creaditsText[i].setOutlineThickness(1.0f);
 				menuElements::creaditsText[i].setOutlineColor(Color::Red);
 			}
-			menuElements::creaditsText[3] = menuElements::backButtonText;
+			menuElements::creaditsText[2] = menuElements::backButtonText;
 
 			//After Everything Loaded And Set
 			menuLoadingCompleted = true;
+			
 		}
 
-		static void loadAssetsForGame() {
-
+		void loadAssetsForGame() {
 			//After Everything Loaded And Set
 			gameLoadingCompleted = true;
 		}
 
-		auto getAssetManager() {
+		AssetManager * getAssetManager() {
 			return this;
 		}
-		
+		private:
+		std::thread menuThread{ &AssetManager::loadAssetsForMenu,this};
+		std::thread gameThread{ &AssetManager::loadAssetsForGame,this};
 	};
 
-	
-	
-	sf::Thread menuThread(&AssetManager::loadAssetsForMenu);
-	sf::Thread gameThread(&AssetManager::loadAssetsForGame);
+
 
 }
 

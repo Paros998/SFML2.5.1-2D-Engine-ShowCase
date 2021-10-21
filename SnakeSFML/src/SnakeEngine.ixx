@@ -1,20 +1,43 @@
 #include <SFML/Graphics.hpp>
 using namespace sf;
 
+import AssetsManager;
+using namespace manager;
+
 import GeneralStuff;
-using namespace globalVars;
 using namespace consts;
 
-export module SnakeEngine;
+import Menu;
+using namespace menu;
 
+export module SnakeEngine;
+enum {MENU,GAME};
 export namespace engine {
 	class Engine {
 	private:
 		static Engine* instance;
-
+		manager::AssetManager* assetManager;
+		menu::Menu* menuInstance;
+		//game::Game* gameInstance;
+		RenderWindow* window;
+		bool menuLoaded = false;
+		bool gameLoaded = false;
+		bool shutdown = false;
+		int currentLevel = MENU;
 	public:
-		Engine() {}
-
+		Engine() {
+			window = new RenderWindow(VideoMode(consts::SCREEN_WIDTH, consts::SCREEN_HEIGHT), "SFML works!",Style::Fullscreen | Style::Close);
+			assetManager = new manager::AssetManager(window);
+			menuInstance = new menu::Menu(assetManager,window);
+		}
+		~Engine() {
+			//if (gameInstance)
+			//	gameInstance->~Game();
+			if (menuInstance)
+				menuInstance->~Menu();
+			assetManager->~AssetManager();
+			window->~RenderWindow();
+		}
 		static Engine* getInstance() {
 			if (instance == nullptr) {
 				instance = new Engine();
@@ -22,29 +45,54 @@ export namespace engine {
 			return instance;
 		}
 
-		static void main() {
-			RenderWindow window(VideoMode(200, 200), "SFML works!");
-			window.setFramerateLimit(60);
-			window.setKeyRepeatEnabled(false);
-			window.setVerticalSyncEnabled(true);
-			window.setTitle("Snake Game :D");
+		static void release() {
+			instance = getInstance();
+			instance->~Engine();
+		}
 
-			while (window.isOpen()) {
-				Event event;
-				while (window.pollEvent(event)) {
-					if (event.type == sf::Event::Closed) {
-						window.close();
+		static int main() {
+			instance = getInstance();
+			instance->window->setFramerateLimit(60);
+			instance->window->setKeyRepeatEnabled(false);
+			instance->window->setVerticalSyncEnabled(true);
+			instance->window->setTitle("Snake Game :D");
+			
+			while (true) {
+				switch (instance->currentLevel) {
+				case MENU:
+					if (instance->menuInstance == nullptr) {
+						instance->menuInstance = new menu::Menu(instance->assetManager, instance->window);
+						//instance->gameInstance->~Game();
 					}
-					if (event.type == sf::Event::Resized) {
-						sf::Vector2u size = window.getSize();
-						globalVars::screenRatio = Vector2f(size.x / (float) consts::SCREEN_WIDTH , size.y / (float)consts::SCREEN_HEIGHT);
+					else {
+						if (instance->menuLoaded) {
+							instance->shutdown =  instance->menuInstance->render();
+							if (instance->shutdown) {
+								return 0;
+								
+							}
+
+						}
+						else {
+							instance->menuLoaded = instance->menuInstance->loadAssets();
+						}
 					}
+					break;
+				case GAME:
+					/*if (instance->gameInstance == nullptr) {
+						instance->gameInstance = new game::Game(instance->assetManager, instance->window);
+						instance->menuInstance->~Menu();
+					}
+					else{
+						if (instance->gameLoaded) {
+							instance->gameInstance->render();
+						}
+						else {
+							instance->gameLoaded = instance->gameInstance->loadAssets();
+						}
+					}*/
+					break;
 				}
-				window.clear();
-
-				//Main Render HERE!!
-
-				window.display();
 			}
 		}
 	};

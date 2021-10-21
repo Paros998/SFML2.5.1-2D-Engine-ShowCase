@@ -6,6 +6,8 @@ import SnakeEngine;
 using namespace engine;
 
 int main(void) {
-	Engine::main();
+	if (Engine::main() == 0)
+		Engine::release;
+	
 	return 0;
 }
