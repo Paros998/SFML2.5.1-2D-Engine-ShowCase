@@ -22,6 +22,7 @@
     <ClCompile Include="animation.ixx" />
     <ClCompile Include="general.ixx" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\Player\Player.ixx" />
     <ClCompile Include="src\SnakeEngine.ixx" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
