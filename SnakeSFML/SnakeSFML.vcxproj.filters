@@ -5,6 +5,7 @@
     <ClCompile Include="GeneralStuff.ixx" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="src\SnakeEngine.ixx" />
+    <ClCompile Include="src\Player\Player.ixx" />
     <ClCompile Include="AssetsManager.ixx" />
     <ClCompile Include="Menu.ixx" />
   </ItemGroup>
