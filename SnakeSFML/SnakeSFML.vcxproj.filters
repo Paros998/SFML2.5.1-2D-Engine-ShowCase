@@ -3,10 +3,11 @@
   <ItemGroup>
     <ClCompile Include="Animator.ixx" />
     <ClCompile Include="GeneralStuff.ixx" />
-    <ClCompile Include="main.cpp" />
     <ClCompile Include="src\SnakeEngine.ixx" />
     <ClCompile Include="src\Player\Player.ixx" />
     <ClCompile Include="AssetsManager.ixx" />
     <ClCompile Include="Menu.ixx" />
+    <ClCompile Include="src\Engine.ixx" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
 </Project>
