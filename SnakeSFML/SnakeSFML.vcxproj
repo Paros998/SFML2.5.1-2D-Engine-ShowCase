@@ -19,13 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Animator.ixx" />
-    <ClCompile Include="AssetsManager.ixx" />
-    <ClCompile Include="GeneralStuff.ixx" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="src\Engine.ixx" />
-    <ClCompile Include="src\Player\Player.ixx" />
-    <ClCompile Include="Menu.ixx" />
+    <ClCompile Include="Render.ixx" />
+    <ClCompile Include="src\Animator.ixx" />
+    <ClCompile Include="src\AssetsManager.ixx" />
+    <ClCompile Include="src\GeneralStuff.ixx" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Menu.ixx" />
     <ClCompile Include="src\SnakeEngine.ixx" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -88,6 +87,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -136,6 +136,10 @@
       <AdditionalIncludeDirectories>/SFML/include</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

@@ -15,6 +15,11 @@ export namespace menu {
 	class Menu {
 		manager::AssetManager* manager;
 		RenderWindow* gameWindow;
+		//Logic variables
+		int windowActive = MAIN;
+		int actualWindowOption = 0;
+
+
 		//Needed everywhere
 		Font font; 
 
@@ -82,6 +87,9 @@ export namespace menu {
 			backButtonText = menuElements::backButtonText;
 			creaditsText = menuElements::creaditsText;  
 		}
+		void updateRenderAndLogic() {
+
+		}
 
 		void prepareForDraw() {
 			switch (actualPage) {
@@ -124,10 +132,27 @@ export namespace menu {
 				Event event;
 
 				while (gameWindow->pollEvent(event)) {
-					if (event.type == Event::Closed) {
-						gameWindow->close();
-						return true;
+
+					switch (event.type) {
+					case Event::Closed:
+							gameWindow->close();
+							return true;
+							break;
+					case Event::KeyPressed:
+						switch (event.key.code) {
+						case Keyboard::Down:
+							break;
+						case Keyboard::Up:
+							break;
+						case Keyboard::Enter:
+							
+							break;
+						}
+						break;
 					}
+
+					
+					
 				}
 
 				gameWindow->clear();
