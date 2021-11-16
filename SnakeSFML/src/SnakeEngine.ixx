@@ -2,7 +2,7 @@
 using namespace sf;
 
 import AssetsManager;
-using namespace manager;
+using namespace manager; 
 
 import GeneralStuff;
 using namespace consts;
@@ -21,7 +21,7 @@ export namespace engine {
 		//game::Game* gameInstance;
 		RenderWindow* window;
 		bool menuLoaded = false;
-		bool gameLoaded = false;
+		bool gameLoaded = false; 
 		bool shutdown = false;
 		int currentLevel = MENU;
 	public:
@@ -46,6 +46,7 @@ export namespace engine {
 		}
 
 		static void release() {
+		
 			instance = getInstance();
 			instance->~Engine();
 		}
@@ -69,7 +70,6 @@ export namespace engine {
 							instance->shutdown =  instance->menuInstance->render();
 							if (instance->shutdown) {
 								return 0;
-								
 							}
 
 						}
