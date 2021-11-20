@@ -12,6 +12,7 @@ using namespace menu;
 
 export module SnakeEngine;
 enum {MENU,GAME};
+
 export namespace engine {
 	class Engine {
 	private:

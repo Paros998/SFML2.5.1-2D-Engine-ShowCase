@@ -8,6 +8,9 @@ using namespace std;
 
 export module Engine;
 
+import Render;
+using namespace shapes; 
+
 export namespace graphicsEngine {
 	class GraphicsEngine {
 
@@ -119,6 +122,11 @@ export namespace graphicsEngine {
 			bool hasKeyboardSupport,
 			bool shouldDebug
 		) {
+			std::vector<LineSegment> lines;
+			lines.push_back(LineSegment(0, 499, 1400, 899));
+			lines.push_back(LineSegment(1401, 899, 1400, 5));
+			lines.push_back(LineSegment(1400, 4, 400, 80));
+			lines.push_back(LineSegment(399, 80, 0, 0));
 			const int windowStyle = isWindowed ? Style::Fullscreen : Style::Default;
 
 			RenderWindow window(VideoMode(windowWidth, windowHeight), "Graphics Engine", windowStyle);
@@ -152,6 +160,11 @@ export namespace graphicsEngine {
 					showFps(window, frameRateClock);
 					showMouseCoordinates(window);
 				}
+
+				PrimitiveRenderer::drawLine(window, LineSegment(0,500,1400,900), Color::White);
+				PrimitiveRenderer::drawPoint(window, Point2D(1401,901), Color::Red);
+				PrimitiveRenderer::drawMulitpleLines(window, lines, Color::Magenta);
+				PrimitiveRenderer::drawCircle(window, Circle(Point2D(800,600),100));
 
 				window.display();
 			}

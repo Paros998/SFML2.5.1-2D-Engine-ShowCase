@@ -7,6 +7,7 @@
     <ClCompile Include="src\GeneralStuff.ixx" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Menu.ixx" />
-    <ClCompile Include="Render.ixx" />
+    <ClCompile Include="src\Engine.ixx" />
+    <ClCompile Include="src\Render.ixx" />
   </ItemGroup>
 </Project>
