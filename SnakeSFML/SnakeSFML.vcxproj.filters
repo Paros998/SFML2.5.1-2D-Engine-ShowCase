@@ -1,13 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="src\SnakeEngine.ixx" />
-    <ClCompile Include="src\Animator.ixx" />
-    <ClCompile Include="src\AssetsManager.ixx" />
     <ClCompile Include="src\GeneralStuff.ixx" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\Menu.ixx" />
     <ClCompile Include="src\Engine.ixx" />
     <ClCompile Include="src\Render.ixx" />
+    <ClCompile Include="src\GameObjects.ixx" />
+    <ClCompile Include="src\ErrorHandler.ixx" />
   </ItemGroup>
 </Project>

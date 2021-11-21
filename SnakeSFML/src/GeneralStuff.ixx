@@ -2,14 +2,31 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <time.h>
-export module GeneralStuff; 
-
-import <iostream>;
-import <fstream>; 
+#include <iostream>
+#include <fstream>
 
 using namespace std;
 using namespace sf;
 
+export module GeneralStuff; 
+
+// Graphics engine stuff
+
+export namespace playerMovementDirections {
+	enum directions { Down, Up, Left, Right };
+}
+
+export namespace engineConsts {
+	constexpr int SCREEN_WIDTH = 1920;
+	constexpr int SCREEN_HEIGHT = 1080;
+}
+
+export namespace directories {
+	String SPRITES_DIRECTORY = "./assets/SpritesTextures/Engine";
+	String FONTS_DIRECTORY = "./assets/Fonts";
+}
+
+// Snake stuff
 
 export namespace consts {
 
