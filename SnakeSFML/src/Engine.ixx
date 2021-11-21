@@ -2,13 +2,19 @@
 using namespace sf;
 
 #include <iostream>
-#include <sstream>
 #include <vector>
 using namespace std;
 
 export module Engine;
 
 import Render;
+import GameObjects;
+import GeneralStuff;
+import ErrorHandler;
+
+using namespace directories;
+using namespace engineConsts;
+using namespace gameObjects;
 using namespace shapes; 
 
 export namespace graphicsEngine {
@@ -19,16 +25,18 @@ export namespace graphicsEngine {
 		enum InfoTextTypes { MouseCords, Fps };
 		Font infoFont;
 		vector<Text> infoTexts;
+		RenderWindow* window;
 
-	private:
-		void handleError(string message) {
-			cout << message << endl;
-		}
+		Player* player;
+		GameObject* greyStone;
+		GameObject* brownStone;
 
 	public:
 		GraphicsEngine() {
-			if (!infoFont.loadFromFile("./assets/Fonts/arial.ttf")) {
-				handleError("Can't load arial.ttf.");
+			string arialFontPath = FONTS_DIRECTORY + "/arial.ttf";
+
+			if (!infoFont.loadFromFile(arialFontPath)) {
+				ErrorHandler::showErrorDialog("Can't load arial.ttf.", "Engine.ixx", "error");
 			}
 
 			Text text;
@@ -38,12 +46,29 @@ export namespace graphicsEngine {
 			for (int i = 0; i < 2; i++) {
 				infoTexts.push_back(text);
 			}
+
+			string dudeSpritePath = SPRITES_DIRECTORY + "/dude.png";
+
+			player = new Player(
+				dudeSpritePath,
+				Vector2u(4, 4),
+				Vector2u(1, 1),
+				0.2f,
+				Vector2f(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+			);
+
+			string greyStonePath = SPRITES_DIRECTORY + "/obstructionTexture2.png";
+			greyStone = new GameObject(greyStonePath, Vector2f(SCREEN_WIDTH / 2 + 100, SCREEN_HEIGHT / 2 + 100));
+
+			string brownStonePath = SPRITES_DIRECTORY + "/obstructionTexture3.png";
+			brownStone = new GameObject(brownStonePath, Vector2f(SCREEN_WIDTH / 2 + 200, SCREEN_HEIGHT / 2 + 200));
 		}
 
 		~GraphicsEngine() {
-			if (instance) {
-				delete instance;
-			}
+			if (player) delete player;
+			if (greyStone) delete greyStone;
+			if (brownStone) delete brownStone;
+			if (window) delete window;
 		}
 
 		static GraphicsEngine* getInstance() {
@@ -53,26 +78,39 @@ export namespace graphicsEngine {
 			return instance;
 		}
 
-		void handleKeybardOnPressed(RenderWindow& window, bool exitOnEscape) {
+		void handleKeybardOnPressed() {
 			if (Keyboard::isKeyPressed(Keyboard::W)) {
-				cout << "Key W has been presssed\n";
+				player->updateMovement(playerMovementDirections::Up);
 			} else if (Keyboard::isKeyPressed(Keyboard::A)) {
-				cout << "Key A has been presssed\n";
+				player->updateMovement(playerMovementDirections::Left);
 			} else if (Keyboard::isKeyPressed(Keyboard::S)) {
-				cout << "Key S has been presssed\n";
+				player->updateMovement(playerMovementDirections::Down);
 			} else if (Keyboard::isKeyPressed(Keyboard::D)) {
-				cout << "Key D has been presssed\n";
+				player->updateMovement(playerMovementDirections::Right);
 			} else if (Keyboard::isKeyPressed(Keyboard::Up)) {
-				cout << "Key ArrowUp has been presssed\n";
+				player->updateMovement(playerMovementDirections::Up);
 			} else if (Keyboard::isKeyPressed(Keyboard::Left)) {
-				cout << "Key ArrowLeft has been presssed\n";
+				player->updateMovement(playerMovementDirections::Left);
 			} else if (Keyboard::isKeyPressed(Keyboard::Down)) {
-				cout << "Key ArrowDown has been presssed\n";
+				player->updateMovement(playerMovementDirections::Down);
 			} else if (Keyboard::isKeyPressed(Keyboard::Right)) {
-				cout << "Key ArrowDown has been presssed\n";
-			} else if (Keyboard::isKeyPressed(Keyboard::Escape) && exitOnEscape) {
-				cout << "Key Escape has been presssed\n";
-				window.close();
+				player->updateMovement(playerMovementDirections::Right);
+			} else {
+				player->animateIdle();
+			}
+		}
+
+		void handleKeyboardOnClick(Event event, bool shouldExitOnEscape) {
+			if (event.key.code == Keyboard::Escape && shouldExitOnEscape) {
+				window->close();
+			} else if (event.key.code == Keyboard::LControl) {
+				player->setBitmap(SPRITES_DIRECTORY + "/dude.png");
+			} else if (event.key.code == Keyboard::LAlt) {
+				player->clearBitmap();
+			} else if (event.key.code == Keyboard::Space) {
+				player->saveBitmap();
+			} else if (event.key.code == Keyboard::RAlt) {
+				brownStone->setBitmap(greyStone->getBitmap());
 			}
 		}
 
@@ -86,28 +124,25 @@ export namespace graphicsEngine {
 			}
 		}
 
-		void showMouseCoordinates(RenderWindow& window) {
-			Vector2i mouseCoordinates = Mouse::getPosition(window);
-			ostringstream stream;
-			stream << "Mouse pos.: (" << mouseCoordinates.x << ", " << mouseCoordinates.y << ")";
+		void showMouseCoordinates() {
+			Vector2i mouseCoordinates = Mouse::getPosition();
+			String mouseCords = "Mouse pos.: (" + to_string(mouseCoordinates.x) + ", " + to_string(mouseCoordinates.y) + ")";
 
 			infoTexts[MouseCords].setFillColor(Color::Green);
-			infoTexts[MouseCords].setString(stream.str());
+			infoTexts[MouseCords].setString(mouseCords);
 
-			window.draw(infoTexts[MouseCords]);
+			window->draw(infoTexts[MouseCords]);
 		}
 
-		void showFps(RenderWindow& window, Clock& frameRateClock) {
+		void showFps(Clock& frameRateClock) {
 			int framerate = 1 / frameRateClock.getElapsedTime().asSeconds();
-
-			ostringstream stream;
-			stream << "FPS: " << framerate;
+			String fpsInfo = "FPS: " + to_string(framerate);
 
 			infoTexts[Fps].setFillColor(Color::Yellow);
-			infoTexts[Fps].setString(stream.str());
+			infoTexts[Fps].setString(fpsInfo);
 			infoTexts[Fps].setPosition(Vector2f(180, 0));
 
-			window.draw(infoTexts[Fps]);
+			window->draw(infoTexts[Fps]);
 
 			frameRateClock.restart().asSeconds();
 		}
@@ -129,24 +164,22 @@ export namespace graphicsEngine {
 			lines.push_back(LineSegment(399, 80, 0, 0));
 			const int windowStyle = isWindowed ? Style::Fullscreen : Style::Default;
 
-			RenderWindow window(VideoMode(windowWidth, windowHeight), "Graphics Engine", windowStyle);
+			window = new RenderWindow(VideoMode(windowWidth, windowHeight), "Graphics Engine", windowStyle);
 			CircleShape shape(100.f);
 			Clock frameRateClock;
 
 			shape.setFillColor(Color::Green);
 
-			window.setFramerateLimit(60);
+			window->setFramerateLimit(60);
 
-			while (window.isOpen())
-			{
+			while (window->isOpen()) {
 				Event event;
-				while (window.pollEvent(event))
-				{
+				while (window->pollEvent(event)) {
 					if (event.type == Event::Closed)
-						window.close();
+						window->close();
 
-					if (event.type == Event::KeyPressed && hasKeyboardSupport) {
-						handleKeybardOnPressed(window, shouldExitOnEscape);
+					if (event.type == Event::KeyPressed) {
+						handleKeyboardOnClick(event, shouldExitOnEscape);
 					}
 
 					if (event.type == Event::MouseButtonPressed && hasMouseSupport) {
@@ -154,19 +187,29 @@ export namespace graphicsEngine {
 					}
 				}
 
-				window.clear(clearColor);
-
-				if (shouldDebug) {
-					showFps(window, frameRateClock);
-					showMouseCoordinates(window);
+				if (hasKeyboardSupport) {
+					handleKeybardOnPressed();
 				}
 
-				PrimitiveRenderer::drawLine(window, LineSegment(0,500,1400,900), Color::White);
-				PrimitiveRenderer::drawPoint(window, Point2D(1401,901), Color::Red);
-				PrimitiveRenderer::drawMulitpleLines(window, lines, Color::Magenta);
-				PrimitiveRenderer::drawCircle(window, Circle(Point2D(800,600),100));
+				player->update();
 
-				window.display();
+				window->clear(clearColor);
+
+				if (shouldDebug) {
+					showFps(frameRateClock);
+					showMouseCoordinates();
+				}
+
+				PrimitiveRenderer::drawLine(*window, LineSegment(0,500,1400,900), Color::White);
+				PrimitiveRenderer::drawPoint(*window, Point2D(1401,901), Color::Red);
+				PrimitiveRenderer::drawMulitpleLines(*window, lines, Color::Magenta);
+				PrimitiveRenderer::drawCircle(*window, Circle(Point2D(800,600),100));
+
+				window->draw(*player);
+				window->draw(*greyStone);
+				window->draw(*brownStone);
+
+				window->display();
 			}
 		}
 	};

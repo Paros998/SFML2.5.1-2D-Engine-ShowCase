@@ -19,14 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Animator.ixx" />
-    <ClCompile Include="src\AssetsManager.ixx" />
     <ClCompile Include="src\Engine.ixx" />
+    <ClCompile Include="src\ErrorHandler.ixx" />
     <ClCompile Include="src\GeneralStuff.ixx" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\Menu.ixx" />
+    <ClCompile Include="src\GameObjects.ixx" />
     <ClCompile Include="src\Render.ixx" />
-    <ClCompile Include="src\SnakeEngine.ixx" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

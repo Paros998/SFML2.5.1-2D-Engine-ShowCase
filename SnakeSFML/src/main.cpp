@@ -1,9 +1,4 @@
 #include <SFML/Graphics.hpp>
-import <iostream>;
-using namespace std;
-
-import SnakeEngine;
-using namespace engine;
 
 import Engine;
 using namespace graphicsEngine;
@@ -14,15 +9,17 @@ int main(void) {
 
 	GraphicsEngine* engine = GraphicsEngine::getInstance();
 	engine->main(
-		400,
-		200,
-		sf::Color::Black,
+		1920,
+		1080,
+		sf::Color::White,
 		true,
 		true,
 		true,
 		true,
 		true
 	);
+
+	delete engine;
 	
 	return 0;
 }
