@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include <cstdlib>
 #include <math.h>
+#include <queue>
 
 export module Render;
 
@@ -109,8 +110,6 @@ export namespace shapes {
 		FloatRect      m_bounds;		   ///< Bounding rectangle of the whole line
 		Vector2f	   begin;              ///< Line begin point
 		Vector2f	   end;		           ///< Line end point
-
-		
 
 		void calculatePoints() {
 			m_vertices.clear();
@@ -262,9 +261,10 @@ export namespace shapes {
 	};
 
 	class Circle : public sf::Shape {
-		enum Precision { Normal , FourTimes , EightTimes };
 		const float radian2PI = 6.28;
 		const int maxAngle = 360;
+		const int PI_4 = 90;
+		const int PI_8 = 45;
 		const Texture* m_texture;          ///< Texture of the shape
 		IntRect        m_textureRect;      ///< Rectangle defining the area of the source texture to display
 		Color          m_fillColor;        ///< Fill color
@@ -275,7 +275,9 @@ export namespace shapes {
 		FloatRect      m_insideBounds;     ///< Bounding rectangle of the inside (fill)
 		FloatRect      m_bounds;		   ///< Bounding rectangle of the whole line
 		Point2D		   middle;             ///< middle point of circle
-		int			   radius;			   ///< radius of the circle
+		int			   radius;			   ///< radius of the circle or horizontal radius of elipse
+		int			   radiusY;			   ///< vertical radius of elipse
+		int			   type;			   ///< defines the type of this circle
 
 		virtual void draw(sf::RenderTarget& target, sf::RenderStates states)const override {
 			target.draw(m_vertices, states);
@@ -285,29 +287,507 @@ export namespace shapes {
 		void calculateOutlineVertices() {
 			m_outlineVertices.clear();
 			m_outlineVertices.resize(0);
-			for (int i = 0; i < maxAngle; i++) {
-				m_outlineVertices.append(
-					Vector2f(
-						middle.getCords().x + (radius * cos(i / radian2PI))
-						,
-						middle.getCords().y + (radius * sin(i / radian2PI))
+			int index = 0;
+			float i;
+			float momentum =
+				(radius > 25 || radiusY > 25)
+				? (5.0f / (float) (radius > radiusY ? radius : radiusY))
+				: 0.1f;
+
+			for (i = 0.0f; i < maxAngle; i += momentum) {
+				bool nextIteration = false;
+				Vector2f newPoint = Vector2f(
+					round(
+						middle.getCords().x + (radius * cos(i / radian2PI)))
+					, round(
+						type == TypeOfCircle::Round
+						? middle.getCords().y + (radius * sin(i / radian2PI))
+						: middle.getCords().y + (radiusY * sin(i / radian2PI))
 					)
 				);
-				m_outlineVertices[i].color = m_outlineColor;
+
+				for (int j = 0; j < index; j++) {
+					if (m_outlineVertices[j].position == newPoint) {
+						nextIteration = true;
+						break;
+					}
+				}
+				if (nextIteration) continue;
+
+				m_outlineVertices.append(newPoint);
+				m_outlineVertices[index++].color = m_outlineColor;
+			}
+		}
+
+		void calculateOutlineVertices(int precision) {
+			if (precision == Precision::FourTimes) {
+				m_outlineVertices.clear();
+				m_outlineVertices.resize(0);
+				int x_y_index_min = 0, x_y_index;
+				int x_y_index_max;
+				int index = 0;
+				float i;
+				float momentum =
+					(radius > 25 || radiusY > 25)
+					? (5.0f / (float)(radius > radiusY ? radius : radiusY))
+					: 0.1f;
+
+				for (i = 0.0f; i < PI_4; i += momentum) {
+					bool nextIteration = false;
+					Vector2f newPoint = Vector2f(
+						round(
+						middle.getCords().x + (radius * cos(i / radian2PI)))
+						, round(
+							type == TypeOfCircle::Round
+							? middle.getCords().y + (radius * sin(i / radian2PI))
+							: middle.getCords().y + (radiusY * sin(i / radian2PI))
+						)
+					);
+
+					for (int j = 0; j < index; j++) {
+						if (m_outlineVertices[j].position == newPoint) {
+							nextIteration = true;
+							break;
+						}	
+					}
+					if (nextIteration) continue;
+
+					m_outlineVertices.append(newPoint);
+					m_outlineVertices[index++].color = m_outlineColor;
+				}
+
+				x_y_index_max = index - 1;
+				x_y_index = x_y_index_max;
+
+				for (i; i < maxAngle; i += 0.25f) {
+					if (i >= 90.0f && i < 180.0f) {
+						m_outlineVertices.append(
+							Vector2f(round(
+								middle.getCords().x + (middle.getCords().x - m_outlineVertices[x_y_index].position.x ))
+								, round(
+								middle.getCords().y - (middle.getCords().y - m_outlineVertices[x_y_index].position.y ))
+							)
+						);
+						m_outlineVertices[index++].color = m_outlineColor;
+						x_y_index--;
+						if (x_y_index < x_y_index_min) x_y_index = x_y_index_max;
+					}
+					else if (i >= 180.0f && i < 270.0f) {
+						m_outlineVertices.append(
+							Vector2f(round(
+								middle.getCords().x - (middle.getCords().x - m_outlineVertices[x_y_index].position.x))
+								, round(
+								middle.getCords().y - (middle.getCords().y - m_outlineVertices[x_y_index].position.y))
+							)
+						);
+						m_outlineVertices[index++].color = m_outlineColor;
+						x_y_index--;
+						if (x_y_index < x_y_index_min) x_y_index = x_y_index_max;
+					}
+					else {
+						m_outlineVertices.append(
+							Vector2f(round(
+								middle.getCords().x - (middle.getCords().x - m_outlineVertices[x_y_index].position.x))
+								, round(
+								middle.getCords().y + (middle.getCords().y - m_outlineVertices[x_y_index].position.y))
+							)
+						);
+						m_outlineVertices[index++].color = m_outlineColor;
+						x_y_index--;
+						if (x_y_index < x_y_index_min) x_y_index = x_y_index_max;
+					}
+				}
+			}
+			else if (precision == Precision::EightTimes) {
+				m_outlineVertices.clear();
+				m_outlineVertices.resize(0);
+				int x_y_index_min = 0, x_y_index;
+				int x_y_index_max;
+				int index = 0;
+				float i;
+				float momentum =
+					(radius > 25 || radiusY > 25)
+					? (5.0f / (float)(radius > radiusY ? radius : radiusY))
+					: 0.1f;
+
+				for (i = 0.0f; i < PI_4; i += momentum) {
+					bool nextIteration = false;
+					Vector2f newPoint = Vector2f(
+						round(
+							middle.getCords().x + (radius * cos(i / radian2PI))
+						)
+						, round(
+							type == TypeOfCircle::Round
+							? middle.getCords().y + (radius * sin(i / radian2PI))
+							: middle.getCords().y + (radiusY * sin(i / radian2PI))
+						)
+					);
+
+					for (int j = 0; j < index; j++) {
+						if (m_outlineVertices[j].position == newPoint) {
+							nextIteration = true;
+							break;
+						}
+					}
+					if (nextIteration) continue;
+
+					m_outlineVertices.append(newPoint);
+					m_outlineVertices[index++].color = m_outlineColor;
+				}
+
+				x_y_index_max = index - 1;
+				x_y_index = x_y_index_max;
+
+				for (i; i < maxAngle; i += 0.25f) {
+					if (i >= 45.0f && i < 90.0f) {
+						m_outlineVertices.append(
+							Vector2f(round(
+								middle.getCords().x + (middle.getCords().y - m_outlineVertices[x_y_index].position.y))
+								, round(
+								middle.getCords().y + (middle.getCords().x - m_outlineVertices[x_y_index].position.x))
+							)
+						);
+						m_outlineVertices[index++].color = m_outlineColor;
+						x_y_index--;
+						if (x_y_index < x_y_index_min) x_y_index = x_y_index_max;
+					}
+					else if (i >= 90.0f && i < 135.0f) {
+						m_outlineVertices.append(
+							Vector2f(round(
+								middle.getCords().x + (middle.getCords().y - m_outlineVertices[x_y_index].position.y))
+								, round(
+								middle.getCords().y - (middle.getCords().x - m_outlineVertices[x_y_index].position.x))
+							)
+						);
+						m_outlineVertices[index++].color = m_outlineColor;
+						x_y_index--;
+						if (x_y_index < x_y_index_min) x_y_index = x_y_index_max;
+					}
+					else if(i >= 135.0f && i < 180.0f) {
+						m_outlineVertices.append(
+							Vector2f(round(
+								middle.getCords().x + (middle.getCords().x - m_outlineVertices[x_y_index].position.x))
+								, round(
+								middle.getCords().y - (middle.getCords().y - m_outlineVertices[x_y_index].position.y))
+							)
+						);
+						m_outlineVertices[index++].color = m_outlineColor;
+						x_y_index--;
+						if (x_y_index < x_y_index_min) x_y_index = x_y_index_max;
+					}
+					else if (i >= 180.0f && i < 225.0f) {
+						m_outlineVertices.append(
+							Vector2f(round(
+								middle.getCords().x - (middle.getCords().x - m_outlineVertices[x_y_index].position.x))
+								, round(
+								middle.getCords().y - (middle.getCords().y - m_outlineVertices[x_y_index].position.y))
+							)
+						);
+						m_outlineVertices[index++].color = m_outlineColor;
+						x_y_index--;
+						if (x_y_index < x_y_index_min) x_y_index = x_y_index_max;
+					}
+					else if (i >= 225.0f && i < 270.0f) {
+						m_outlineVertices.append(
+							Vector2f(round(
+								middle.getCords().x - (middle.getCords().y - m_outlineVertices[x_y_index].position.y))
+								, round(
+								middle.getCords().y - (middle.getCords().x - m_outlineVertices[x_y_index].position.x))
+							)
+						);
+						m_outlineVertices[index++].color = m_outlineColor;
+						x_y_index--;
+						if (x_y_index < x_y_index_min) x_y_index = x_y_index_max;
+					}
+					else if (i >= 270.0f && i < 315.0f) {
+						m_outlineVertices.append(
+							Vector2f(round(
+								middle.getCords().x - (middle.getCords().y - m_outlineVertices[x_y_index].position.y))
+								, round(
+								middle.getCords().y + (middle.getCords().x - m_outlineVertices[x_y_index].position.x))
+							)
+						);
+						m_outlineVertices[index++].color = m_outlineColor;
+						x_y_index--;
+						if (x_y_index < x_y_index_min) x_y_index = x_y_index_max;
+					}
+					else {
+						m_outlineVertices.append(
+							Vector2f(round(
+								middle.getCords().x - (middle.getCords().x - m_outlineVertices[x_y_index].position.x))
+								, round(
+								middle.getCords().y + (middle.getCords().y - m_outlineVertices[x_y_index].position.y))
+							)
+						);
+						m_outlineVertices[index++].color = m_outlineColor;
+						x_y_index--;
+						if (x_y_index < x_y_index_min) x_y_index = x_y_index_max;
+					}
+				}
+
+			}else calculateOutlineVertices();
+		}
+
+		void calculateFillVertices() {
+			std::queue <Vector2f> DSD;
+			DSD.push(middle.getCords());
+			while (!DSD.empty()) {
+				Vector2f point = DSD.front();
+				DSD.pop();
+				bool nextIteration = false;
+
+				for (int j = 0; j < m_vertices.getVertexCount(); j++) {
+					if (m_vertices[j].position == point)
+						nextIteration = true;
+				}
+
+				if (nextIteration) continue;
+
+				for (int i = 0; i < m_outlineVertices.getVertexCount(); i++) {
+					if (point == m_outlineVertices[i].position)
+						nextIteration = true;
+				}
+				if (nextIteration) continue;
+
+				m_vertices.append(Vertex(point, m_fillColor));
+
+				DSD.push(Vector2f(point.x, point.y - 1));
+				DSD.push(Vector2f(point.x, point.y + 1));
+				DSD.push(Vector2f(point.x - 1, point.y));
+				DSD.push(Vector2f(point.x + 1, point.y));
+			}
+		}
+
+		void calculateFillVerticesAsLines() {
+			m_vertices = VertexArray(LinesStrip);
+			int numberOfLines;
+			Vector2f startPoint = middle.getCords();
+
+			if (this->type == TypeOfCircle::Round) {
+				numberOfLines = radius * 2 - 2;
+				startPoint.y -= radius - 1;
+			}
+			else {
+				numberOfLines = radiusY * 2 - 2;
+				startPoint.y -= radiusY - 1;
+			}
+
+			for (int i = 0; i < numberOfLines; i++) {
+				bool startFound = false;
+				bool endFound = false;
+				Vector2f startOfLine, endOfLine;
+
+				for (int j = 0; j < m_outlineVertices.getVertexCount(); j++) {
+					if (m_outlineVertices[j].position.y == startPoint.y) {
+						if(!startFound)
+							if (m_outlineVertices[j].position.x <= startPoint.x) {
+								startOfLine = m_outlineVertices[j].position;
+								startOfLine.x+=1;
+								startFound = true;
+							}
+						if(!endFound)
+							if (m_outlineVertices[j].position.x >= startPoint.x) {
+								endOfLine = m_outlineVertices[j].position;
+								endFound = true;
+							}
+					}
+					if (startFound && endFound)
+						break;
+				}
+
+				m_vertices.append(Vertex(startOfLine , m_fillColor));
+				m_vertices.append(Vertex(endOfLine , m_fillColor));
+				
+				startPoint.y+=1;
+
 			}
 		}
 
 	public:
-		Circle(Point2D middle, int radius) {
+
+		enum Precision { Normal, FourTimes, EightTimes };
+		enum TypeOfCircle {Round, Elipse};
+
+		Circle(Point2D middle,int radius , bool fillCircle) {
 			this->middle = middle;
 			this->radius = radius;
+			this->type = TypeOfCircle::Round;
 			m_outlineColor = Color::Green;
+			m_fillColor = Color::Green;
 			calculateOutlineVertices();
+			if (fillCircle) calculateFillVerticesAsLines();
 		}
 
-		Circle(Point2D middle, int radius, int precision) {
-			
+		Circle(Point2D middle,int radius ,bool whatever, int radiusY, bool fillCircle) {
+			this->middle = middle;
+			this->radius = radius;
+			this->radiusY = radiusY;
+			this->type = TypeOfCircle::Elipse;
+			m_outlineColor = Color::Green;
+			m_fillColor = Color::Green;
+			calculateOutlineVertices();
+			if (fillCircle) calculateFillVerticesAsLines();
 		}
+
+		Circle(Point2D middle, int radius,int precision, bool fillCircle) {
+			this->middle = middle;
+			this->radius = radius;
+			this->type = TypeOfCircle::Round;
+			m_outlineColor = Color::Green;
+			m_fillColor = Color::Green;
+			calculateOutlineVertices(precision);
+			if (fillCircle) calculateFillVerticesAsLines();
+		}
+
+		Circle(Point2D middle, int radius, bool whatever, int radiusY, int precision, bool fillCircle) {
+			this->middle = middle;
+			this->radius = radius;
+			this->radiusY = radiusY;
+			this->type = TypeOfCircle::Elipse;
+			m_outlineColor = Color::Green;
+			m_fillColor = Color::Green;
+			calculateOutlineVertices(precision);
+			if (fillCircle) calculateFillVerticesAsLines();
+		}
+
+		Circle(Point2D middle, int radius , bool fillCircle , Color fillColor) {
+			this->middle = middle;
+			this->radius = radius;
+			this->type = TypeOfCircle::Round;
+			m_outlineColor = Color::Green;
+			m_fillColor = fillColor;
+			calculateOutlineVertices();
+			if(fillCircle) calculateFillVerticesAsLines();
+		}
+		
+		Circle(Point2D middle, int radius , bool whatever, int radiusY, bool fillCircle , Color fillColor) {
+			this->middle = middle;
+			this->radius = radius;
+			this->radiusY = radiusY;
+			this->type = TypeOfCircle::Elipse;
+			m_outlineColor = Color::Green;
+			m_fillColor = fillColor;
+			calculateOutlineVertices();
+			if(fillCircle) calculateFillVerticesAsLines();
+		}
+
+		Circle(Point2D middle,int radius, int precision, bool fillCircle, Color fillColor) {
+			this->middle = middle;
+			this->radius = radius;
+			this->type = TypeOfCircle::Round;
+			m_outlineColor = Color::Green;
+			m_fillColor = fillColor;
+			calculateOutlineVertices(precision);
+			if (fillCircle) calculateFillVerticesAsLines();
+		}
+		
+		Circle(Point2D middle,int radius, bool whatever, int radiusY, int precision, bool fillCircle, Color fillColor) {
+			this->middle = middle;
+			this->radius = radius;
+			this->radiusY = radiusY;
+			this->type = TypeOfCircle::Elipse;
+			m_outlineColor = Color::Green;
+			m_fillColor = fillColor;
+			calculateOutlineVertices(precision);
+			if (fillCircle) calculateFillVerticesAsLines();
+		}
+
+		Circle(Point2D middle, int radius , bool fillCircle , Color fillColor, bool noOutline) {
+			this->middle = middle;
+			this->radius = radius;
+			this->type = TypeOfCircle::Round;
+			m_outlineColor = noOutline ? Color::Transparent : Color::Green;
+			m_fillColor = fillColor;
+			calculateOutlineVertices();
+			if(fillCircle) calculateFillVerticesAsLines();
+		}
+		
+		Circle(Point2D middle, int radius , bool whatever, int radiusY , bool fillCircle , Color fillColor, bool noOutline) {
+			this->middle = middle;
+			this->radius = radius;
+			this->radiusY = radiusY;
+			this->type = TypeOfCircle::Elipse;
+			m_outlineColor = noOutline ? Color::Transparent : Color::Green;
+			m_fillColor = fillColor;
+			calculateOutlineVertices();
+			if(fillCircle) calculateFillVerticesAsLines();
+		}
+
+		Circle(Point2D middle, int radius, int precision, bool fillCircle, Color fillColor, bool noOutline) {
+			this->middle = middle;
+			this->radius = radius;
+			this->type = TypeOfCircle::Round;
+			m_outlineColor = noOutline ? Color::Transparent : Color::Green;
+			m_fillColor = fillColor;
+			calculateOutlineVertices(precision);
+			if (fillCircle) calculateFillVerticesAsLines();
+		}
+		
+		Circle(Point2D middle, int radius, bool whatever, int radiusY, int precision, bool fillCircle, Color fillColor, bool noOutline) {
+			this->middle = middle;
+			this->radius = radius;
+			this->radiusY = radiusY;
+			this->type = TypeOfCircle::Elipse;
+			m_outlineColor = noOutline ? Color::Transparent : Color::Green;
+			m_fillColor = fillColor;
+			calculateOutlineVertices(precision);
+			if (fillCircle) calculateFillVerticesAsLines();
+		}
+
+		Circle(Point2D middle, int radius,Color outlineColor, Color fillColor) {
+			this->middle = middle;
+			this->radius = radius;
+			this->type = TypeOfCircle::Round;
+			m_outlineColor = outlineColor;
+			m_fillColor = fillColor;
+			calculateOutlineVertices();
+			calculateFillVerticesAsLines();
+		}
+		
+		Circle(Point2D middle, int radius, bool whatever, int radiusY, Color outlineColor, Color fillColor) {
+			this->middle = middle;
+			this->radius = radius;
+			this->radiusY = radiusY;
+			this->type = TypeOfCircle::Elipse;
+			m_outlineColor = outlineColor;
+			m_fillColor = fillColor;
+			calculateOutlineVertices();
+			calculateFillVerticesAsLines();
+		}
+
+		Circle(Point2D middle, int radius, int precision, Color outlineColor, Color fillColor) {
+			this->middle = middle;
+			this->radius = radius;
+			this->type = TypeOfCircle::Round;
+			m_outlineColor = outlineColor;
+			m_fillColor = fillColor;
+			calculateOutlineVertices(precision);
+			calculateFillVertices();
+		}
+		
+		Circle(Point2D middle, int radius, bool whatever, int radiusY, int precision, Color outlineColor, Color fillColor) {
+			this->middle = middle;
+			this->radius = radius;
+			this->radiusY = radiusY;
+			this->type = TypeOfCircle::Elipse;
+			m_outlineColor = outlineColor;
+			m_fillColor = fillColor;
+			calculateOutlineVertices(precision);
+			calculateFillVertices();
+		}
+
+		Circle(Point2D middle, int radius, int radiusY, int precision, Texture* texture) {
+			this->middle = middle;
+			this->radius = radius;
+			this->radiusY = radiusY;
+			if (radius != radiusY)
+				this->type = TypeOfCircle::Elipse;
+			else this->type = TypeOfCircle::Round;
+			m_outlineColor = Color::Transparent;
+			this->setTexture(texture);
+			calculateOutlineVertices(precision);
+		}
+
 
 		virtual std::size_t getPointCount()const override {
 			return m_vertices.getVertexCount();
@@ -316,6 +796,45 @@ export namespace shapes {
 		virtual Vector2f getPoint(std::size_t index)const override {
 			return m_vertices[index].position;
 		}
+	};
+
+	class Polygon {
+	private:
+		sf::ConvexShape polygon;
+	public:
+		Polygon(){}
+
+		Polygon(std::vector<Vector2f> points, Color outlineColor, int thickness,Color fillColor) {
+			polygon = ConvexShape(points.size());
+			int i = 0;
+			for (Vector2f point : points) {
+				polygon.setPoint(i, point);
+				i++;
+			}
+			polygon.setOutlineColor(outlineColor);
+			polygon.setOutlineThickness(thickness);
+			polygon.setFillColor(fillColor);
+
+		}
+
+		Polygon(std::vector<Vector2f> points, Texture* texture, Vector2f position) {
+			polygon = ConvexShape(points.size());
+			int i = 0;
+			for (Vector2f point : points) {
+				polygon.setPoint(i, point);
+				i++;
+			}
+			polygon.setTexture(texture);
+			polygon.setOrigin(Vector2f(
+				polygon.getGlobalBounds().width / 2
+				,
+				polygon.getGlobalBounds().height / 2
+			));
+			polygon.setPosition(position);
+		}
+
+		ConvexShape getPolygon() { return polygon; }
+
 	};
 
 	class PrimitiveRenderer {
@@ -345,8 +864,12 @@ export namespace shapes {
 			}
 		}
 
-		static void drawCircle(RenderWindow& window, Circle circle) {
+		static void drawCircle(RenderWindow& window, Circle& circle) {
 			window.draw(circle);
+		}
+
+		static void drawPolygon(RenderWindow& window, Polygon polygon ) {
+			window.draw(polygon.getPolygon());
 		}
 
 	};
