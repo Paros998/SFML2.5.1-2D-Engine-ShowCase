@@ -19,8 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Animator.ixx" />
     <ClCompile Include="Demo.ixx" />
-    <ClCompile Include="src\Animator.ixx" />
+    <ClCompile Include="src\AnimatedObject.ixx" />
     <ClCompile Include="src\AssetsManager.ixx" />
     <ClCompile Include="src\Engine.ixx" />
     <ClCompile Include="src\ErrorHandler.ixx" />

@@ -25,14 +25,16 @@ export namespace assets {
 
 		///Textures
 
-		Texture* skyTexture;
+		Texture skyTexture;
+
 	public:
 		std::atomic<bool> loadingCompleted;
 		ShowCase() {}
 
 		void load() {
-			skyTexture->loadFromFile("assets/demo/sky2.png");
-			skyTexture->setSmooth(true);
+
+			skyTexture.loadFromFile("assets/demo/sky2.png");
+			skyTexture.setSmooth(true);
 
 			lines.push_back(LineSegment(0, 499, 1400, 899));
 			lines.push_back(LineSegment(1401, 899, 1400, 5));
@@ -44,7 +46,7 @@ export namespace assets {
 			polygonPoints.push_back(Vector2f(100, 100));
 			polygonPoints.push_back(Vector2f(100, 0));
 
-			sky = Polygon(polygonPoints,skyTexture,Vector2f(0,0));
+			sky = Polygon(polygonPoints,&skyTexture,Vector2f(100,100));
 
 			kolo2 = new Circle(Point2D(1210, 500), 400, Circle::Precision::EightTimes, true, Color::Magenta, true);
 

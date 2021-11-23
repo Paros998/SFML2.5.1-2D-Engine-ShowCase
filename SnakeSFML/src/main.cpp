@@ -11,7 +11,7 @@ int main(void) {
 	engine->main(
 		1920,
 		1080,
-		sf::Color::White,
+		sf::Color::Black,
 		true,
 		true,
 		true,
