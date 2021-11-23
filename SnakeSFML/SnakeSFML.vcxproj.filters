@@ -9,5 +9,6 @@
     <ClCompile Include="src\Menu.ixx" />
     <ClCompile Include="src\Engine.ixx" />
     <ClCompile Include="src\Render.ixx" />
+    <ClCompile Include="Demo.ixx" />
   </ItemGroup>
 </Project>

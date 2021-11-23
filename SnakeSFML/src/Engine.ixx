@@ -4,12 +4,17 @@ using namespace sf;
 #include <iostream>
 #include <sstream>
 #include <vector>
+#include <thread>
 using namespace std;
+
+import Demo;
+using namespace assets;
+
+import Animation;
+using namespace animation;
 
 export module Engine;
 
-import Render;
-using namespace shapes; 
 
 export namespace graphicsEngine {
 	class GraphicsEngine {
@@ -20,7 +25,52 @@ export namespace graphicsEngine {
 		Font infoFont;
 		vector<Text> infoTexts;
 
+		Animator* loadingAnimator;
+
+		sf::Texture loadingBackgroundTexture;
+		Sprite loadingBackgroundSprite;
+
+		sf::Texture loadingSpinnerTexture;
+		Sprite loadingSpinnerSprite;
+
 	private:
+
+		void drawLoadingScreen(RenderWindow& window) {
+			loadingAnimator->update();
+			window.draw(loadingBackgroundSprite);
+			window.draw(loadingSpinnerSprite);
+		}
+
+		void releaseResources() {
+			loadingAnimator->~Animator();
+			loadingBackgroundSprite.~Sprite();
+			loadingSpinnerSprite.~Sprite();
+			loadingBackgroundTexture.~Texture();
+			loadingSpinnerTexture.~Texture();
+
+		}
+
+		void prepareLoadingScreen(RenderWindow& window) {
+
+			loadingSpinnerTexture.loadFromFile("assets/LoadingScreen/spinner.png");
+			loadingSpinnerTexture.setSmooth(true);
+			
+			loadingBackgroundTexture.loadFromFile("assets/LoadingScreen/demoBackground.jpg");
+			loadingBackgroundTexture.setSmooth(true);
+
+			loadingBackgroundSprite.setTexture(loadingBackgroundTexture);
+			loadingBackgroundSprite.setPosition(0, 0);
+
+			loadingSpinnerSprite.setTexture(loadingSpinnerTexture);
+			loadingSpinnerSprite.setScale(2.0f, 2.0f);
+			loadingSpinnerSprite.setOrigin(loadingSpinnerSprite.getGlobalBounds().width / 2, loadingSpinnerSprite.getGlobalBounds().height / 2);
+			loadingSpinnerSprite.setPosition(Vector2f(window.getSize().x / 2 , window.getSize().y / 2));
+
+			loadingAnimator = new Animator(loadingSpinnerTexture, &loadingSpinnerSprite, Vector2u(24,1) , 1.0f / (float)24);
+			loadingAnimator->setStartFrame();
+		}
+
+
 		void handleError(string message) {
 			cout << message << endl;
 		}
@@ -44,6 +94,8 @@ export namespace graphicsEngine {
 			if (instance) {
 				delete instance;
 			}
+
+			releaseResources();
 		}
 
 		static GraphicsEngine* getInstance() {
@@ -99,12 +151,10 @@ export namespace graphicsEngine {
 
 		void showFps(RenderWindow& window, Clock& frameRateClock) {
 			int framerate = 1 / frameRateClock.getElapsedTime().asSeconds();
-
-			ostringstream stream;
-			stream << "FPS: " << framerate;
+			String fpsInfo = "FPS: " + to_string(framerate);
 
 			infoTexts[Fps].setFillColor(Color::Yellow);
-			infoTexts[Fps].setString(stream.str());
+			infoTexts[Fps].setString(fpsInfo);
 			infoTexts[Fps].setPosition(Vector2f(180, 0));
 
 			window.draw(infoTexts[Fps]);
@@ -122,20 +172,23 @@ export namespace graphicsEngine {
 			bool hasKeyboardSupport,
 			bool shouldDebug
 		) {
-			std::vector<LineSegment> lines;
-			lines.push_back(LineSegment(0, 499, 1400, 899));
-			lines.push_back(LineSegment(1401, 899, 1400, 5));
-			lines.push_back(LineSegment(1400, 4, 400, 80));
-			lines.push_back(LineSegment(399, 80, 0, 0));
+
 			const int windowStyle = isWindowed ? Style::Fullscreen : Style::Default;
 
 			RenderWindow window(VideoMode(windowWidth, windowHeight), "Graphics Engine", windowStyle);
-			CircleShape shape(100.f);
-			Clock frameRateClock;
 
-			shape.setFillColor(Color::Green);
+			prepareLoadingScreen(window);
+
+			Clock frameRateClock;
+			Clock updateClock;
 
 			window.setFramerateLimit(60);
+
+			ShowCase demoShowCase;
+
+			std::thread loadThread{&ShowCase::load,&demoShowCase};
+
+			loadThread.detach();
 
 			while (window.isOpen())
 			{
@@ -161,10 +214,12 @@ export namespace graphicsEngine {
 					showMouseCoordinates(window);
 				}
 
-				PrimitiveRenderer::drawLine(window, LineSegment(0,500,1400,900), Color::White);
-				PrimitiveRenderer::drawPoint(window, Point2D(1401,901), Color::Red);
-				PrimitiveRenderer::drawMulitpleLines(window, lines, Color::Magenta);
-				PrimitiveRenderer::drawCircle(window, Circle(Point2D(800,600),100));
+				if (demoShowCase.loadingCompleted == true) {
+					//demoShowCase.update(updateClock);
+					//demoShowCase.draw(window);
+				}
+				else
+					drawLoadingScreen(window);
 
 				window.display();
 			}
