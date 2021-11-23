@@ -8,5 +8,8 @@
     <ClCompile Include="Demo.ixx" />
     <ClCompile Include="src\GameObjects.ixx" />
     <ClCompile Include="src\ErrorHandler.ixx" />
+    <ClCompile Include="src\AssetsManager.ixx" />
+    <ClCompile Include="src\AnimatedObject.ixx" />
+    <ClCompile Include="Animator.ixx" />
   </ItemGroup>
 </Project>

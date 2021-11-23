@@ -42,6 +42,9 @@ export namespace graphicsEngine {
 		sf::Texture loadingSpinnerTexture;
 		Sprite loadingSpinnerSprite;
 
+		Player* player;
+		GameObject* greyStone;
+		GameObject* brownStone;
 	private:
 
 		void drawLoadingScreen(RenderWindow& window) {
@@ -215,11 +218,9 @@ export namespace graphicsEngine {
 			const int windowStyle = isWindowed ? Style::Fullscreen : Style::Default;
 
 			window = new RenderWindow(VideoMode(windowWidth, windowHeight), "Graphics Engine", windowStyle);
-			prepareLoadingScreen(window);
+			prepareLoadingScreen(*window);
 			Clock frameRateClock;
 			Clock updateClock;
-
-			window.setFramerateLimit(60);
 
 			ShowCase demoShowCase;
 
@@ -257,14 +258,14 @@ export namespace graphicsEngine {
 				}
 
 				if (demoShowCase.loadingCompleted == true) {
-					//demoShowCase.update(updateClock);
-					//demoShowCase.draw(window);
+					demoShowCase.update(updateClock);
+					demoShowCase.draw(*window);
 					window->draw(*player);
 					window->draw(*greyStone);
 					window->draw(*brownStone);
 				}
 				else
-					drawLoadingScreen(window);
+					drawLoadingScreen(*window);
 
 				window->display();
 			}
