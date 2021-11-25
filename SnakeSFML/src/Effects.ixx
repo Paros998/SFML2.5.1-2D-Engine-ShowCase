@@ -14,7 +14,7 @@ export namespace effects {
 		VertexArray			m_vertices;
 		VertexArray			m_outlineVertices;
 		int					size;
-		float				flashTime = 1.f;
+		float				flashTime = float(rand() % 2) + (rand() % 100 / 100.f);
 		float				switchTime;
 		float				deltaTime = 0.f;
 		bool				isSwitched = false;
@@ -208,6 +208,7 @@ export namespace effects {
 		float               m_rotation = 0.f;             ///< Orientation of the object, in degrees
 		Vector2f            m_scale;
 		float				velocity = 0.f;
+		FloatRect			globalBounds;
 
 		virtual void draw(sf::RenderTarget& target, sf::RenderStates states)const override {
 			states.transform *= getTransform();
@@ -254,8 +255,54 @@ export namespace effects {
 			}
 		}
 
-		void reset() {
-			setPosition(originalPosition.x,0);
+		void reset(Vector2f windowSize) {
+ 			m_position = Vector2f((float) (rand() % ((int)windowSize.x - 40) + 20),3);
+			if (size == 0) {
+				m_vertices[0].position = m_position;
+				m_outlineVertices[0].position = Vector2f(m_position.x + 1, m_position.y);
+				m_outlineVertices[1].position = Vector2f(m_position.x + 2, m_position.y);
+				m_outlineVertices[2].position = Vector2f(m_position.x - 1, m_position.y);
+				m_outlineVertices[3].position = Vector2f(m_position.x - 2, m_position.y);
+				m_outlineVertices[4].position = Vector2f(m_position.x, m_position.y + 1);
+				m_outlineVertices[5].position = Vector2f(m_position.x, m_position.y + 2);
+				m_outlineVertices[6].position = Vector2f(m_position.x, m_position.y - 1);
+				m_outlineVertices[7].position = Vector2f(m_position.x, m_position.y - 2);
+
+				m_outlineVertices[8].position = Vector2f(m_position.x + 1, m_position.y + 1);
+				m_outlineVertices[9].position = Vector2f(m_position.x + 1, m_position.y - 1);
+				m_outlineVertices[10].position = Vector2f(m_position.x - 1, m_position.y + 1);
+				m_outlineVertices[11].position = Vector2f(m_position.x - 1, m_position.y - 1);
+			}
+			else {
+				m_vertices[0].position = m_position;
+				m_outlineVertices[0].position = Vector2f(m_position.x + 1, m_position.y);
+				m_outlineVertices[1].position = Vector2f(m_position.x + 2, m_position.y);
+				m_outlineVertices[2].position = Vector2f(m_position.x + 3, m_position.y);
+				m_outlineVertices[3].position = Vector2f(m_position.x - 1, m_position.y);
+				m_outlineVertices[4].position = Vector2f(m_position.x - 2, m_position.y);
+				m_outlineVertices[5].position = Vector2f(m_position.x - 3, m_position.y);
+				m_outlineVertices[6].position = Vector2f(m_position.x, m_position.y - 1);
+				m_outlineVertices[7].position = Vector2f(m_position.x, m_position.y - 2);
+				m_outlineVertices[8].position = Vector2f(m_position.x, m_position.y - 3);
+				m_outlineVertices[9].position = Vector2f(m_position.x, m_position.y + 1);
+				m_outlineVertices[10].position = Vector2f(m_position.x, m_position.y + 2);
+				m_outlineVertices[11].position = Vector2f(m_position.x, m_position.y + 3);
+
+				m_outlineVertices[12].position = Vector2f(m_position.x + 1, m_position.y + 1);
+				m_outlineVertices[13].position = Vector2f(m_position.x + 1, m_position.y - 1);
+				m_outlineVertices[14].position = Vector2f(m_position.x - 1, m_position.y + 1);
+				m_outlineVertices[15].position = Vector2f(m_position.x - 1, m_position.y - 1);
+			}
+		}
+
+		void move(float x,float y) {
+			for (int i = 0; i < m_vertices.getVertexCount(); i++)
+				m_vertices[i].position = Vector2f(m_vertices[i].position.x + x, m_vertices[i].position.y + y);
+
+			for (int j = 0; j < m_outlineVertices.getVertexCount(); j++)
+				m_outlineVertices[j].position = Vector2f(m_outlineVertices[j].position.x + x, m_outlineVertices[j].position.y + y);
+
+			m_position = m_vertices[0].position;
 		}
 
 	public:
@@ -266,9 +313,10 @@ export namespace effects {
 			this->m_position = position;
 			this->setPosition(position);
 			this->setScale(1.f, 1.f);
-			this->size = rand() % 2;
+			this->size = (rand() % 10) % 2;
 			calculateVertices();
-			this->setOrigin(getGlobalBounds().width / 2, getGlobalBounds().height / 2);
+			globalBounds = size == 0 ? FloatRect(0, 0, 5, 5) : FloatRect(0, 0, 7, 7);
+			this->setOrigin(globalBounds.width / 2, globalBounds.height / 2);
 		}
 
 		~Snow() {
@@ -279,12 +327,12 @@ export namespace effects {
 
 		void update(float rawTime,Vector2f windowSize) {
 			velocity = rawTime * (float)(rand() % 50 + 50);
-			if ((rand() % 2) == 0)
-				move(velocity / 1.3f, velocity);
-			else move(-velocity / 1.3f, velocity);
+			if ((rand() % 10) % 2 == 0)
+				move(velocity , velocity);
+			else move(-velocity , velocity);
 
-			if (getPosition().y > windowSize.y || getPosition().x > windowSize.x || getPosition().x < 0)
-				reset();
+			if (m_position.y > windowSize.y || m_position.x > windowSize.x || m_position.x < 0)
+				reset(windowSize);
 		}
 
 		virtual std::size_t getPointCount()const override {
@@ -317,9 +365,9 @@ export namespace effects {
 					bool pointUsed = false;
 
 					position = Vector2f(
-						rand() % rectangle.width
+						rand() % (rectangle.width - 20) + 10
 						,
-						rand() % rectangle.height
+						rand() % (rectangle.height - 20) + 5
 					);
 
 					for (Vector2f point : points)

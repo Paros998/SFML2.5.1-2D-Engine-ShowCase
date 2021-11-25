@@ -23,6 +23,7 @@ using namespace directories;
 using namespace engineConsts;
 using namespace gameObjects;
 using namespace shapes; 
+using namespace playerMovement;
 
 export namespace graphicsEngine {
 	class GraphicsEngine {
@@ -103,13 +104,13 @@ export namespace graphicsEngine {
 				infoTexts.push_back(text);
 			}
 
-			string dudeSpritePath = SPRITES_DIRECTORY + "/dude.png";
+			string dudeSpritePath = SPRITES_DIRECTORY + "/viking_Sprites/animations.png";
 
 			player = new Player(
 				dudeSpritePath,
-				Vector2u(4, 4),
+				Vector2u(30, 8),
 				Vector2u(1, 1),
-				0.2f,
+				1.f/30,
 				Vector2f(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
 			);
 
@@ -126,6 +127,7 @@ export namespace graphicsEngine {
 			if (brownStone) delete brownStone;
 			if (window) delete window;
 			releaseResources();
+
 		}
 
 		static GraphicsEngine* getInstance() {
@@ -137,21 +139,11 @@ export namespace graphicsEngine {
 
 		void handleKeybardOnPressed() {
 			if (Keyboard::isKeyPressed(Keyboard::W)) {
-				player->updateMovement(playerMovementDirections::Up);
+				player->updateMovement(direction::NOTIMPORTANT,actions::JUMP,fight::NONE);
 			} else if (Keyboard::isKeyPressed(Keyboard::A)) {
-				player->updateMovement(playerMovementDirections::Left);
-			} else if (Keyboard::isKeyPressed(Keyboard::S)) {
-				player->updateMovement(playerMovementDirections::Down);
+				player->updateMovement(direction::LEFT,actions::WALK,fight::NONE);
 			} else if (Keyboard::isKeyPressed(Keyboard::D)) {
-				player->updateMovement(playerMovementDirections::Right);
-			} else if (Keyboard::isKeyPressed(Keyboard::Up)) {
-				player->updateMovement(playerMovementDirections::Up);
-			} else if (Keyboard::isKeyPressed(Keyboard::Left)) {
-				player->updateMovement(playerMovementDirections::Left);
-			} else if (Keyboard::isKeyPressed(Keyboard::Down)) {
-				player->updateMovement(playerMovementDirections::Down);
-			} else if (Keyboard::isKeyPressed(Keyboard::Right)) {
-				player->updateMovement(playerMovementDirections::Right);
+				player->updateMovement(direction::RIGHT, actions::WALK, fight::NONE);
 			} else {
 				player->animateIdle();
 			}
@@ -173,7 +165,7 @@ export namespace graphicsEngine {
 
 		void handleMouseOnPressed() {
 			if (Mouse::isButtonPressed(Mouse::Left)) {
-				cout << "Mouse key left has been pressed\n";
+				//player->updateMovement(playerMovementDirections::Attack);
 			} else if (Mouse::isButtonPressed(Mouse::Middle)) {
 				cout << "Mouse key middle has been pressed\n";
 			} else if (Mouse::isButtonPressed(Mouse::Right)) {
@@ -226,7 +218,7 @@ export namespace graphicsEngine {
 
 			std::thread loadThread{ &ShowCase::load, &demoShowCase };
 			std::thread updateThread;
-			//std::thread updateThread2;
+			std::thread updateThread2;
 
 			window->setFramerateLimit(144);
 			loadThread.detach();
@@ -260,11 +252,10 @@ export namespace graphicsEngine {
 				}
 
 				if (demoShowCase.loadingCompleted == true) {
-					updateThread = std::thread(&ShowCase::update, &demoShowCase);
 					//updateThread2 = std::thread(&ShowCase::updateSnow, &demoShowCase);
 
+					updateThread = std::thread(&ShowCase::update, &demoShowCase);
 					updateThread.detach();
-					//updateThread2.detach();
 					demoShowCase.draw();
 
 					window->draw(*player);

@@ -45,25 +45,26 @@ export namespace assets {
 		RenderWindow* window;
 
 
-		int direction = 0;
-		float maxSkyOffset = 20.f;
+		int direction = 1;
+		float maxSkyOffset = 100.f;
 		float actualSkyOffset = 0.f;
 		void moveBackgroundSky(float rawTime) {
+			float velocity = rawTime * (float)(rand() % 10 + 1);
 			if (direction == 1) {
-				stars->move(rawTime);
-				moon->move(rawTime);
-				sky.move(rawTime);
-				actualSkyOffset += rawTime;
+				stars->move(velocity);
+				moon->move(velocity);
+				sky.move(velocity);
+				actualSkyOffset += velocity;
 				if (actualSkyOffset >= maxSkyOffset) {
 					direction = 0;
 					actualSkyOffset = 0;
 				}
 			}
 			else if (direction == 0) {
-				stars->move(-rawTime);
-				moon->move(-rawTime);
-				sky.move(-rawTime);
-				actualSkyOffset += rawTime;
+				stars->move(-velocity);
+				moon->move(-velocity);
+				sky.move(-velocity);
+				actualSkyOffset += velocity;
 				if (actualSkyOffset >= maxSkyOffset) {
 					direction = 1;
 					actualSkyOffset = 0;
@@ -105,8 +106,8 @@ export namespace assets {
 
 			SkyPolygonPoints.push_back(Vector2f(0, 0));
 			SkyPolygonPoints.push_back(Vector2f(0, ySize / 3));
-			SkyPolygonPoints.push_back(Vector2f(xSize + 20, ySize / 3));
-			SkyPolygonPoints.push_back(Vector2f(xSize + 20, 0));
+			SkyPolygonPoints.push_back(Vector2f(xSize + 100, ySize / 3));
+			SkyPolygonPoints.push_back(Vector2f(xSize + 100, 0));
 
 			ForestPolygonPoints.push_back(Vector2f(0,0));
 			ForestPolygonPoints.push_back(Vector2f(0, 140));
@@ -118,7 +119,7 @@ export namespace assets {
 			SnowPolygonPoints.push_back(Vector2f(xSize, ySize - (ySize / 3) - 120));
 			SnowPolygonPoints.push_back(Vector2f(xSize,0));
 
-			sky = Polygon(SkyPolygonPoints,&skyTexture,Vector2f(0,0),false);
+			sky = Polygon(SkyPolygonPoints,&skyTexture,Vector2f(-100,0),false);
 			forestBackground = Polygon(ForestPolygonPoints, &forestTexture, Vector2f(0, ySize / 3 - 20), false);
 			walkingBackground = Polygon(SnowPolygonPoints, &snowTexture, Vector2f(0, ySize / 3 + 120), false);
 
@@ -141,9 +142,9 @@ export namespace assets {
 			/// 
 			/// dont change the order here
 			/// 
-			loadingCompleted = true;
 			updateClock.restart();
 			updateClock2.restart();
+			loadingCompleted = true;
 		}
 
 		void draw(){
@@ -165,7 +166,7 @@ export namespace assets {
 		void update(){
 			float rawTime = updateClock.getElapsedTime().asSeconds();
 			moveBackgroundSky(rawTime);
-			stars->update(rawTime);
+			stars->update(rawTime * (rand() % 2 + 1));
 			snows->update(rawTime, (Vector2f)window->getSize());
 			updateClock.restart();
 		}
@@ -173,6 +174,7 @@ export namespace assets {
 		void updateSnow() {
 			srand(time(NULL));
 			float rawTime = updateClock2.getElapsedTime().asSeconds();
+			stars->update(rawTime);
 			snows->update(rawTime, (Vector2f)window->getSize());
 			updateClock2.restart();
 		}
