@@ -220,13 +220,15 @@ export namespace graphicsEngine {
 			window = new RenderWindow(VideoMode(windowWidth, windowHeight), "Graphics Engine", windowStyle);
 			prepareLoadingScreen(*window);
 			Clock frameRateClock;
-			Clock updateClock;
+			
 
-			ShowCase demoShowCase;
+			ShowCase demoShowCase(window);
 
-			std::thread loadThread{&ShowCase::load,&demoShowCase};
+			std::thread loadThread{ &ShowCase::load, &demoShowCase };
+			std::thread updateThread;
+			//std::thread updateThread2;
 
-			window->setFramerateLimit(60);
+			window->setFramerateLimit(144);
 			loadThread.detach();
 
 			while (window->isOpen()) {
@@ -258,14 +260,20 @@ export namespace graphicsEngine {
 				}
 
 				if (demoShowCase.loadingCompleted == true) {
-					demoShowCase.update(updateClock);
-					demoShowCase.draw(*window);
+					updateThread = std::thread(&ShowCase::update, &demoShowCase);
+					//updateThread2 = std::thread(&ShowCase::updateSnow, &demoShowCase);
+
+					updateThread.detach();
+					//updateThread2.detach();
+					demoShowCase.draw();
+
 					window->draw(*player);
 					window->draw(*greyStone);
 					window->draw(*brownStone);
 				}
-				else
+				else {
 					drawLoadingScreen(*window);
+				}
 
 				window->display();
 			}
