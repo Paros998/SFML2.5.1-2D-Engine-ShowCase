@@ -12,8 +12,10 @@ export module GeneralStuff;
 
 // Graphics engine stuff
 
-export namespace playerMovementDirections {
-	enum directions { Down, Up, Left, Right };
+export namespace playerMovement {
+	enum direction {NOTIMPORTANT , LEFT , RIGHT};
+	enum actions {NEVERMIND, IDLE , WALK , RUN , JUMP};
+	enum fight {NONE, FIRST , SECOND , THIRD , JUMPATTACK};
 }
 
 export namespace engineConsts {
@@ -40,7 +42,7 @@ constexpr int ROW_SIZE = 64;
 Color gold = Color(255, 215, 0, 255);
 constexpr int SCREEN_WIDTH = 1920;
 constexpr int SCREEN_HEIGHT = 1080;
-constexpr float APPLES_SCALER = 0.26f;
+constexpr float APPLES_SCALER = 0.26f; 
 
 }
 
