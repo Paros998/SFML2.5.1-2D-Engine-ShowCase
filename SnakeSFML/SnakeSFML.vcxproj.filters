@@ -5,11 +5,15 @@
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Engine.ixx" />
     <ClCompile Include="src\Render.ixx" />
-    <ClCompile Include="Demo.ixx" />
     <ClCompile Include="src\GameObjects.ixx" />
     <ClCompile Include="src\ErrorHandler.ixx" />
     <ClCompile Include="src\AssetsManager.ixx" />
     <ClCompile Include="src\AnimatedObject.ixx" />
-    <ClCompile Include="Animator.ixx" />
+    <ClCompile Include="src\Player\Player.ixx" />
+    <ClCompile Include="src\Animator.ixx" />
+    <ClCompile Include="src\Demo.ixx" />
+    <ClCompile Include="src\Menu.ixx" />
+    <ClCompile Include="src\SnakeEngine.ixx" />
+    <ClCompile Include="src\Effects.ixx" />
   </ItemGroup>
 </Project>

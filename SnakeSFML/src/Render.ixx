@@ -3,10 +3,14 @@
 #include <cstdlib>
 #include <math.h>
 #include <queue>
+#include <time.h>
+
+import Effects;
 
 export module Render;
 
 using namespace sf;
+using namespace effects;
 
 export namespace shapes {
 
@@ -21,6 +25,12 @@ export namespace shapes {
 		}
 
 	public:
+		~Point2D() {
+			m_vertices.~VertexArray();
+			m_fillColor.~Color();
+			point.~Vector2f();
+		}
+
 		Point2D() {
 			point = Vector2f();
 			m_vertices.append(point);
@@ -209,6 +219,18 @@ export namespace shapes {
 
 	public:
 
+		~LineSegment() {
+			m_vertices.~VertexArray();
+			m_outlineVertices.~VertexArray();
+			m_insideBounds.~FloatRect();
+			m_bounds.~FloatRect();
+			m_textureRect.~IntRect();
+			m_fillColor.~Color();
+			m_outlineColor.~Color();
+			begin.~Vector2f();
+			end.~Vector2f();
+		}
+
 		LineSegment(Vector2f begin,Vector2f end) {
 			this->begin = begin;
 			this->end = end;
@@ -265,19 +287,20 @@ export namespace shapes {
 		const int maxAngle = 360;
 		const int PI_4 = 90;
 		const int PI_8 = 45;
-		const Texture* m_texture;          ///< Texture of the shape
-		IntRect        m_textureRect;      ///< Rectangle defining the area of the source texture to display
-		Color          m_fillColor;        ///< Fill color
-		Color          m_outlineColor;     ///< Outline color
-		float          m_outlineThickness; ///< Thickness of the shape's outline
-		VertexArray    m_vertices;         ///< Vertex array containing the fill geometry
-		VertexArray    m_outlineVertices;  ///< Vertex array containing the outline geometry
-		FloatRect      m_insideBounds;     ///< Bounding rectangle of the inside (fill)
-		FloatRect      m_bounds;		   ///< Bounding rectangle of the whole line
-		Point2D		   middle;             ///< middle point of circle
-		int			   radius;			   ///< radius of the circle or horizontal radius of elipse
-		int			   radiusY;			   ///< vertical radius of elipse
-		int			   type;			   ///< defines the type of this circle
+		const Texture*				m_texture;          ///< Texture of the shape
+		IntRect						m_textureRect;      ///< Rectangle defining the area of the source texture to display
+		Color						m_fillColor;        ///< Fill color
+		Color						m_outlineColor;     ///< Outline color
+		float						m_outlineThickness; ///< Thickness of the shape's outline
+		VertexArray					m_vertices;         ///< Vertex array containing the fill geometry
+		VertexArray					m_outlineVertices;  ///< Vertex array containing the outline geometry
+		FloatRect					m_insideBounds;     ///< Bounding rectangle of the inside (fill)
+		FloatRect					m_bounds;		   ///< Bounding rectangle of the whole line
+		Point2D						middle;             ///< middle point of circle
+		int							radius;			   ///< radius of the circle or horizontal radius of elipse
+		int							radiusY;			   ///< vertical radius of elipse
+		int							type;			   ///< defines the type of this circle
+		std::vector<Color>		    m_fillColors;	   ///< Multiple colours to shape a better texture
 
 		virtual void draw(sf::RenderTarget& target, sf::RenderStates states)const override {
 			target.draw(m_vertices, states);
@@ -528,32 +551,83 @@ export namespace shapes {
 			}else calculateOutlineVertices();
 		}
 
-		void calculateFillVertices() {
+		void calculateFillVertices(bool multipleColours) {
 			std::queue <Vector2f> DSD;
 			DSD.push(middle.getCords());
+			if (multipleColours)
+				srand(time(NULL));
+			
+			std::vector<Vector2f> pointsChecked;
+
 			while (!DSD.empty()) {
 				Vector2f point = DSD.front();
 				DSD.pop();
 				bool nextIteration = false;
+				bool N = false, S = false, W = false, E = false;
+
+				//for (Vector2f pointChecked : pointsChecked) {
+				//	if (pointChecked == point) {
+				//		nextIteration = true;
+				//		break;
+				//	}
+				//}
+
+				if (nextIteration) continue;
 
 				for (int j = 0; j < m_vertices.getVertexCount(); j++) {
-					if (m_vertices[j].position == point)
+					if (m_vertices[j].position == point) {
 						nextIteration = true;
+						break;
+					}
 				}
 
 				if (nextIteration) continue;
 
 				for (int i = 0; i < m_outlineVertices.getVertexCount(); i++) {
-					if (point == m_outlineVertices[i].position)
+					if (point == m_outlineVertices[i].position) {
 						nextIteration = true;
+						break;
+					}
 				}
+
 				if (nextIteration) continue;
 
-				m_vertices.append(Vertex(point, m_fillColor));
+				if(multipleColours)
+					m_vertices.append(Vertex(point, m_fillColors[rand() % m_fillColors.size()]));
+				else m_vertices.append(Vertex(point, m_fillColor));
 
+				pointsChecked.push_back(point);
+
+				for (Vector2f pointChecked : pointsChecked) {
+					if (!N)
+						if(pointChecked == (Vector2f(point.x, point.y - 1))) {
+							N = true;
+							continue;
+						}
+					if (!S)
+						if(pointChecked == (Vector2f(point.x, point.y + 1))) {
+							S = true;
+							continue;
+						}
+					if (!W)
+						if (pointChecked == (Vector2f(point.x - 1, point.y))) {
+							W = true;
+							continue;
+						}
+					if (!E)
+						if (pointChecked == (Vector2f(point.x + 1, point.y))) {
+							E = true;
+							continue;
+						}
+				}
+
+				if(!N)
 				DSD.push(Vector2f(point.x, point.y - 1));
+				if(!S)
 				DSD.push(Vector2f(point.x, point.y + 1));
+				if(!W)
 				DSD.push(Vector2f(point.x - 1, point.y));
+				if(!E)
 				DSD.push(Vector2f(point.x + 1, point.y));
 			}
 		}
@@ -605,8 +679,33 @@ export namespace shapes {
 
 	public:
 
+		~Circle() {
+			m_vertices.~VertexArray();
+			m_outlineVertices.~VertexArray();
+			m_insideBounds.~FloatRect();
+			m_bounds.~FloatRect();
+			m_textureRect.~IntRect();
+			m_fillColor.~Color();
+			m_outlineColor.~Color();
+			middle.~Point2D();
+			m_fillColors.~vector();
+		}
+
 		enum Precision { Normal, FourTimes, EightTimes };
 		enum TypeOfCircle {Round, Elipse};
+
+		void move(float x) {
+			for (int i = 0; i < m_vertices.getVertexCount(); i++)
+				m_vertices[i].position = Vector2f(m_vertices[i].position.x + x, m_vertices[i].position.y);
+
+			for (int j = 0; j < m_outlineVertices.getVertexCount(); j++)
+				m_outlineVertices[j].position = Vector2f(m_outlineVertices[j].position.x + x, m_outlineVertices[j].position.y);
+		}
+
+		void setOutlineColor(Color color) {
+			for (int i = 0; i < m_outlineVertices.getVertexCount(); i++)
+				m_outlineVertices[i].color = color;
+		}
 
 		Circle(Point2D middle,int radius , bool fillCircle) {
 			this->middle = middle;
@@ -762,7 +861,7 @@ export namespace shapes {
 			m_outlineColor = outlineColor;
 			m_fillColor = fillColor;
 			calculateOutlineVertices(precision);
-			calculateFillVertices();
+			calculateFillVerticesAsLines();
 		}
 		
 		Circle(Point2D middle, int radius, bool whatever, int radiusY, int precision, Color outlineColor, Color fillColor) {
@@ -773,7 +872,7 @@ export namespace shapes {
 			m_outlineColor = outlineColor;
 			m_fillColor = fillColor;
 			calculateOutlineVertices(precision);
-			calculateFillVertices();
+			calculateFillVerticesAsLines();
 		}
 
 		Circle(Point2D middle, int radius, int radiusY, int precision, Texture* texture) {
@@ -786,6 +885,19 @@ export namespace shapes {
 			m_outlineColor = Color::Transparent;
 			this->setTexture(texture);
 			calculateOutlineVertices(precision);
+		}
+
+		Circle(Point2D middle, int radius,int radiusY, int precision, std::vector<Color> m_fillColors,bool renderOutline,Color m_outlineColor) {
+			this->middle = middle;
+			this->radius = radius;
+			if (radius != radiusY)
+				this->type = TypeOfCircle::Elipse;
+			else this->type = TypeOfCircle::Round;
+			this->m_fillColors = m_fillColors;
+			if (renderOutline)
+				this->m_outlineColor = m_outlineColor;
+			calculateOutlineVertices(precision);
+			calculateFillVertices(true);
 		}
 
 
@@ -804,6 +916,10 @@ export namespace shapes {
 	public:
 		Polygon(){}
 
+		~Polygon() {
+			polygon.~ConvexShape();
+		}
+
 		Polygon(std::vector<Vector2f> points, Color outlineColor, int thickness,Color fillColor) {
 			polygon = ConvexShape(points.size());
 			int i = 0;
@@ -817,7 +933,7 @@ export namespace shapes {
 
 		}
 
-		Polygon(std::vector<Vector2f> points, Texture* texture, Vector2f position) {
+		Polygon(std::vector<Vector2f> points, Texture* texture, Vector2f position, bool setOrigin) {
 			polygon = ConvexShape(points.size());
 			int i = 0;
 			for (Vector2f point : points) {
@@ -825,12 +941,17 @@ export namespace shapes {
 				i++;
 			}
 			polygon.setTexture(texture);
-			polygon.setOrigin(Vector2f(
-				polygon.getGlobalBounds().width / 2
-				,
-				polygon.getGlobalBounds().height / 2
-			));
+			if(setOrigin)
+				polygon.setOrigin(Vector2f(
+					polygon.getGlobalBounds().width / 2
+					,
+					polygon.getGlobalBounds().height / 2
+				));
 			polygon.setPosition(position);
+		}
+
+		void move(float x) {
+			polygon.move(Vector2f(x,0));
 		}
 
 		ConvexShape getPolygon() { return polygon; }
@@ -870,6 +991,24 @@ export namespace shapes {
 
 		static void drawPolygon(RenderWindow& window, Polygon polygon ) {
 			window.draw(polygon.getPolygon());
+		}
+
+		static void drawStarParticles(RenderWindow& window, StarsParticleSystem system) {
+			for (int i = 0; i < system.getNumberOfStars(); i++) {
+				Star star = system.getStar(i);
+				window.draw(star);
+			}
+		}
+
+		static void drawSnowParticles(RenderWindow& window, SnowParticleSystem system) {
+			for (int i = 0; i < system.getNumberOfSnows(); i++) {
+				Snow snow = system.getSnow(i);
+				window.draw(snow);
+			}
+		}
+
+		static void drawStar(RenderWindow& window, Star star) {
+			window.draw(star);
 		}
 
 	};
