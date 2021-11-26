@@ -4,9 +4,6 @@ import Engine;
 using namespace graphicsEngine;
 
 int main(void) {
-	//if (Engine::main() == 0)
-		//Engine::release;
-
 	GraphicsEngine* engine = GraphicsEngine::getInstance();
 	engine->main(
 		1920,
@@ -21,5 +18,5 @@ int main(void) {
 
 	delete engine;
 	
-	return 0;
+	exit(0);
 }

@@ -19,9 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\AnimatedObject.ixx" />
     <ClCompile Include="src\Animator.ixx" />
-    <ClCompile Include="src\AssetsManager.ixx" />
     <ClCompile Include="src\Demo.ixx" />
     <ClCompile Include="src\Effects.ixx" />
     <ClCompile Include="src\Engine.ixx" />
@@ -29,10 +27,8 @@
     <ClCompile Include="src\GeneralStuff.ixx" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\GameObjects.ixx" />
-    <ClCompile Include="src\Menu.ixx" />
     <ClCompile Include="src\Player\Player.ixx" />
     <ClCompile Include="src\Render.ixx" />
-    <ClCompile Include="src\SnakeEngine.ixx" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -144,6 +140,9 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

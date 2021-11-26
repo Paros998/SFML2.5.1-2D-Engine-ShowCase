@@ -993,17 +993,15 @@ export namespace shapes {
 			window.draw(polygon.getPolygon());
 		}
 
-		static void drawStarParticles(RenderWindow& window, StarsParticleSystem system) {
-			for (int i = 0; i < system.getNumberOfStars(); i++) {
-				Star star = system.getStar(i);
-				window.draw(star);
+		static void drawStarParticles(RenderWindow& window, StarsParticleSystem* system) {
+			for (int i = 0; i < system->getNumberOfStars(); i++) {
+				window.draw(*system->getStar(i));
 			}
 		}
 
-		static void drawSnowParticles(RenderWindow& window, SnowParticleSystem system) {
-			for (int i = 0; i < system.getNumberOfSnows(); i++) {
-				Snow snow = system.getSnow(i);
-				window.draw(snow);
+		static void drawSnowParticles(RenderWindow& window, SnowParticleSystem* system) {
+			for (int i = 0; i < system->getNumberOfSnows(); i++) {
+				window.draw(*system->getSnow(i));
 			}
 		}
 

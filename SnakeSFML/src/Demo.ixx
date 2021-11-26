@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <vector>
+#include <SFML/Audio/Music.hpp>
 
 import Render;
 import Effects;
@@ -22,8 +23,8 @@ export namespace assets {
 		std::vector<Vector2f> SnowPolygonPoints;
 		std::vector<Color> moonColors;
 
-		Circle* kolo;
-		Circle* kolo2;
+		Circle* kolo = NULL;
+		Circle* kolo2 = NULL;
 		Circle* moon;
 
 		Polygon sky;
@@ -41,7 +42,9 @@ export namespace assets {
 		Texture snowTexture;
 
 		Clock updateClock;
-		Clock updateClock2;
+
+		Music* music;
+		Music* ambientWind;
 		RenderWindow* window;
 
 
@@ -73,12 +76,64 @@ export namespace assets {
 		}
 
 	public:
+
+		Music* getMusic() { return music; }
+
 		std::atomic<bool> loadingCompleted;
 
-		ShowCase(RenderWindow* window) { this->window = window; }
+		ShowCase(RenderWindow* window) { 
+			this->window = window;
+			this->music = new Music();
+			music->openFromFile("assets/demo/GodOfWar.ogg");
+			music->setLoop(true);
+			music->setVolume(25);
+		}
+
+		~ShowCase() {
+			if(music)
+				delete music;
+			if (ambientWind)
+				delete ambientWind;
+			lines.~vector();
+			SkyPolygonPoints.~vector();;
+			ForestPolygonPoints.~vector();;
+			SnowPolygonPoints.~vector();;
+			moonColors.~vector();;
+			
+			if (kolo)
+				delete kolo;
+			if (kolo2)
+				delete kolo2;
+			
+			if (moon)
+				delete moon;
+
+			sky.~Polygon(); 
+			forestBackground.~Polygon();
+			walkingBackground.~Polygon();
+
+			convex.~ConvexShape();
+			if(stars)
+				delete stars;
+			if(snows)
+				delete snows;
+
+			skyTexture.~Texture();
+			forestTexture.~Texture();
+			snowTexture.~Texture();
+
+			updateClock.~Clock();
+		}
 
 		void load() {
-			srand(time(NULL));
+			srand(time(NULL));		
+			music->play();
+
+			ambientWind = new Music();
+			ambientWind->openFromFile("assets/demo/wind_ambient.ogg");
+			ambientWind->setVolume(40);
+			ambientWind->setLoop(true);
+
 			skyTexture.loadFromFile("assets/demo/sky_texture2.png");
 			skyTexture.setSmooth(true);
 
@@ -127,11 +182,11 @@ export namespace assets {
 
 			//kolo = new Circle(Point2D(800, 600), 100, true, 150, Circle::Precision::EightTimes, true, Color::Red, true);
 
-			moon = new Circle(Point2D(1500, 50), 35, 35, Circle::Precision::EightTimes , moonColors,true, Color(247, 247, 247, 45));
+			moon = new Circle(Point2D(1500, 50), 50, 50, Circle::Precision::EightTimes , moonColors,true, Color(247, 247, 247, 45));
 			
-			stars = new StarsParticleSystem(60,IntRect(0,0,window->getSize().x,window->getSize().y / 3));
+			stars = new StarsParticleSystem(120,IntRect(0,0,window->getSize().x,window->getSize().y / 3));
 
-			snows = new SnowParticleSystem(1000, IntRect(0, 0, xSize, ySize));
+			snows = new SnowParticleSystem(2000, IntRect(0, 0, xSize, ySize));
 
 			convex.setPointCount(4);
 			convex.setPoint(0, Vector2f(0, 0));
@@ -139,11 +194,13 @@ export namespace assets {
 			convex.setPoint(2, Vector2f(40, 40));
 			convex.setPoint(3, Vector2f(40, 0));
 
+			updateClock.restart();
+
+			ambientWind->play();
+
 			/// 
 			/// dont change the order here
 			/// 
-			updateClock.restart();
-			updateClock2.restart();
 			loadingCompleted = true;
 		}
 
@@ -155,13 +212,15 @@ export namespace assets {
 			//PrimitiveRenderer::drawCircle(window, *kolo);
 			//PrimitiveRenderer::drawCircle(window, *kolo2);
 			PrimitiveRenderer::drawPolygon(*window, sky);
-			PrimitiveRenderer::drawStarParticles(*window, *stars);
+			PrimitiveRenderer::drawStarParticles(*window, stars);
 			PrimitiveRenderer::drawCircle(*window,*moon);
 			PrimitiveRenderer::drawPolygon(*window, walkingBackground);
 			PrimitiveRenderer::drawPolygon(*window, forestBackground);
-			PrimitiveRenderer::drawSnowParticles(*window, *snows);
+			
 
 		}
+
+		void drawSnow(){ PrimitiveRenderer::drawSnowParticles(*window, snows); }
 
 		void update(){
 			float rawTime = updateClock.getElapsedTime().asSeconds();
@@ -170,15 +229,6 @@ export namespace assets {
 			snows->update(rawTime, (Vector2f)window->getSize());
 			updateClock.restart();
 		}
-
-		void updateSnow() {
-			srand(time(NULL));
-			float rawTime = updateClock2.getElapsedTime().asSeconds();
-			stars->update(rawTime);
-			snows->update(rawTime, (Vector2f)window->getSize());
-			updateClock2.restart();
-		}
-
 	};
 	
 

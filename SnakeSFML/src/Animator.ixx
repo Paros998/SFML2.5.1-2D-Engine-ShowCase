@@ -31,6 +31,10 @@ export namespace animation {
 				this->sprite->getGlobalBounds().height / 2 / this->sprite->getScale().y);
 		}
 		~Animator() {
+			currentImage.~Vector2u();
+			imageNumber.~Vector2u();
+			textureArea.~IntRect();
+			clock.~Clock();
 		}
 
 		void update(int row) {
