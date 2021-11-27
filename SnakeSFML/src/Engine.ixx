@@ -1,9 +1,11 @@
+#pragma once
 #include <SFML/Graphics.hpp>
-using namespace sf;
-
+#include <SFML/Audio.hpp>
 #include <iostream>
 #include <vector>
 #include <thread>
+
+using namespace sf;
 using namespace std;
 
 import Demo;
@@ -37,49 +39,55 @@ export namespace graphicsEngine {
 
 		Animator* loadingAnimator;
 
-		sf::Texture loadingBackgroundTexture;
-		Sprite loadingBackgroundSprite;
+		sf::Texture* loadingBackgroundTexture;
+		Sprite* loadingBackgroundSprite;
 
-		sf::Texture loadingSpinnerTexture;
-		Sprite loadingSpinnerSprite;
+		sf::Texture* loadingSpinnerTexture;
+		Sprite* loadingSpinnerSprite;
 
-		Player* player;
+
 		GameObject* greyStone;
 		GameObject* brownStone;
+
+		Player* player;
+		
 	private:
 
 		void drawLoadingScreen(RenderWindow& window) {
 			loadingAnimator->update();
-			window.draw(loadingBackgroundSprite);
-			window.draw(loadingSpinnerSprite);
+			window.draw(*loadingBackgroundSprite);
+			window.draw(*loadingSpinnerSprite);
 		}
 
 		void releaseResources() {
-			loadingAnimator->~Animator();
-			loadingBackgroundSprite.~Sprite();
-			loadingSpinnerSprite.~Sprite();
-			loadingBackgroundTexture.~Texture();
-			loadingSpinnerTexture.~Texture();
+			delete loadingAnimator;
+			delete loadingBackgroundSprite;
+			delete loadingSpinnerSprite;
+			delete loadingBackgroundTexture;
+			delete loadingSpinnerTexture;
 
 		}
 
 		void prepareLoadingScreen(RenderWindow& window) {
 
-			loadingSpinnerTexture.loadFromFile("assets/LoadingScreen/spinner.png");
-			loadingSpinnerTexture.setSmooth(true);
+			loadingSpinnerTexture = new Texture();
+			loadingBackgroundTexture = new Texture();
 			
-			loadingBackgroundTexture.loadFromFile("assets/LoadingScreen/demoBackground.jpg");
-			loadingBackgroundTexture.setSmooth(true);
+			loadingSpinnerTexture->loadFromFile("assets/LoadingScreen/spinner.png");
+			loadingSpinnerTexture->setSmooth(true);
+			
+			loadingBackgroundTexture->loadFromFile("assets/LoadingScreen/demoBackground.jpg");
+			loadingBackgroundTexture->setSmooth(true);
 
-			loadingBackgroundSprite.setTexture(loadingBackgroundTexture);
-			loadingBackgroundSprite.setPosition(0, 0);
+			loadingBackgroundSprite = new Sprite(*loadingBackgroundTexture);
+			loadingBackgroundSprite->setPosition(0, 0);
 
-			loadingSpinnerSprite.setTexture(loadingSpinnerTexture);
-			loadingSpinnerSprite.setScale(2.0f, 2.0f);
-			loadingSpinnerSprite.setOrigin(loadingSpinnerSprite.getGlobalBounds().width / 2, loadingSpinnerSprite.getGlobalBounds().height / 2);
-			loadingSpinnerSprite.setPosition(Vector2f(window.getSize().x / 2 , window.getSize().y / 2));
+			loadingSpinnerSprite = new Sprite(*loadingSpinnerTexture);
+			loadingSpinnerSprite->setScale(2.0f, 2.0f);
+			loadingSpinnerSprite->setOrigin(loadingSpinnerSprite->getGlobalBounds().width / 2, loadingSpinnerSprite->getGlobalBounds().height / 2);
+			loadingSpinnerSprite->setPosition(Vector2f(window.getSize().x / 2 , window.getSize().y / 2));
 
-			loadingAnimator = new Animator(loadingSpinnerTexture, &loadingSpinnerSprite, Vector2u(24,1) , 1.0f / (float)24);
+			loadingAnimator = new Animator(*loadingSpinnerTexture, loadingSpinnerSprite, Vector2u(24,1) , 1.0f / (float)24);
 			loadingAnimator->setStartFrame();
 		}
 
@@ -99,11 +107,11 @@ export namespace graphicsEngine {
 				infoTexts.push_back(text);
 			}
 
-			string dudeSpritePath = SPRITES_DIRECTORY + "/viking_Sprites/animations.png";
+			string dudeSpritePath = SPRITES_DIRECTORY + "/viking_Sprites/animations3.png";
 
 			player = new Player(
 				dudeSpritePath,
-				Vector2u(30, 8),
+				Vector2u(30, 16),
 				Vector2u(1, 1),
 				1.f/30,
 				Vector2f(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
@@ -117,12 +125,13 @@ export namespace graphicsEngine {
 		}
 
 		~GraphicsEngine() {
+			infoFont.~Font();
+			infoTexts.~vector();
+			releaseResources();
 			if (player) delete player;
 			if (greyStone) delete greyStone;
 			if (brownStone) delete brownStone;
 			if (window) delete window;
-			releaseResources();
-
 		}
 
 		static GraphicsEngine* getInstance() {
@@ -132,15 +141,42 @@ export namespace graphicsEngine {
 			return instance;
 		}
 
-		void handleKeybardOnPressed() {
-			if (Keyboard::isKeyPressed(Keyboard::W)) {
-				player->updateMovement(direction::NOTIMPORTANT,actions::JUMP,fight::NONE);
-			} else if (Keyboard::isKeyPressed(Keyboard::A)) {
-				player->updateMovement(direction::LEFT,actions::WALK,fight::NONE);
-			} else if (Keyboard::isKeyPressed(Keyboard::D)) {
-				player->updateMovement(direction::RIGHT, actions::WALK, fight::NONE);
-			} else {
-				player->animateIdle();
+		void handleKeybardOnPressed(float rawTime) {
+			if (Mouse::isButtonPressed(Mouse::Left) && Keyboard::isKeyPressed(Keyboard::W)) {
+				player->updateMovement(direction::NOTIMPORTANT, actions::JUMP, fight::JUMPATTACK, rawTime);
+			}
+			else if (Mouse::isButtonPressed(Mouse::Left) && Keyboard::isKeyPressed(Keyboard::A)) {
+				player->updateMovement(direction::LEFT, actions::WALK, fight::FIRST , rawTime);
+			}
+			else if (Mouse::isButtonPressed(Mouse::Left) && Keyboard::isKeyPressed(Keyboard::D)) {
+				player->updateMovement(direction::RIGHT, actions::WALK, fight::FIRST , rawTime);
+			}
+			else if (Mouse::isButtonPressed(Mouse::Left)) {			
+				player->updateMovement(direction::NOTIMPORTANT, actions::NEVERMIND, fight::FIRST , rawTime);
+			}
+			else if (Keyboard::isKeyPressed(Keyboard::A) && Keyboard::isKeyPressed(Keyboard::LShift)) {
+				player->updateMovement(direction::LEFT, actions::RUN, fight::NONE, rawTime);
+			}
+			else if (Keyboard::isKeyPressed(Keyboard::A) && Keyboard::isKeyPressed(Keyboard::W)) {
+				player->updateMovement(direction::LEFT,actions::JUMP,fight::NONE, rawTime);
+			}
+			else if (Keyboard::isKeyPressed(Keyboard::A)) {
+				player->updateMovement(direction::LEFT,actions::WALK,fight::NONE, rawTime);
+			}
+			else if (Keyboard::isKeyPressed(Keyboard::D) && Keyboard::isKeyPressed(Keyboard::LShift)) {
+				player->updateMovement(direction::RIGHT, actions::RUN, fight::NONE, rawTime);
+			}
+			else if (Keyboard::isKeyPressed(Keyboard::D) && Keyboard::isKeyPressed(Keyboard::W)) {
+				player->updateMovement(direction::RIGHT, actions::JUMP, fight::NONE, rawTime);
+			}
+			else if (Keyboard::isKeyPressed(Keyboard::D)) {
+				player->updateMovement(direction::RIGHT, actions::WALK, fight::NONE, rawTime);
+			}
+			else if (Keyboard::isKeyPressed(Keyboard::W)) {
+				player->updateMovement(direction::NOTIMPORTANT, actions::JUMP, fight::NONE, rawTime);
+			}
+			else {
+				player->animateIdle(rawTime);
 			}
 		}
 
@@ -148,7 +184,7 @@ export namespace graphicsEngine {
 			if (event.key.code == Keyboard::Escape && shouldExitOnEscape) {
 				window->close();
 			} else if (event.key.code == Keyboard::LControl) {
-				player->setBitmap(SPRITES_DIRECTORY + "/dude.png");
+				player->setBitmap(SPRITES_DIRECTORY + "/viking_Sprites/animations3.png");
 			} else if (event.key.code == Keyboard::LAlt) {
 				player->clearBitmap();
 			} else if (event.key.code == Keyboard::Space) {
@@ -160,7 +196,7 @@ export namespace graphicsEngine {
 
 		void handleMouseOnPressed() {
 			if (Mouse::isButtonPressed(Mouse::Left)) {
-				//player->updateMovement(playerMovementDirections::Attack);
+				cout << "Mouse key left has been pressed\n";
 			} else if (Mouse::isButtonPressed(Mouse::Middle)) {
 				cout << "Mouse key middle has been pressed\n";
 			} else if (Mouse::isButtonPressed(Mouse::Right)) {
@@ -207,17 +243,14 @@ export namespace graphicsEngine {
 			window = new RenderWindow(VideoMode(windowWidth, windowHeight), "Graphics Engine", windowStyle);
 			prepareLoadingScreen(*window);
 			Clock frameRateClock;
-			
 
 			ShowCase demoShowCase(window);
 
 			std::thread loadThread{ &ShowCase::load, &demoShowCase };
 			std::thread updateThread;
-			std::thread updateThread2;
 
 			window->setFramerateLimit(144);
 			loadThread.detach();
-
 			while (window->isOpen()) {
 				Event event;
 				while (window->pollEvent(event)) {
@@ -234,10 +267,8 @@ export namespace graphicsEngine {
 				}
 
 				if (hasKeyboardSupport) {
-					handleKeybardOnPressed();
+					handleKeybardOnPressed(frameRateClock.getElapsedTime().asSeconds());
 				}
-
-				player->update();
 
 				window->clear(clearColor);
 
@@ -247,17 +278,19 @@ export namespace graphicsEngine {
 				}
 
 				if (demoShowCase.loadingCompleted == true) {
-					//updateThread2 = std::thread(&ShowCase::updateSnow, &demoShowCase);
-
 					updateThread = std::thread(&ShowCase::update, &demoShowCase);
 					updateThread.detach();
-					demoShowCase.draw();
 
+					player->update((Vector2f)window->getSize());
+					demoShowCase.draw();
 					window->draw(*player);
 					window->draw(*greyStone);
 					window->draw(*brownStone);
+					demoShowCase.drawSnow();
 				}
 				else {
+					frameRateClock.restart();
+					player->resetAnimator();
 					drawLoadingScreen(*window);
 				}
 

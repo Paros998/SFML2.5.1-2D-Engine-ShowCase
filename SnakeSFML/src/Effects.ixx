@@ -131,12 +131,12 @@ export namespace effects {
 	class StarsParticleSystem {
 	private:
 		int numberOfStars;
-		Star* stars;
+		Star** stars;
 
 	public:
 		StarsParticleSystem(int numberOfStars,IntRect rectangle) {
 			this->numberOfStars = numberOfStars;
-			stars = new Star[numberOfStars];
+			stars = new Star*[numberOfStars];
 
 			std::vector<Vector2f> points;
 
@@ -163,26 +163,27 @@ export namespace effects {
 						goodPointAcquired = true;
 				}
 
-				stars[i] = Star(position);
+				stars[i] = new Star(position);
 				points.push_back(position);
 
 			}
 		}
 
-		/*~StarsParticleSystem() {
+		~StarsParticleSystem() {
 			for (int i = 0; i < numberOfStars; i++)
-				stars[i].~Star();
-		}*/
+				delete stars[i];
+			delete[] stars;
+		}
 
 		void update(float rawTime) {
 			for (int i = 0; i < numberOfStars; i++) {
-				stars[i].update(rawTime);
+				stars[i]->update(rawTime);
 			}
 		}
 
 		void move(float x) {
 			for (int i = 0; i < numberOfStars; i++) {
-				stars[i].move(x);
+				stars[i]->move(x);
 			}
 		}
 
@@ -190,7 +191,7 @@ export namespace effects {
 			return this->numberOfStars;
 		}
 
-		Star getStar(int index) {
+		Star* getStar(int index) {
 			return stars[index];
 		}
 		
@@ -347,13 +348,13 @@ export namespace effects {
 	class SnowParticleSystem {
 	private:
 		int numberOfSnows;
-		Snow* snows;
+		Snow** snows;
 		IntRect windowRectangle;
 	public:
 		SnowParticleSystem(int numberOfSnows, IntRect rectangle) {
 			this->numberOfSnows = numberOfSnows;
 			this->windowRectangle = rectangle;
-			snows = new Snow[numberOfSnows];
+			snows = new Snow*[numberOfSnows];
 
 			std::vector<Vector2f> points;
 
@@ -380,21 +381,22 @@ export namespace effects {
 						goodPointAcquired = true;
 				}
 
-				snows[i] = Snow(position);
+				snows[i] = new Snow(position);
 				points.push_back(position);
 
 			}
 		}
 
-		/*~SnowParticleSystem() {
+		~SnowParticleSystem() {
 			for (int i = 0; i < numberOfSnows; i++)
-				snows[i].~Snow();
+				delete snows[i];
 			windowRectangle.~IntRect();
-		}*/
+			delete[] snows;
+		}
 
 		void update(float rawTime,Vector2f windowSize) {
 			for (int i = 0; i < numberOfSnows; i++) {
-				snows[i].update(rawTime, windowSize);
+				snows[i]->update(rawTime, windowSize);
 			}
 		}
 
@@ -402,7 +404,7 @@ export namespace effects {
 			return this->numberOfSnows;
 		}
 
-		Snow getSnow(int index) {
+		Snow* getSnow(int index) {
 			return snows[index];
 		}
 	};
