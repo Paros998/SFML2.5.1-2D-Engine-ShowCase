@@ -1,0 +1,175 @@
+\doxysection{Dokumentacja klasy effects\+::Star}
+\label{classeffects_1_1_star}\index{effects::Star@{effects::Star}}
+Diagram dziedziczenia dla effects\+::Star\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classeffects_1_1_star}
+\end{center}
+\end{figure}
+\doxysubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+Vector2f \textbf{ get\+Position} ()
+\item 
+\textbf{ Star} ()
+\item 
+\textbf{ $\sim$\+Star} ()
+\item 
+\textbf{ Star} (Vector2f \textbf{ position})
+\item 
+void \textbf{ move} (float x)
+\item 
+void \textbf{ update} (float raw\+Time)
+\item 
+virtual std\+::size\+\_\+t \textbf{ get\+Point\+Count} () const override
+\item 
+virtual Vector2f \textbf{ get\+Point} (std\+::size\+\_\+t index) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Metody prywatne}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \textbf{ draw} (sf\+::\+Render\+Target \&target, sf\+::\+Render\+States states) const override
+\item 
+void \textbf{ calculate\+Vertices} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Atrybuty prywatne}
+\begin{DoxyCompactItemize}
+\item 
+Vertex\+Array \textbf{ m\+\_\+vertices}
+\item 
+Vertex\+Array \textbf{ m\+\_\+outline\+Vertices}
+\item 
+int \textbf{ size}
+\item 
+float \textbf{ flash\+Time} = float(rand() \% 2) + (rand() \% 100 / 100.f)
+\item 
+float \textbf{ switch\+Time}
+\item 
+float \textbf{ delta\+Time} = 0.f
+\item 
+bool \textbf{ is\+Switched} = false
+\item 
+Vector2f \textbf{ position}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Dokumentacja konstruktora i destruktora}
+\mbox{\label{classeffects_1_1_star_a0a4edaaefb5b48e3932d2133b1a82b45}} 
+\index{effects::Star@{effects::Star}!Star@{Star}}
+\index{Star@{Star}!effects::Star@{effects::Star}}
+\doxysubsubsection{Star()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily effects\+::\+Star\+::\+Star (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classeffects_1_1_star_ad50231c6db41064c94bef7b3a5500ff5}} 
+\index{effects::Star@{effects::Star}!````~Star@{$\sim$Star}}
+\index{````~Star@{$\sim$Star}!effects::Star@{effects::Star}}
+\doxysubsubsection{$\sim$Star()}
+{\footnotesize\ttfamily effects\+::\+Star\+::$\sim$\+Star (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classeffects_1_1_star_a7d22b6cdd7f14a6c834acc5bec1edcc0}} 
+\index{effects::Star@{effects::Star}!Star@{Star}}
+\index{Star@{Star}!effects::Star@{effects::Star}}
+\doxysubsubsection{Star()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily effects\+::\+Star\+::\+Star (\begin{DoxyParamCaption}\item[{Vector2f}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Dokumentacja funkcji składowych}
+\mbox{\label{classeffects_1_1_star_a667f5092b0e6970b4b2549b59df58ad4}} 
+\index{effects::Star@{effects::Star}!calculateVertices@{calculateVertices}}
+\index{calculateVertices@{calculateVertices}!effects::Star@{effects::Star}}
+\doxysubsubsection{calculateVertices()}
+{\footnotesize\ttfamily void effects\+::\+Star\+::calculate\+Vertices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\label{classeffects_1_1_star_a1ec22d35df3d9c2a940a46a55529d999}} 
+\index{effects::Star@{effects::Star}!draw@{draw}}
+\index{draw@{draw}!effects::Star@{effects::Star}}
+\doxysubsubsection{draw()}
+{\footnotesize\ttfamily virtual void effects\+::\+Star\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \&}]{target,  }\item[{sf\+::\+Render\+States}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+\mbox{\label{classeffects_1_1_star_a544ede9b723a47f4f79bfa9f57b35c95}} 
+\index{effects::Star@{effects::Star}!getPoint@{getPoint}}
+\index{getPoint@{getPoint}!effects::Star@{effects::Star}}
+\doxysubsubsection{getPoint()}
+{\footnotesize\ttfamily virtual Vector2f effects\+::\+Star\+::get\+Point (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\mbox{\label{classeffects_1_1_star_a53f5e7126467fbf49bfe0e00f56e56d0}} 
+\index{effects::Star@{effects::Star}!getPointCount@{getPointCount}}
+\index{getPointCount@{getPointCount}!effects::Star@{effects::Star}}
+\doxysubsubsection{getPointCount()}
+{\footnotesize\ttfamily virtual std\+::size\+\_\+t effects\+::\+Star\+::get\+Point\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\mbox{\label{classeffects_1_1_star_ad87188a399d7c5ca12c70e5378d5a68b}} 
+\index{effects::Star@{effects::Star}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!effects::Star@{effects::Star}}
+\doxysubsubsection{getPosition()}
+{\footnotesize\ttfamily Vector2f effects\+::\+Star\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classeffects_1_1_star_ae1af7c7357145470fdf293a058308b41}} 
+\index{effects::Star@{effects::Star}!move@{move}}
+\index{move@{move}!effects::Star@{effects::Star}}
+\doxysubsubsection{move()}
+{\footnotesize\ttfamily void effects\+::\+Star\+::move (\begin{DoxyParamCaption}\item[{float}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classeffects_1_1_star_ad3dc1566e33b580fe46767e4e32feb9f}} 
+\index{effects::Star@{effects::Star}!update@{update}}
+\index{update@{update}!effects::Star@{effects::Star}}
+\doxysubsubsection{update()}
+{\footnotesize\ttfamily void effects\+::\+Star\+::update (\begin{DoxyParamCaption}\item[{float}]{raw\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Dokumentacja atrybutów składowych}
+\mbox{\label{classeffects_1_1_star_a6637e6ddeb0354d0c70ec4e42f386ebd}} 
+\index{effects::Star@{effects::Star}!deltaTime@{deltaTime}}
+\index{deltaTime@{deltaTime}!effects::Star@{effects::Star}}
+\doxysubsubsection{deltaTime}
+{\footnotesize\ttfamily float effects\+::\+Star\+::delta\+Time = 0.f\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classeffects_1_1_star_a5aa447216261a745b84a8015b43f82a6}} 
+\index{effects::Star@{effects::Star}!flashTime@{flashTime}}
+\index{flashTime@{flashTime}!effects::Star@{effects::Star}}
+\doxysubsubsection{flashTime}
+{\footnotesize\ttfamily float effects\+::\+Star\+::flash\+Time = float(rand() \% 2) + (rand() \% 100 / 100.f)\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classeffects_1_1_star_a6d2d0746299fc72c36513ee8188f4744}} 
+\index{effects::Star@{effects::Star}!isSwitched@{isSwitched}}
+\index{isSwitched@{isSwitched}!effects::Star@{effects::Star}}
+\doxysubsubsection{isSwitched}
+{\footnotesize\ttfamily bool effects\+::\+Star\+::is\+Switched = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classeffects_1_1_star_a7616641a1ffcc163754f9392bb5f38fb}} 
+\index{effects::Star@{effects::Star}!m\_outlineVertices@{m\_outlineVertices}}
+\index{m\_outlineVertices@{m\_outlineVertices}!effects::Star@{effects::Star}}
+\doxysubsubsection{m\_outlineVertices}
+{\footnotesize\ttfamily Vertex\+Array effects\+::\+Star\+::m\+\_\+outline\+Vertices\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classeffects_1_1_star_a61d1302a7030610b61a7c27b59f052f9}} 
+\index{effects::Star@{effects::Star}!m\_vertices@{m\_vertices}}
+\index{m\_vertices@{m\_vertices}!effects::Star@{effects::Star}}
+\doxysubsubsection{m\_vertices}
+{\footnotesize\ttfamily Vertex\+Array effects\+::\+Star\+::m\+\_\+vertices\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classeffects_1_1_star_a8e6f654da66fee4272ce05465fe31fba}} 
+\index{effects::Star@{effects::Star}!position@{position}}
+\index{position@{position}!effects::Star@{effects::Star}}
+\doxysubsubsection{position}
+{\footnotesize\ttfamily Vector2f effects\+::\+Star\+::position\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classeffects_1_1_star_ab7e138acaa1ea483e7e40c98c6f9cd41}} 
+\index{effects::Star@{effects::Star}!size@{size}}
+\index{size@{size}!effects::Star@{effects::Star}}
+\doxysubsubsection{size}
+{\footnotesize\ttfamily int effects\+::\+Star\+::size\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classeffects_1_1_star_aa782a974a505bf68f07755efba682643}} 
+\index{effects::Star@{effects::Star}!switchTime@{switchTime}}
+\index{switchTime@{switchTime}!effects::Star@{effects::Star}}
+\doxysubsubsection{switchTime}
+{\footnotesize\ttfamily float effects\+::\+Star\+::switch\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Chomik/source/repos/\+Snake\+S\+F\+M\+Lv1/\+Snake\+S\+F\+M\+L/src/\textbf{ Effects.\+ixx}\end{DoxyCompactItemize}

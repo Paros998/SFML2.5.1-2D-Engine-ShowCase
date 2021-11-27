@@ -361,3 +361,133 @@ export namespace gameObjects {
 			}
 	};
 }
+/**
+ * \file GameObjects.ixx
+ * \brief Plik modu³owy zawieraj¹cy deklaracje klas obiektów graficznych.
+ */
+
+/**
+ * \namespace gameObjects
+ * \brief Przestrzeñ nazw zawieraj¹ca definicjê klas GameObject, AnimatedObject i Player.
+ */
+
+/**
+ * \class gameObjects::GameObject.
+ * \brief Klasa opisuj¹ca bitmapê.
+ * Dziedziczy po klasie Sprite, dziêki której posiada metody do transformacji bitmapy.
+ */
+
+/**
+ * \fn gameObjects::GameObject::GameObject()
+ * \brief Domyœlny konstruktor.
+ */
+
+/**
+ * \fn gameObjects::GameObject::GameObject(string texturePath, Vector2f startPosition)
+ * \brief Konstruktor inicjuj¹cy bitmapê.
+ */
+
+/**
+ * \fn gameObjects::GameObject::~GameObject()
+ * \brief Destruktor sprz¹taj¹cy po obiekcie.
+ */
+
+/**
+ * \fn void gameObjects::GameObject::clearBitmap()
+ * \brief Metoda czyszcz¹ca bitmapê.
+ * 
+ * \return void
+ */
+
+/**
+ * \fn void gameObjects::GameObject::saveBitmap()
+ * \brief Metoda zapisuj¹ca bitmapê do pliku.
+ * 
+ * \return void
+ */
+
+/**
+ * \fn void gameObjects::GameObject::setBitmap(string texturePath)
+ * \brief Metoda ustawiaj¹ca bitmapê za pomoc¹ œcie¿ki do pliku.
+ * 
+ * \return void
+ */
+
+/**
+ * \fn void gameObjects::GameObject::setBitmap(Texture* newTexture)
+ * \brief Metoda ustawiaj¹ca bitmapê za pomoc¹ innej bitmapy.
+ * 
+ * \return void
+ */
+
+/**
+ * \fn Texture* gameObjects::GameObject::getBitmap()
+ * \brief Metoda pobieraj¹ca aktualn¹ bitmapê.
+ * 
+ * \return Texture* Aktualna bitmapa.
+ */
+
+/**
+ * \class gameObjects::AnimatedObject
+ * \brief Klasa opisuj¹ca graficzny obiekt animowany.
+ */
+
+/**
+ * \fn gameObjects::AnimatedObject::AnimatedObject()
+ * \brief Domyœlny konstruktor.
+ */
+
+/**
+ * \fn gameObjects::AnimatedObject::AnimatedObject(string texturePath, Vector2f startPosition, Vector2u imageNumber, float changeTime)
+ * \brief Konstruktor, który ustawia spritesheet do animacji, liczbê obrazków w x i y oraz szybkoœæ animacji.
+ */
+
+/**
+ * \fn void gameObjects::AnimatedObject::update()
+ * \brief Metoda aktualizuj¹ca animacje na podstawie wczeœniej przekazanego spritesheet'u.
+ */
+
+/**
+ * \fn void gameObjects::AnimatedObject::update(int row)
+ * \brief Metoda aktualizuj¹ca animacje w okreœlonym rzêdzie spritesheet'u.
+ */
+
+/**
+ * \fn void gameObjects::AnimatedObject::setStartFrame()
+ * \brief Metoda ustawiaj¹ca pocz¹tkow¹ klatkê animacji.
+ */
+
+/**
+ * \fn void gameObjects::AnimatedObject::animateIdle(Vector2u spriteSheetPosition)
+ * \brief Metoda animuj¹ca wskazan¹ klatkê.
+ */
+
+/**
+ * \fn void gameObjects::AnimatedObject::updatePicture(bool shouldUpdateTextureArea)
+ * \brief Metoda wycinaj¹ca nastêpn¹ klatkê ze spritesheet'u.
+ */
+
+/**
+ * \class gameObjects::Player
+ * \brief Klasa gracza, która obs³uguje animacje oraz klawiaturê i myszkê.
+ */
+
+/**
+ * \fn gameObjects::Player::Player()
+ * \brief Konstruktor inicjuj¹cy klasy bazowe oraz ruchy gracza.
+ */
+
+/**
+ * \fn void gameObjects::Player::updateMovement(int direction, int action, int fight)
+ * \brief Metoda aktualizuj¹ca kierunek poruszania siê gracza oraz okreœlone akcje.
+ */
+
+/**
+ * \fn void gameObjects::Player::animateIdle()
+ * \brief Metoda aktualizuj¹ca animacjê spoczynku.
+ */
+
+/**
+ * \fn void gameObjects::Player::update()
+ * \brief Metoda animuj¹ca gracza poprzez pobieranie aktualnego obrazka ze spritesheet'u.
+ */

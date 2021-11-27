@@ -1,0 +1,95 @@
+.TH "menuAssets::afterOptions::sprites" 3 "So, 27 lis 2021" "Silnik graficzny" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+menuAssets::afterOptions::sprites
+.SH SYNOPSIS
+.br
+.PP
+.SS "Wyliczenia"
+
+.in +1c
+.ti -1c
+.RI "enum \fBoptionsTextSprites\fP { \fBCONTROLS\fP, \fBUP\fP, \fBDOWN\fP, \fBRIGHT\fP, \fBLEFT\fP, \fBOPTIONS\fP }"
+.br
+.ti -1c
+.RI "enum \fBoptionsButtonsSpritesIndex\fP { \fBPLUS\fP, \fBMINUS\fP }"
+.br
+.in -1c
+.SS "Zmienne"
+
+.in +1c
+.ti -1c
+.RI "Vector2f \fBoptionsTextSpritesPositions\fP [6]"
+.br
+.ti -1c
+.RI "String \fBoptionsButtonsSprites\fP [2]"
+.br
+.ti -1c
+.RI "Vector2f \fBoptionsButtonsSpritesPositions\fP [2]"
+.br
+.in -1c
+.SH "Dokumentacja typów wyliczanych"
+.PP 
+.SS "enum \fBmenuAssets::afterOptions::sprites::optionsButtonsSpritesIndex\fP"
+
+.PP
+\fBWartości wyliczeń\fP
+.in +1c
+.TP
+\fB\fIPLUS \fP\fP
+.TP
+\fB\fIMINUS \fP\fP
+.SS "enum \fBmenuAssets::afterOptions::sprites::optionsTextSprites\fP"
+
+.PP
+\fBWartości wyliczeń\fP
+.in +1c
+.TP
+\fB\fICONTROLS \fP\fP
+.TP
+\fB\fIUP \fP\fP
+.TP
+\fB\fIDOWN \fP\fP
+.TP
+\fB\fIRIGHT \fP\fP
+.TP
+\fB\fILEFT \fP\fP
+.TP
+\fB\fIOPTIONS \fP\fP
+.SH "Dokumentacja zmiennych"
+.PP 
+.SS "String menuAssets::afterOptions::sprites::optionsButtonsSprites[2]"
+\fBWartość początkowa:\fP
+.PP
+.nf
+= { 
+                menuHelpersTextures[menuHelpersIndex::PLUS],
+                menuHelpersTextures[menuHelpersIndex::MINUS] 
+            }
+.fi
+.SS "Vector2f menuAssets::afterOptions::sprites::optionsButtonsSpritesPositions[2]"
+\fBWartość początkowa:\fP
+.PP
+.nf
+= { 
+                {1010\&.0f,700\&.0f},
+                {1270\&.0f,700\&.0f}
+            }
+.fi
+.SS "Vector2f menuAssets::afterOptions::sprites::optionsTextSpritesPositions[6]"
+\fBWartość początkowa:\fP
+.PP
+.nf
+= {
+                {1140\&.0f,optionsTextPosition[CONTROLS]\&.y},
+                {1140\&.0f,optionsTextPosition[UP]\&.y},
+                {1140\&.0f,optionsTextPosition[DOWN]\&.y},
+                {1140\&.0f,optionsTextPosition[RIGHT]\&.y},
+                {1140\&.0f,optionsTextPosition[LEFT]\&.y},
+                {1140\&.0f,optionsTextPosition[OPTIONS]\&.y}
+            }
+.fi
+.SH "Autor"
+.PP 
+Wygenerowano automatycznie z kodu źródłowego programem Doxygen dla Silnik graficzny\&.

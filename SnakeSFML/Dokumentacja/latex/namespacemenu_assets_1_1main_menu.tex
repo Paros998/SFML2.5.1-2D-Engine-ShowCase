@@ -1,0 +1,78 @@
+\doxysection{Dokumentacja przestrzeni nazw menu\+Assets\+::main\+Menu}
+\label{namespacemenu_assets_1_1main_menu}\index{menuAssets::mainMenu@{menuAssets::mainMenu}}
+\doxysubsection*{Wyliczenia}
+\begin{DoxyCompactItemize}
+\item 
+enum \textbf{ menu\+Buttons\+Index} \{ \newline
+\textbf{ S\+T\+A\+RT}, 
+\textbf{ O\+P\+T\+I\+O\+NS}, 
+\textbf{ S\+C\+O\+R\+ES}, 
+\textbf{ C\+R\+E\+A\+T\+O\+RS}, 
+\newline
+\textbf{ E\+X\+IT}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Zmienne}
+\begin{DoxyCompactItemize}
+\item 
+String \textbf{ menu\+Buttons\+Text} [5] = \{\char`\"{}S\+T\+A\+RT\char`\"{},\char`\"{}\textbf{ O\+P\+T\+I\+O\+NS}\char`\"{},\char`\"{}\textbf{ S\+C\+O\+R\+ES}\char`\"{},\char`\"{}\textbf{ C\+R\+E\+A\+T\+O\+RS}\char`\"{},\char`\"{}\textbf{ E\+X\+IT}\char`\"{}\}
+\item 
+Vector2f \textbf{ menu\+Buttons\+Position} [5]
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Dokumentacja typów wyliczanych}
+\mbox{\label{namespacemenu_assets_1_1main_menu_a9a1914798fe6a396a88609e41fdb2f3a}} 
+\index{menuAssets::mainMenu@{menuAssets::mainMenu}!menuButtonsIndex@{menuButtonsIndex}}
+\index{menuButtonsIndex@{menuButtonsIndex}!menuAssets::mainMenu@{menuAssets::mainMenu}}
+\doxysubsubsection{menuButtonsIndex}
+{\footnotesize\ttfamily enum \textbf{ menu\+Assets\+::main\+Menu\+::menu\+Buttons\+Index}}
+
+\begin{DoxyEnumFields}{Wartości wyliczeń}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{START@{START}!menuAssets::mainMenu@{menuAssets::mainMenu}}\index{menuAssets::mainMenu@{menuAssets::mainMenu}!START@{START}}}\mbox{\label{namespacemenu_assets_1_1main_menu_a9a1914798fe6a396a88609e41fdb2f3aaf9e04c2b9d4e7c92734ce4b8959ef9cf}} 
+S\+T\+A\+RT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OPTIONS@{OPTIONS}!menuAssets::mainMenu@{menuAssets::mainMenu}}\index{menuAssets::mainMenu@{menuAssets::mainMenu}!OPTIONS@{OPTIONS}}}\mbox{\label{namespacemenu_assets_1_1main_menu_a9a1914798fe6a396a88609e41fdb2f3aaabcaeb0053dfdb0a20b395ba6b8c189a}} 
+O\+P\+T\+I\+O\+NS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SCORES@{SCORES}!menuAssets::mainMenu@{menuAssets::mainMenu}}\index{menuAssets::mainMenu@{menuAssets::mainMenu}!SCORES@{SCORES}}}\mbox{\label{namespacemenu_assets_1_1main_menu_a9a1914798fe6a396a88609e41fdb2f3aa7039dd764a7963974f64746e2fe58876}} 
+S\+C\+O\+R\+ES&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CREATORS@{CREATORS}!menuAssets::mainMenu@{menuAssets::mainMenu}}\index{menuAssets::mainMenu@{menuAssets::mainMenu}!CREATORS@{CREATORS}}}\mbox{\label{namespacemenu_assets_1_1main_menu_a9a1914798fe6a396a88609e41fdb2f3aa62cead287d0b357fec30b296dde2336e}} 
+C\+R\+E\+A\+T\+O\+RS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EXIT@{EXIT}!menuAssets::mainMenu@{menuAssets::mainMenu}}\index{menuAssets::mainMenu@{menuAssets::mainMenu}!EXIT@{EXIT}}}\mbox{\label{namespacemenu_assets_1_1main_menu_a9a1914798fe6a396a88609e41fdb2f3aa86e9d48d732a24f37e9048f600cc5bd8}} 
+E\+X\+IT&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Dokumentacja zmiennych}
+\mbox{\label{namespacemenu_assets_1_1main_menu_a949a5111f9c4348933cf3c8dad937ef1}} 
+\index{menuAssets::mainMenu@{menuAssets::mainMenu}!menuButtonsPosition@{menuButtonsPosition}}
+\index{menuButtonsPosition@{menuButtonsPosition}!menuAssets::mainMenu@{menuAssets::mainMenu}}
+\doxysubsubsection{menuButtonsPosition}
+{\footnotesize\ttfamily Vector2f menu\+Assets\+::main\+Menu\+::menu\+Buttons\+Position[5]}
+
+{\bfseries Wartość początkowa\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{            \{globalFunctions::findHorizontallyCenteredPositionOfGivenText(menuButtonsText[START]),250.0f\},}
+\DoxyCodeLine{            \{globalFunctions::findHorizontallyCenteredPositionOfGivenText(menuButtonsText[OPTIONS]),400.0f\},}
+\DoxyCodeLine{            \{globalFunctions::findHorizontallyCenteredPositionOfGivenText(menuButtonsText[SCORES]),550.0f\},}
+\DoxyCodeLine{            \{globalFunctions::findHorizontallyCenteredPositionOfGivenText(menuButtonsText[CREATORS]),700.0f\},}
+\DoxyCodeLine{            \{globalFunctions::findHorizontallyCenteredPositionOfGivenText(menuButtonsText[EXIT]),850.0f\}}
+\DoxyCodeLine{        \}}
+
+\end{DoxyCode}
+\mbox{\label{namespacemenu_assets_1_1main_menu_ad9d178c599b1061d59aa6449e3e4fd10}} 
+\index{menuAssets::mainMenu@{menuAssets::mainMenu}!menuButtonsText@{menuButtonsText}}
+\index{menuButtonsText@{menuButtonsText}!menuAssets::mainMenu@{menuAssets::mainMenu}}
+\doxysubsubsection{menuButtonsText}
+{\footnotesize\ttfamily String menu\+Assets\+::main\+Menu\+::menu\+Buttons\+Text[5] = \{\char`\"{}S\+T\+A\+RT\char`\"{},\char`\"{}\textbf{ O\+P\+T\+I\+O\+NS}\char`\"{},\char`\"{}\textbf{ S\+C\+O\+R\+ES}\char`\"{},\char`\"{}\textbf{ C\+R\+E\+A\+T\+O\+RS}\char`\"{},\char`\"{}\textbf{ E\+X\+IT}\char`\"{}\}}
+

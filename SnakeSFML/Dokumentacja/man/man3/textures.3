@@ -1,0 +1,185 @@
+.TH "textures" 3 "So, 27 lis 2021" "Silnik graficzny" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+textures
+.SH SYNOPSIS
+.br
+.PP
+.SS "Wyliczenia"
+
+.in +1c
+.ti -1c
+.RI "enum \fBlevels\fP { \fBLEVEL1\fP, \fBLEVEL2\fP, \fBLEVEL3\fP }"
+.br
+.ti -1c
+.RI "enum \fBmaterials\fP { \fBROCK1\fP, \fBGRASS1\fP, \fBSNOW1\fP, \fBROCK2\fP, \fBGRASS2\fP, \fBROCK3\fP, \fBGRASS3\fP, \fBROCK4\fP }"
+.br
+.ti -1c
+.RI "enum \fBcupTexturesIndex\fP { \fBBRONZE\fP, \fBSILVER\fP, \fBGOLDEN\fP }"
+.br
+.ti -1c
+.RI "enum \fBsnakeTexturesIndexX\fP { \fBHEAD\fP, \fBBODY\fP, \fBBODYTRANSPARENT\fP }"
+.br
+.ti -1c
+.RI "enum \fBsnakeTexturesIndexY\fP { \fBGREEN\fP, \fBGREY\fP, \fBPINK\fP, \fBCYAN\fP, \fBBLUE\fP, \fBRED\fP, \fBPURPLE\fP, \fBGOLD\fP }"
+.br
+.in -1c
+.SS "Zmienne"
+
+.in +1c
+.ti -1c
+.RI "int \fBmaterialsOnLevel\fP [3][3]"
+.br
+.ti -1c
+.RI "String \fBmapTexturesLocation\fP [8]"
+.br
+.ti -1c
+.RI "int \fBnumOfObstructions\fP = 3"
+.br
+.ti -1c
+.RI "String \fBrocksTexturesLocation\fP [3]"
+.br
+.ti -1c
+.RI "String \fBteleportTextureLocation\fP = 'assets/SpritesTextures/Map/holeTexture\&.png'"
+.br
+.ti -1c
+.RI "String \fBcupTexturesLocation\fP [3]"
+.br
+.ti -1c
+.RI "String \fBsnakeTexturesLocation\fP [3][8]"
+.br
+.in -1c
+.SH "Dokumentacja typów wyliczanych"
+.PP 
+.SS "enum \fBtextures::cupTexturesIndex\fP"
+
+.PP
+\fBWartości wyliczeń\fP
+.in +1c
+.TP
+\fB\fIBRONZE \fP\fP
+.TP
+\fB\fISILVER \fP\fP
+.TP
+\fB\fIGOLDEN \fP\fP
+.SS "enum \fBtextures::levels\fP"
+
+.PP
+\fBWartości wyliczeń\fP
+.in +1c
+.TP
+\fB\fILEVEL1 \fP\fP
+.TP
+\fB\fILEVEL2 \fP\fP
+.TP
+\fB\fILEVEL3 \fP\fP
+.SS "enum \fBtextures::materials\fP"
+
+.PP
+\fBWartości wyliczeń\fP
+.in +1c
+.TP
+\fB\fIROCK1 \fP\fP
+.TP
+\fB\fIGRASS1 \fP\fP
+.TP
+\fB\fISNOW1 \fP\fP
+.TP
+\fB\fIROCK2 \fP\fP
+.TP
+\fB\fIGRASS2 \fP\fP
+.TP
+\fB\fIROCK3 \fP\fP
+.TP
+\fB\fIGRASS3 \fP\fP
+.TP
+\fB\fIROCK4 \fP\fP
+.SS "enum \fBtextures::snakeTexturesIndexX\fP"
+
+.PP
+\fBWartości wyliczeń\fP
+.in +1c
+.TP
+\fB\fIHEAD \fP\fP
+.TP
+\fB\fIBODY \fP\fP
+.TP
+\fB\fIBODYTRANSPARENT \fP\fP
+.SS "enum \fBtextures::snakeTexturesIndexY\fP"
+
+.PP
+\fBWartości wyliczeń\fP
+.in +1c
+.TP
+\fB\fIGREEN \fP\fP
+.TP
+\fB\fIGREY \fP\fP
+.TP
+\fB\fIPINK \fP\fP
+.TP
+\fB\fICYAN \fP\fP
+.TP
+\fB\fIBLUE \fP\fP
+.TP
+\fB\fIRED \fP\fP
+.TP
+\fB\fIPURPLE \fP\fP
+.TP
+\fB\fIGOLD \fP\fP
+.SH "Dokumentacja zmiennych"
+.PP 
+.SS "String textures::cupTexturesLocation[3]"
+\fBWartość początkowa:\fP
+.PP
+.nf
+= {
+        "assets/SpritesTextures/Cups/cup1\&.png",
+        "assets/SpritesTextures/Cups/cup2\&.png",
+        "assets/SpritesTextures/Cups/cup3\&.png"
+    }
+.fi
+.SS "String textures::mapTexturesLocation[8]"
+\fBWartość początkowa:\fP
+.PP
+.nf
+= { 
+        "assets/SpritesTextures/Map/rockTexture1\&.png",
+        "assets/SpritesTextures/Map/grassTexture1\&.png",
+        "assets/SpritesTextures/Map/snowTexture1\&.png",
+        "assets/SpritesTextures/Map/rockTexture2\&.png",
+        "assets/SpritesTextures/Map/grassTexture2\&.png",
+        "assets/SpritesTextures/Map/rockTexture3\&.png",
+        "assets/SpritesTextures/Map/grassTexture3\&.png",
+        "assets/SpritesTextures/Map/rockTexture4\&.png"
+    }
+.fi
+.SS "int textures::materialsOnLevel[3][3]"
+\fBWartość początkowa:\fP
+.PP
+.nf
+= { 
+        {ROCK1,GRASS1,GRASS2},
+        {ROCK2,SNOW1,ROCK3},
+        {ROCK3,ROCK4,SNOW1},
+    }
+.fi
+.SS "int textures::numOfObstructions = 3"
+
+.SS "String textures::rocksTexturesLocation[3]"
+\fBWartość początkowa:\fP
+.PP
+.nf
+= {
+        "assets/SpritesTextures/Map/obstructionTexture1\&.png",
+        "assets/SpritesTextures/Map/obstructionTexture2\&.png",
+        "assets/SpritesTextures/Map/obstructionTexture3\&.png"
+    }
+.fi
+.SS "String textures::snakeTexturesLocation[3][8]"
+
+.SS "String textures::teleportTextureLocation = 'assets/SpritesTextures/Map/holeTexture\&.png'"
+
+.SH "Autor"
+.PP 
+Wygenerowano automatycznie z kodu źródłowego programem Doxygen dla Silnik graficzny\&.

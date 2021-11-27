@@ -1,0 +1,190 @@
+\doxysection{Dokumentacja klasy game\+Objects\+::Animated\+Object}
+\label{classgame_objects_1_1_animated_object}\index{gameObjects::AnimatedObject@{gameObjects::AnimatedObject}}
+
+
+Klasa opisująca graficzny obiekt animowany.  
+
+
+Diagram dziedziczenia dla game\+Objects\+::Animated\+Object\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classgame_objects_1_1_animated_object}
+\end{center}
+\end{figure}
+\doxysubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Animated\+Object} ()
+\begin{DoxyCompactList}\small\item\em Domyślny konstruktor. \end{DoxyCompactList}\item 
+\textbf{ Animated\+Object} (string texture\+Path, Vector2f start\+Position, Vector2u \textbf{ image\+Number}, float \textbf{ change\+Time})
+\begin{DoxyCompactList}\small\item\em Konstruktor, który ustawia spritesheet do animacji, liczbę obrazków w x i y oraz szybkość animacji. \end{DoxyCompactList}\item 
+void \textbf{ update} (int row)
+\begin{DoxyCompactList}\small\item\em Metoda aktualizująca animacje w określonym rzędzie spritesheet\textquotesingle{}u. \end{DoxyCompactList}\item 
+void \textbf{ update} ()
+\begin{DoxyCompactList}\small\item\em Metoda aktualizująca animacje na podstawie wcześniej przekazanego spritesheet\textquotesingle{}u. \end{DoxyCompactList}\item 
+void \textbf{ set\+Start\+Frame} ()
+\begin{DoxyCompactList}\small\item\em Metoda ustawiająca początkową klatkę animacji. \end{DoxyCompactList}\item 
+void \textbf{ animate\+Idle} (Vector2u sprite\+Sheet\+Position)
+\begin{DoxyCompactList}\small\item\em Metoda animująca wskazaną klatkę. \end{DoxyCompactList}\item 
+Int\+Rect \textbf{ get\+Current\+Frame} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Atrybuty publiczne}
+\begin{DoxyCompactItemize}
+\item 
+Int\+Rect \textbf{ texture\+Area}
+\item 
+Clock \textbf{ clock}
+\item 
+float \textbf{ full\+Time} = 0.\+0f
+\end{DoxyCompactItemize}
+\doxysubsection*{Metody prywatne}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ update\+Picture} (bool should\+Update\+Texture\+Area)
+\begin{DoxyCompactList}\small\item\em Metoda wycinająca następną klatkę ze spritesheet\textquotesingle{}u. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atrybuty prywatne}
+\begin{DoxyCompactItemize}
+\item 
+float \textbf{ change\+Time}
+\item 
+float \textbf{ delta\+Time} = 0.\+0f
+\item 
+Vector2u \textbf{ current\+Image}
+\item 
+Vector2u \textbf{ image\+Number}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Klasa opisująca graficzny obiekt animowany. 
+
+\doxysubsection{Dokumentacja konstruktora i destruktora}
+\mbox{\label{classgame_objects_1_1_animated_object_a36da051d93591e3986151ce42f91add7}} 
+\index{gameObjects::AnimatedObject@{gameObjects::AnimatedObject}!AnimatedObject@{AnimatedObject}}
+\index{AnimatedObject@{AnimatedObject}!gameObjects::AnimatedObject@{gameObjects::AnimatedObject}}
+\doxysubsubsection{AnimatedObject()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily game\+Objects\+::\+Animated\+Object\+::\+Animated\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Domyślny konstruktor. 
+
+\mbox{\label{classgame_objects_1_1_animated_object_a3d1aa20b202afd7a507bbeb975851218}} 
+\index{gameObjects::AnimatedObject@{gameObjects::AnimatedObject}!AnimatedObject@{AnimatedObject}}
+\index{AnimatedObject@{AnimatedObject}!gameObjects::AnimatedObject@{gameObjects::AnimatedObject}}
+\doxysubsubsection{AnimatedObject()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily game\+Objects\+::\+Animated\+Object\+::\+Animated\+Object (\begin{DoxyParamCaption}\item[{string}]{texture\+Path,  }\item[{Vector2f}]{start\+Position,  }\item[{Vector2u}]{image\+Number,  }\item[{float}]{change\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Konstruktor, który ustawia spritesheet do animacji, liczbę obrazków w x i y oraz szybkość animacji. 
+
+
+
+\doxysubsection{Dokumentacja funkcji składowych}
+\mbox{\label{classgame_objects_1_1_animated_object_a15972c16e443f51adaab9cd5e337802c}} 
+\index{gameObjects::AnimatedObject@{gameObjects::AnimatedObject}!animateIdle@{animateIdle}}
+\index{animateIdle@{animateIdle}!gameObjects::AnimatedObject@{gameObjects::AnimatedObject}}
+\doxysubsubsection{animateIdle()}
+{\footnotesize\ttfamily void game\+Objects\+::\+Animated\+Object\+::animate\+Idle (\begin{DoxyParamCaption}\item[{Vector2u}]{sprite\+Sheet\+Position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Metoda animująca wskazaną klatkę. 
+
+\mbox{\label{classgame_objects_1_1_animated_object_a7b063726eb92ab1694639c4671a2ea88}} 
+\index{gameObjects::AnimatedObject@{gameObjects::AnimatedObject}!getCurrentFrame@{getCurrentFrame}}
+\index{getCurrentFrame@{getCurrentFrame}!gameObjects::AnimatedObject@{gameObjects::AnimatedObject}}
+\doxysubsubsection{getCurrentFrame()}
+{\footnotesize\ttfamily Int\+Rect game\+Objects\+::\+Animated\+Object\+::get\+Current\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classgame_objects_1_1_animated_object_ac8037d6b814e5ca44cc195937add66e9}} 
+\index{gameObjects::AnimatedObject@{gameObjects::AnimatedObject}!setStartFrame@{setStartFrame}}
+\index{setStartFrame@{setStartFrame}!gameObjects::AnimatedObject@{gameObjects::AnimatedObject}}
+\doxysubsubsection{setStartFrame()}
+{\footnotesize\ttfamily void game\+Objects\+::\+Animated\+Object\+::set\+Start\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Metoda ustawiająca początkową klatkę animacji. 
+
+\mbox{\label{classgame_objects_1_1_animated_object_af65ed6d0c691d05fba0ad62dd4c8744a}} 
+\index{gameObjects::AnimatedObject@{gameObjects::AnimatedObject}!update@{update}}
+\index{update@{update}!gameObjects::AnimatedObject@{gameObjects::AnimatedObject}}
+\doxysubsubsection{update()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void game\+Objects\+::\+Animated\+Object\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Metoda aktualizująca animacje na podstawie wcześniej przekazanego spritesheet\textquotesingle{}u. 
+
+\mbox{\label{classgame_objects_1_1_animated_object_ad80a6c115b635f5363aae8ba7f982e69}} 
+\index{gameObjects::AnimatedObject@{gameObjects::AnimatedObject}!update@{update}}
+\index{update@{update}!gameObjects::AnimatedObject@{gameObjects::AnimatedObject}}
+\doxysubsubsection{update()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void game\+Objects\+::\+Animated\+Object\+::update (\begin{DoxyParamCaption}\item[{int}]{row }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Metoda aktualizująca animacje w określonym rzędzie spritesheet\textquotesingle{}u. 
+
+\mbox{\label{classgame_objects_1_1_animated_object_a290a9be05ef1fe7844b4021709a7c055}} 
+\index{gameObjects::AnimatedObject@{gameObjects::AnimatedObject}!updatePicture@{updatePicture}}
+\index{updatePicture@{updatePicture}!gameObjects::AnimatedObject@{gameObjects::AnimatedObject}}
+\doxysubsubsection{updatePicture()}
+{\footnotesize\ttfamily void game\+Objects\+::\+Animated\+Object\+::update\+Picture (\begin{DoxyParamCaption}\item[{bool}]{should\+Update\+Texture\+Area }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Metoda wycinająca następną klatkę ze spritesheet\textquotesingle{}u. 
+
+
+
+\doxysubsection{Dokumentacja atrybutów składowych}
+\mbox{\label{classgame_objects_1_1_animated_object_ac52b73ddae9b2c7b5fa62480bf0785da}} 
+\index{gameObjects::AnimatedObject@{gameObjects::AnimatedObject}!changeTime@{changeTime}}
+\index{changeTime@{changeTime}!gameObjects::AnimatedObject@{gameObjects::AnimatedObject}}
+\doxysubsubsection{changeTime}
+{\footnotesize\ttfamily float game\+Objects\+::\+Animated\+Object\+::change\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classgame_objects_1_1_animated_object_af2705ba49cf9f3b647d292a9c97ded8c}} 
+\index{gameObjects::AnimatedObject@{gameObjects::AnimatedObject}!clock@{clock}}
+\index{clock@{clock}!gameObjects::AnimatedObject@{gameObjects::AnimatedObject}}
+\doxysubsubsection{clock}
+{\footnotesize\ttfamily Clock game\+Objects\+::\+Animated\+Object\+::clock}
+
+\mbox{\label{classgame_objects_1_1_animated_object_aefc41e0bef7a4785f8c675a1245cd463}} 
+\index{gameObjects::AnimatedObject@{gameObjects::AnimatedObject}!currentImage@{currentImage}}
+\index{currentImage@{currentImage}!gameObjects::AnimatedObject@{gameObjects::AnimatedObject}}
+\doxysubsubsection{currentImage}
+{\footnotesize\ttfamily Vector2u game\+Objects\+::\+Animated\+Object\+::current\+Image\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classgame_objects_1_1_animated_object_acc06f89b743cbae92e7a37d6ebc23590}} 
+\index{gameObjects::AnimatedObject@{gameObjects::AnimatedObject}!deltaTime@{deltaTime}}
+\index{deltaTime@{deltaTime}!gameObjects::AnimatedObject@{gameObjects::AnimatedObject}}
+\doxysubsubsection{deltaTime}
+{\footnotesize\ttfamily float game\+Objects\+::\+Animated\+Object\+::delta\+Time = 0.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classgame_objects_1_1_animated_object_ae5df79e58ad8d68a9ee5985ea8fdca19}} 
+\index{gameObjects::AnimatedObject@{gameObjects::AnimatedObject}!fullTime@{fullTime}}
+\index{fullTime@{fullTime}!gameObjects::AnimatedObject@{gameObjects::AnimatedObject}}
+\doxysubsubsection{fullTime}
+{\footnotesize\ttfamily float game\+Objects\+::\+Animated\+Object\+::full\+Time = 0.\+0f}
+
+\mbox{\label{classgame_objects_1_1_animated_object_a4ff7386ef68b10e8713d8fe7f9240b4b}} 
+\index{gameObjects::AnimatedObject@{gameObjects::AnimatedObject}!imageNumber@{imageNumber}}
+\index{imageNumber@{imageNumber}!gameObjects::AnimatedObject@{gameObjects::AnimatedObject}}
+\doxysubsubsection{imageNumber}
+{\footnotesize\ttfamily Vector2u game\+Objects\+::\+Animated\+Object\+::image\+Number\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classgame_objects_1_1_animated_object_af548b66f699dfb6b17bf6d2cd8ec5b08}} 
+\index{gameObjects::AnimatedObject@{gameObjects::AnimatedObject}!textureArea@{textureArea}}
+\index{textureArea@{textureArea}!gameObjects::AnimatedObject@{gameObjects::AnimatedObject}}
+\doxysubsubsection{textureArea}
+{\footnotesize\ttfamily Int\+Rect game\+Objects\+::\+Animated\+Object\+::texture\+Area}
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Chomik/source/repos/\+Snake\+S\+F\+M\+Lv1/\+Snake\+S\+F\+M\+L/src/\textbf{ Game\+Objects.\+ixx}\end{DoxyCompactItemize}

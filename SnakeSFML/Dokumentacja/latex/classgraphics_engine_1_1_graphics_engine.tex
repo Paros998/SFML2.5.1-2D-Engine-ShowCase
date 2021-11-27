@@ -1,0 +1,427 @@
+\doxysection{Dokumentacja klasy graphics\+Engine\+::Graphics\+Engine}
+\label{classgraphics_engine_1_1_graphics_engine}\index{graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}}
+
+
+Klasa typu singleton odpowiedzialna za inicjacje i wyświetlanie obiektów graficznych, tekstur, obsługi klawiatury i myszki. Dodatkowo wyświetla informacje statystyczne.  
+
+
+\doxysubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Graphics\+Engine} ()
+\begin{DoxyCompactList}\small\item\em Kontruktor klasy \doxyref{Graphics\+Engine}{str.}{classgraphics_engine_1_1_graphics_engine}, inicjujący obiekty graficzne i teksty statystyczne. \end{DoxyCompactList}\item 
+\textbf{ $\sim$\+Graphics\+Engine} ()
+\begin{DoxyCompactList}\small\item\em Destruktor klasy \doxyref{Graphics\+Engine}{str.}{classgraphics_engine_1_1_graphics_engine}, sprzątający po pracy silnika graficznego. \end{DoxyCompactList}\item 
+void \textbf{ handle\+Keybard\+On\+Pressed} ()
+\begin{DoxyCompactList}\small\item\em Metoda obsługująca klawiaturę do momentu zwolnienia klawisza. \end{DoxyCompactList}\item 
+void \textbf{ handle\+Keyboard\+On\+Click} (Event event, bool should\+Exit\+On\+Escape)
+\begin{DoxyCompactList}\small\item\em Metoda obsługująca klawiaturę. Odczytuje naciśnięcie klawisza i wykonuje się tylko raz. \end{DoxyCompactList}\item 
+void \textbf{ handle\+Mouse\+On\+Pressed} ()
+\begin{DoxyCompactList}\small\item\em Metoda obsługująca myszkę do momentu zwolnienia klawisza. \end{DoxyCompactList}\item 
+void \textbf{ show\+Mouse\+Coordinates} ()
+\begin{DoxyCompactList}\small\item\em Metoda wyświetlająca położenie kursora myszki względem okna silnika graficznego. \end{DoxyCompactList}\item 
+void \textbf{ show\+Fps} (Clock \&frame\+Rate\+Clock)
+\begin{DoxyCompactList}\small\item\em Metoda wyświetlająca aktualną liczbę klatek na sekundę. \end{DoxyCompactList}\item 
+void \textbf{ main} (int window\+Width, int window\+Height, const Color clear\+Color, bool is\+Windowed, bool should\+Exit\+On\+Escape, bool has\+Mouse\+Support, bool has\+Keyboard\+Support, bool should\+Debug)
+\begin{DoxyCompactList}\small\item\em Główna metoda silnika graficznego. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Statyczne metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Graphics\+Engine} $\ast$ \textbf{ get\+Instance} ()
+\begin{DoxyCompactList}\small\item\em Metoda zwracająca niepowtarzalną instancję silnika. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typy prywatne}
+\begin{DoxyCompactItemize}
+\item 
+enum \textbf{ Info\+Text\+Types} \{ \textbf{ Mouse\+Cords}, 
+\textbf{ Fps}
+ \}
+\begin{DoxyCompactList}\small\item\em Typ wyliczeniowy, określający koordynaty położenia myszki i wyświetlanie klatek na sekundę \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Metody prywatne}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ draw\+Loading\+Screen} (Render\+Window \&\textbf{ window})
+\begin{DoxyCompactList}\small\item\em Metoda rysująca ekran ładowania. \end{DoxyCompactList}\item 
+void \textbf{ release\+Resources} ()
+\begin{DoxyCompactList}\small\item\em Metoda zwalniająca pamięć z obiektów ekranu ładowania. \end{DoxyCompactList}\item 
+void \textbf{ prepare\+Loading\+Screen} (Render\+Window \&\textbf{ window})
+\begin{DoxyCompactList}\small\item\em Metoda inicujująca obiekty graficzne do ekranu ładowania. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atrybuty prywatne}
+\begin{DoxyCompactItemize}
+\item 
+Font \textbf{ info\+Font}
+\begin{DoxyCompactList}\small\item\em Czcionka do wyświetlania informacji w silniku graficznym. \end{DoxyCompactList}\item 
+vector$<$ Text $>$ \textbf{ info\+Texts}
+\begin{DoxyCompactList}\small\item\em Kontener przechowujący informacje dotyczące silnika graficznego. \end{DoxyCompactList}\item 
+Render\+Window $\ast$ \textbf{ window}
+\begin{DoxyCompactList}\small\item\em Okno, renderujące obiekty graficzne. \end{DoxyCompactList}\item 
+\textbf{ Animator} $\ast$ \textbf{ loading\+Animator}
+\begin{DoxyCompactList}\small\item\em Obiekt, animujący ładowanie obiektów graficznych. \end{DoxyCompactList}\item 
+sf\+::\+Texture \textbf{ loading\+Background\+Texture}
+\begin{DoxyCompactList}\small\item\em Tekstura tła podczas ładowania. \end{DoxyCompactList}\item 
+Sprite \textbf{ loading\+Background\+Sprite}
+\begin{DoxyCompactList}\small\item\em Bitmapa tła podczas ładowania. \end{DoxyCompactList}\item 
+sf\+::\+Texture \textbf{ loading\+Spinner\+Texture}
+\begin{DoxyCompactList}\small\item\em Tekstura (spritesheet) kręciołka przedstawiającego stan ładowania. \end{DoxyCompactList}\item 
+Sprite \textbf{ loading\+Spinner\+Sprite}
+\begin{DoxyCompactList}\small\item\em Bitmapa kręciołka przedstawiającego stan ładowania. \end{DoxyCompactList}\item 
+\textbf{ Player} $\ast$ \textbf{ player}
+\begin{DoxyCompactList}\small\item\em Obiekt klasy gracza. \end{DoxyCompactList}\item 
+\textbf{ Game\+Object} $\ast$ \textbf{ grey\+Stone}
+\item 
+\textbf{ Game\+Object} $\ast$ \textbf{ brown\+Stone}
+\end{DoxyCompactItemize}
+\doxysubsection*{Statyczne atrybuty prywatne}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Graphics\+Engine} $\ast$ \textbf{ instance} = nullptr
+\begin{DoxyCompactList}\small\item\em Instancja singletonu klasy \doxyref{Graphics\+Engine}{str.}{classgraphics_engine_1_1_graphics_engine}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Klasa typu singleton odpowiedzialna za inicjacje i wyświetlanie obiektów graficznych, tekstur, obsługi klawiatury i myszki. Dodatkowo wyświetla informacje statystyczne. 
+
+\doxysubsection{Dokumentacja składowych wyliczanych}
+\mbox{\label{classgraphics_engine_1_1_graphics_engine_a2b16161c6e13d0d569180ee8d56717ca}} 
+\index{graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}!InfoTextTypes@{InfoTextTypes}}
+\index{InfoTextTypes@{InfoTextTypes}!graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}}
+\doxysubsubsection{InfoTextTypes}
+{\footnotesize\ttfamily enum \textbf{ graphics\+Engine\+::\+Graphics\+Engine\+::\+Info\+Text\+Types}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Typ wyliczeniowy, określający koordynaty położenia myszki i wyświetlanie klatek na sekundę 
+
+\begin{DoxyEnumFields}{Wartości wyliczeń}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MouseCords@{MouseCords}!graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}}\index{graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}!MouseCords@{MouseCords}}}\mbox{\label{classgraphics_engine_1_1_graphics_engine_a2b16161c6e13d0d569180ee8d56717caaf04b8b4e6acb877a18fbf964d2c1025c}} 
+Mouse\+Cords&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Fps@{Fps}!graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}}\index{graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}!Fps@{Fps}}}\mbox{\label{classgraphics_engine_1_1_graphics_engine_a2b16161c6e13d0d569180ee8d56717caaaac13ffe174a80b0c4069d45c934a4e7}} 
+Fps&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Dokumentacja konstruktora i destruktora}
+\mbox{\label{classgraphics_engine_1_1_graphics_engine_a2725915e19e98a5472bc9710b64a8e0f}} 
+\index{graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}!GraphicsEngine@{GraphicsEngine}}
+\index{GraphicsEngine@{GraphicsEngine}!graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}}
+\doxysubsubsection{GraphicsEngine()}
+{\footnotesize\ttfamily graphics\+Engine\+::\+Graphics\+Engine\+::\+Graphics\+Engine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Kontruktor klasy \doxyref{Graphics\+Engine}{str.}{classgraphics_engine_1_1_graphics_engine}, inicjujący obiekty graficzne i teksty statystyczne. 
+
+\mbox{\label{classgraphics_engine_1_1_graphics_engine_a711efd32789f1f54ebedce23b2bac92d}} 
+\index{graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}!````~GraphicsEngine@{$\sim$GraphicsEngine}}
+\index{````~GraphicsEngine@{$\sim$GraphicsEngine}!graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}}
+\doxysubsubsection{$\sim$GraphicsEngine()}
+{\footnotesize\ttfamily graphics\+Engine\+::\+Graphics\+Engine\+::$\sim$\+Graphics\+Engine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destruktor klasy \doxyref{Graphics\+Engine}{str.}{classgraphics_engine_1_1_graphics_engine}, sprzątający po pracy silnika graficznego. 
+
+
+
+\doxysubsection{Dokumentacja funkcji składowych}
+\mbox{\label{classgraphics_engine_1_1_graphics_engine_ae6f28043774df0650301b985064a1912}} 
+\index{graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}!drawLoadingScreen@{drawLoadingScreen}}
+\index{drawLoadingScreen@{drawLoadingScreen}!graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}}
+\doxysubsubsection{drawLoadingScreen()}
+{\footnotesize\ttfamily void graphics\+Engine\+::\+Graphics\+Engine\+::draw\+Loading\+Screen (\begin{DoxyParamCaption}\item[{Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Metoda rysująca ekran ładowania. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em Render\+Window\&} & window -\/ Referencja obiektu okna.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+void 
+\end{DoxyReturn}
+\mbox{\label{classgraphics_engine_1_1_graphics_engine_a0ad9fd56830f458776fd9da900517798}} 
+\index{graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}}
+\doxysubsubsection{getInstance()}
+{\footnotesize\ttfamily static \textbf{ Graphics\+Engine} $\ast$ graphics\+Engine\+::\+Graphics\+Engine\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Metoda zwracająca niepowtarzalną instancję silnika. 
+
+\begin{DoxyReturn}{Zwraca}
+Graphics\+Engine$\ast$ Instancja silnika graficznego. 
+\end{DoxyReturn}
+\mbox{\label{classgraphics_engine_1_1_graphics_engine_a2a4cb5a0fb17af47cae9b01d62701787}} 
+\index{graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}!handleKeybardOnPressed@{handleKeybardOnPressed}}
+\index{handleKeybardOnPressed@{handleKeybardOnPressed}!graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}}
+\doxysubsubsection{handleKeybardOnPressed()}
+{\footnotesize\ttfamily void graphics\+Engine\+::\+Graphics\+Engine\+::handle\+Keybard\+On\+Pressed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Metoda obsługująca klawiaturę do momentu zwolnienia klawisza. 
+
+\begin{DoxyReturn}{Zwraca}
+void 
+\end{DoxyReturn}
+\mbox{\label{classgraphics_engine_1_1_graphics_engine_a360cc47a2aa38d055e2a3dc44fea95d4}} 
+\index{graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}!handleKeyboardOnClick@{handleKeyboardOnClick}}
+\index{handleKeyboardOnClick@{handleKeyboardOnClick}!graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}}
+\doxysubsubsection{handleKeyboardOnClick()}
+{\footnotesize\ttfamily void graphics\+Engine\+::\+Graphics\+Engine\+::handle\+Keyboard\+On\+Click (\begin{DoxyParamCaption}\item[{Event}]{event,  }\item[{bool}]{should\+Exit\+On\+Escape }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Metoda obsługująca klawiaturę. Odczytuje naciśnięcie klawisza i wykonuje się tylko raz. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em Event} & event -\/ Wydarzenie w bibliotece S\+F\+ML. \\
+\hline
+{\em bool} & should\+Exit\+On\+Escape -\/ Flaga, określająca czy zakończyć pracę silnika po wciśnieciu klawisza Escape.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+void 
+\end{DoxyReturn}
+\mbox{\label{classgraphics_engine_1_1_graphics_engine_a4afee1f1ef8b50f0db0c445b3f95cc4f}} 
+\index{graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}!handleMouseOnPressed@{handleMouseOnPressed}}
+\index{handleMouseOnPressed@{handleMouseOnPressed}!graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}}
+\doxysubsubsection{handleMouseOnPressed()}
+{\footnotesize\ttfamily void graphics\+Engine\+::\+Graphics\+Engine\+::handle\+Mouse\+On\+Pressed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Metoda obsługująca myszkę do momentu zwolnienia klawisza. 
+
+\begin{DoxyReturn}{Zwraca}
+void 
+\end{DoxyReturn}
+\mbox{\label{classgraphics_engine_1_1_graphics_engine_a6fd878356dcfd6006790951e9b1adf15}} 
+\index{graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}!main@{main}}
+\index{main@{main}!graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}}
+\doxysubsubsection{main()}
+{\footnotesize\ttfamily void graphics\+Engine\+::\+Graphics\+Engine\+::main (\begin{DoxyParamCaption}\item[{int}]{window\+Width,  }\item[{int}]{window\+Height,  }\item[{const Color}]{clear\+Color,  }\item[{bool}]{is\+Windowed,  }\item[{bool}]{should\+Exit\+On\+Escape,  }\item[{bool}]{has\+Mouse\+Support,  }\item[{bool}]{has\+Keyboard\+Support,  }\item[{bool}]{should\+Debug }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Główna metoda silnika graficznego. 
+
+
+\begin{DoxyItemize}
+\item Jest ona wywoływana w głównej funkcji programu.
+\item Zawiera główną pętlę silnika.
+\item Inicjuje silnik za pomocą parametrów.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parametry}
+{\em int} & window\+Width -\/ Szerokość ekranu okna. \\
+\hline
+{\em int} & window\+Height -\/ Wysokość ekranu okna. \\
+\hline
+{\em const} & Color clear\+Color -\/ Kolor, który domyślnie czyści ekran silnika. \\
+\hline
+{\em bool} & is\+Windowed -\/ Flaga, określająca czy otwierać okno w trybie okienkowym. \\
+\hline
+{\em bool} & should\+Exit\+On\+Escape -\/ Flaga, określająca czy zakończyć pracę silnika po wciśnieciu klawisza Escape. \\
+\hline
+{\em bool} & has\+Mouse\+Support -\/ Flaga, określająca czy włączyć obsługę myszki. \\
+\hline
+{\em bool} & has\+Keyboard\+Support -\/ Flaga, określająca czy włączyć obsługę klawiatury. \\
+\hline
+{\em bool} & should\+Debug -\/ Flaga, określająca czy włączyć tryb debugowania (klatki na sekundę, pozycja).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+void 
+\end{DoxyReturn}
+\mbox{\label{classgraphics_engine_1_1_graphics_engine_af039170b3961561f0f740789c021071d}} 
+\index{graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}!prepareLoadingScreen@{prepareLoadingScreen}}
+\index{prepareLoadingScreen@{prepareLoadingScreen}!graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}}
+\doxysubsubsection{prepareLoadingScreen()}
+{\footnotesize\ttfamily void graphics\+Engine\+::\+Graphics\+Engine\+::prepare\+Loading\+Screen (\begin{DoxyParamCaption}\item[{Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Metoda inicujująca obiekty graficzne do ekranu ładowania. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em Render\+Window\&} & window -\/ Referencja obiektu okna.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+void 
+\end{DoxyReturn}
+\mbox{\label{classgraphics_engine_1_1_graphics_engine_ad3f418404bf8f900c5d36d83505a367d}} 
+\index{graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}!releaseResources@{releaseResources}}
+\index{releaseResources@{releaseResources}!graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}}
+\doxysubsubsection{releaseResources()}
+{\footnotesize\ttfamily void graphics\+Engine\+::\+Graphics\+Engine\+::release\+Resources (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Metoda zwalniająca pamięć z obiektów ekranu ładowania. 
+
+\begin{DoxyReturn}{Zwraca}
+void 
+\end{DoxyReturn}
+\mbox{\label{classgraphics_engine_1_1_graphics_engine_a4ba67b0288d9b09bc94f8ee72eb6d0df}} 
+\index{graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}!showFps@{showFps}}
+\index{showFps@{showFps}!graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}}
+\doxysubsubsection{showFps()}
+{\footnotesize\ttfamily void graphics\+Engine\+::\+Graphics\+Engine\+::show\+Fps (\begin{DoxyParamCaption}\item[{Clock \&}]{frame\+Rate\+Clock }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Metoda wyświetlająca aktualną liczbę klatek na sekundę. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em Clock\&} & frame\+Rate\+Clock -\/ Referencja obiektu zegara.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+void 
+\end{DoxyReturn}
+\mbox{\label{classgraphics_engine_1_1_graphics_engine_a14a68f2768d6af38386d84870c5a2f20}} 
+\index{graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}!showMouseCoordinates@{showMouseCoordinates}}
+\index{showMouseCoordinates@{showMouseCoordinates}!graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}}
+\doxysubsubsection{showMouseCoordinates()}
+{\footnotesize\ttfamily void graphics\+Engine\+::\+Graphics\+Engine\+::show\+Mouse\+Coordinates (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Metoda wyświetlająca położenie kursora myszki względem okna silnika graficznego. 
+
+\begin{DoxyReturn}{Zwraca}
+void 
+\end{DoxyReturn}
+
+
+\doxysubsection{Dokumentacja atrybutów składowych}
+\mbox{\label{classgraphics_engine_1_1_graphics_engine_a5ccf0c1438407d1294022b64cd673e53}} 
+\index{graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}!brownStone@{brownStone}}
+\index{brownStone@{brownStone}!graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}}
+\doxysubsubsection{brownStone}
+{\footnotesize\ttfamily \textbf{ Game\+Object} $\ast$ graphics\+Engine\+::\+Graphics\+Engine\+::brown\+Stone\hspace{0.3cm}{\ttfamily [private]}}
+
+Obiekt klasy Game\+Object przedstawiający brązowy kamień \mbox{\label{classgraphics_engine_1_1_graphics_engine_a4b21ebcaa7348ca2c6f06db46f43fe25}} 
+\index{graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}!greyStone@{greyStone}}
+\index{greyStone@{greyStone}!graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}}
+\doxysubsubsection{greyStone}
+{\footnotesize\ttfamily \textbf{ Game\+Object} $\ast$ graphics\+Engine\+::\+Graphics\+Engine\+::grey\+Stone\hspace{0.3cm}{\ttfamily [private]}}
+
+Obiekt klasy Game\+Object przedstawiający szary kamień \mbox{\label{classgraphics_engine_1_1_graphics_engine_a90ea34b6b93a5985ba36039a46a0016c}} 
+\index{graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}!infoFont@{infoFont}}
+\index{infoFont@{infoFont}!graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}}
+\doxysubsubsection{infoFont}
+{\footnotesize\ttfamily Font graphics\+Engine\+::\+Graphics\+Engine\+::info\+Font\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Czcionka do wyświetlania informacji w silniku graficznym. 
+
+\mbox{\label{classgraphics_engine_1_1_graphics_engine_a484addc8fc37207e3909e80ff34bac3b}} 
+\index{graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}!infoTexts@{infoTexts}}
+\index{infoTexts@{infoTexts}!graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}}
+\doxysubsubsection{infoTexts}
+{\footnotesize\ttfamily vector$<$ Text $>$ graphics\+Engine\+::\+Graphics\+Engine\+::info\+Texts\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Kontener przechowujący informacje dotyczące silnika graficznego. 
+
+\mbox{\label{classgraphics_engine_1_1_graphics_engine_a975387ba3842547cdbe2c988212c3eea}} 
+\index{graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}!instance@{instance}}
+\index{instance@{instance}!graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}}
+\doxysubsubsection{instance}
+{\footnotesize\ttfamily \textbf{ graphics\+Engine\+::\+Graphics\+Engine} graphics\+Engine\+::\+Graphics\+Engine\+::instance = nullptr\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Instancja singletonu klasy \doxyref{Graphics\+Engine}{str.}{classgraphics_engine_1_1_graphics_engine}. 
+
+\mbox{\label{classgraphics_engine_1_1_graphics_engine_a1183b855df09db69fbcc6055d9ca0c12}} 
+\index{graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}!loadingAnimator@{loadingAnimator}}
+\index{loadingAnimator@{loadingAnimator}!graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}}
+\doxysubsubsection{loadingAnimator}
+{\footnotesize\ttfamily \textbf{ Animator} $\ast$ graphics\+Engine\+::\+Graphics\+Engine\+::loading\+Animator\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Obiekt, animujący ładowanie obiektów graficznych. 
+
+\mbox{\label{classgraphics_engine_1_1_graphics_engine_a269bffc2ee775d484bc353d72e099878}} 
+\index{graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}!loadingBackgroundSprite@{loadingBackgroundSprite}}
+\index{loadingBackgroundSprite@{loadingBackgroundSprite}!graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}}
+\doxysubsubsection{loadingBackgroundSprite}
+{\footnotesize\ttfamily Sprite graphics\+Engine\+::\+Graphics\+Engine\+::loading\+Background\+Sprite\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Bitmapa tła podczas ładowania. 
+
+\mbox{\label{classgraphics_engine_1_1_graphics_engine_aca53e63b51fd9f47ed3a2c3fbf5d69d8}} 
+\index{graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}!loadingBackgroundTexture@{loadingBackgroundTexture}}
+\index{loadingBackgroundTexture@{loadingBackgroundTexture}!graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}}
+\doxysubsubsection{loadingBackgroundTexture}
+{\footnotesize\ttfamily sf\+::\+Texture graphics\+Engine\+::\+Graphics\+Engine\+::loading\+Background\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Tekstura tła podczas ładowania. 
+
+\mbox{\label{classgraphics_engine_1_1_graphics_engine_a43d5f515e8848d60932fcedbeeb2dac0}} 
+\index{graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}!loadingSpinnerSprite@{loadingSpinnerSprite}}
+\index{loadingSpinnerSprite@{loadingSpinnerSprite}!graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}}
+\doxysubsubsection{loadingSpinnerSprite}
+{\footnotesize\ttfamily Sprite graphics\+Engine\+::\+Graphics\+Engine\+::loading\+Spinner\+Sprite\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Bitmapa kręciołka przedstawiającego stan ładowania. 
+
+\mbox{\label{classgraphics_engine_1_1_graphics_engine_a6e78a56a2b28ace2b9fe2cf34691d47f}} 
+\index{graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}!loadingSpinnerTexture@{loadingSpinnerTexture}}
+\index{loadingSpinnerTexture@{loadingSpinnerTexture}!graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}}
+\doxysubsubsection{loadingSpinnerTexture}
+{\footnotesize\ttfamily sf\+::\+Texture graphics\+Engine\+::\+Graphics\+Engine\+::loading\+Spinner\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Tekstura (spritesheet) kręciołka przedstawiającego stan ładowania. 
+
+\mbox{\label{classgraphics_engine_1_1_graphics_engine_a08c03b86f032f7e62ec973e88d93e366}} 
+\index{graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}!player@{player}}
+\index{player@{player}!graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}}
+\doxysubsubsection{player}
+{\footnotesize\ttfamily \textbf{ Player} $\ast$ graphics\+Engine\+::\+Graphics\+Engine\+::player\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Obiekt klasy gracza. 
+
+\mbox{\label{classgraphics_engine_1_1_graphics_engine_a9b614495efb71c7962c418738cb1acc9}} 
+\index{graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}!window@{window}}
+\index{window@{window}!graphicsEngine::GraphicsEngine@{graphicsEngine::GraphicsEngine}}
+\doxysubsubsection{window}
+{\footnotesize\ttfamily Render\+Window $\ast$ graphics\+Engine\+::\+Graphics\+Engine\+::window\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Okno, renderujące obiekty graficzne. 
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Chomik/source/repos/\+Snake\+S\+F\+M\+Lv1/\+Snake\+S\+F\+M\+L/src/\textbf{ Engine.\+ixx}\end{DoxyCompactItemize}

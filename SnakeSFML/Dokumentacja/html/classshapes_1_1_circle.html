@@ -1,0 +1,1986 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Silnik graficzny: Dokumentacja klasy shapes::Circle</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Silnik graficzny
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceshapes.html">shapes</a></li><li class="navelem"><a class="el" href="classshapes_1_1_circle.html">Circle</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Typy publiczne</a> &#124;
+<a href="#pub-methods">Metody publiczne</a> &#124;
+<a href="#pri-methods">Metody prywatne</a> &#124;
+<a href="#pri-attribs">Atrybuty prywatne</a> &#124;
+<a href="classshapes_1_1_circle-members.html">Lista wszystkich składowych</a>  </div>
+  <div class="headertitle">
+<div class="title">Dokumentacja klasy shapes::Circle</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="dynheader">
+Diagram dziedziczenia dla shapes::Circle</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classshapes_1_1_circle.png" alt=""/>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Typy publiczne</h2></td></tr>
+<tr class="memitem:aaa00f0d07cad4c2aea5f9ce735ed4ac3"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#aaa00f0d07cad4c2aea5f9ce735ed4ac3">Precision</a> { <a class="el" href="classshapes_1_1_circle.html#aaa00f0d07cad4c2aea5f9ce735ed4ac3a8e74152cceec662f48e0f84fde7437a8">Normal</a>, 
+<a class="el" href="classshapes_1_1_circle.html#aaa00f0d07cad4c2aea5f9ce735ed4ac3ada32807897609983548e00f2f1c7ba64">FourTimes</a>, 
+<a class="el" href="classshapes_1_1_circle.html#aaa00f0d07cad4c2aea5f9ce735ed4ac3a86aa34fa1fadd4c0355d6b55fd3c6373">EightTimes</a>
+ }</td></tr>
+<tr class="separator:aaa00f0d07cad4c2aea5f9ce735ed4ac3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40e178dc03426b5253c81e251edb0ddd"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#a40e178dc03426b5253c81e251edb0ddd">TypeOfCircle</a> { <a class="el" href="classshapes_1_1_circle.html#a40e178dc03426b5253c81e251edb0ddda66469712ee8dd1727f692be505965ca7">Round</a>, 
+<a class="el" href="classshapes_1_1_circle.html#a40e178dc03426b5253c81e251edb0dddaa3373d0408cf590d883a7caad2ccd88f">Elipse</a>
+ }</td></tr>
+<tr class="separator:a40e178dc03426b5253c81e251edb0ddd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:af96072caa97fe899aac3ce5e3925cf65"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#af96072caa97fe899aac3ce5e3925cf65">~Circle</a> ()</td></tr>
+<tr class="separator:af96072caa97fe899aac3ce5e3925cf65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e48183c15bfac948903351a21967c12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#a7e48183c15bfac948903351a21967c12">move</a> (float x)</td></tr>
+<tr class="separator:a7e48183c15bfac948903351a21967c12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad957233a4f0a4cc7b22d6ededf6bb424"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#ad957233a4f0a4cc7b22d6ededf6bb424">setOutlineColor</a> (Color color)</td></tr>
+<tr class="separator:ad957233a4f0a4cc7b22d6ededf6bb424"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2d57d5c68d38462ae278f01264f4d2a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#ae2d57d5c68d38462ae278f01264f4d2a">Circle</a> (<a class="el" href="classshapes_1_1_point2_d.html">Point2D</a> <a class="el" href="classshapes_1_1_circle.html#a8016cf9ba0269d3916271fa447c00157">middle</a>, int <a class="el" href="classshapes_1_1_circle.html#a9e917ba9d222ba534848d7eb2b6c2450">radius</a>, bool fillCircle)</td></tr>
+<tr class="separator:ae2d57d5c68d38462ae278f01264f4d2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a492ff0df34fa305e01d7de2b6fbc774c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#a492ff0df34fa305e01d7de2b6fbc774c">Circle</a> (<a class="el" href="classshapes_1_1_point2_d.html">Point2D</a> <a class="el" href="classshapes_1_1_circle.html#a8016cf9ba0269d3916271fa447c00157">middle</a>, int <a class="el" href="classshapes_1_1_circle.html#a9e917ba9d222ba534848d7eb2b6c2450">radius</a>, bool whatever, int <a class="el" href="classshapes_1_1_circle.html#a5073ba6434c798bdccc06b0238cd150a">radiusY</a>, bool fillCircle)</td></tr>
+<tr class="separator:a492ff0df34fa305e01d7de2b6fbc774c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29a71a3b10060407b00a2b86643a51de"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#a29a71a3b10060407b00a2b86643a51de">Circle</a> (<a class="el" href="classshapes_1_1_point2_d.html">Point2D</a> <a class="el" href="classshapes_1_1_circle.html#a8016cf9ba0269d3916271fa447c00157">middle</a>, int <a class="el" href="classshapes_1_1_circle.html#a9e917ba9d222ba534848d7eb2b6c2450">radius</a>, int precision, bool fillCircle)</td></tr>
+<tr class="separator:a29a71a3b10060407b00a2b86643a51de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc0a2752a3013e7199429d411eb5dbce"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#afc0a2752a3013e7199429d411eb5dbce">Circle</a> (<a class="el" href="classshapes_1_1_point2_d.html">Point2D</a> <a class="el" href="classshapes_1_1_circle.html#a8016cf9ba0269d3916271fa447c00157">middle</a>, int <a class="el" href="classshapes_1_1_circle.html#a9e917ba9d222ba534848d7eb2b6c2450">radius</a>, bool whatever, int <a class="el" href="classshapes_1_1_circle.html#a5073ba6434c798bdccc06b0238cd150a">radiusY</a>, int precision, bool fillCircle)</td></tr>
+<tr class="separator:afc0a2752a3013e7199429d411eb5dbce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7c1d15eb1d57ca2eac4d52f4329851f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#af7c1d15eb1d57ca2eac4d52f4329851f">Circle</a> (<a class="el" href="classshapes_1_1_point2_d.html">Point2D</a> <a class="el" href="classshapes_1_1_circle.html#a8016cf9ba0269d3916271fa447c00157">middle</a>, int <a class="el" href="classshapes_1_1_circle.html#a9e917ba9d222ba534848d7eb2b6c2450">radius</a>, bool fillCircle, Color fillColor)</td></tr>
+<tr class="separator:af7c1d15eb1d57ca2eac4d52f4329851f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a068bfd3a7fc46ef142515d03c4d77298"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#a068bfd3a7fc46ef142515d03c4d77298">Circle</a> (<a class="el" href="classshapes_1_1_point2_d.html">Point2D</a> <a class="el" href="classshapes_1_1_circle.html#a8016cf9ba0269d3916271fa447c00157">middle</a>, int <a class="el" href="classshapes_1_1_circle.html#a9e917ba9d222ba534848d7eb2b6c2450">radius</a>, bool whatever, int <a class="el" href="classshapes_1_1_circle.html#a5073ba6434c798bdccc06b0238cd150a">radiusY</a>, bool fillCircle, Color fillColor)</td></tr>
+<tr class="separator:a068bfd3a7fc46ef142515d03c4d77298"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad65a3c0f92d229ceaa99f2e45e372fac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#ad65a3c0f92d229ceaa99f2e45e372fac">Circle</a> (<a class="el" href="classshapes_1_1_point2_d.html">Point2D</a> <a class="el" href="classshapes_1_1_circle.html#a8016cf9ba0269d3916271fa447c00157">middle</a>, int <a class="el" href="classshapes_1_1_circle.html#a9e917ba9d222ba534848d7eb2b6c2450">radius</a>, int precision, bool fillCircle, Color fillColor)</td></tr>
+<tr class="separator:ad65a3c0f92d229ceaa99f2e45e372fac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a777a649af32f4c2f4ba613d598286861"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#a777a649af32f4c2f4ba613d598286861">Circle</a> (<a class="el" href="classshapes_1_1_point2_d.html">Point2D</a> <a class="el" href="classshapes_1_1_circle.html#a8016cf9ba0269d3916271fa447c00157">middle</a>, int <a class="el" href="classshapes_1_1_circle.html#a9e917ba9d222ba534848d7eb2b6c2450">radius</a>, bool whatever, int <a class="el" href="classshapes_1_1_circle.html#a5073ba6434c798bdccc06b0238cd150a">radiusY</a>, int precision, bool fillCircle, Color fillColor)</td></tr>
+<tr class="separator:a777a649af32f4c2f4ba613d598286861"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad81d33923c587fe41b3cba28b5fa2faa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#ad81d33923c587fe41b3cba28b5fa2faa">Circle</a> (<a class="el" href="classshapes_1_1_point2_d.html">Point2D</a> <a class="el" href="classshapes_1_1_circle.html#a8016cf9ba0269d3916271fa447c00157">middle</a>, int <a class="el" href="classshapes_1_1_circle.html#a9e917ba9d222ba534848d7eb2b6c2450">radius</a>, bool fillCircle, Color fillColor, bool noOutline)</td></tr>
+<tr class="separator:ad81d33923c587fe41b3cba28b5fa2faa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a97e064b2fd743c588509a515048085"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#a6a97e064b2fd743c588509a515048085">Circle</a> (<a class="el" href="classshapes_1_1_point2_d.html">Point2D</a> <a class="el" href="classshapes_1_1_circle.html#a8016cf9ba0269d3916271fa447c00157">middle</a>, int <a class="el" href="classshapes_1_1_circle.html#a9e917ba9d222ba534848d7eb2b6c2450">radius</a>, bool whatever, int <a class="el" href="classshapes_1_1_circle.html#a5073ba6434c798bdccc06b0238cd150a">radiusY</a>, bool fillCircle, Color fillColor, bool noOutline)</td></tr>
+<tr class="separator:a6a97e064b2fd743c588509a515048085"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaca226b3dd9972e6f61823f76993f909"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#aaca226b3dd9972e6f61823f76993f909">Circle</a> (<a class="el" href="classshapes_1_1_point2_d.html">Point2D</a> <a class="el" href="classshapes_1_1_circle.html#a8016cf9ba0269d3916271fa447c00157">middle</a>, int <a class="el" href="classshapes_1_1_circle.html#a9e917ba9d222ba534848d7eb2b6c2450">radius</a>, int precision, bool fillCircle, Color fillColor, bool noOutline)</td></tr>
+<tr class="separator:aaca226b3dd9972e6f61823f76993f909"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57a635eb5992d44be1ba4cf2144e2af1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#a57a635eb5992d44be1ba4cf2144e2af1">Circle</a> (<a class="el" href="classshapes_1_1_point2_d.html">Point2D</a> <a class="el" href="classshapes_1_1_circle.html#a8016cf9ba0269d3916271fa447c00157">middle</a>, int <a class="el" href="classshapes_1_1_circle.html#a9e917ba9d222ba534848d7eb2b6c2450">radius</a>, bool whatever, int <a class="el" href="classshapes_1_1_circle.html#a5073ba6434c798bdccc06b0238cd150a">radiusY</a>, int precision, bool fillCircle, Color fillColor, bool noOutline)</td></tr>
+<tr class="separator:a57a635eb5992d44be1ba4cf2144e2af1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bf2a0495391823d5692b543d973bcc7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#a2bf2a0495391823d5692b543d973bcc7">Circle</a> (<a class="el" href="classshapes_1_1_point2_d.html">Point2D</a> <a class="el" href="classshapes_1_1_circle.html#a8016cf9ba0269d3916271fa447c00157">middle</a>, int <a class="el" href="classshapes_1_1_circle.html#a9e917ba9d222ba534848d7eb2b6c2450">radius</a>, Color outlineColor, Color fillColor)</td></tr>
+<tr class="separator:a2bf2a0495391823d5692b543d973bcc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc265c6fcd7a8eae4be28eb3db6bb4be"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#abc265c6fcd7a8eae4be28eb3db6bb4be">Circle</a> (<a class="el" href="classshapes_1_1_point2_d.html">Point2D</a> <a class="el" href="classshapes_1_1_circle.html#a8016cf9ba0269d3916271fa447c00157">middle</a>, int <a class="el" href="classshapes_1_1_circle.html#a9e917ba9d222ba534848d7eb2b6c2450">radius</a>, bool whatever, int <a class="el" href="classshapes_1_1_circle.html#a5073ba6434c798bdccc06b0238cd150a">radiusY</a>, Color outlineColor, Color fillColor)</td></tr>
+<tr class="separator:abc265c6fcd7a8eae4be28eb3db6bb4be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2baaf24f7c458db2333b0de7dc195f3f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#a2baaf24f7c458db2333b0de7dc195f3f">Circle</a> (<a class="el" href="classshapes_1_1_point2_d.html">Point2D</a> <a class="el" href="classshapes_1_1_circle.html#a8016cf9ba0269d3916271fa447c00157">middle</a>, int <a class="el" href="classshapes_1_1_circle.html#a9e917ba9d222ba534848d7eb2b6c2450">radius</a>, int precision, Color outlineColor, Color fillColor)</td></tr>
+<tr class="separator:a2baaf24f7c458db2333b0de7dc195f3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6586b3bb19a30747c37dfcb9b95211bc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#a6586b3bb19a30747c37dfcb9b95211bc">Circle</a> (<a class="el" href="classshapes_1_1_point2_d.html">Point2D</a> <a class="el" href="classshapes_1_1_circle.html#a8016cf9ba0269d3916271fa447c00157">middle</a>, int <a class="el" href="classshapes_1_1_circle.html#a9e917ba9d222ba534848d7eb2b6c2450">radius</a>, bool whatever, int <a class="el" href="classshapes_1_1_circle.html#a5073ba6434c798bdccc06b0238cd150a">radiusY</a>, int precision, Color outlineColor, Color fillColor)</td></tr>
+<tr class="separator:a6586b3bb19a30747c37dfcb9b95211bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7482d149a487459426b31ef963464f9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#ad7482d149a487459426b31ef963464f9">Circle</a> (<a class="el" href="classshapes_1_1_point2_d.html">Point2D</a> <a class="el" href="classshapes_1_1_circle.html#a8016cf9ba0269d3916271fa447c00157">middle</a>, int <a class="el" href="classshapes_1_1_circle.html#a9e917ba9d222ba534848d7eb2b6c2450">radius</a>, int <a class="el" href="classshapes_1_1_circle.html#a5073ba6434c798bdccc06b0238cd150a">radiusY</a>, int precision, Texture *texture)</td></tr>
+<tr class="separator:ad7482d149a487459426b31ef963464f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b2e52930c3833c86b8bb824e040997e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#a9b2e52930c3833c86b8bb824e040997e">Circle</a> (<a class="el" href="classshapes_1_1_point2_d.html">Point2D</a> <a class="el" href="classshapes_1_1_circle.html#a8016cf9ba0269d3916271fa447c00157">middle</a>, int <a class="el" href="classshapes_1_1_circle.html#a9e917ba9d222ba534848d7eb2b6c2450">radius</a>, int <a class="el" href="classshapes_1_1_circle.html#a5073ba6434c798bdccc06b0238cd150a">radiusY</a>, int precision, std::vector&lt; Color &gt; <a class="el" href="classshapes_1_1_circle.html#a852f9248b294ff746fe9fd420799f5ff">m_fillColors</a>, bool renderOutline, Color <a class="el" href="classshapes_1_1_circle.html#a227d610e349a390883a30c345d80eb95">m_outlineColor</a>)</td></tr>
+<tr class="separator:a9b2e52930c3833c86b8bb824e040997e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add9d5ee29c131244411c1492e9b2fd12"><td class="memItemLeft" align="right" valign="top">virtual std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#add9d5ee29c131244411c1492e9b2fd12">getPointCount</a> () const override</td></tr>
+<tr class="separator:add9d5ee29c131244411c1492e9b2fd12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ca8a1ad2cc896798560cb4c1f1ba1a9"><td class="memItemLeft" align="right" valign="top">virtual Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#a5ca8a1ad2cc896798560cb4c1f1ba1a9">getPoint</a> (std::size_t index) const override</td></tr>
+<tr class="separator:a5ca8a1ad2cc896798560cb4c1f1ba1a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Metody prywatne</h2></td></tr>
+<tr class="memitem:a976db3f1a7cbbe68dcd4e14ef7b19658"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#a976db3f1a7cbbe68dcd4e14ef7b19658">draw</a> (sf::RenderTarget &amp;target, sf::RenderStates states) const override</td></tr>
+<tr class="separator:a976db3f1a7cbbe68dcd4e14ef7b19658"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a469fd3b1f0e256472845feadc7eb11f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#a469fd3b1f0e256472845feadc7eb11f5">calculateOutlineVertices</a> ()</td></tr>
+<tr class="separator:a469fd3b1f0e256472845feadc7eb11f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad826bdb14a858d9405d79689ab405feb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#ad826bdb14a858d9405d79689ab405feb">calculateOutlineVertices</a> (int precision)</td></tr>
+<tr class="separator:ad826bdb14a858d9405d79689ab405feb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34b90f63b7bdc3d7570047ec8c9a2101"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#a34b90f63b7bdc3d7570047ec8c9a2101">calculateFillVertices</a> (bool multipleColours)</td></tr>
+<tr class="separator:a34b90f63b7bdc3d7570047ec8c9a2101"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace4c07bcda9cc92665583896b1175124"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#ace4c07bcda9cc92665583896b1175124">calculateFillVerticesAsLines</a> ()</td></tr>
+<tr class="separator:ace4c07bcda9cc92665583896b1175124"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Atrybuty prywatne</h2></td></tr>
+<tr class="memitem:a3f311104ff87838620a39dfb46e9e46f"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#a3f311104ff87838620a39dfb46e9e46f">radian2PI</a> = 6.28</td></tr>
+<tr class="separator:a3f311104ff87838620a39dfb46e9e46f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69630dc941c5d5b99223dd649842e375"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#a69630dc941c5d5b99223dd649842e375">maxAngle</a> = 360</td></tr>
+<tr class="separator:a69630dc941c5d5b99223dd649842e375"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adeb41bcb7799e81649bf9f11fbdf68ea"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#adeb41bcb7799e81649bf9f11fbdf68ea">PI_4</a> = 90</td></tr>
+<tr class="separator:adeb41bcb7799e81649bf9f11fbdf68ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2d41051f8e5b306b8fab16922756057"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#ac2d41051f8e5b306b8fab16922756057">PI_8</a> = 45</td></tr>
+<tr class="separator:ac2d41051f8e5b306b8fab16922756057"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c4baf967ca7ae9249fd6d4f880c2d0d"><td class="memItemLeft" align="right" valign="top">const Texture *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#a2c4baf967ca7ae9249fd6d4f880c2d0d">m_texture</a></td></tr>
+<tr class="memdesc:a2c4baf967ca7ae9249fd6d4f880c2d0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Texture of the shape.  <a href="classshapes_1_1_circle.html#a2c4baf967ca7ae9249fd6d4f880c2d0d">Więcej...</a><br /></td></tr>
+<tr class="separator:a2c4baf967ca7ae9249fd6d4f880c2d0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6991195971a74d0e8e93121767be2c51"><td class="memItemLeft" align="right" valign="top">IntRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#a6991195971a74d0e8e93121767be2c51">m_textureRect</a></td></tr>
+<tr class="memdesc:a6991195971a74d0e8e93121767be2c51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rectangle defining the area of the source texture to display.  <a href="classshapes_1_1_circle.html#a6991195971a74d0e8e93121767be2c51">Więcej...</a><br /></td></tr>
+<tr class="separator:a6991195971a74d0e8e93121767be2c51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae62c6ef7a994bd85fd9248c3ef56f583"><td class="memItemLeft" align="right" valign="top">Color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#ae62c6ef7a994bd85fd9248c3ef56f583">m_fillColor</a></td></tr>
+<tr class="memdesc:ae62c6ef7a994bd85fd9248c3ef56f583"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill color.  <a href="classshapes_1_1_circle.html#ae62c6ef7a994bd85fd9248c3ef56f583">Więcej...</a><br /></td></tr>
+<tr class="separator:ae62c6ef7a994bd85fd9248c3ef56f583"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a227d610e349a390883a30c345d80eb95"><td class="memItemLeft" align="right" valign="top">Color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#a227d610e349a390883a30c345d80eb95">m_outlineColor</a></td></tr>
+<tr class="memdesc:a227d610e349a390883a30c345d80eb95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Outline color.  <a href="classshapes_1_1_circle.html#a227d610e349a390883a30c345d80eb95">Więcej...</a><br /></td></tr>
+<tr class="separator:a227d610e349a390883a30c345d80eb95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab53f36368304cfdc7a1b61c8a104234a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#ab53f36368304cfdc7a1b61c8a104234a">m_outlineThickness</a></td></tr>
+<tr class="memdesc:ab53f36368304cfdc7a1b61c8a104234a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thickness of the shape's outline.  <a href="classshapes_1_1_circle.html#ab53f36368304cfdc7a1b61c8a104234a">Więcej...</a><br /></td></tr>
+<tr class="separator:ab53f36368304cfdc7a1b61c8a104234a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e5b7ad2822e2c9c0e807f253a33532f"><td class="memItemLeft" align="right" valign="top">VertexArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#a6e5b7ad2822e2c9c0e807f253a33532f">m_vertices</a></td></tr>
+<tr class="memdesc:a6e5b7ad2822e2c9c0e807f253a33532f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vertex array containing the fill geometry.  <a href="classshapes_1_1_circle.html#a6e5b7ad2822e2c9c0e807f253a33532f">Więcej...</a><br /></td></tr>
+<tr class="separator:a6e5b7ad2822e2c9c0e807f253a33532f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a790f5f565211a310d9724ca917b21883"><td class="memItemLeft" align="right" valign="top">VertexArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#a790f5f565211a310d9724ca917b21883">m_outlineVertices</a></td></tr>
+<tr class="memdesc:a790f5f565211a310d9724ca917b21883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vertex array containing the outline geometry.  <a href="classshapes_1_1_circle.html#a790f5f565211a310d9724ca917b21883">Więcej...</a><br /></td></tr>
+<tr class="separator:a790f5f565211a310d9724ca917b21883"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a661eb96ad6f9b55293d0f44a255f94c9"><td class="memItemLeft" align="right" valign="top">FloatRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#a661eb96ad6f9b55293d0f44a255f94c9">m_insideBounds</a></td></tr>
+<tr class="memdesc:a661eb96ad6f9b55293d0f44a255f94c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bounding rectangle of the inside (fill)  <a href="classshapes_1_1_circle.html#a661eb96ad6f9b55293d0f44a255f94c9">Więcej...</a><br /></td></tr>
+<tr class="separator:a661eb96ad6f9b55293d0f44a255f94c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a1cce33ba92086a508fce1e45d57730"><td class="memItemLeft" align="right" valign="top">FloatRect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#a5a1cce33ba92086a508fce1e45d57730">m_bounds</a></td></tr>
+<tr class="memdesc:a5a1cce33ba92086a508fce1e45d57730"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bounding rectangle of the whole line.  <a href="classshapes_1_1_circle.html#a5a1cce33ba92086a508fce1e45d57730">Więcej...</a><br /></td></tr>
+<tr class="separator:a5a1cce33ba92086a508fce1e45d57730"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8016cf9ba0269d3916271fa447c00157"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classshapes_1_1_point2_d.html">Point2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#a8016cf9ba0269d3916271fa447c00157">middle</a></td></tr>
+<tr class="memdesc:a8016cf9ba0269d3916271fa447c00157"><td class="mdescLeft">&#160;</td><td class="mdescRight">middle point of circle  <a href="classshapes_1_1_circle.html#a8016cf9ba0269d3916271fa447c00157">Więcej...</a><br /></td></tr>
+<tr class="separator:a8016cf9ba0269d3916271fa447c00157"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e917ba9d222ba534848d7eb2b6c2450"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#a9e917ba9d222ba534848d7eb2b6c2450">radius</a></td></tr>
+<tr class="memdesc:a9e917ba9d222ba534848d7eb2b6c2450"><td class="mdescLeft">&#160;</td><td class="mdescRight">radius of the circle or horizontal radius of elipse  <a href="classshapes_1_1_circle.html#a9e917ba9d222ba534848d7eb2b6c2450">Więcej...</a><br /></td></tr>
+<tr class="separator:a9e917ba9d222ba534848d7eb2b6c2450"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5073ba6434c798bdccc06b0238cd150a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#a5073ba6434c798bdccc06b0238cd150a">radiusY</a></td></tr>
+<tr class="memdesc:a5073ba6434c798bdccc06b0238cd150a"><td class="mdescLeft">&#160;</td><td class="mdescRight">vertical radius of elipse  <a href="classshapes_1_1_circle.html#a5073ba6434c798bdccc06b0238cd150a">Więcej...</a><br /></td></tr>
+<tr class="separator:a5073ba6434c798bdccc06b0238cd150a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fb28ff778e22e010121f57cb2ed6cbe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#a6fb28ff778e22e010121f57cb2ed6cbe">type</a></td></tr>
+<tr class="memdesc:a6fb28ff778e22e010121f57cb2ed6cbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">defines the type of this circle  <a href="classshapes_1_1_circle.html#a6fb28ff778e22e010121f57cb2ed6cbe">Więcej...</a><br /></td></tr>
+<tr class="separator:a6fb28ff778e22e010121f57cb2ed6cbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a852f9248b294ff746fe9fd420799f5ff"><td class="memItemLeft" align="right" valign="top">std::vector&lt; Color &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classshapes_1_1_circle.html#a852f9248b294ff746fe9fd420799f5ff">m_fillColors</a></td></tr>
+<tr class="memdesc:a852f9248b294ff746fe9fd420799f5ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiple colours to shape a better texture.  <a href="classshapes_1_1_circle.html#a852f9248b294ff746fe9fd420799f5ff">Więcej...</a><br /></td></tr>
+<tr class="separator:a852f9248b294ff746fe9fd420799f5ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Dokumentacja składowych wyliczanych</h2>
+<a id="aaa00f0d07cad4c2aea5f9ce735ed4ac3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa00f0d07cad4c2aea5f9ce735ed4ac3">&#9670;&nbsp;</a></span>Precision</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classshapes_1_1_circle.html#aaa00f0d07cad4c2aea5f9ce735ed4ac3">shapes::Circle::Precision</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Wartości wyliczeń</th></tr><tr><td class="fieldname"><a id="aaa00f0d07cad4c2aea5f9ce735ed4ac3a8e74152cceec662f48e0f84fde7437a8"></a>Normal&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aaa00f0d07cad4c2aea5f9ce735ed4ac3ada32807897609983548e00f2f1c7ba64"></a>FourTimes&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aaa00f0d07cad4c2aea5f9ce735ed4ac3a86aa34fa1fadd4c0355d6b55fd3c6373"></a>EightTimes&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a40e178dc03426b5253c81e251edb0ddd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40e178dc03426b5253c81e251edb0ddd">&#9670;&nbsp;</a></span>TypeOfCircle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classshapes_1_1_circle.html#a40e178dc03426b5253c81e251edb0ddd">shapes::Circle::TypeOfCircle</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Wartości wyliczeń</th></tr><tr><td class="fieldname"><a id="a40e178dc03426b5253c81e251edb0ddda66469712ee8dd1727f692be505965ca7"></a>Round&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a40e178dc03426b5253c81e251edb0dddaa3373d0408cf590d883a7caad2ccd88f"></a>Elipse&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja konstruktora i destruktora</h2>
+<a id="af96072caa97fe899aac3ce5e3925cf65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af96072caa97fe899aac3ce5e3925cf65">&#9670;&nbsp;</a></span>~Circle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">shapes::Circle::~Circle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae2d57d5c68d38462ae278f01264f4d2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2d57d5c68d38462ae278f01264f4d2a">&#9670;&nbsp;</a></span>Circle() <span class="overload">[1/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">shapes::Circle::Circle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classshapes_1_1_point2_d.html">Point2D</a>&#160;</td>
+          <td class="paramname"><em>middle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>radius</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>fillCircle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a492ff0df34fa305e01d7de2b6fbc774c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a492ff0df34fa305e01d7de2b6fbc774c">&#9670;&nbsp;</a></span>Circle() <span class="overload">[2/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">shapes::Circle::Circle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classshapes_1_1_point2_d.html">Point2D</a>&#160;</td>
+          <td class="paramname"><em>middle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>radius</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>whatever</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>radiusY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>fillCircle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a29a71a3b10060407b00a2b86643a51de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29a71a3b10060407b00a2b86643a51de">&#9670;&nbsp;</a></span>Circle() <span class="overload">[3/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">shapes::Circle::Circle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classshapes_1_1_point2_d.html">Point2D</a>&#160;</td>
+          <td class="paramname"><em>middle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>radius</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>precision</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>fillCircle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afc0a2752a3013e7199429d411eb5dbce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc0a2752a3013e7199429d411eb5dbce">&#9670;&nbsp;</a></span>Circle() <span class="overload">[4/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">shapes::Circle::Circle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classshapes_1_1_point2_d.html">Point2D</a>&#160;</td>
+          <td class="paramname"><em>middle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>radius</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>whatever</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>radiusY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>precision</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>fillCircle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af7c1d15eb1d57ca2eac4d52f4329851f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7c1d15eb1d57ca2eac4d52f4329851f">&#9670;&nbsp;</a></span>Circle() <span class="overload">[5/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">shapes::Circle::Circle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classshapes_1_1_point2_d.html">Point2D</a>&#160;</td>
+          <td class="paramname"><em>middle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>radius</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>fillCircle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Color&#160;</td>
+          <td class="paramname"><em>fillColor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a068bfd3a7fc46ef142515d03c4d77298"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a068bfd3a7fc46ef142515d03c4d77298">&#9670;&nbsp;</a></span>Circle() <span class="overload">[6/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">shapes::Circle::Circle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classshapes_1_1_point2_d.html">Point2D</a>&#160;</td>
+          <td class="paramname"><em>middle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>radius</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>whatever</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>radiusY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>fillCircle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Color&#160;</td>
+          <td class="paramname"><em>fillColor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad65a3c0f92d229ceaa99f2e45e372fac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad65a3c0f92d229ceaa99f2e45e372fac">&#9670;&nbsp;</a></span>Circle() <span class="overload">[7/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">shapes::Circle::Circle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classshapes_1_1_point2_d.html">Point2D</a>&#160;</td>
+          <td class="paramname"><em>middle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>radius</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>precision</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>fillCircle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Color&#160;</td>
+          <td class="paramname"><em>fillColor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a777a649af32f4c2f4ba613d598286861"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a777a649af32f4c2f4ba613d598286861">&#9670;&nbsp;</a></span>Circle() <span class="overload">[8/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">shapes::Circle::Circle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classshapes_1_1_point2_d.html">Point2D</a>&#160;</td>
+          <td class="paramname"><em>middle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>radius</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>whatever</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>radiusY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>precision</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>fillCircle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Color&#160;</td>
+          <td class="paramname"><em>fillColor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad81d33923c587fe41b3cba28b5fa2faa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad81d33923c587fe41b3cba28b5fa2faa">&#9670;&nbsp;</a></span>Circle() <span class="overload">[9/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">shapes::Circle::Circle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classshapes_1_1_point2_d.html">Point2D</a>&#160;</td>
+          <td class="paramname"><em>middle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>radius</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>fillCircle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Color&#160;</td>
+          <td class="paramname"><em>fillColor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>noOutline</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6a97e064b2fd743c588509a515048085"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a97e064b2fd743c588509a515048085">&#9670;&nbsp;</a></span>Circle() <span class="overload">[10/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">shapes::Circle::Circle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classshapes_1_1_point2_d.html">Point2D</a>&#160;</td>
+          <td class="paramname"><em>middle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>radius</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>whatever</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>radiusY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>fillCircle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Color&#160;</td>
+          <td class="paramname"><em>fillColor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>noOutline</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaca226b3dd9972e6f61823f76993f909"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaca226b3dd9972e6f61823f76993f909">&#9670;&nbsp;</a></span>Circle() <span class="overload">[11/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">shapes::Circle::Circle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classshapes_1_1_point2_d.html">Point2D</a>&#160;</td>
+          <td class="paramname"><em>middle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>radius</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>precision</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>fillCircle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Color&#160;</td>
+          <td class="paramname"><em>fillColor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>noOutline</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a57a635eb5992d44be1ba4cf2144e2af1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57a635eb5992d44be1ba4cf2144e2af1">&#9670;&nbsp;</a></span>Circle() <span class="overload">[12/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">shapes::Circle::Circle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classshapes_1_1_point2_d.html">Point2D</a>&#160;</td>
+          <td class="paramname"><em>middle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>radius</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>whatever</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>radiusY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>precision</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>fillCircle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Color&#160;</td>
+          <td class="paramname"><em>fillColor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>noOutline</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2bf2a0495391823d5692b543d973bcc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bf2a0495391823d5692b543d973bcc7">&#9670;&nbsp;</a></span>Circle() <span class="overload">[13/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">shapes::Circle::Circle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classshapes_1_1_point2_d.html">Point2D</a>&#160;</td>
+          <td class="paramname"><em>middle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>radius</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Color&#160;</td>
+          <td class="paramname"><em>outlineColor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Color&#160;</td>
+          <td class="paramname"><em>fillColor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abc265c6fcd7a8eae4be28eb3db6bb4be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc265c6fcd7a8eae4be28eb3db6bb4be">&#9670;&nbsp;</a></span>Circle() <span class="overload">[14/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">shapes::Circle::Circle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classshapes_1_1_point2_d.html">Point2D</a>&#160;</td>
+          <td class="paramname"><em>middle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>radius</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>whatever</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>radiusY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Color&#160;</td>
+          <td class="paramname"><em>outlineColor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Color&#160;</td>
+          <td class="paramname"><em>fillColor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2baaf24f7c458db2333b0de7dc195f3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2baaf24f7c458db2333b0de7dc195f3f">&#9670;&nbsp;</a></span>Circle() <span class="overload">[15/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">shapes::Circle::Circle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classshapes_1_1_point2_d.html">Point2D</a>&#160;</td>
+          <td class="paramname"><em>middle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>radius</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>precision</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Color&#160;</td>
+          <td class="paramname"><em>outlineColor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Color&#160;</td>
+          <td class="paramname"><em>fillColor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6586b3bb19a30747c37dfcb9b95211bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6586b3bb19a30747c37dfcb9b95211bc">&#9670;&nbsp;</a></span>Circle() <span class="overload">[16/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">shapes::Circle::Circle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classshapes_1_1_point2_d.html">Point2D</a>&#160;</td>
+          <td class="paramname"><em>middle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>radius</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>whatever</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>radiusY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>precision</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Color&#160;</td>
+          <td class="paramname"><em>outlineColor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Color&#160;</td>
+          <td class="paramname"><em>fillColor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad7482d149a487459426b31ef963464f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7482d149a487459426b31ef963464f9">&#9670;&nbsp;</a></span>Circle() <span class="overload">[17/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">shapes::Circle::Circle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classshapes_1_1_point2_d.html">Point2D</a>&#160;</td>
+          <td class="paramname"><em>middle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>radius</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>radiusY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>precision</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Texture *&#160;</td>
+          <td class="paramname"><em>texture</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9b2e52930c3833c86b8bb824e040997e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b2e52930c3833c86b8bb824e040997e">&#9670;&nbsp;</a></span>Circle() <span class="overload">[18/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">shapes::Circle::Circle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classshapes_1_1_point2_d.html">Point2D</a>&#160;</td>
+          <td class="paramname"><em>middle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>radius</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>radiusY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>precision</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; Color &gt;&#160;</td>
+          <td class="paramname"><em>m_fillColors</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>renderOutline</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Color&#160;</td>
+          <td class="paramname"><em>m_outlineColor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="a34b90f63b7bdc3d7570047ec8c9a2101"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34b90f63b7bdc3d7570047ec8c9a2101">&#9670;&nbsp;</a></span>calculateFillVertices()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void shapes::Circle::calculateFillVertices </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>multipleColours</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ace4c07bcda9cc92665583896b1175124"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace4c07bcda9cc92665583896b1175124">&#9670;&nbsp;</a></span>calculateFillVerticesAsLines()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void shapes::Circle::calculateFillVerticesAsLines </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a469fd3b1f0e256472845feadc7eb11f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a469fd3b1f0e256472845feadc7eb11f5">&#9670;&nbsp;</a></span>calculateOutlineVertices() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void shapes::Circle::calculateOutlineVertices </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad826bdb14a858d9405d79689ab405feb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad826bdb14a858d9405d79689ab405feb">&#9670;&nbsp;</a></span>calculateOutlineVertices() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void shapes::Circle::calculateOutlineVertices </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>precision</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a976db3f1a7cbbe68dcd4e14ef7b19658"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a976db3f1a7cbbe68dcd4e14ef7b19658">&#9670;&nbsp;</a></span>draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void shapes::Circle::draw </td>
+          <td>(</td>
+          <td class="paramtype">sf::RenderTarget &amp;&#160;</td>
+          <td class="paramname"><em>target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::RenderStates&#160;</td>
+          <td class="paramname"><em>states</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5ca8a1ad2cc896798560cb4c1f1ba1a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ca8a1ad2cc896798560cb4c1f1ba1a9">&#9670;&nbsp;</a></span>getPoint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual Vector2f shapes::Circle::getPoint </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="add9d5ee29c131244411c1492e9b2fd12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add9d5ee29c131244411c1492e9b2fd12">&#9670;&nbsp;</a></span>getPointCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::size_t shapes::Circle::getPointCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7e48183c15bfac948903351a21967c12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e48183c15bfac948903351a21967c12">&#9670;&nbsp;</a></span>move()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void shapes::Circle::move </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad957233a4f0a4cc7b22d6ededf6bb424"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad957233a4f0a4cc7b22d6ededf6bb424">&#9670;&nbsp;</a></span>setOutlineColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void shapes::Circle::setOutlineColor </td>
+          <td>(</td>
+          <td class="paramtype">Color&#160;</td>
+          <td class="paramname"><em>color</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja atrybutów składowych</h2>
+<a id="a5a1cce33ba92086a508fce1e45d57730"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a1cce33ba92086a508fce1e45d57730">&#9670;&nbsp;</a></span>m_bounds</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">FloatRect shapes::Circle::m_bounds</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Bounding rectangle of the whole line. </p>
+
+</div>
+</div>
+<a id="ae62c6ef7a994bd85fd9248c3ef56f583"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae62c6ef7a994bd85fd9248c3ef56f583">&#9670;&nbsp;</a></span>m_fillColor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Color shapes::Circle::m_fillColor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fill color. </p>
+
+</div>
+</div>
+<a id="a852f9248b294ff746fe9fd420799f5ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a852f9248b294ff746fe9fd420799f5ff">&#9670;&nbsp;</a></span>m_fillColors</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;Color&gt; shapes::Circle::m_fillColors</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Multiple colours to shape a better texture. </p>
+
+</div>
+</div>
+<a id="a661eb96ad6f9b55293d0f44a255f94c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a661eb96ad6f9b55293d0f44a255f94c9">&#9670;&nbsp;</a></span>m_insideBounds</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">FloatRect shapes::Circle::m_insideBounds</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Bounding rectangle of the inside (fill) </p>
+
+</div>
+</div>
+<a id="a227d610e349a390883a30c345d80eb95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a227d610e349a390883a30c345d80eb95">&#9670;&nbsp;</a></span>m_outlineColor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Color shapes::Circle::m_outlineColor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Outline color. </p>
+
+</div>
+</div>
+<a id="ab53f36368304cfdc7a1b61c8a104234a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab53f36368304cfdc7a1b61c8a104234a">&#9670;&nbsp;</a></span>m_outlineThickness</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float shapes::Circle::m_outlineThickness</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Thickness of the shape's outline. </p>
+
+</div>
+</div>
+<a id="a790f5f565211a310d9724ca917b21883"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a790f5f565211a310d9724ca917b21883">&#9670;&nbsp;</a></span>m_outlineVertices</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">VertexArray shapes::Circle::m_outlineVertices</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Vertex array containing the outline geometry. </p>
+
+</div>
+</div>
+<a id="a2c4baf967ca7ae9249fd6d4f880c2d0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c4baf967ca7ae9249fd6d4f880c2d0d">&#9670;&nbsp;</a></span>m_texture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Texture* shapes::Circle::m_texture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Texture of the shape. </p>
+
+</div>
+</div>
+<a id="a6991195971a74d0e8e93121767be2c51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6991195971a74d0e8e93121767be2c51">&#9670;&nbsp;</a></span>m_textureRect</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IntRect shapes::Circle::m_textureRect</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Rectangle defining the area of the source texture to display. </p>
+
+</div>
+</div>
+<a id="a6e5b7ad2822e2c9c0e807f253a33532f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e5b7ad2822e2c9c0e807f253a33532f">&#9670;&nbsp;</a></span>m_vertices</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">VertexArray shapes::Circle::m_vertices</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Vertex array containing the fill geometry. </p>
+
+</div>
+</div>
+<a id="a69630dc941c5d5b99223dd649842e375"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69630dc941c5d5b99223dd649842e375">&#9670;&nbsp;</a></span>maxAngle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int shapes::Circle::maxAngle = 360</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8016cf9ba0269d3916271fa447c00157"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8016cf9ba0269d3916271fa447c00157">&#9670;&nbsp;</a></span>middle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classshapes_1_1_point2_d.html">Point2D</a> shapes::Circle::middle</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>middle point of circle </p>
+
+</div>
+</div>
+<a id="adeb41bcb7799e81649bf9f11fbdf68ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adeb41bcb7799e81649bf9f11fbdf68ea">&#9670;&nbsp;</a></span>PI_4</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int shapes::Circle::PI_4 = 90</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac2d41051f8e5b306b8fab16922756057"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2d41051f8e5b306b8fab16922756057">&#9670;&nbsp;</a></span>PI_8</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int shapes::Circle::PI_8 = 45</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3f311104ff87838620a39dfb46e9e46f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f311104ff87838620a39dfb46e9e46f">&#9670;&nbsp;</a></span>radian2PI</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float shapes::Circle::radian2PI = 6.28</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9e917ba9d222ba534848d7eb2b6c2450"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e917ba9d222ba534848d7eb2b6c2450">&#9670;&nbsp;</a></span>radius</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int shapes::Circle::radius</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>radius of the circle or horizontal radius of elipse </p>
+
+</div>
+</div>
+<a id="a5073ba6434c798bdccc06b0238cd150a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5073ba6434c798bdccc06b0238cd150a">&#9670;&nbsp;</a></span>radiusY</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int shapes::Circle::radiusY</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>vertical radius of elipse </p>
+
+</div>
+</div>
+<a id="a6fb28ff778e22e010121f57cb2ed6cbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fb28ff778e22e010121f57cb2ed6cbe">&#9670;&nbsp;</a></span>type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int shapes::Circle::type</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>defines the type of this circle </p>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z pliku:<ul>
+<li>C:/Users/Chomik/source/repos/SnakeSFMLv1/SnakeSFML/src/<a class="el" href="_render_8ixx.html">Render.ixx</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano przez &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>

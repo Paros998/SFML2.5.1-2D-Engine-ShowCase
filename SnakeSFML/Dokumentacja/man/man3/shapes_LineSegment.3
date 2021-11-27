@@ -1,0 +1,197 @@
+.TH "shapes::LineSegment" 3 "So, 27 lis 2021" "Silnik graficzny" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+shapes::LineSegment
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Dziedziczy Shape\&.
+.SS "Metody publiczne"
+
+.in +1c
+.ti -1c
+.RI "\fB~LineSegment\fP ()"
+.br
+.ti -1c
+.RI "\fBLineSegment\fP (Vector2f \fBbegin\fP, Vector2f \fBend\fP)"
+.br
+.ti -1c
+.RI "\fBLineSegment\fP (float x1, float y1, float x2, float y2)"
+.br
+.ti -1c
+.RI "virtual std::size_t \fBgetPointCount\fP () const override"
+.br
+.ti -1c
+.RI "virtual Vector2f \fBgetPoint\fP (std::size_t index) const override"
+.br
+.ti -1c
+.RI "Vector2f \fBgetBegin\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetBegin\fP (Vector2f newBegin)"
+.br
+.ti -1c
+.RI "void \fBsetBegin\fP (float x, float y)"
+.br
+.ti -1c
+.RI "Vector2f \fBgetEnd\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetEnd\fP (Vector2f newEnd)"
+.br
+.ti -1c
+.RI "void \fBsetEnd\fP (float x, float y)"
+.br
+.ti -1c
+.RI "void \fBsetFillColor\fP (Color color)"
+.br
+.in -1c
+.SS "Metody prywatne"
+
+.in +1c
+.ti -1c
+.RI "void \fBcalculatePoints\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (sf::RenderTarget &target, sf::RenderStates states) const override"
+.br
+.ti -1c
+.RI "void \fBupdateVerticiesColor\fP ()"
+.br
+.in -1c
+.SS "Atrybuty prywatne"
+
+.in +1c
+.ti -1c
+.RI "const Texture * \fBm_texture\fP"
+.br
+.RI "Texture of the shape\&. "
+.ti -1c
+.RI "IntRect \fBm_textureRect\fP"
+.br
+.RI "Rectangle defining the area of the source texture to display\&. "
+.ti -1c
+.RI "Color \fBm_fillColor\fP"
+.br
+.RI "Fill color\&. "
+.ti -1c
+.RI "Color \fBm_outlineColor\fP"
+.br
+.RI "Outline color\&. "
+.ti -1c
+.RI "float \fBm_outlineThickness\fP"
+.br
+.RI "Thickness of the shape's outline\&. "
+.ti -1c
+.RI "VertexArray \fBm_vertices\fP"
+.br
+.RI "Vertex array containing the fill geometry\&. "
+.ti -1c
+.RI "VertexArray \fBm_outlineVertices\fP"
+.br
+.RI "Vertex array containing the outline geometry\&. "
+.ti -1c
+.RI "FloatRect \fBm_insideBounds\fP"
+.br
+.RI "Bounding rectangle of the inside (fill) "
+.ti -1c
+.RI "FloatRect \fBm_bounds\fP"
+.br
+.RI "Bounding rectangle of the whole line\&. "
+.ti -1c
+.RI "Vector2f \fBbegin\fP"
+.br
+.RI "Line begin point\&. "
+.ti -1c
+.RI "Vector2f \fBend\fP"
+.br
+.RI "Line end point\&. "
+.in -1c
+.SH "Dokumentacja konstruktora i destruktora"
+.PP 
+.SS "shapes::LineSegment::~LineSegment ()\fC [inline]\fP"
+
+.SS "shapes::LineSegment::LineSegment (Vector2f begin, Vector2f end)\fC [inline]\fP"
+
+.SS "shapes::LineSegment::LineSegment (float x1, float y1, float x2, float y2)\fC [inline]\fP"
+
+.SH "Dokumentacja funkcji składowych"
+.PP 
+.SS "void shapes::LineSegment::calculatePoints ()\fC [inline]\fP, \fC [private]\fP"
+If the line is horizontal long
+.PP
+if the line is vertical long
+.SS "virtual void shapes::LineSegment::draw (sf::RenderTarget & target, sf::RenderStates states) const\fC [inline]\fP, \fC [override]\fP, \fC [private]\fP, \fC [virtual]\fP"
+
+.SS "Vector2f shapes::LineSegment::getBegin ()\fC [inline]\fP"
+
+.SS "Vector2f shapes::LineSegment::getEnd ()\fC [inline]\fP"
+
+.SS "virtual Vector2f shapes::LineSegment::getPoint (std::size_t index) const\fC [inline]\fP, \fC [override]\fP, \fC [virtual]\fP"
+
+.SS "virtual std::size_t shapes::LineSegment::getPointCount () const\fC [inline]\fP, \fC [override]\fP, \fC [virtual]\fP"
+
+.SS "void shapes::LineSegment::setBegin (float x, float y)\fC [inline]\fP"
+
+.SS "void shapes::LineSegment::setBegin (Vector2f newBegin)\fC [inline]\fP"
+
+.SS "void shapes::LineSegment::setEnd (float x, float y)\fC [inline]\fP"
+
+.SS "void shapes::LineSegment::setEnd (Vector2f newEnd)\fC [inline]\fP"
+
+.SS "void shapes::LineSegment::setFillColor (Color color)\fC [inline]\fP"
+
+.SS "void shapes::LineSegment::updateVerticiesColor ()\fC [inline]\fP, \fC [private]\fP"
+
+.SH "Dokumentacja atrybutów składowych"
+.PP 
+.SS "Vector2f shapes::LineSegment::begin\fC [private]\fP"
+
+.PP
+Line begin point\&. 
+.SS "Vector2f shapes::LineSegment::end\fC [private]\fP"
+
+.PP
+Line end point\&. 
+.SS "FloatRect shapes::LineSegment::m_bounds\fC [private]\fP"
+
+.PP
+Bounding rectangle of the whole line\&. 
+.SS "Color shapes::LineSegment::m_fillColor\fC [private]\fP"
+
+.PP
+Fill color\&. 
+.SS "FloatRect shapes::LineSegment::m_insideBounds\fC [private]\fP"
+
+.PP
+Bounding rectangle of the inside (fill) 
+.SS "Color shapes::LineSegment::m_outlineColor\fC [private]\fP"
+
+.PP
+Outline color\&. 
+.SS "float shapes::LineSegment::m_outlineThickness\fC [private]\fP"
+
+.PP
+Thickness of the shape's outline\&. 
+.SS "VertexArray shapes::LineSegment::m_outlineVertices\fC [private]\fP"
+
+.PP
+Vertex array containing the outline geometry\&. 
+.SS "const Texture* shapes::LineSegment::m_texture\fC [private]\fP"
+
+.PP
+Texture of the shape\&. 
+.SS "IntRect shapes::LineSegment::m_textureRect\fC [private]\fP"
+
+.PP
+Rectangle defining the area of the source texture to display\&. 
+.SS "VertexArray shapes::LineSegment::m_vertices\fC [private]\fP"
+
+.PP
+Vertex array containing the fill geometry\&. 
+
+.SH "Autor"
+.PP 
+Wygenerowano automatycznie z kodu źródłowego programem Doxygen dla Silnik graficzny\&.

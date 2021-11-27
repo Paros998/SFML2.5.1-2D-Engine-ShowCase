@@ -1,0 +1,138 @@
+.TH "gameObjects::AnimatedObject" 3 "So, 27 lis 2021" "Silnik graficzny" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+gameObjects::AnimatedObject \- Klasa opisująca graficzny obiekt animowany\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Dziedziczy \fBgameObjects::GameObject\fP\&.
+.PP
+Dziedziczona przez \fBgameObjects::Player\fP\&.
+.SS "Metody publiczne"
+
+.in +1c
+.ti -1c
+.RI "\fBAnimatedObject\fP ()"
+.br
+.RI "Domyślny konstruktor\&. "
+.ti -1c
+.RI "\fBAnimatedObject\fP (string texturePath, Vector2f startPosition, Vector2u \fBimageNumber\fP, float \fBchangeTime\fP)"
+.br
+.RI "Konstruktor, który ustawia spritesheet do animacji, liczbę obrazków w x i y oraz szybkość animacji\&. "
+.ti -1c
+.RI "void \fBupdate\fP (int row)"
+.br
+.RI "Metoda aktualizująca animacje w określonym rzędzie spritesheet'u\&. "
+.ti -1c
+.RI "void \fBupdate\fP ()"
+.br
+.RI "Metoda aktualizująca animacje na podstawie wcześniej przekazanego spritesheet'u\&. "
+.ti -1c
+.RI "void \fBsetStartFrame\fP ()"
+.br
+.RI "Metoda ustawiająca początkową klatkę animacji\&. "
+.ti -1c
+.RI "void \fBanimateIdle\fP (Vector2u spriteSheetPosition)"
+.br
+.RI "Metoda animująca wskazaną klatkę\&. "
+.ti -1c
+.RI "IntRect \fBgetCurrentFrame\fP ()"
+.br
+.in -1c
+.SS "Atrybuty publiczne"
+
+.in +1c
+.ti -1c
+.RI "IntRect \fBtextureArea\fP"
+.br
+.ti -1c
+.RI "Clock \fBclock\fP"
+.br
+.ti -1c
+.RI "float \fBfullTime\fP = 0\&.0f"
+.br
+.in -1c
+.SS "Metody prywatne"
+
+.in +1c
+.ti -1c
+.RI "void \fBupdatePicture\fP (bool shouldUpdateTextureArea)"
+.br
+.RI "Metoda wycinająca następną klatkę ze spritesheet'u\&. "
+.in -1c
+.SS "Atrybuty prywatne"
+
+.in +1c
+.ti -1c
+.RI "float \fBchangeTime\fP"
+.br
+.ti -1c
+.RI "float \fBdeltaTime\fP = 0\&.0f"
+.br
+.ti -1c
+.RI "Vector2u \fBcurrentImage\fP"
+.br
+.ti -1c
+.RI "Vector2u \fBimageNumber\fP"
+.br
+.in -1c
+.SH "Opis szczegółowy"
+.PP 
+Klasa opisująca graficzny obiekt animowany\&. 
+.SH "Dokumentacja konstruktora i destruktora"
+.PP 
+.SS "gameObjects::AnimatedObject::AnimatedObject ()\fC [inline]\fP"
+
+.PP
+Domyślny konstruktor\&. 
+.SS "gameObjects::AnimatedObject::AnimatedObject (string texturePath, Vector2f startPosition, Vector2u imageNumber, float changeTime)\fC [inline]\fP"
+
+.PP
+Konstruktor, który ustawia spritesheet do animacji, liczbę obrazków w x i y oraz szybkość animacji\&. 
+.SH "Dokumentacja funkcji składowych"
+.PP 
+.SS "void gameObjects::AnimatedObject::animateIdle (Vector2u spriteSheetPosition)\fC [inline]\fP"
+
+.PP
+Metoda animująca wskazaną klatkę\&. 
+.SS "IntRect gameObjects::AnimatedObject::getCurrentFrame ()\fC [inline]\fP"
+
+.SS "void gameObjects::AnimatedObject::setStartFrame ()\fC [inline]\fP"
+
+.PP
+Metoda ustawiająca początkową klatkę animacji\&. 
+.SS "void gameObjects::AnimatedObject::update ()\fC [inline]\fP"
+
+.PP
+Metoda aktualizująca animacje na podstawie wcześniej przekazanego spritesheet'u\&. 
+.SS "void gameObjects::AnimatedObject::update (int row)\fC [inline]\fP"
+
+.PP
+Metoda aktualizująca animacje w określonym rzędzie spritesheet'u\&. 
+.SS "void gameObjects::AnimatedObject::updatePicture (bool shouldUpdateTextureArea)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Metoda wycinająca następną klatkę ze spritesheet'u\&. 
+.SH "Dokumentacja atrybutów składowych"
+.PP 
+.SS "float gameObjects::AnimatedObject::changeTime\fC [private]\fP"
+
+.SS "Clock gameObjects::AnimatedObject::clock"
+
+.SS "Vector2u gameObjects::AnimatedObject::currentImage\fC [private]\fP"
+
+.SS "float gameObjects::AnimatedObject::deltaTime = 0\&.0f\fC [private]\fP"
+
+.SS "float gameObjects::AnimatedObject::fullTime = 0\&.0f"
+
+.SS "Vector2u gameObjects::AnimatedObject::imageNumber\fC [private]\fP"
+
+.SS "IntRect gameObjects::AnimatedObject::textureArea"
+
+
+.SH "Autor"
+.PP 
+Wygenerowano automatycznie z kodu źródłowego programem Doxygen dla Silnik graficzny\&.

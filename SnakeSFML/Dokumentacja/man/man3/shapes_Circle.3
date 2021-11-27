@@ -1,0 +1,336 @@
+.TH "shapes::Circle" 3 "So, 27 lis 2021" "Silnik graficzny" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+shapes::Circle
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Dziedziczy Shape\&.
+.SS "Typy publiczne"
+
+.in +1c
+.ti -1c
+.RI "enum \fBPrecision\fP { \fBNormal\fP, \fBFourTimes\fP, \fBEightTimes\fP }"
+.br
+.ti -1c
+.RI "enum \fBTypeOfCircle\fP { \fBRound\fP, \fBElipse\fP }"
+.br
+.in -1c
+.SS "Metody publiczne"
+
+.in +1c
+.ti -1c
+.RI "\fB~Circle\fP ()"
+.br
+.ti -1c
+.RI "void \fBmove\fP (float x)"
+.br
+.ti -1c
+.RI "void \fBsetOutlineColor\fP (Color color)"
+.br
+.ti -1c
+.RI "\fBCircle\fP (\fBPoint2D\fP \fBmiddle\fP, int \fBradius\fP, bool fillCircle)"
+.br
+.ti -1c
+.RI "\fBCircle\fP (\fBPoint2D\fP \fBmiddle\fP, int \fBradius\fP, bool whatever, int \fBradiusY\fP, bool fillCircle)"
+.br
+.ti -1c
+.RI "\fBCircle\fP (\fBPoint2D\fP \fBmiddle\fP, int \fBradius\fP, int precision, bool fillCircle)"
+.br
+.ti -1c
+.RI "\fBCircle\fP (\fBPoint2D\fP \fBmiddle\fP, int \fBradius\fP, bool whatever, int \fBradiusY\fP, int precision, bool fillCircle)"
+.br
+.ti -1c
+.RI "\fBCircle\fP (\fBPoint2D\fP \fBmiddle\fP, int \fBradius\fP, bool fillCircle, Color fillColor)"
+.br
+.ti -1c
+.RI "\fBCircle\fP (\fBPoint2D\fP \fBmiddle\fP, int \fBradius\fP, bool whatever, int \fBradiusY\fP, bool fillCircle, Color fillColor)"
+.br
+.ti -1c
+.RI "\fBCircle\fP (\fBPoint2D\fP \fBmiddle\fP, int \fBradius\fP, int precision, bool fillCircle, Color fillColor)"
+.br
+.ti -1c
+.RI "\fBCircle\fP (\fBPoint2D\fP \fBmiddle\fP, int \fBradius\fP, bool whatever, int \fBradiusY\fP, int precision, bool fillCircle, Color fillColor)"
+.br
+.ti -1c
+.RI "\fBCircle\fP (\fBPoint2D\fP \fBmiddle\fP, int \fBradius\fP, bool fillCircle, Color fillColor, bool noOutline)"
+.br
+.ti -1c
+.RI "\fBCircle\fP (\fBPoint2D\fP \fBmiddle\fP, int \fBradius\fP, bool whatever, int \fBradiusY\fP, bool fillCircle, Color fillColor, bool noOutline)"
+.br
+.ti -1c
+.RI "\fBCircle\fP (\fBPoint2D\fP \fBmiddle\fP, int \fBradius\fP, int precision, bool fillCircle, Color fillColor, bool noOutline)"
+.br
+.ti -1c
+.RI "\fBCircle\fP (\fBPoint2D\fP \fBmiddle\fP, int \fBradius\fP, bool whatever, int \fBradiusY\fP, int precision, bool fillCircle, Color fillColor, bool noOutline)"
+.br
+.ti -1c
+.RI "\fBCircle\fP (\fBPoint2D\fP \fBmiddle\fP, int \fBradius\fP, Color outlineColor, Color fillColor)"
+.br
+.ti -1c
+.RI "\fBCircle\fP (\fBPoint2D\fP \fBmiddle\fP, int \fBradius\fP, bool whatever, int \fBradiusY\fP, Color outlineColor, Color fillColor)"
+.br
+.ti -1c
+.RI "\fBCircle\fP (\fBPoint2D\fP \fBmiddle\fP, int \fBradius\fP, int precision, Color outlineColor, Color fillColor)"
+.br
+.ti -1c
+.RI "\fBCircle\fP (\fBPoint2D\fP \fBmiddle\fP, int \fBradius\fP, bool whatever, int \fBradiusY\fP, int precision, Color outlineColor, Color fillColor)"
+.br
+.ti -1c
+.RI "\fBCircle\fP (\fBPoint2D\fP \fBmiddle\fP, int \fBradius\fP, int \fBradiusY\fP, int precision, Texture *texture)"
+.br
+.ti -1c
+.RI "\fBCircle\fP (\fBPoint2D\fP \fBmiddle\fP, int \fBradius\fP, int \fBradiusY\fP, int precision, std::vector< Color > \fBm_fillColors\fP, bool renderOutline, Color \fBm_outlineColor\fP)"
+.br
+.ti -1c
+.RI "virtual std::size_t \fBgetPointCount\fP () const override"
+.br
+.ti -1c
+.RI "virtual Vector2f \fBgetPoint\fP (std::size_t index) const override"
+.br
+.in -1c
+.SS "Metody prywatne"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBdraw\fP (sf::RenderTarget &target, sf::RenderStates states) const override"
+.br
+.ti -1c
+.RI "void \fBcalculateOutlineVertices\fP ()"
+.br
+.ti -1c
+.RI "void \fBcalculateOutlineVertices\fP (int precision)"
+.br
+.ti -1c
+.RI "void \fBcalculateFillVertices\fP (bool multipleColours)"
+.br
+.ti -1c
+.RI "void \fBcalculateFillVerticesAsLines\fP ()"
+.br
+.in -1c
+.SS "Atrybuty prywatne"
+
+.in +1c
+.ti -1c
+.RI "const float \fBradian2PI\fP = 6\&.28"
+.br
+.ti -1c
+.RI "const int \fBmaxAngle\fP = 360"
+.br
+.ti -1c
+.RI "const int \fBPI_4\fP = 90"
+.br
+.ti -1c
+.RI "const int \fBPI_8\fP = 45"
+.br
+.ti -1c
+.RI "const Texture * \fBm_texture\fP"
+.br
+.RI "Texture of the shape\&. "
+.ti -1c
+.RI "IntRect \fBm_textureRect\fP"
+.br
+.RI "Rectangle defining the area of the source texture to display\&. "
+.ti -1c
+.RI "Color \fBm_fillColor\fP"
+.br
+.RI "Fill color\&. "
+.ti -1c
+.RI "Color \fBm_outlineColor\fP"
+.br
+.RI "Outline color\&. "
+.ti -1c
+.RI "float \fBm_outlineThickness\fP"
+.br
+.RI "Thickness of the shape's outline\&. "
+.ti -1c
+.RI "VertexArray \fBm_vertices\fP"
+.br
+.RI "Vertex array containing the fill geometry\&. "
+.ti -1c
+.RI "VertexArray \fBm_outlineVertices\fP"
+.br
+.RI "Vertex array containing the outline geometry\&. "
+.ti -1c
+.RI "FloatRect \fBm_insideBounds\fP"
+.br
+.RI "Bounding rectangle of the inside (fill) "
+.ti -1c
+.RI "FloatRect \fBm_bounds\fP"
+.br
+.RI "Bounding rectangle of the whole line\&. "
+.ti -1c
+.RI "\fBPoint2D\fP \fBmiddle\fP"
+.br
+.RI "middle point of circle "
+.ti -1c
+.RI "int \fBradius\fP"
+.br
+.RI "radius of the circle or horizontal radius of elipse "
+.ti -1c
+.RI "int \fBradiusY\fP"
+.br
+.RI "vertical radius of elipse "
+.ti -1c
+.RI "int \fBtype\fP"
+.br
+.RI "defines the type of this circle "
+.ti -1c
+.RI "std::vector< Color > \fBm_fillColors\fP"
+.br
+.RI "Multiple colours to shape a better texture\&. "
+.in -1c
+.SH "Dokumentacja składowych wyliczanych"
+.PP 
+.SS "enum \fBshapes::Circle::Precision\fP"
+
+.PP
+\fBWartości wyliczeń\fP
+.in +1c
+.TP
+\fB\fINormal \fP\fP
+.TP
+\fB\fIFourTimes \fP\fP
+.TP
+\fB\fIEightTimes \fP\fP
+.SS "enum \fBshapes::Circle::TypeOfCircle\fP"
+
+.PP
+\fBWartości wyliczeń\fP
+.in +1c
+.TP
+\fB\fIRound \fP\fP
+.TP
+\fB\fIElipse \fP\fP
+.SH "Dokumentacja konstruktora i destruktora"
+.PP 
+.SS "shapes::Circle::~Circle ()\fC [inline]\fP"
+
+.SS "shapes::Circle::Circle (\fBPoint2D\fP middle, int radius, bool fillCircle)\fC [inline]\fP"
+
+.SS "shapes::Circle::Circle (\fBPoint2D\fP middle, int radius, bool whatever, int radiusY, bool fillCircle)\fC [inline]\fP"
+
+.SS "shapes::Circle::Circle (\fBPoint2D\fP middle, int radius, int precision, bool fillCircle)\fC [inline]\fP"
+
+.SS "shapes::Circle::Circle (\fBPoint2D\fP middle, int radius, bool whatever, int radiusY, int precision, bool fillCircle)\fC [inline]\fP"
+
+.SS "shapes::Circle::Circle (\fBPoint2D\fP middle, int radius, bool fillCircle, Color fillColor)\fC [inline]\fP"
+
+.SS "shapes::Circle::Circle (\fBPoint2D\fP middle, int radius, bool whatever, int radiusY, bool fillCircle, Color fillColor)\fC [inline]\fP"
+
+.SS "shapes::Circle::Circle (\fBPoint2D\fP middle, int radius, int precision, bool fillCircle, Color fillColor)\fC [inline]\fP"
+
+.SS "shapes::Circle::Circle (\fBPoint2D\fP middle, int radius, bool whatever, int radiusY, int precision, bool fillCircle, Color fillColor)\fC [inline]\fP"
+
+.SS "shapes::Circle::Circle (\fBPoint2D\fP middle, int radius, bool fillCircle, Color fillColor, bool noOutline)\fC [inline]\fP"
+
+.SS "shapes::Circle::Circle (\fBPoint2D\fP middle, int radius, bool whatever, int radiusY, bool fillCircle, Color fillColor, bool noOutline)\fC [inline]\fP"
+
+.SS "shapes::Circle::Circle (\fBPoint2D\fP middle, int radius, int precision, bool fillCircle, Color fillColor, bool noOutline)\fC [inline]\fP"
+
+.SS "shapes::Circle::Circle (\fBPoint2D\fP middle, int radius, bool whatever, int radiusY, int precision, bool fillCircle, Color fillColor, bool noOutline)\fC [inline]\fP"
+
+.SS "shapes::Circle::Circle (\fBPoint2D\fP middle, int radius, Color outlineColor, Color fillColor)\fC [inline]\fP"
+
+.SS "shapes::Circle::Circle (\fBPoint2D\fP middle, int radius, bool whatever, int radiusY, Color outlineColor, Color fillColor)\fC [inline]\fP"
+
+.SS "shapes::Circle::Circle (\fBPoint2D\fP middle, int radius, int precision, Color outlineColor, Color fillColor)\fC [inline]\fP"
+
+.SS "shapes::Circle::Circle (\fBPoint2D\fP middle, int radius, bool whatever, int radiusY, int precision, Color outlineColor, Color fillColor)\fC [inline]\fP"
+
+.SS "shapes::Circle::Circle (\fBPoint2D\fP middle, int radius, int radiusY, int precision, Texture * texture)\fC [inline]\fP"
+
+.SS "shapes::Circle::Circle (\fBPoint2D\fP middle, int radius, int radiusY, int precision, std::vector< Color > m_fillColors, bool renderOutline, Color m_outlineColor)\fC [inline]\fP"
+
+.SH "Dokumentacja funkcji składowych"
+.PP 
+.SS "void shapes::Circle::calculateFillVertices (bool multipleColours)\fC [inline]\fP, \fC [private]\fP"
+
+.SS "void shapes::Circle::calculateFillVerticesAsLines ()\fC [inline]\fP, \fC [private]\fP"
+
+.SS "void shapes::Circle::calculateOutlineVertices ()\fC [inline]\fP, \fC [private]\fP"
+
+.SS "void shapes::Circle::calculateOutlineVertices (int precision)\fC [inline]\fP, \fC [private]\fP"
+
+.SS "virtual void shapes::Circle::draw (sf::RenderTarget & target, sf::RenderStates states) const\fC [inline]\fP, \fC [override]\fP, \fC [private]\fP, \fC [virtual]\fP"
+
+.SS "virtual Vector2f shapes::Circle::getPoint (std::size_t index) const\fC [inline]\fP, \fC [override]\fP, \fC [virtual]\fP"
+
+.SS "virtual std::size_t shapes::Circle::getPointCount () const\fC [inline]\fP, \fC [override]\fP, \fC [virtual]\fP"
+
+.SS "void shapes::Circle::move (float x)\fC [inline]\fP"
+
+.SS "void shapes::Circle::setOutlineColor (Color color)\fC [inline]\fP"
+
+.SH "Dokumentacja atrybutów składowych"
+.PP 
+.SS "FloatRect shapes::Circle::m_bounds\fC [private]\fP"
+
+.PP
+Bounding rectangle of the whole line\&. 
+.SS "Color shapes::Circle::m_fillColor\fC [private]\fP"
+
+.PP
+Fill color\&. 
+.SS "std::vector<Color> shapes::Circle::m_fillColors\fC [private]\fP"
+
+.PP
+Multiple colours to shape a better texture\&. 
+.SS "FloatRect shapes::Circle::m_insideBounds\fC [private]\fP"
+
+.PP
+Bounding rectangle of the inside (fill) 
+.SS "Color shapes::Circle::m_outlineColor\fC [private]\fP"
+
+.PP
+Outline color\&. 
+.SS "float shapes::Circle::m_outlineThickness\fC [private]\fP"
+
+.PP
+Thickness of the shape's outline\&. 
+.SS "VertexArray shapes::Circle::m_outlineVertices\fC [private]\fP"
+
+.PP
+Vertex array containing the outline geometry\&. 
+.SS "const Texture* shapes::Circle::m_texture\fC [private]\fP"
+
+.PP
+Texture of the shape\&. 
+.SS "IntRect shapes::Circle::m_textureRect\fC [private]\fP"
+
+.PP
+Rectangle defining the area of the source texture to display\&. 
+.SS "VertexArray shapes::Circle::m_vertices\fC [private]\fP"
+
+.PP
+Vertex array containing the fill geometry\&. 
+.SS "const int shapes::Circle::maxAngle = 360\fC [private]\fP"
+
+.SS "\fBPoint2D\fP shapes::Circle::middle\fC [private]\fP"
+
+.PP
+middle point of circle 
+.SS "const int shapes::Circle::PI_4 = 90\fC [private]\fP"
+
+.SS "const int shapes::Circle::PI_8 = 45\fC [private]\fP"
+
+.SS "const float shapes::Circle::radian2PI = 6\&.28\fC [private]\fP"
+
+.SS "int shapes::Circle::radius\fC [private]\fP"
+
+.PP
+radius of the circle or horizontal radius of elipse 
+.SS "int shapes::Circle::radiusY\fC [private]\fP"
+
+.PP
+vertical radius of elipse 
+.SS "int shapes::Circle::type\fC [private]\fP"
+
+.PP
+defines the type of this circle 
+
+.SH "Autor"
+.PP 
+Wygenerowano automatycznie z kodu źródłowego programem Doxygen dla Silnik graficzny\&.

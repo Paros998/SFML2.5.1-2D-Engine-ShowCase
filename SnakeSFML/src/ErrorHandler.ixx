@@ -23,3 +23,19 @@ export class ErrorHandler {
 			);
 		}
 };
+
+/**
+ * \file ErrorHandler.ixx
+ * \brief Plik modu³owy zawieraj¹cy deklaracjê klasy ErrorHandler.
+ */
+
+/**
+ * \class ErrorHandler
+ * \brief Klasa obs³uguj¹ca b³¹d window'sowy
+ */
+
+/**
+ * \fn static void ErrorHandler::showErrorDialog()
+ * \brief Metoda statyczna obs³uguj¹ca b³¹d lub ostrze¿enie.
+ * Wyœwietla miejsce b³êdu oraz przekazany przez parametr komunikat.
+ */

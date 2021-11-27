@@ -1,0 +1,187 @@
+\doxysection{Dokumentacja klasy game\+Objects\+::Game\+Object}
+\label{classgame_objects_1_1_game_object}\index{gameObjects::GameObject@{gameObjects::GameObject}}
+
+
+Klasa opisująca bitmapę. Dziedziczy po klasie Sprite, dzięki której posiada metody do transformacji bitmapy.  
+
+
+Diagram dziedziczenia dla game\+Objects\+::Game\+Object\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classgame_objects_1_1_game_object}
+\end{center}
+\end{figure}
+\doxysubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Game\+Object} (string texture\+Path, Vector2f start\+Position)
+\begin{DoxyCompactList}\small\item\em Konstruktor inicjujący bitmapę. \end{DoxyCompactList}\item 
+\textbf{ Game\+Object} ()
+\begin{DoxyCompactList}\small\item\em Domyślny konstruktor. \end{DoxyCompactList}\item 
+\textbf{ $\sim$\+Game\+Object} ()
+\begin{DoxyCompactList}\small\item\em Destruktor sprzątający po obiekcie. \end{DoxyCompactList}\item 
+void \textbf{ clear\+Bitmap} ()
+\begin{DoxyCompactList}\small\item\em Metoda czyszcząca bitmapę. \end{DoxyCompactList}\item 
+void \textbf{ save\+Bitmap} ()
+\begin{DoxyCompactList}\small\item\em Metoda zapisująca bitmapę do pliku. \end{DoxyCompactList}\item 
+void \textbf{ set\+Bitmap} (string texture\+Path)
+\begin{DoxyCompactList}\small\item\em Metoda ustawiająca bitmapę za pomocą ścieżki do pliku. \end{DoxyCompactList}\item 
+void \textbf{ set\+Bitmap} (Texture $\ast$new\+Texture)
+\begin{DoxyCompactList}\small\item\em Metoda ustawiająca bitmapę za pomocą innej bitmapy. \end{DoxyCompactList}\item 
+Texture $\ast$ \textbf{ get\+Bitmap} ()
+\begin{DoxyCompactList}\small\item\em Metoda pobierająca aktualną bitmapę. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atrybuty prywatne}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Texture $\ast$ \textbf{ texture}
+\item 
+sf\+::\+Texture $\ast$ \textbf{ empty\+Texture}
+\item 
+bool \textbf{ is\+Cleared}
+\item 
+bool \textbf{ is\+Copied}
+\item 
+Color \textbf{ default\+Color}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Klasa opisująca bitmapę. Dziedziczy po klasie Sprite, dzięki której posiada metody do transformacji bitmapy. 
+
+\doxysubsection{Dokumentacja konstruktora i destruktora}
+\mbox{\label{classgame_objects_1_1_game_object_a495f83376a69e2b69aa515ff02094841}} 
+\index{gameObjects::GameObject@{gameObjects::GameObject}!GameObject@{GameObject}}
+\index{GameObject@{GameObject}!gameObjects::GameObject@{gameObjects::GameObject}}
+\doxysubsubsection{GameObject()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily game\+Objects\+::\+Game\+Object\+::\+Game\+Object (\begin{DoxyParamCaption}\item[{string}]{texture\+Path,  }\item[{Vector2f}]{start\+Position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Konstruktor inicjujący bitmapę. 
+
+\mbox{\label{classgame_objects_1_1_game_object_a546e9bfd8ca7b0065ae837a259d2bcf4}} 
+\index{gameObjects::GameObject@{gameObjects::GameObject}!GameObject@{GameObject}}
+\index{GameObject@{GameObject}!gameObjects::GameObject@{gameObjects::GameObject}}
+\doxysubsubsection{GameObject()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily game\+Objects\+::\+Game\+Object\+::\+Game\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Domyślny konstruktor. 
+
+\mbox{\label{classgame_objects_1_1_game_object_aa979adefea9bcdf05a51b9cd5219bc35}} 
+\index{gameObjects::GameObject@{gameObjects::GameObject}!````~GameObject@{$\sim$GameObject}}
+\index{````~GameObject@{$\sim$GameObject}!gameObjects::GameObject@{gameObjects::GameObject}}
+\doxysubsubsection{$\sim$GameObject()}
+{\footnotesize\ttfamily game\+Objects\+::\+Game\+Object\+::$\sim$\+Game\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destruktor sprzątający po obiekcie. 
+
+
+
+\doxysubsection{Dokumentacja funkcji składowych}
+\mbox{\label{classgame_objects_1_1_game_object_a6078ea0830bb8dac5175009aa67f7b52}} 
+\index{gameObjects::GameObject@{gameObjects::GameObject}!clearBitmap@{clearBitmap}}
+\index{clearBitmap@{clearBitmap}!gameObjects::GameObject@{gameObjects::GameObject}}
+\doxysubsubsection{clearBitmap()}
+{\footnotesize\ttfamily void game\+Objects\+::\+Game\+Object\+::clear\+Bitmap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Metoda czyszcząca bitmapę. 
+
+\begin{DoxyReturn}{Zwraca}
+void 
+\end{DoxyReturn}
+\mbox{\label{classgame_objects_1_1_game_object_a2154f2dd4c5dab01b36b4fa2d2401237}} 
+\index{gameObjects::GameObject@{gameObjects::GameObject}!getBitmap@{getBitmap}}
+\index{getBitmap@{getBitmap}!gameObjects::GameObject@{gameObjects::GameObject}}
+\doxysubsubsection{getBitmap()}
+{\footnotesize\ttfamily Texture $\ast$ game\+Objects\+::\+Game\+Object\+::get\+Bitmap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Metoda pobierająca aktualną bitmapę. 
+
+\begin{DoxyReturn}{Zwraca}
+Texture$\ast$ Aktualna bitmapa. 
+\end{DoxyReturn}
+\mbox{\label{classgame_objects_1_1_game_object_ad102ec65764e68fc6301227a0f0031c9}} 
+\index{gameObjects::GameObject@{gameObjects::GameObject}!saveBitmap@{saveBitmap}}
+\index{saveBitmap@{saveBitmap}!gameObjects::GameObject@{gameObjects::GameObject}}
+\doxysubsubsection{saveBitmap()}
+{\footnotesize\ttfamily void game\+Objects\+::\+Game\+Object\+::save\+Bitmap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Metoda zapisująca bitmapę do pliku. 
+
+\begin{DoxyReturn}{Zwraca}
+void 
+\end{DoxyReturn}
+\mbox{\label{classgame_objects_1_1_game_object_a1c33090b815c65e0c212654081e283b9}} 
+\index{gameObjects::GameObject@{gameObjects::GameObject}!setBitmap@{setBitmap}}
+\index{setBitmap@{setBitmap}!gameObjects::GameObject@{gameObjects::GameObject}}
+\doxysubsubsection{setBitmap()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void game\+Objects\+::\+Game\+Object\+::set\+Bitmap (\begin{DoxyParamCaption}\item[{string}]{texture\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Metoda ustawiająca bitmapę za pomocą ścieżki do pliku. 
+
+\begin{DoxyReturn}{Zwraca}
+void 
+\end{DoxyReturn}
+\mbox{\label{classgame_objects_1_1_game_object_a1b6d702b70abcd2729a0543bf0c68505}} 
+\index{gameObjects::GameObject@{gameObjects::GameObject}!setBitmap@{setBitmap}}
+\index{setBitmap@{setBitmap}!gameObjects::GameObject@{gameObjects::GameObject}}
+\doxysubsubsection{setBitmap()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void game\+Objects\+::\+Game\+Object\+::set\+Bitmap (\begin{DoxyParamCaption}\item[{Texture $\ast$}]{new\+Texture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Metoda ustawiająca bitmapę za pomocą innej bitmapy. 
+
+\begin{DoxyReturn}{Zwraca}
+void 
+\end{DoxyReturn}
+
+
+\doxysubsection{Dokumentacja atrybutów składowych}
+\mbox{\label{classgame_objects_1_1_game_object_ad13a40507aec23ce30460c3c02db5ad5}} 
+\index{gameObjects::GameObject@{gameObjects::GameObject}!defaultColor@{defaultColor}}
+\index{defaultColor@{defaultColor}!gameObjects::GameObject@{gameObjects::GameObject}}
+\doxysubsubsection{defaultColor}
+{\footnotesize\ttfamily Color game\+Objects\+::\+Game\+Object\+::default\+Color\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classgame_objects_1_1_game_object_a1d9eeff3b15e65463d648f276cb3f516}} 
+\index{gameObjects::GameObject@{gameObjects::GameObject}!emptyTexture@{emptyTexture}}
+\index{emptyTexture@{emptyTexture}!gameObjects::GameObject@{gameObjects::GameObject}}
+\doxysubsubsection{emptyTexture}
+{\footnotesize\ttfamily sf\+::\+Texture$\ast$ game\+Objects\+::\+Game\+Object\+::empty\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classgame_objects_1_1_game_object_aa202d3e515f4ae24e3d60f3422e0e628}} 
+\index{gameObjects::GameObject@{gameObjects::GameObject}!isCleared@{isCleared}}
+\index{isCleared@{isCleared}!gameObjects::GameObject@{gameObjects::GameObject}}
+\doxysubsubsection{isCleared}
+{\footnotesize\ttfamily bool game\+Objects\+::\+Game\+Object\+::is\+Cleared\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classgame_objects_1_1_game_object_a8e1353394c6a41aee751bdc81acd93ee}} 
+\index{gameObjects::GameObject@{gameObjects::GameObject}!isCopied@{isCopied}}
+\index{isCopied@{isCopied}!gameObjects::GameObject@{gameObjects::GameObject}}
+\doxysubsubsection{isCopied}
+{\footnotesize\ttfamily bool game\+Objects\+::\+Game\+Object\+::is\+Copied\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classgame_objects_1_1_game_object_a907d0466098a2c755b4105f1c33b3b0e}} 
+\index{gameObjects::GameObject@{gameObjects::GameObject}!texture@{texture}}
+\index{texture@{texture}!gameObjects::GameObject@{gameObjects::GameObject}}
+\doxysubsubsection{texture}
+{\footnotesize\ttfamily sf\+::\+Texture$\ast$ game\+Objects\+::\+Game\+Object\+::texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Chomik/source/repos/\+Snake\+S\+F\+M\+Lv1/\+Snake\+S\+F\+M\+L/src/\textbf{ Game\+Objects.\+ixx}\end{DoxyCompactItemize}

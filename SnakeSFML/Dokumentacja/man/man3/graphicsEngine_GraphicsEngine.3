@@ -1,0 +1,367 @@
+.TH "graphicsEngine::GraphicsEngine" 3 "So, 27 lis 2021" "Silnik graficzny" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+graphicsEngine::GraphicsEngine \- Klasa typu singleton odpowiedzialna za inicjacje i wyświetlanie obiektów graficznych, tekstur, obsługi klawiatury i myszki\&. Dodatkowo wyświetla informacje statystyczne\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Metody publiczne"
+
+.in +1c
+.ti -1c
+.RI "\fBGraphicsEngine\fP ()"
+.br
+.RI "Kontruktor klasy \fBGraphicsEngine\fP, inicjujący obiekty graficzne i teksty statystyczne\&. "
+.ti -1c
+.RI "\fB~GraphicsEngine\fP ()"
+.br
+.RI "Destruktor klasy \fBGraphicsEngine\fP, sprzątający po pracy silnika graficznego\&. "
+.ti -1c
+.RI "void \fBhandleKeybardOnPressed\fP ()"
+.br
+.RI "Metoda obsługująca klawiaturę do momentu zwolnienia klawisza\&. "
+.ti -1c
+.RI "void \fBhandleKeyboardOnClick\fP (Event event, bool shouldExitOnEscape)"
+.br
+.RI "Metoda obsługująca klawiaturę\&. Odczytuje naciśnięcie klawisza i wykonuje się tylko raz\&. "
+.ti -1c
+.RI "void \fBhandleMouseOnPressed\fP ()"
+.br
+.RI "Metoda obsługująca myszkę do momentu zwolnienia klawisza\&. "
+.ti -1c
+.RI "void \fBshowMouseCoordinates\fP ()"
+.br
+.RI "Metoda wyświetlająca położenie kursora myszki względem okna silnika graficznego\&. "
+.ti -1c
+.RI "void \fBshowFps\fP (Clock &frameRateClock)"
+.br
+.RI "Metoda wyświetlająca aktualną liczbę klatek na sekundę\&. "
+.ti -1c
+.RI "void \fBmain\fP (int windowWidth, int windowHeight, const Color clearColor, bool isWindowed, bool shouldExitOnEscape, bool hasMouseSupport, bool hasKeyboardSupport, bool shouldDebug)"
+.br
+.RI "Główna metoda silnika graficznego\&. "
+.in -1c
+.SS "Statyczne metody publiczne"
+
+.in +1c
+.ti -1c
+.RI "static \fBGraphicsEngine\fP * \fBgetInstance\fP ()"
+.br
+.RI "Metoda zwracająca niepowtarzalną instancję silnika\&. "
+.in -1c
+.SS "Typy prywatne"
+
+.in +1c
+.ti -1c
+.RI "enum \fBInfoTextTypes\fP { \fBMouseCords\fP, \fBFps\fP }"
+.br
+.RI "Typ wyliczeniowy, określający koordynaty położenia myszki i wyświetlanie klatek na sekundę "
+.in -1c
+.SS "Metody prywatne"
+
+.in +1c
+.ti -1c
+.RI "void \fBdrawLoadingScreen\fP (RenderWindow &\fBwindow\fP)"
+.br
+.RI "Metoda rysująca ekran ładowania\&. "
+.ti -1c
+.RI "void \fBreleaseResources\fP ()"
+.br
+.RI "Metoda zwalniająca pamięć z obiektów ekranu ładowania\&. "
+.ti -1c
+.RI "void \fBprepareLoadingScreen\fP (RenderWindow &\fBwindow\fP)"
+.br
+.RI "Metoda inicujująca obiekty graficzne do ekranu ładowania\&. "
+.in -1c
+.SS "Atrybuty prywatne"
+
+.in +1c
+.ti -1c
+.RI "Font \fBinfoFont\fP"
+.br
+.RI "Czcionka do wyświetlania informacji w silniku graficznym\&. "
+.ti -1c
+.RI "vector< Text > \fBinfoTexts\fP"
+.br
+.RI "Kontener przechowujący informacje dotyczące silnika graficznego\&. "
+.ti -1c
+.RI "RenderWindow * \fBwindow\fP"
+.br
+.RI "Okno, renderujące obiekty graficzne\&. "
+.ti -1c
+.RI "\fBAnimator\fP * \fBloadingAnimator\fP"
+.br
+.RI "Obiekt, animujący ładowanie obiektów graficznych\&. "
+.ti -1c
+.RI "sf::Texture \fBloadingBackgroundTexture\fP"
+.br
+.RI "Tekstura tła podczas ładowania\&. "
+.ti -1c
+.RI "Sprite \fBloadingBackgroundSprite\fP"
+.br
+.RI "Bitmapa tła podczas ładowania\&. "
+.ti -1c
+.RI "sf::Texture \fBloadingSpinnerTexture\fP"
+.br
+.RI "Tekstura (spritesheet) kręciołka przedstawiającego stan ładowania\&. "
+.ti -1c
+.RI "Sprite \fBloadingSpinnerSprite\fP"
+.br
+.RI "Bitmapa kręciołka przedstawiającego stan ładowania\&. "
+.ti -1c
+.RI "\fBPlayer\fP * \fBplayer\fP"
+.br
+.RI "Obiekt klasy gracza\&. "
+.ti -1c
+.RI "\fBGameObject\fP * \fBgreyStone\fP"
+.br
+.ti -1c
+.RI "\fBGameObject\fP * \fBbrownStone\fP"
+.br
+.in -1c
+.SS "Statyczne atrybuty prywatne"
+
+.in +1c
+.ti -1c
+.RI "static \fBGraphicsEngine\fP * \fBinstance\fP = nullptr"
+.br
+.RI "Instancja singletonu klasy \fBGraphicsEngine\fP\&. "
+.in -1c
+.SH "Opis szczegółowy"
+.PP 
+Klasa typu singleton odpowiedzialna za inicjacje i wyświetlanie obiektów graficznych, tekstur, obsługi klawiatury i myszki\&. Dodatkowo wyświetla informacje statystyczne\&. 
+.SH "Dokumentacja składowych wyliczanych"
+.PP 
+.SS "enum \fBgraphicsEngine::GraphicsEngine::InfoTextTypes\fP\fC [private]\fP"
+
+.PP
+Typ wyliczeniowy, określający koordynaty położenia myszki i wyświetlanie klatek na sekundę 
+.PP
+\fBWartości wyliczeń\fP
+.in +1c
+.TP
+\fB\fIMouseCords \fP\fP
+.TP
+\fB\fIFps \fP\fP
+.SH "Dokumentacja konstruktora i destruktora"
+.PP 
+.SS "graphicsEngine::GraphicsEngine::GraphicsEngine ()\fC [inline]\fP"
+
+.PP
+Kontruktor klasy \fBGraphicsEngine\fP, inicjujący obiekty graficzne i teksty statystyczne\&. 
+.SS "graphicsEngine::GraphicsEngine::~GraphicsEngine ()\fC [inline]\fP"
+
+.PP
+Destruktor klasy \fBGraphicsEngine\fP, sprzątający po pracy silnika graficznego\&. 
+.SH "Dokumentacja funkcji składowych"
+.PP 
+.SS "void graphicsEngine::GraphicsEngine::drawLoadingScreen (RenderWindow & window)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Metoda rysująca ekran ładowania\&. 
+.PP
+\fBParametry\fP
+.RS 4
+\fIRenderWindow&\fP window - Referencja obiektu okna\&.
+.RE
+.PP
+\fBZwraca\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "static \fBGraphicsEngine\fP * graphicsEngine::GraphicsEngine::getInstance ()\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Metoda zwracająca niepowtarzalną instancję silnika\&. 
+.PP
+\fBZwraca\fP
+.RS 4
+GraphicsEngine* Instancja silnika graficznego\&. 
+.RE
+.PP
+
+.SS "void graphicsEngine::GraphicsEngine::handleKeybardOnPressed ()\fC [inline]\fP"
+
+.PP
+Metoda obsługująca klawiaturę do momentu zwolnienia klawisza\&. 
+.PP
+\fBZwraca\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void graphicsEngine::GraphicsEngine::handleKeyboardOnClick (Event event, bool shouldExitOnEscape)\fC [inline]\fP"
+
+.PP
+Metoda obsługująca klawiaturę\&. Odczytuje naciśnięcie klawisza i wykonuje się tylko raz\&. 
+.PP
+\fBParametry\fP
+.RS 4
+\fIEvent\fP event - Wydarzenie w bibliotece SFML\&. 
+.br
+\fIbool\fP shouldExitOnEscape - Flaga, określająca czy zakończyć pracę silnika po wciśnieciu klawisza Escape\&.
+.RE
+.PP
+\fBZwraca\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void graphicsEngine::GraphicsEngine::handleMouseOnPressed ()\fC [inline]\fP"
+
+.PP
+Metoda obsługująca myszkę do momentu zwolnienia klawisza\&. 
+.PP
+\fBZwraca\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void graphicsEngine::GraphicsEngine::main (int windowWidth, int windowHeight, const Color clearColor, bool isWindowed, bool shouldExitOnEscape, bool hasMouseSupport, bool hasKeyboardSupport, bool shouldDebug)\fC [inline]\fP"
+
+.PP
+Główna metoda silnika graficznego\&. 
+.IP "\(bu" 2
+Jest ona wywoływana w głównej funkcji programu\&.
+.IP "\(bu" 2
+Zawiera główną pętlę silnika\&.
+.IP "\(bu" 2
+Inicjuje silnik za pomocą parametrów\&.
+.PP
+.PP
+\fBParametry\fP
+.RS 4
+\fIint\fP windowWidth - Szerokość ekranu okna\&. 
+.br
+\fIint\fP windowHeight - Wysokość ekranu okna\&. 
+.br
+\fIconst\fP Color clearColor - Kolor, który domyślnie czyści ekran silnika\&. 
+.br
+\fIbool\fP isWindowed - Flaga, określająca czy otwierać okno w trybie okienkowym\&. 
+.br
+\fIbool\fP shouldExitOnEscape - Flaga, określająca czy zakończyć pracę silnika po wciśnieciu klawisza Escape\&. 
+.br
+\fIbool\fP hasMouseSupport - Flaga, określająca czy włączyć obsługę myszki\&. 
+.br
+\fIbool\fP hasKeyboardSupport - Flaga, określająca czy włączyć obsługę klawiatury\&. 
+.br
+\fIbool\fP shouldDebug - Flaga, określająca czy włączyć tryb debugowania (klatki na sekundę, pozycja)\&.
+.RE
+.PP
+\fBZwraca\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void graphicsEngine::GraphicsEngine::prepareLoadingScreen (RenderWindow & window)\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Metoda inicujująca obiekty graficzne do ekranu ładowania\&. 
+.PP
+\fBParametry\fP
+.RS 4
+\fIRenderWindow&\fP window - Referencja obiektu okna\&.
+.RE
+.PP
+\fBZwraca\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void graphicsEngine::GraphicsEngine::releaseResources ()\fC [inline]\fP, \fC [private]\fP"
+
+.PP
+Metoda zwalniająca pamięć z obiektów ekranu ładowania\&. 
+.PP
+\fBZwraca\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void graphicsEngine::GraphicsEngine::showFps (Clock & frameRateClock)\fC [inline]\fP"
+
+.PP
+Metoda wyświetlająca aktualną liczbę klatek na sekundę\&. 
+.PP
+\fBParametry\fP
+.RS 4
+\fIClock&\fP frameRateClock - Referencja obiektu zegara\&.
+.RE
+.PP
+\fBZwraca\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void graphicsEngine::GraphicsEngine::showMouseCoordinates ()\fC [inline]\fP"
+
+.PP
+Metoda wyświetlająca położenie kursora myszki względem okna silnika graficznego\&. 
+.PP
+\fBZwraca\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SH "Dokumentacja atrybutów składowych"
+.PP 
+.SS "\fBGameObject\fP * graphicsEngine::GraphicsEngine::brownStone\fC [private]\fP"
+Obiekt klasy GameObject przedstawiający brązowy kamień 
+.SS "\fBGameObject\fP * graphicsEngine::GraphicsEngine::greyStone\fC [private]\fP"
+Obiekt klasy GameObject przedstawiający szary kamień 
+.SS "Font graphicsEngine::GraphicsEngine::infoFont\fC [private]\fP"
+
+.PP
+Czcionka do wyświetlania informacji w silniku graficznym\&. 
+.SS "vector< Text > graphicsEngine::GraphicsEngine::infoTexts\fC [private]\fP"
+
+.PP
+Kontener przechowujący informacje dotyczące silnika graficznego\&. 
+.SS "\fBgraphicsEngine::GraphicsEngine\fP graphicsEngine::GraphicsEngine::instance = nullptr\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Instancja singletonu klasy \fBGraphicsEngine\fP\&. 
+.SS "\fBAnimator\fP * graphicsEngine::GraphicsEngine::loadingAnimator\fC [private]\fP"
+
+.PP
+Obiekt, animujący ładowanie obiektów graficznych\&. 
+.SS "Sprite graphicsEngine::GraphicsEngine::loadingBackgroundSprite\fC [private]\fP"
+
+.PP
+Bitmapa tła podczas ładowania\&. 
+.SS "sf::Texture graphicsEngine::GraphicsEngine::loadingBackgroundTexture\fC [private]\fP"
+
+.PP
+Tekstura tła podczas ładowania\&. 
+.SS "Sprite graphicsEngine::GraphicsEngine::loadingSpinnerSprite\fC [private]\fP"
+
+.PP
+Bitmapa kręciołka przedstawiającego stan ładowania\&. 
+.SS "sf::Texture graphicsEngine::GraphicsEngine::loadingSpinnerTexture\fC [private]\fP"
+
+.PP
+Tekstura (spritesheet) kręciołka przedstawiającego stan ładowania\&. 
+.SS "\fBPlayer\fP * graphicsEngine::GraphicsEngine::player\fC [private]\fP"
+
+.PP
+Obiekt klasy gracza\&. 
+.SS "RenderWindow * graphicsEngine::GraphicsEngine::window\fC [private]\fP"
+
+.PP
+Okno, renderujące obiekty graficzne\&. 
+
+.SH "Autor"
+.PP 
+Wygenerowano automatycznie z kodu źródłowego programem Doxygen dla Silnik graficzny\&.

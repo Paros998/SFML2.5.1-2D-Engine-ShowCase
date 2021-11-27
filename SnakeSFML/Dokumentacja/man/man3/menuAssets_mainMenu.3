@@ -1,0 +1,61 @@
+.TH "menuAssets::mainMenu" 3 "So, 27 lis 2021" "Silnik graficzny" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+menuAssets::mainMenu
+.SH SYNOPSIS
+.br
+.PP
+.SS "Wyliczenia"
+
+.in +1c
+.ti -1c
+.RI "enum \fBmenuButtonsIndex\fP { \fBSTART\fP, \fBOPTIONS\fP, \fBSCORES\fP, \fBCREATORS\fP, \fBEXIT\fP }"
+.br
+.in -1c
+.SS "Zmienne"
+
+.in +1c
+.ti -1c
+.RI "String \fBmenuButtonsText\fP [5] = {'START','\fBOPTIONS\fP','\fBSCORES\fP','\fBCREATORS\fP','\fBEXIT\fP'}"
+.br
+.ti -1c
+.RI "Vector2f \fBmenuButtonsPosition\fP [5]"
+.br
+.in -1c
+.SH "Dokumentacja typów wyliczanych"
+.PP 
+.SS "enum \fBmenuAssets::mainMenu::menuButtonsIndex\fP"
+
+.PP
+\fBWartości wyliczeń\fP
+.in +1c
+.TP
+\fB\fISTART \fP\fP
+.TP
+\fB\fIOPTIONS \fP\fP
+.TP
+\fB\fISCORES \fP\fP
+.TP
+\fB\fICREATORS \fP\fP
+.TP
+\fB\fIEXIT \fP\fP
+.SH "Dokumentacja zmiennych"
+.PP 
+.SS "Vector2f menuAssets::mainMenu::menuButtonsPosition[5]"
+\fBWartość początkowa:\fP
+.PP
+.nf
+= {
+            {globalFunctions::findHorizontallyCenteredPositionOfGivenText(menuButtonsText[START]),250\&.0f},
+            {globalFunctions::findHorizontallyCenteredPositionOfGivenText(menuButtonsText[OPTIONS]),400\&.0f},
+            {globalFunctions::findHorizontallyCenteredPositionOfGivenText(menuButtonsText[SCORES]),550\&.0f},
+            {globalFunctions::findHorizontallyCenteredPositionOfGivenText(menuButtonsText[CREATORS]),700\&.0f},
+            {globalFunctions::findHorizontallyCenteredPositionOfGivenText(menuButtonsText[EXIT]),850\&.0f}
+        }
+.fi
+.SS "String menuAssets::mainMenu::menuButtonsText[5] = {'START','\fBOPTIONS\fP','\fBSCORES\fP','\fBCREATORS\fP','\fBEXIT\fP'}"
+
+.SH "Autor"
+.PP 
+Wygenerowano automatycznie z kodu źródłowego programem Doxygen dla Silnik graficzny\&.

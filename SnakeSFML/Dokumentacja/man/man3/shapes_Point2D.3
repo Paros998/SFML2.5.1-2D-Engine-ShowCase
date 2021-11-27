@@ -1,0 +1,136 @@
+.TH "shapes::Point2D" 3 "So, 27 lis 2021" "Silnik graficzny" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+shapes::Point2D
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Dziedziczy Shape\&.
+.SS "Metody publiczne"
+
+.in +1c
+.ti -1c
+.RI "\fB~Point2D\fP ()"
+.br
+.ti -1c
+.RI "\fBPoint2D\fP ()"
+.br
+.ti -1c
+.RI "\fBPoint2D\fP (Vector2f \fBpoint\fP)"
+.br
+.ti -1c
+.RI "\fBPoint2D\fP (float x, float y)"
+.br
+.ti -1c
+.RI "\fBPoint2D\fP (Color fillColor)"
+.br
+.ti -1c
+.RI "\fBPoint2D\fP (Vector2f \fBpoint\fP, Color fillColor)"
+.br
+.ti -1c
+.RI "\fBPoint2D\fP (float x, float y, Color fillColor)"
+.br
+.ti -1c
+.RI "virtual std::size_t \fBgetPointCount\fP () const override"
+.br
+.ti -1c
+.RI "virtual Vector2f \fBgetPoint\fP (std::size_t index) const override"
+.br
+.ti -1c
+.RI "Color \fBgetFillColor\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetFillColor\fP (Color newColor)"
+.br
+.ti -1c
+.RI "Vector2f \fBgetCords\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetCords\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetCords\fP (Vector2f newPoint)"
+.br
+.ti -1c
+.RI "void \fBsetCords\fP (float x, float y)"
+.br
+.in -1c
+.SS "Metody prywatne"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBdraw\fP (sf::RenderTarget &target, sf::RenderStates states) const override"
+.br
+.in -1c
+.SS "Atrybuty prywatne"
+
+.in +1c
+.ti -1c
+.RI "sf::Vector2f \fBpoint\fP"
+.br
+.RI "Coordinates of the point\&. "
+.ti -1c
+.RI "sf::VertexArray \fBm_vertices\fP"
+.br
+.RI "Vertex array containing the fill geometry\&. "
+.ti -1c
+.RI "sf::Color \fBm_fillColor\fP"
+.br
+.RI "Fill color\&. "
+.in -1c
+.SH "Dokumentacja konstruktora i destruktora"
+.PP 
+.SS "shapes::Point2D::~Point2D ()\fC [inline]\fP"
+
+.SS "shapes::Point2D::Point2D ()\fC [inline]\fP"
+
+.SS "shapes::Point2D::Point2D (Vector2f point)\fC [inline]\fP"
+
+.SS "shapes::Point2D::Point2D (float x, float y)\fC [inline]\fP"
+
+.SS "shapes::Point2D::Point2D (Color fillColor)\fC [inline]\fP"
+
+.SS "shapes::Point2D::Point2D (Vector2f point, Color fillColor)\fC [inline]\fP"
+
+.SS "shapes::Point2D::Point2D (float x, float y, Color fillColor)\fC [inline]\fP"
+
+.SH "Dokumentacja funkcji składowych"
+.PP 
+.SS "virtual void shapes::Point2D::draw (sf::RenderTarget & target, sf::RenderStates states) const\fC [inline]\fP, \fC [override]\fP, \fC [private]\fP, \fC [virtual]\fP"
+
+.SS "Vector2f shapes::Point2D::getCords ()\fC [inline]\fP"
+
+.SS "Color shapes::Point2D::getFillColor ()\fC [inline]\fP"
+
+.SS "virtual Vector2f shapes::Point2D::getPoint (std::size_t index) const\fC [inline]\fP, \fC [override]\fP, \fC [virtual]\fP"
+
+.SS "virtual std::size_t shapes::Point2D::getPointCount () const\fC [inline]\fP, \fC [override]\fP, \fC [virtual]\fP"
+
+.SS "void shapes::Point2D::setCords ()\fC [inline]\fP"
+
+.SS "void shapes::Point2D::setCords (float x, float y)\fC [inline]\fP"
+
+.SS "void shapes::Point2D::setCords (Vector2f newPoint)\fC [inline]\fP"
+
+.SS "void shapes::Point2D::setFillColor (Color newColor)\fC [inline]\fP"
+
+.SH "Dokumentacja atrybutów składowych"
+.PP 
+.SS "sf::Color shapes::Point2D::m_fillColor\fC [private]\fP"
+
+.PP
+Fill color\&. 
+.SS "sf::VertexArray shapes::Point2D::m_vertices\fC [private]\fP"
+
+.PP
+Vertex array containing the fill geometry\&. 
+.SS "sf::Vector2f shapes::Point2D::point\fC [private]\fP"
+
+.PP
+Coordinates of the point\&. 
+
+.SH "Autor"
+.PP 
+Wygenerowano automatycznie z kodu źródłowego programem Doxygen dla Silnik graficzny\&.

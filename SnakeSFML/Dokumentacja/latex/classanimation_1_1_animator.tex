@@ -1,0 +1,137 @@
+\doxysection{Dokumentacja klasy animation\+::Animator}
+\label{classanimation_1_1_animator}\index{animation::Animator@{animation::Animator}}
+\doxysubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Animator} (Texture \&texture, Sprite $\ast$\textbf{ sprite}, Vector2u \textbf{ image\+Number}, float \textbf{ change\+Time})
+\item 
+\textbf{ $\sim$\+Animator} ()
+\item 
+void \textbf{ update} (int row)
+\item 
+void \textbf{ update} ()
+\item 
+void \textbf{ set\+Start\+Frame} ()
+\item 
+Int\+Rect \textbf{ get\+Current\+Frame} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Atrybuty publiczne}
+\begin{DoxyCompactItemize}
+\item 
+Int\+Rect \textbf{ texture\+Area}
+\item 
+Clock \textbf{ clock}
+\item 
+float \textbf{ full\+Time} = 0.\+0f
+\end{DoxyCompactItemize}
+\doxysubsection*{Atrybuty prywatne}
+\begin{DoxyCompactItemize}
+\item 
+float \textbf{ change\+Time}
+\item 
+float \textbf{ delta\+Time} = 0.\+0f
+\item 
+Vector2u \textbf{ current\+Image}
+\item 
+Vector2u \textbf{ image\+Number}
+\item 
+Sprite $\ast$ \textbf{ sprite}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Dokumentacja konstruktora i destruktora}
+\mbox{\label{classanimation_1_1_animator_a99955cf9bee512b8c62f68f389c20ed4}} 
+\index{animation::Animator@{animation::Animator}!Animator@{Animator}}
+\index{Animator@{Animator}!animation::Animator@{animation::Animator}}
+\doxysubsubsection{Animator()}
+{\footnotesize\ttfamily animation\+::\+Animator\+::\+Animator (\begin{DoxyParamCaption}\item[{Texture \&}]{texture,  }\item[{Sprite $\ast$}]{sprite,  }\item[{Vector2u}]{image\+Number,  }\item[{float}]{change\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classanimation_1_1_animator_aa41360723d4542becc20a238f25bed4a}} 
+\index{animation::Animator@{animation::Animator}!````~Animator@{$\sim$Animator}}
+\index{````~Animator@{$\sim$Animator}!animation::Animator@{animation::Animator}}
+\doxysubsubsection{$\sim$Animator()}
+{\footnotesize\ttfamily animation\+::\+Animator\+::$\sim$\+Animator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Dokumentacja funkcji składowych}
+\mbox{\label{classanimation_1_1_animator_a8ec76bafce7c17fc543310ffb4d86ae9}} 
+\index{animation::Animator@{animation::Animator}!getCurrentFrame@{getCurrentFrame}}
+\index{getCurrentFrame@{getCurrentFrame}!animation::Animator@{animation::Animator}}
+\doxysubsubsection{getCurrentFrame()}
+{\footnotesize\ttfamily Int\+Rect animation\+::\+Animator\+::get\+Current\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classanimation_1_1_animator_a7de0609e17a9eec6939c809dabf7f035}} 
+\index{animation::Animator@{animation::Animator}!setStartFrame@{setStartFrame}}
+\index{setStartFrame@{setStartFrame}!animation::Animator@{animation::Animator}}
+\doxysubsubsection{setStartFrame()}
+{\footnotesize\ttfamily void animation\+::\+Animator\+::set\+Start\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classanimation_1_1_animator_a65c3fb2eca8bb0a882d36a452b170c9e}} 
+\index{animation::Animator@{animation::Animator}!update@{update}}
+\index{update@{update}!animation::Animator@{animation::Animator}}
+\doxysubsubsection{update()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void animation\+::\+Animator\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classanimation_1_1_animator_a5189190fca42b82baf06f94e277f8486}} 
+\index{animation::Animator@{animation::Animator}!update@{update}}
+\index{update@{update}!animation::Animator@{animation::Animator}}
+\doxysubsubsection{update()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void animation\+::\+Animator\+::update (\begin{DoxyParamCaption}\item[{int}]{row }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Dokumentacja atrybutów składowych}
+\mbox{\label{classanimation_1_1_animator_af1e2b6fc4b539b2249f98acd847c886d}} 
+\index{animation::Animator@{animation::Animator}!changeTime@{changeTime}}
+\index{changeTime@{changeTime}!animation::Animator@{animation::Animator}}
+\doxysubsubsection{changeTime}
+{\footnotesize\ttfamily float animation\+::\+Animator\+::change\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classanimation_1_1_animator_abd525f9d8efdc670ca072950b86e1692}} 
+\index{animation::Animator@{animation::Animator}!clock@{clock}}
+\index{clock@{clock}!animation::Animator@{animation::Animator}}
+\doxysubsubsection{clock}
+{\footnotesize\ttfamily Clock animation\+::\+Animator\+::clock}
+
+\mbox{\label{classanimation_1_1_animator_a9a208b1ccd9367b544e49356b00d72d3}} 
+\index{animation::Animator@{animation::Animator}!currentImage@{currentImage}}
+\index{currentImage@{currentImage}!animation::Animator@{animation::Animator}}
+\doxysubsubsection{currentImage}
+{\footnotesize\ttfamily Vector2u animation\+::\+Animator\+::current\+Image\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classanimation_1_1_animator_a8136ec754252111549fb2be13db99815}} 
+\index{animation::Animator@{animation::Animator}!deltaTime@{deltaTime}}
+\index{deltaTime@{deltaTime}!animation::Animator@{animation::Animator}}
+\doxysubsubsection{deltaTime}
+{\footnotesize\ttfamily float animation\+::\+Animator\+::delta\+Time = 0.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classanimation_1_1_animator_abc61895b5772b82d1d0013ff3eb14daf}} 
+\index{animation::Animator@{animation::Animator}!fullTime@{fullTime}}
+\index{fullTime@{fullTime}!animation::Animator@{animation::Animator}}
+\doxysubsubsection{fullTime}
+{\footnotesize\ttfamily float animation\+::\+Animator\+::full\+Time = 0.\+0f}
+
+\mbox{\label{classanimation_1_1_animator_a0a132149cde0495e7ddddf56595e4f5c}} 
+\index{animation::Animator@{animation::Animator}!imageNumber@{imageNumber}}
+\index{imageNumber@{imageNumber}!animation::Animator@{animation::Animator}}
+\doxysubsubsection{imageNumber}
+{\footnotesize\ttfamily Vector2u animation\+::\+Animator\+::image\+Number\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classanimation_1_1_animator_af315a88adcd83a57453e048699fc186f}} 
+\index{animation::Animator@{animation::Animator}!sprite@{sprite}}
+\index{sprite@{sprite}!animation::Animator@{animation::Animator}}
+\doxysubsubsection{sprite}
+{\footnotesize\ttfamily Sprite$\ast$ animation\+::\+Animator\+::sprite\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classanimation_1_1_animator_a64c186062c95cbc732c73633b5ddc56c}} 
+\index{animation::Animator@{animation::Animator}!textureArea@{textureArea}}
+\index{textureArea@{textureArea}!animation::Animator@{animation::Animator}}
+\doxysubsubsection{textureArea}
+{\footnotesize\ttfamily Int\+Rect animation\+::\+Animator\+::texture\+Area}
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Chomik/source/repos/\+Snake\+S\+F\+M\+Lv1/\+Snake\+S\+F\+M\+L/src/\textbf{ Animator.\+ixx}\end{DoxyCompactItemize}

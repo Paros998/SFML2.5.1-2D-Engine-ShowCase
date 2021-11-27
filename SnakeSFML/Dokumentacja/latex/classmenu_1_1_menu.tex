@@ -1,0 +1,321 @@
+\doxysection{Dokumentacja klasy menu\+::Menu}
+\label{classmenu_1_1_menu}\index{menu::Menu@{menu::Menu}}
+\doxysubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Menu} (\textbf{ Asset\+Manager} $\ast$\textbf{ manager}, Render\+Window $\ast$\textbf{ game\+Window})
+\item 
+\textbf{ $\sim$\+Menu} ()
+\item 
+bool \textbf{ load\+Assets} ()
+\item 
+bool \textbf{ render} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Metody prywatne}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ acquire\+Assets\+Pointers} ()
+\item 
+void \textbf{ update\+Render\+And\+Logic} ()
+\item 
+void \textbf{ prepare\+For\+Draw} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Atrybuty prywatne}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ manager\+::\+Asset\+Manager} $\ast$ \textbf{ manager}
+\item 
+Render\+Window $\ast$ \textbf{ game\+Window}
+\item 
+int \textbf{ window\+Active} = \textbf{ M\+A\+IN}
+\item 
+int \textbf{ actual\+Window\+Option} = 0
+\item 
+Font \textbf{ font}
+\item 
+Music $\ast$ \textbf{ menu\+Songs}
+\item 
+Sound \textbf{ menu\+Click\+Sound}
+\item 
+Sound\+Buffer \textbf{ menu\+Click\+Sound\+Buffer}
+\item 
+sf\+::\+Texture \textbf{ menu\+Pointer\+Texture}
+\item 
+Sprite \textbf{ menu\+Pointer\+Sprite}
+\item 
+\textbf{ Animator} $\ast$ \textbf{ menu\+Pointer\+Animator}
+\item 
+sf\+::\+Texture \textbf{ menu\+Background\+Texture}
+\item 
+Sprite \textbf{ menu\+Background\+Sprite}
+\item 
+sf\+::\+Texture \textbf{ menu\+Logo\+Texture}
+\item 
+Sprite \textbf{ menu\+Logo\+Sprite}
+\item 
+Text $\ast$ \textbf{ menu\+Text\+Buttons}
+\item 
+Text $\ast$ \textbf{ tips\+Text}
+\item 
+Text $\ast$ \textbf{ start\+Text\+Buttons}
+\item 
+sf\+::\+Texture $\ast$ \textbf{ options\+Symbols\+Textures}
+\item 
+Sprite $\ast$ \textbf{ options\+Symbols\+Sprites}
+\item 
+sf\+::\+Texture $\ast$ \textbf{ options\+Buttons\+Textures}
+\item 
+Sprite $\ast$ \textbf{ options\+Buttons\+Sprites}
+\item 
+Text $\ast$ \textbf{ options\+Text\+Labels}
+\item 
+Text $\ast$ \textbf{ options\+Text\+Buttons}
+\item 
+Text \textbf{ options\+Music\+Level\+Text}
+\item 
+Text \textbf{ back\+Button\+Text}
+\item 
+Text $\ast$ \textbf{ creadits\+Text}
+\item 
+bool \textbf{ assets\+Loaded}
+\item 
+bool \textbf{ assets\+Still\+Loading}
+\item 
+int \textbf{ actual\+Page} = \textbf{ M\+A\+IN}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Dokumentacja konstruktora i destruktora}
+\mbox{\label{classmenu_1_1_menu_ad92efd36779918da5ca63e861a1cd2d1}} 
+\index{menu::Menu@{menu::Menu}!Menu@{Menu}}
+\index{Menu@{Menu}!menu::Menu@{menu::Menu}}
+\doxysubsubsection{Menu()}
+{\footnotesize\ttfamily menu\+::\+Menu\+::\+Menu (\begin{DoxyParamCaption}\item[{\textbf{ Asset\+Manager} $\ast$}]{manager,  }\item[{Render\+Window $\ast$}]{game\+Window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classmenu_1_1_menu_a6e550d80c24ac0f61535dc0e7cc7377b}} 
+\index{menu::Menu@{menu::Menu}!````~Menu@{$\sim$Menu}}
+\index{````~Menu@{$\sim$Menu}!menu::Menu@{menu::Menu}}
+\doxysubsubsection{$\sim$Menu()}
+{\footnotesize\ttfamily menu\+::\+Menu\+::$\sim$\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Dokumentacja funkcji składowych}
+\mbox{\label{classmenu_1_1_menu_a122a55cfa9da149f63838aa5c0f55503}} 
+\index{menu::Menu@{menu::Menu}!acquireAssetsPointers@{acquireAssetsPointers}}
+\index{acquireAssetsPointers@{acquireAssetsPointers}!menu::Menu@{menu::Menu}}
+\doxysubsubsection{acquireAssetsPointers()}
+{\footnotesize\ttfamily void menu\+::\+Menu\+::acquire\+Assets\+Pointers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\label{classmenu_1_1_menu_a338822a6f0e0eaf4fdc092e8314b9e63}} 
+\index{menu::Menu@{menu::Menu}!loadAssets@{loadAssets}}
+\index{loadAssets@{loadAssets}!menu::Menu@{menu::Menu}}
+\doxysubsubsection{loadAssets()}
+{\footnotesize\ttfamily bool menu\+::\+Menu\+::load\+Assets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classmenu_1_1_menu_a2de7b79cd93c2ecb3bd51ee690520c67}} 
+\index{menu::Menu@{menu::Menu}!prepareForDraw@{prepareForDraw}}
+\index{prepareForDraw@{prepareForDraw}!menu::Menu@{menu::Menu}}
+\doxysubsubsection{prepareForDraw()}
+{\footnotesize\ttfamily void menu\+::\+Menu\+::prepare\+For\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\label{classmenu_1_1_menu_ab9e2427cf6b9b7c517631bccbf57f61c}} 
+\index{menu::Menu@{menu::Menu}!render@{render}}
+\index{render@{render}!menu::Menu@{menu::Menu}}
+\doxysubsubsection{render()}
+{\footnotesize\ttfamily bool menu\+::\+Menu\+::render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classmenu_1_1_menu_ac166334eb328421cc7eb37630223b635}} 
+\index{menu::Menu@{menu::Menu}!updateRenderAndLogic@{updateRenderAndLogic}}
+\index{updateRenderAndLogic@{updateRenderAndLogic}!menu::Menu@{menu::Menu}}
+\doxysubsubsection{updateRenderAndLogic()}
+{\footnotesize\ttfamily void menu\+::\+Menu\+::update\+Render\+And\+Logic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+\doxysubsection{Dokumentacja atrybutów składowych}
+\mbox{\label{classmenu_1_1_menu_aa1450a7606f19dcec5dad9d9520a3b5f}} 
+\index{menu::Menu@{menu::Menu}!actualPage@{actualPage}}
+\index{actualPage@{actualPage}!menu::Menu@{menu::Menu}}
+\doxysubsubsection{actualPage}
+{\footnotesize\ttfamily int menu\+::\+Menu\+::actual\+Page = \textbf{ M\+A\+IN}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classmenu_1_1_menu_a278b0d691d15653d22f3f3cebafc13ee}} 
+\index{menu::Menu@{menu::Menu}!actualWindowOption@{actualWindowOption}}
+\index{actualWindowOption@{actualWindowOption}!menu::Menu@{menu::Menu}}
+\doxysubsubsection{actualWindowOption}
+{\footnotesize\ttfamily int menu\+::\+Menu\+::actual\+Window\+Option = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classmenu_1_1_menu_a85ca847a8144e422cca272b1e3b8a8d4}} 
+\index{menu::Menu@{menu::Menu}!assetsLoaded@{assetsLoaded}}
+\index{assetsLoaded@{assetsLoaded}!menu::Menu@{menu::Menu}}
+\doxysubsubsection{assetsLoaded}
+{\footnotesize\ttfamily bool menu\+::\+Menu\+::assets\+Loaded\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classmenu_1_1_menu_a2beccba147067c6dec1e451b3bd7879d}} 
+\index{menu::Menu@{menu::Menu}!assetsStillLoading@{assetsStillLoading}}
+\index{assetsStillLoading@{assetsStillLoading}!menu::Menu@{menu::Menu}}
+\doxysubsubsection{assetsStillLoading}
+{\footnotesize\ttfamily bool menu\+::\+Menu\+::assets\+Still\+Loading\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classmenu_1_1_menu_ac684fb7903894c9ec2912e67d8c4d66e}} 
+\index{menu::Menu@{menu::Menu}!backButtonText@{backButtonText}}
+\index{backButtonText@{backButtonText}!menu::Menu@{menu::Menu}}
+\doxysubsubsection{backButtonText}
+{\footnotesize\ttfamily Text menu\+::\+Menu\+::back\+Button\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classmenu_1_1_menu_a01a34fb2364c93aa566f852a2d38465a}} 
+\index{menu::Menu@{menu::Menu}!creaditsText@{creaditsText}}
+\index{creaditsText@{creaditsText}!menu::Menu@{menu::Menu}}
+\doxysubsubsection{creaditsText}
+{\footnotesize\ttfamily Text$\ast$ menu\+::\+Menu\+::creadits\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classmenu_1_1_menu_a6d6bd6335a4eb8f63edcf2ccc1cb69f7}} 
+\index{menu::Menu@{menu::Menu}!font@{font}}
+\index{font@{font}!menu::Menu@{menu::Menu}}
+\doxysubsubsection{font}
+{\footnotesize\ttfamily Font menu\+::\+Menu\+::font\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classmenu_1_1_menu_a058302f59cdfac8b0106d28c2d8393b8}} 
+\index{menu::Menu@{menu::Menu}!gameWindow@{gameWindow}}
+\index{gameWindow@{gameWindow}!menu::Menu@{menu::Menu}}
+\doxysubsubsection{gameWindow}
+{\footnotesize\ttfamily Render\+Window$\ast$ menu\+::\+Menu\+::game\+Window\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classmenu_1_1_menu_a415389503a8a75144b60047dc7609f70}} 
+\index{menu::Menu@{menu::Menu}!manager@{manager}}
+\index{manager@{manager}!menu::Menu@{menu::Menu}}
+\doxysubsubsection{manager}
+{\footnotesize\ttfamily \textbf{ manager\+::\+Asset\+Manager}$\ast$ menu\+::\+Menu\+::manager\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classmenu_1_1_menu_a81221fb3c582a91b31b3cce2ab05e587}} 
+\index{menu::Menu@{menu::Menu}!menuBackgroundSprite@{menuBackgroundSprite}}
+\index{menuBackgroundSprite@{menuBackgroundSprite}!menu::Menu@{menu::Menu}}
+\doxysubsubsection{menuBackgroundSprite}
+{\footnotesize\ttfamily Sprite menu\+::\+Menu\+::menu\+Background\+Sprite\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classmenu_1_1_menu_a79cbd81c625c6b0166a9b41d33c44fa3}} 
+\index{menu::Menu@{menu::Menu}!menuBackgroundTexture@{menuBackgroundTexture}}
+\index{menuBackgroundTexture@{menuBackgroundTexture}!menu::Menu@{menu::Menu}}
+\doxysubsubsection{menuBackgroundTexture}
+{\footnotesize\ttfamily sf\+::\+Texture menu\+::\+Menu\+::menu\+Background\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classmenu_1_1_menu_af557d38011bf2191fad8af4d14cddd8b}} 
+\index{menu::Menu@{menu::Menu}!menuClickSound@{menuClickSound}}
+\index{menuClickSound@{menuClickSound}!menu::Menu@{menu::Menu}}
+\doxysubsubsection{menuClickSound}
+{\footnotesize\ttfamily Sound menu\+::\+Menu\+::menu\+Click\+Sound\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classmenu_1_1_menu_aa684ca1652b82b9b7ba1ff189ead2c68}} 
+\index{menu::Menu@{menu::Menu}!menuClickSoundBuffer@{menuClickSoundBuffer}}
+\index{menuClickSoundBuffer@{menuClickSoundBuffer}!menu::Menu@{menu::Menu}}
+\doxysubsubsection{menuClickSoundBuffer}
+{\footnotesize\ttfamily Sound\+Buffer menu\+::\+Menu\+::menu\+Click\+Sound\+Buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classmenu_1_1_menu_ac39420b12742399fc640eaab8a0ed7b3}} 
+\index{menu::Menu@{menu::Menu}!menuLogoSprite@{menuLogoSprite}}
+\index{menuLogoSprite@{menuLogoSprite}!menu::Menu@{menu::Menu}}
+\doxysubsubsection{menuLogoSprite}
+{\footnotesize\ttfamily Sprite menu\+::\+Menu\+::menu\+Logo\+Sprite\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classmenu_1_1_menu_aa00f0dae2c90bddff64a91d6ebafcecc}} 
+\index{menu::Menu@{menu::Menu}!menuLogoTexture@{menuLogoTexture}}
+\index{menuLogoTexture@{menuLogoTexture}!menu::Menu@{menu::Menu}}
+\doxysubsubsection{menuLogoTexture}
+{\footnotesize\ttfamily sf\+::\+Texture menu\+::\+Menu\+::menu\+Logo\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classmenu_1_1_menu_ac04eb093a180ad0d62594bf967536ddd}} 
+\index{menu::Menu@{menu::Menu}!menuPointerAnimator@{menuPointerAnimator}}
+\index{menuPointerAnimator@{menuPointerAnimator}!menu::Menu@{menu::Menu}}
+\doxysubsubsection{menuPointerAnimator}
+{\footnotesize\ttfamily \textbf{ Animator}$\ast$ menu\+::\+Menu\+::menu\+Pointer\+Animator\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classmenu_1_1_menu_afb4b2935efd50873a6d342c33b22635e}} 
+\index{menu::Menu@{menu::Menu}!menuPointerSprite@{menuPointerSprite}}
+\index{menuPointerSprite@{menuPointerSprite}!menu::Menu@{menu::Menu}}
+\doxysubsubsection{menuPointerSprite}
+{\footnotesize\ttfamily Sprite menu\+::\+Menu\+::menu\+Pointer\+Sprite\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classmenu_1_1_menu_ad4a8bef8ac8fe77f4969f337b825e05e}} 
+\index{menu::Menu@{menu::Menu}!menuPointerTexture@{menuPointerTexture}}
+\index{menuPointerTexture@{menuPointerTexture}!menu::Menu@{menu::Menu}}
+\doxysubsubsection{menuPointerTexture}
+{\footnotesize\ttfamily sf\+::\+Texture menu\+::\+Menu\+::menu\+Pointer\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classmenu_1_1_menu_aa46d2582418586eb8639d7811a0930fa}} 
+\index{menu::Menu@{menu::Menu}!menuSongs@{menuSongs}}
+\index{menuSongs@{menuSongs}!menu::Menu@{menu::Menu}}
+\doxysubsubsection{menuSongs}
+{\footnotesize\ttfamily Music$\ast$ menu\+::\+Menu\+::menu\+Songs\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classmenu_1_1_menu_ab3ccd31879501a71d25e7c6abb5782f0}} 
+\index{menu::Menu@{menu::Menu}!menuTextButtons@{menuTextButtons}}
+\index{menuTextButtons@{menuTextButtons}!menu::Menu@{menu::Menu}}
+\doxysubsubsection{menuTextButtons}
+{\footnotesize\ttfamily Text$\ast$ menu\+::\+Menu\+::menu\+Text\+Buttons\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classmenu_1_1_menu_a3d8ed108e0d2ac4c783e7e99f59157f4}} 
+\index{menu::Menu@{menu::Menu}!optionsButtonsSprites@{optionsButtonsSprites}}
+\index{optionsButtonsSprites@{optionsButtonsSprites}!menu::Menu@{menu::Menu}}
+\doxysubsubsection{optionsButtonsSprites}
+{\footnotesize\ttfamily Sprite$\ast$ menu\+::\+Menu\+::options\+Buttons\+Sprites\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classmenu_1_1_menu_a9224db94be561dfb5be63db83778f525}} 
+\index{menu::Menu@{menu::Menu}!optionsButtonsTextures@{optionsButtonsTextures}}
+\index{optionsButtonsTextures@{optionsButtonsTextures}!menu::Menu@{menu::Menu}}
+\doxysubsubsection{optionsButtonsTextures}
+{\footnotesize\ttfamily sf\+::\+Texture$\ast$ menu\+::\+Menu\+::options\+Buttons\+Textures\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classmenu_1_1_menu_a58e3a6c8c333347cf11e9fd752ba98a5}} 
+\index{menu::Menu@{menu::Menu}!optionsMusicLevelText@{optionsMusicLevelText}}
+\index{optionsMusicLevelText@{optionsMusicLevelText}!menu::Menu@{menu::Menu}}
+\doxysubsubsection{optionsMusicLevelText}
+{\footnotesize\ttfamily Text menu\+::\+Menu\+::options\+Music\+Level\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classmenu_1_1_menu_a63edd519e045339d4f6dd301322b2ac7}} 
+\index{menu::Menu@{menu::Menu}!optionsSymbolsSprites@{optionsSymbolsSprites}}
+\index{optionsSymbolsSprites@{optionsSymbolsSprites}!menu::Menu@{menu::Menu}}
+\doxysubsubsection{optionsSymbolsSprites}
+{\footnotesize\ttfamily Sprite$\ast$ menu\+::\+Menu\+::options\+Symbols\+Sprites\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classmenu_1_1_menu_a7316381457fce6f9f4a1b1b010764dff}} 
+\index{menu::Menu@{menu::Menu}!optionsSymbolsTextures@{optionsSymbolsTextures}}
+\index{optionsSymbolsTextures@{optionsSymbolsTextures}!menu::Menu@{menu::Menu}}
+\doxysubsubsection{optionsSymbolsTextures}
+{\footnotesize\ttfamily sf\+::\+Texture$\ast$ menu\+::\+Menu\+::options\+Symbols\+Textures\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classmenu_1_1_menu_a40ff610788cf2c137a9eaf268665a85e}} 
+\index{menu::Menu@{menu::Menu}!optionsTextButtons@{optionsTextButtons}}
+\index{optionsTextButtons@{optionsTextButtons}!menu::Menu@{menu::Menu}}
+\doxysubsubsection{optionsTextButtons}
+{\footnotesize\ttfamily Text$\ast$ menu\+::\+Menu\+::options\+Text\+Buttons\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classmenu_1_1_menu_a2909ce755fef8ed8cc3f1c825117feef}} 
+\index{menu::Menu@{menu::Menu}!optionsTextLabels@{optionsTextLabels}}
+\index{optionsTextLabels@{optionsTextLabels}!menu::Menu@{menu::Menu}}
+\doxysubsubsection{optionsTextLabels}
+{\footnotesize\ttfamily Text$\ast$ menu\+::\+Menu\+::options\+Text\+Labels\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classmenu_1_1_menu_a91ecff577c7e5108d738aa95f16de808}} 
+\index{menu::Menu@{menu::Menu}!startTextButtons@{startTextButtons}}
+\index{startTextButtons@{startTextButtons}!menu::Menu@{menu::Menu}}
+\doxysubsubsection{startTextButtons}
+{\footnotesize\ttfamily Text$\ast$ menu\+::\+Menu\+::start\+Text\+Buttons\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classmenu_1_1_menu_ab9514a29547fb5b670b84eb8b6c50b92}} 
+\index{menu::Menu@{menu::Menu}!tipsText@{tipsText}}
+\index{tipsText@{tipsText}!menu::Menu@{menu::Menu}}
+\doxysubsubsection{tipsText}
+{\footnotesize\ttfamily Text$\ast$ menu\+::\+Menu\+::tips\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classmenu_1_1_menu_ab375c4a6a2851598d013631198894956}} 
+\index{menu::Menu@{menu::Menu}!windowActive@{windowActive}}
+\index{windowActive@{windowActive}!menu::Menu@{menu::Menu}}
+\doxysubsubsection{windowActive}
+{\footnotesize\ttfamily int menu\+::\+Menu\+::window\+Active = \textbf{ M\+A\+IN}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Chomik/source/repos/\+Snake\+S\+F\+M\+Lv1/\+Snake\+S\+F\+M\+L/src/\textbf{ Menu.\+ixx}\end{DoxyCompactItemize}

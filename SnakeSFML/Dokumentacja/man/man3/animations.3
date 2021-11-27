@@ -1,0 +1,59 @@
+.TH "animations" 3 "So, 27 lis 2021" "Silnik graficzny" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+animations
+.SH SYNOPSIS
+.br
+.PP
+.SS "Wyliczenia"
+
+.in +1c
+.ti -1c
+.RI "enum \fBanimationTypes\fP { \fBNORMAL\fP, \fBEATEN\fP }"
+.br
+.in -1c
+.SS "Zmienne"
+
+.in +1c
+.ti -1c
+.RI "String \fBnormalAppleAnimations\fP [2]"
+.br
+.ti -1c
+.RI "String \fBgoldAppleAnimations\fP [2]"
+.br
+.in -1c
+.SH "Dokumentacja typów wyliczanych"
+.PP 
+.SS "enum \fBanimations::animationTypes\fP"
+
+.PP
+\fBWartości wyliczeń\fP
+.in +1c
+.TP
+\fB\fINORMAL \fP\fP
+.TP
+\fB\fIEATEN \fP\fP
+.SH "Dokumentacja zmiennych"
+.PP 
+.SS "String animations::goldAppleAnimations[2]"
+\fBWartość początkowa:\fP
+.PP
+.nf
+= {
+        "assets/SpritesTextures/Player&Things/goldAppleAnimation\&.png",
+        "assets/SpritesTextures/Player&Things/goldAppleEatingAnimation\&.png"
+    }
+.fi
+.SS "String animations::normalAppleAnimations[2]"
+\fBWartość początkowa:\fP
+.PP
+.nf
+= {
+        "assets/SpritesTextures/Player&Things/appleAnimation\&.png",
+        "assets/SpritesTextures/Player&Things/appleEatingAnimation\&.png"
+    }
+.fi
+.SH "Autor"
+.PP 
+Wygenerowano automatycznie z kodu źródłowego programem Doxygen dla Silnik graficzny\&.

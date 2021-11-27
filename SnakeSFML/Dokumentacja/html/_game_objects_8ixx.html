@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Silnik graficzny: Dokumentacja pliku C:/Users/Chomik/source/repos/SnakeSFMLv1/SnakeSFML/src/GameObjects.ixx</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Silnik graficzny
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Komponenty</a> &#124;
+<a href="#namespaces">Przestrzenie nazw</a> &#124;
+<a href="#var-members">Zmienne</a>  </div>
+  <div class="headertitle">
+<div class="title">Dokumentacja pliku GameObjects.ixx</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Plik modułowy zawierający deklaracje klas obiektów graficznych.  
+<a href="#details">Więcej...</a></p>
+<div class="textblock"><code>#include &lt;SFML/Graphics.hpp&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Komponenty</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_objects_1_1_game_object.html">gameObjects::GameObject</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Klasa opisująca bitmapę. Dziedziczy po klasie Sprite, dzięki której posiada metody do transformacji bitmapy.  <a href="classgame_objects_1_1_game_object.html#details">Więcej...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_objects_1_1_animated_object.html">gameObjects::AnimatedObject</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Klasa opisująca graficzny obiekt animowany.  <a href="classgame_objects_1_1_animated_object.html#details">Więcej...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_objects_1_1_player.html">gameObjects::Player</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Klasa gracza, która obsługuje animacje oraz klawiaturę i myszkę.  <a href="classgame_objects_1_1_player.html#details">Więcej...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Przestrzenie nazw</h2></td></tr>
+<tr class="memitem:namespacegame_objects"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegame_objects.html">gameObjects</a></td></tr>
+<tr class="memdesc:namespacegame_objects"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przestrzeń nazw zawierająca definicję klas <a class="el" href="classgame_objects_1_1_game_object.html" title="Klasa opisująca bitmapę. Dziedziczy po klasie Sprite, dzięki której posiada metody do transformacji b...">GameObject</a>, <a class="el" href="classgame_objects_1_1_animated_object.html" title="Klasa opisująca graficzny obiekt animowany.">AnimatedObject</a> i <a class="el" href="classgame_objects_1_1_player.html" title="Klasa gracza, która obsługuje animacje oraz klawiaturę i myszkę.">Player</a>. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Zmienne</h2></td></tr>
+<tr class="memitem:a2697a39390397ef5f00887c592770369"><td class="memItemLeft" align="right" valign="top">import&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_game_objects_8ixx.html#a2697a39390397ef5f00887c592770369">GeneralStuff</a></td></tr>
+<tr class="separator:a2697a39390397ef5f00887c592770369"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25eb7355bdbd67ebd7c2aef3d730fe09"><td class="memItemLeft" align="right" valign="top">import&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_game_objects_8ixx.html#a25eb7355bdbd67ebd7c2aef3d730fe09">ErrorHandler</a></td></tr>
+<tr class="separator:a25eb7355bdbd67ebd7c2aef3d730fe09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac38f80f5c0487c999769ce63520386d1"><td class="memItemLeft" align="right" valign="top">export module&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_game_objects_8ixx.html#ac38f80f5c0487c999769ce63520386d1">GameObjects</a></td></tr>
+<tr class="separator:ac38f80f5c0487c999769ce63520386d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p>Plik modułowy zawierający deklaracje klas obiektów graficznych. </p>
+</div><h2 class="groupheader">Dokumentacja zmiennych</h2>
+<a id="a25eb7355bdbd67ebd7c2aef3d730fe09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25eb7355bdbd67ebd7c2aef3d730fe09">&#9670;&nbsp;</a></span>ErrorHandler</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">import <a class="el" href="class_error_handler.html">ErrorHandler</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac38f80f5c0487c999769ce63520386d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac38f80f5c0487c999769ce63520386d1">&#9670;&nbsp;</a></span>GameObjects</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">export module GameObjects</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2697a39390397ef5f00887c592770369"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2697a39390397ef5f00887c592770369">&#9670;&nbsp;</a></span>GeneralStuff</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">import GeneralStuff</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano przez &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>

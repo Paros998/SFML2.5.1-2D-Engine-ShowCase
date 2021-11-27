@@ -1,0 +1,361 @@
+\doxysection{Dokumentacja pliku C\+:/\+Users/\+Chomik/source/repos/\+Snake\+S\+F\+M\+Lv1/\+Snake\+S\+F\+M\+L/src/\+General\+Stuff.ixx}
+\label{_general_stuff_8ixx}\index{C:/Users/Chomik/source/repos/SnakeSFMLv1/SnakeSFML/src/GeneralStuff.ixx@{C:/Users/Chomik/source/repos/SnakeSFMLv1/SnakeSFML/src/GeneralStuff.ixx}}
+{\ttfamily \#include $<$S\+F\+M\+L/\+Graphics.\+hpp$>$}\newline
+{\ttfamily \#include $<$S\+F\+M\+L/\+Audio.\+hpp$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+\doxysubsection*{Przestrzenie nazw}
+\begin{DoxyCompactItemize}
+\item 
+ \textbf{ player\+Movement}
+\item 
+ \textbf{ engine\+Consts}
+\item 
+ \textbf{ directories}
+\item 
+ \textbf{ consts}
+\item 
+ \textbf{ global\+Vars}
+\item 
+ \textbf{ global\+Functions}
+\item 
+ \textbf{ loading\+Screen}
+\item 
+ \textbf{ textures}
+\item 
+ \textbf{ music}
+\item 
+ \textbf{ sounds}
+\item 
+ \textbf{ animations}
+\item 
+ \textbf{ menu\+Assets}
+\item 
+ \textbf{ menu\+Assets\+::main\+Menu}
+\item 
+ \textbf{ menu\+Assets\+::after\+Start}
+\item 
+ \textbf{ menu\+Assets\+::after\+Options}
+\item 
+ \textbf{ menu\+Assets\+::after\+Options\+::sprites}
+\end{DoxyCompactItemize}
+\doxysubsection*{Wyliczenia}
+\begin{DoxyCompactItemize}
+\item 
+enum \textbf{ player\+Movement\+::direction} \{ \textbf{ player\+Movement\+::\+N\+O\+T\+I\+M\+P\+O\+R\+T\+A\+NT}, 
+\textbf{ player\+Movement\+::\+L\+E\+FT}, 
+\textbf{ player\+Movement\+::\+R\+I\+G\+HT}
+ \}
+\item 
+enum \textbf{ player\+Movement\+::actions} \{ \newline
+\textbf{ player\+Movement\+::\+N\+E\+V\+E\+R\+M\+I\+ND}, 
+\textbf{ player\+Movement\+::\+I\+D\+LE}, 
+\textbf{ player\+Movement\+::\+W\+A\+LK}, 
+\textbf{ player\+Movement\+::\+R\+UN}, 
+\newline
+\textbf{ player\+Movement\+::\+J\+U\+MP}
+ \}
+\item 
+enum \textbf{ player\+Movement\+::fight} \{ \newline
+\textbf{ player\+Movement\+::\+N\+O\+NE}, 
+\textbf{ player\+Movement\+::\+F\+I\+R\+ST}, 
+\textbf{ player\+Movement\+::\+S\+E\+C\+O\+ND}, 
+\textbf{ player\+Movement\+::\+T\+H\+I\+RD}, 
+\newline
+\textbf{ player\+Movement\+::\+J\+U\+M\+P\+A\+T\+T\+A\+CK}
+ \}
+\item 
+enum \textbf{ textures\+::levels} \{ \textbf{ textures\+::\+L\+E\+V\+E\+L1}, 
+\textbf{ textures\+::\+L\+E\+V\+E\+L2}, 
+\textbf{ textures\+::\+L\+E\+V\+E\+L3}
+ \}
+\item 
+enum \textbf{ textures\+::materials} \{ \newline
+\textbf{ textures\+::\+R\+O\+C\+K1}, 
+\textbf{ textures\+::\+G\+R\+A\+S\+S1}, 
+\textbf{ textures\+::\+S\+N\+O\+W1}, 
+\textbf{ textures\+::\+R\+O\+C\+K2}, 
+\newline
+\textbf{ textures\+::\+G\+R\+A\+S\+S2}, 
+\textbf{ textures\+::\+R\+O\+C\+K3}, 
+\textbf{ textures\+::\+G\+R\+A\+S\+S3}, 
+\textbf{ textures\+::\+R\+O\+C\+K4}
+ \}
+\item 
+enum \textbf{ textures\+::cup\+Textures\+Index} \{ \textbf{ textures\+::\+B\+R\+O\+N\+ZE}, 
+\textbf{ textures\+::\+S\+I\+L\+V\+ER}, 
+\textbf{ textures\+::\+G\+O\+L\+D\+EN}
+ \}
+\item 
+enum \textbf{ textures\+::snake\+Textures\+IndexX} \{ \textbf{ textures\+::\+H\+E\+AD}, 
+\textbf{ textures\+::\+B\+O\+DY}, 
+\textbf{ textures\+::\+B\+O\+D\+Y\+T\+R\+A\+N\+S\+P\+A\+R\+E\+NT}
+ \}
+\item 
+enum \textbf{ textures\+::snake\+Textures\+IndexY} \{ \newline
+\textbf{ textures\+::\+G\+R\+E\+EN}, 
+\textbf{ textures\+::\+G\+R\+EY}, 
+\textbf{ textures\+::\+P\+I\+NK}, 
+\textbf{ textures\+::\+C\+Y\+AN}, 
+\newline
+\textbf{ textures\+::\+B\+L\+UE}, 
+\textbf{ textures\+::\+R\+ED}, 
+\textbf{ textures\+::\+P\+U\+R\+P\+LE}, 
+\textbf{ textures\+::\+G\+O\+LD}
+ \}
+\item 
+enum \textbf{ animations\+::animation\+Types} \{ \textbf{ animations\+::\+N\+O\+R\+M\+AL}, 
+\textbf{ animations\+::\+E\+A\+T\+EN}
+ \}
+\item 
+enum \textbf{ menu\+Assets\+::menu\+Helpers\+Index} \{ \newline
+\textbf{ menu\+Assets\+::\+P\+L\+US}, 
+\textbf{ menu\+Assets\+::\+M\+I\+N\+US}, 
+\textbf{ menu\+Assets\+::\+O\+P\+T\+I\+O\+NS}, 
+\textbf{ menu\+Assets\+::\+P\+E\+O\+P\+LE}, 
+\newline
+\textbf{ menu\+Assets\+::\+C\+O\+N\+T\+R\+O\+L\+ER}, 
+\textbf{ menu\+Assets\+::\+D\+O\+WN}, 
+\textbf{ menu\+Assets\+::\+UP}, 
+\textbf{ menu\+Assets\+::\+L\+E\+FT}, 
+\newline
+\textbf{ menu\+Assets\+::\+R\+I\+G\+HT}, 
+\textbf{ menu\+Assets\+::\+A\+P\+P\+LE}, 
+\textbf{ menu\+Assets\+::\+G\+O\+L\+D\+A\+P\+P\+LE}, 
+\textbf{ menu\+Assets\+::\+H\+O\+LE}, 
+\newline
+\textbf{ menu\+Assets\+::\+O\+B\+S\+T\+R\+U\+C\+T\+I\+ON}, 
+\textbf{ menu\+Assets\+::\+R\+O\+CK}, 
+\textbf{ menu\+Assets\+::\+S\+N\+A\+K\+E\+H\+E\+AD}
+ \}
+\item 
+enum \textbf{ menu\+Assets\+::menu\+Tips} \{ \newline
+\textbf{ menu\+Assets\+::\+T\+I\+P1}, 
+\textbf{ menu\+Assets\+::\+T\+I\+P2}, 
+\textbf{ menu\+Assets\+::\+T\+I\+P3}, 
+\textbf{ menu\+Assets\+::\+T\+I\+P4}, 
+\newline
+\textbf{ menu\+Assets\+::\+T\+I\+P5}, 
+\textbf{ menu\+Assets\+::\+T\+I\+P6}
+ \}
+\item 
+enum \textbf{ menu\+Assets\+::main\+Menu\+::menu\+Buttons\+Index} \{ \newline
+\textbf{ menu\+Assets\+::main\+Menu\+::\+S\+T\+A\+RT}, 
+\textbf{ menu\+Assets\+::main\+Menu\+::\+O\+P\+T\+I\+O\+NS}, 
+\textbf{ menu\+Assets\+::main\+Menu\+::\+S\+C\+O\+R\+ES}, 
+\textbf{ menu\+Assets\+::main\+Menu\+::\+C\+R\+E\+A\+T\+O\+RS}, 
+\newline
+\textbf{ menu\+Assets\+::main\+Menu\+::\+E\+X\+IT}
+ \}
+\item 
+enum \textbf{ menu\+Assets\+::after\+Start\+::start\+Buttons\+Index} \{ \textbf{ menu\+Assets\+::after\+Start\+::\+N\+E\+XT}, 
+\textbf{ menu\+Assets\+::after\+Start\+::\+B\+A\+CK}
+ \}
+\item 
+enum \textbf{ menu\+Assets\+::after\+Options\+::options\+Buttons\+Index} \{ \textbf{ menu\+Assets\+::after\+Options\+::\+F\+U\+L\+L\+S\+C\+R\+E\+EN}, 
+\textbf{ menu\+Assets\+::after\+Options\+::\+W\+I\+N\+D\+OW}, 
+\textbf{ menu\+Assets\+::after\+Options\+::\+B\+A\+CK}
+ \}
+\item 
+enum \textbf{ menu\+Assets\+::after\+Options\+::options\+Text\+Index} \{ \newline
+\textbf{ menu\+Assets\+::after\+Options\+::\+C\+O\+N\+T\+R\+O\+LS}, 
+\textbf{ menu\+Assets\+::after\+Options\+::\+UP}, 
+\textbf{ menu\+Assets\+::after\+Options\+::\+D\+O\+WN}, 
+\textbf{ menu\+Assets\+::after\+Options\+::\+R\+I\+G\+HT}, 
+\newline
+\textbf{ menu\+Assets\+::after\+Options\+::\+L\+E\+FT}, 
+\textbf{ menu\+Assets\+::after\+Options\+::\+O\+P\+T\+I\+O\+NS}, 
+\textbf{ menu\+Assets\+::after\+Options\+::\+M\+U\+S\+IC}, 
+\textbf{ menu\+Assets\+::after\+Options\+::\+S\+C\+R\+E\+EN}
+ \}
+\item 
+enum \textbf{ menu\+Assets\+::after\+Options\+::sprites\+::options\+Text\+Sprites} \{ \newline
+\textbf{ menu\+Assets\+::after\+Options\+::sprites\+::\+C\+O\+N\+T\+R\+O\+LS}, 
+\textbf{ menu\+Assets\+::after\+Options\+::sprites\+::\+UP}, 
+\textbf{ menu\+Assets\+::after\+Options\+::sprites\+::\+D\+O\+WN}, 
+\textbf{ menu\+Assets\+::after\+Options\+::sprites\+::\+R\+I\+G\+HT}, 
+\newline
+\textbf{ menu\+Assets\+::after\+Options\+::sprites\+::\+L\+E\+FT}, 
+\textbf{ menu\+Assets\+::after\+Options\+::sprites\+::\+O\+P\+T\+I\+O\+NS}
+ \}
+\item 
+enum \textbf{ menu\+Assets\+::after\+Options\+::sprites\+::options\+Buttons\+Sprites\+Index} \{ \textbf{ menu\+Assets\+::after\+Options\+::sprites\+::\+P\+L\+US}, 
+\textbf{ menu\+Assets\+::after\+Options\+::sprites\+::\+M\+I\+N\+US}
+ \}
+\item 
+enum \textbf{ menu\+Assets\+::creators\+Index} \{ \textbf{ menu\+Assets\+::\+D\+O\+M\+I\+N\+IK}, 
+\textbf{ menu\+Assets\+::\+P\+A\+T\+R\+YK}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ global\+Functions\+::generate} (float \&var, int parameter)
+\item 
+bool \textbf{ global\+Functions\+::collision} (Sprite first, Sprite second)
+\item 
+int \textbf{ global\+Functions\+::generate} (int parameter)
+\item 
+float \textbf{ global\+Functions\+::find\+Horizontally\+Centered\+Position\+Of\+Given\+Text} (String text)
+\item 
+float \textbf{ global\+Functions\+::get\+Half\+Of\+Size\+Of\+Given\+Text} (String text)
+\item 
+float \textbf{ global\+Functions\+::get\+Full\+Size\+Of\+Given\+Text} (String text)
+\item 
+Vector2f \textbf{ global\+Functions\+::get\+Center\+Of\+The\+Screen} ()
+\item 
+String \textbf{ global\+Functions\+::get\+Music\+Level\+In\+Text} ()
+\item 
+Vector2u \textbf{ loading\+Screen\+::spinner\+Images} (24, 1)
+\item 
+Vector2f \textbf{ loading\+Screen\+::spinner\+Scale} (2.\+0f, 2.\+0f)
+\end{DoxyCompactItemize}
+\doxysubsection*{Zmienne}
+\begin{DoxyCompactItemize}
+\item 
+export module \textbf{ General\+Stuff}
+\item 
+constexpr int \textbf{ engine\+Consts\+::\+S\+C\+R\+E\+E\+N\+\_\+\+W\+I\+D\+TH} = 1920
+\item 
+constexpr int \textbf{ engine\+Consts\+::\+S\+C\+R\+E\+E\+N\+\_\+\+H\+E\+I\+G\+HT} = 1080
+\item 
+String \textbf{ directories\+::\+S\+P\+R\+I\+T\+E\+S\+\_\+\+D\+I\+R\+E\+C\+T\+O\+RY} = \char`\"{}./assets/Sprites\+Textures/\textbf{ Engine}\char`\"{}
+\item 
+String \textbf{ directories\+::\+F\+O\+N\+T\+S\+\_\+\+D\+I\+R\+E\+C\+T\+O\+RY} = \char`\"{}./assets/Fonts\char`\"{}
+\item 
+constexpr int \textbf{ consts\+::\+B\+O\+A\+R\+D\+\_\+\+H\+E\+I\+G\+HT} = 12
+\item 
+constexpr int \textbf{ consts\+::\+B\+O\+A\+R\+D\+\_\+\+W\+I\+D\+TH} = 24
+\item 
+constexpr int \textbf{ consts\+::\+S\+T\+A\+R\+T\+\_\+X} = 200
+\item 
+constexpr int \textbf{ consts\+::\+S\+T\+A\+R\+T\+\_\+Y} = 120
+\item 
+constexpr int \textbf{ consts\+::\+E\+N\+D\+\_\+X} = S\+T\+A\+R\+T\+\_\+X + (64 $\ast$ (B\+O\+A\+R\+D\+\_\+\+W\+I\+D\+TH -\/ 1))
+\item 
+constexpr int \textbf{ consts\+::\+E\+N\+D\+\_\+Y} = S\+T\+A\+R\+T\+\_\+Y + (64 $\ast$ (B\+O\+A\+R\+D\+\_\+\+H\+E\+I\+G\+HT -\/ 1))
+\item 
+constexpr int \textbf{ consts\+::\+R\+O\+W\+\_\+\+S\+I\+ZE} = 64
+\item 
+Color \textbf{ consts\+::gold} = Color(255, 215, 0, 255)
+\item 
+constexpr int \textbf{ consts\+::\+S\+C\+R\+E\+E\+N\+\_\+\+W\+I\+D\+TH} = 1920
+\item 
+constexpr int \textbf{ consts\+::\+S\+C\+R\+E\+E\+N\+\_\+\+H\+E\+I\+G\+HT} = 1080
+\item 
+constexpr float \textbf{ consts\+::\+A\+P\+P\+L\+E\+S\+\_\+\+S\+C\+A\+L\+ER} = 0.\+26f
+\item 
+int \textbf{ global\+Vars\+::snake\+Skin\+Num} = 0
+\item 
+int \textbf{ global\+Vars\+::player\+Score} = 0
+\item 
+float \textbf{ global\+Vars\+::music\+Level} = 15.\+0f
+\item 
+Vector2f \textbf{ global\+Vars\+::screen\+Ratio} = \{ 1.\+0f,1.\+0f \}
+\item 
+int \textbf{ global\+Vars\+::font\+Size} = 40
+\item 
+String \textbf{ loading\+Screen\+::spinner\+Texture\+Location} = \char`\"{}assets/Loading\+Screen/spinner.\+png\char`\"{}
+\item 
+String \textbf{ loading\+Screen\+::background\+Texture\+Location} = \char`\"{}assets/Loading\+Screen/background.\+jpg\char`\"{}
+\item 
+int \textbf{ loading\+Screen\+::number\+Of\+Spinner\+Frames} = 24
+\item 
+float \textbf{ loading\+Screen\+::spinner\+Frame\+Switch\+Time} = 1.\+0f / (float)number\+Of\+Spinner\+Frames
+\item 
+int \textbf{ textures\+::materials\+On\+Level} [3][3]
+\item 
+String \textbf{ textures\+::map\+Textures\+Location} [8]
+\item 
+int \textbf{ textures\+::num\+Of\+Obstructions} = 3
+\item 
+String \textbf{ textures\+::rocks\+Textures\+Location} [3]
+\item 
+String \textbf{ textures\+::teleport\+Texture\+Location} = \char`\"{}assets/Sprites\+Textures/Map/hole\+Texture.\+png\char`\"{}
+\item 
+String \textbf{ textures\+::cup\+Textures\+Location} [3]
+\item 
+String \textbf{ textures\+::snake\+Textures\+Location} [3][8]
+\item 
+String \textbf{ music\+::levels\+Music\+Location} [3]
+\item 
+String \textbf{ music\+::menu\+Music} [4]
+\item 
+String \textbf{ sounds\+::eating\+Sound\+Location} = \char`\"{}assets/Sounds/apple\+Eaten.\+wav\char`\"{}
+\item 
+String \textbf{ sounds\+::steps\+Sound\+Location} [3]
+\item 
+String \textbf{ sounds\+::snake\+Hitting\+Sound\+Location} [3]
+\item 
+String \textbf{ sounds\+::menu\+Click\+Sound} = \char`\"{}assets/Sounds/misc\+\_\+menu\+\_\+2.\+wav\char`\"{}
+\item 
+String \textbf{ animations\+::normal\+Apple\+Animations} [2]
+\item 
+String \textbf{ animations\+::gold\+Apple\+Animations} [2]
+\item 
+String \textbf{ menu\+Assets\+::menu\+Texture} = \char`\"{}assets/Menu\+Textures/menu\+Background.\+png\char`\"{}
+\item 
+String \textbf{ menu\+Assets\+::logo\+Texture} = \char`\"{}assets/Menu\+Textures/menu\+Logo.\+png\char`\"{}
+\item 
+String \textbf{ menu\+Assets\+::pointer\+Texture} = \char`\"{}assets/Menu\+Textures/pointer.\+png\char`\"{}
+\item 
+Vector2u \textbf{ menu\+Assets\+::pointer\+Image\+Count} = \{ 20,1 \}
+\item 
+float \textbf{ menu\+Assets\+::pointer\+Switch\+Time} = 1.\+0f / pointer\+Image\+Count.\+x
+\item 
+String \textbf{ menu\+Assets\+::menu\+Helpers\+Textures} [15]
+\item 
+String \textbf{ menu\+Assets\+::menu\+Tips\+Strings} [6]
+\item 
+Vector2f \textbf{ menu\+Assets\+::menu\+Tips\+Position} [6]
+\item 
+String \textbf{ menu\+Assets\+::font\+Location} = \char`\"{}assets/Fonts/snap/snap itc.\+ttf\char`\"{}
+\item 
+Vector2f \textbf{ menu\+Assets\+::back\+Button\+Position} = \{ \textbf{ global\+Functions\+::find\+Horizontally\+Centered\+Position\+Of\+Given\+Text}(\char`\"{}B\+A\+CK\char`\"{}),900.\+0f\}
+\item 
+String \textbf{ menu\+Assets\+::main\+Menu\+::menu\+Buttons\+Text} [5] = \{\char`\"{}S\+T\+A\+RT\char`\"{},\char`\"{}\textbf{ O\+P\+T\+I\+O\+NS}\char`\"{},\char`\"{}S\+C\+O\+R\+ES\char`\"{},\char`\"{}C\+R\+E\+A\+T\+O\+RS\char`\"{},\char`\"{}E\+X\+IT\char`\"{}\}
+\item 
+Vector2f \textbf{ menu\+Assets\+::main\+Menu\+::menu\+Buttons\+Position} [5]
+\item 
+String \textbf{ menu\+Assets\+::after\+Start\+::start\+Buttons\+Text} [2] = \{\char`\"{}N\+E\+XT\char`\"{},\char`\"{}B\+A\+CK\char`\"{}\}
+\item 
+Vector2f \textbf{ menu\+Assets\+::after\+Start\+::start\+Buttons\+PositionY} [2]
+\item 
+String \textbf{ menu\+Assets\+::after\+Options\+::options\+Buttons\+Text} [3] = \{ \char`\"{}F\+U\+L\+L\+S\+C\+R\+E\+EN\char`\"{},\char`\"{}W\+I\+N\+D\+O\+W\+ED\char`\"{},\char`\"{}B\+A\+CK\char`\"{} \}
+\item 
+Vector2f \textbf{ menu\+Assets\+::after\+Options\+::options\+Buttons\+Position} [3]
+\item 
+String \textbf{ menu\+Assets\+::after\+Options\+::options\+Text} [8] = \{\char`\"{}Controls\char`\"{},\char`\"{}Move Up\char`\"{},\char`\"{}Move Down\char`\"{},\char`\"{}Move Right\char`\"{},\char`\"{}Move Left\char`\"{},\char`\"{}Options\char`\"{},\char`\"{}Music\char`\"{},\char`\"{}Screen\char`\"{}\}
+\item 
+Vector2f \textbf{ menu\+Assets\+::after\+Options\+::options\+Text\+Position} [8]
+\item 
+String \textbf{ menu\+Assets\+::after\+Options\+::options\+Text\+Sprites} [6]
+\item 
+Vector2f \textbf{ menu\+Assets\+::after\+Options\+::sprites\+::options\+Text\+Sprites\+Positions} [6]
+\item 
+String \textbf{ menu\+Assets\+::after\+Options\+::sprites\+::options\+Buttons\+Sprites} [2]
+\item 
+Vector2f \textbf{ menu\+Assets\+::after\+Options\+::sprites\+::options\+Buttons\+Sprites\+Positions} [2]
+\item 
+String \textbf{ menu\+Assets\+::after\+Options\+::options\+Music\+Level\+In\+Percent} = \textbf{ global\+Functions\+::get\+Music\+Level\+In\+Text}()
+\item 
+Vector2f \textbf{ menu\+Assets\+::after\+Options\+::options\+Music\+Level\+In\+Percent\+Position}
+\item 
+String \textbf{ menu\+Assets\+::scores\+Button\+Text} = \char`\"{}B\+A\+CK\char`\"{}
+\item 
+String \textbf{ menu\+Assets\+::creators\+Text} [2] = \{\char`\"{}Dominik Grudzien\char`\"{},\char`\"{}Patryk Grzywacz\char`\"{}\}
+\item 
+Vector2f \textbf{ menu\+Assets\+::creators\+Text\+Position} [2]
+\item 
+String \textbf{ menu\+Assets\+::creators\+Button\+Text} = \char`\"{}B\+A\+CK\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Dokumentacja zmiennych}
+\mbox{\label{_general_stuff_8ixx_a34ed0d112017eae64f7f786d1cb91729}} 
+\index{GeneralStuff.ixx@{GeneralStuff.ixx}!GeneralStuff@{GeneralStuff}}
+\index{GeneralStuff@{GeneralStuff}!GeneralStuff.ixx@{GeneralStuff.ixx}}
+\doxysubsubsection{GeneralStuff}
+{\footnotesize\ttfamily export module General\+Stuff}
+

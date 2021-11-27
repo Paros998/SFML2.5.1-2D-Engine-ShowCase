@@ -1,0 +1,158 @@
+.TH "gameObjects::GameObject" 3 "So, 27 lis 2021" "Silnik graficzny" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+gameObjects::GameObject \- Klasa opisująca bitmapę\&. Dziedziczy po klasie Sprite, dzięki której posiada metody do transformacji bitmapy\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Dziedziczy Sprite\&.
+.PP
+Dziedziczona przez \fBgameObjects::AnimatedObject\fP\&.
+.SS "Metody publiczne"
+
+.in +1c
+.ti -1c
+.RI "\fBGameObject\fP (string texturePath, Vector2f startPosition)"
+.br
+.RI "Konstruktor inicjujący bitmapę\&. "
+.ti -1c
+.RI "\fBGameObject\fP ()"
+.br
+.RI "Domyślny konstruktor\&. "
+.ti -1c
+.RI "\fB~GameObject\fP ()"
+.br
+.RI "Destruktor sprzątający po obiekcie\&. "
+.ti -1c
+.RI "void \fBclearBitmap\fP ()"
+.br
+.RI "Metoda czyszcząca bitmapę\&. "
+.ti -1c
+.RI "void \fBsaveBitmap\fP ()"
+.br
+.RI "Metoda zapisująca bitmapę do pliku\&. "
+.ti -1c
+.RI "void \fBsetBitmap\fP (string texturePath)"
+.br
+.RI "Metoda ustawiająca bitmapę za pomocą ścieżki do pliku\&. "
+.ti -1c
+.RI "void \fBsetBitmap\fP (Texture *newTexture)"
+.br
+.RI "Metoda ustawiająca bitmapę za pomocą innej bitmapy\&. "
+.ti -1c
+.RI "Texture * \fBgetBitmap\fP ()"
+.br
+.RI "Metoda pobierająca aktualną bitmapę\&. "
+.in -1c
+.SS "Atrybuty prywatne"
+
+.in +1c
+.ti -1c
+.RI "sf::Texture * \fBtexture\fP"
+.br
+.ti -1c
+.RI "sf::Texture * \fBemptyTexture\fP"
+.br
+.ti -1c
+.RI "bool \fBisCleared\fP"
+.br
+.ti -1c
+.RI "bool \fBisCopied\fP"
+.br
+.ti -1c
+.RI "Color \fBdefaultColor\fP"
+.br
+.in -1c
+.SH "Opis szczegółowy"
+.PP 
+Klasa opisująca bitmapę\&. Dziedziczy po klasie Sprite, dzięki której posiada metody do transformacji bitmapy\&. 
+.SH "Dokumentacja konstruktora i destruktora"
+.PP 
+.SS "gameObjects::GameObject::GameObject (string texturePath, Vector2f startPosition)\fC [inline]\fP"
+
+.PP
+Konstruktor inicjujący bitmapę\&. 
+.SS "gameObjects::GameObject::GameObject ()\fC [inline]\fP"
+
+.PP
+Domyślny konstruktor\&. 
+.SS "gameObjects::GameObject::~GameObject ()\fC [inline]\fP"
+
+.PP
+Destruktor sprzątający po obiekcie\&. 
+.SH "Dokumentacja funkcji składowych"
+.PP 
+.SS "void gameObjects::GameObject::clearBitmap ()\fC [inline]\fP"
+
+.PP
+Metoda czyszcząca bitmapę\&. 
+.PP
+\fBZwraca\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "Texture * gameObjects::GameObject::getBitmap ()\fC [inline]\fP"
+
+.PP
+Metoda pobierająca aktualną bitmapę\&. 
+.PP
+\fBZwraca\fP
+.RS 4
+Texture* Aktualna bitmapa\&. 
+.RE
+.PP
+
+.SS "void gameObjects::GameObject::saveBitmap ()\fC [inline]\fP"
+
+.PP
+Metoda zapisująca bitmapę do pliku\&. 
+.PP
+\fBZwraca\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void gameObjects::GameObject::setBitmap (string texturePath)\fC [inline]\fP"
+
+.PP
+Metoda ustawiająca bitmapę za pomocą ścieżki do pliku\&. 
+.PP
+\fBZwraca\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SS "void gameObjects::GameObject::setBitmap (Texture * newTexture)\fC [inline]\fP"
+
+.PP
+Metoda ustawiająca bitmapę za pomocą innej bitmapy\&. 
+.PP
+\fBZwraca\fP
+.RS 4
+void 
+.RE
+.PP
+
+.SH "Dokumentacja atrybutów składowych"
+.PP 
+.SS "Color gameObjects::GameObject::defaultColor\fC [private]\fP"
+
+.SS "sf::Texture* gameObjects::GameObject::emptyTexture\fC [private]\fP"
+
+.SS "bool gameObjects::GameObject::isCleared\fC [private]\fP"
+
+.SS "bool gameObjects::GameObject::isCopied\fC [private]\fP"
+
+.SS "sf::Texture* gameObjects::GameObject::texture\fC [private]\fP"
+
+
+.SH "Autor"
+.PP 
+Wygenerowano automatycznie z kodu źródłowego programem Doxygen dla Silnik graficzny\&.

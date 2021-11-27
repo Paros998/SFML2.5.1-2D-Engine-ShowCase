@@ -1,0 +1,99 @@
+.TH "engine::Engine" 3 "So, 27 lis 2021" "Silnik graficzny" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+engine::Engine
+.SH SYNOPSIS
+.br
+.PP
+.SS "Metody publiczne"
+
+.in +1c
+.ti -1c
+.RI "\fBEngine\fP ()"
+.br
+.ti -1c
+.RI "\fB~Engine\fP ()"
+.br
+.in -1c
+.SS "Statyczne metody publiczne"
+
+.in +1c
+.ti -1c
+.RI "static \fBEngine\fP * \fBgetInstance\fP ()"
+.br
+.ti -1c
+.RI "static void \fBrelease\fP ()"
+.br
+.ti -1c
+.RI "static int \fBmain\fP ()"
+.br
+.in -1c
+.SS "Atrybuty prywatne"
+
+.in +1c
+.ti -1c
+.RI "\fBmanager::AssetManager\fP * \fBassetManager\fP"
+.br
+.ti -1c
+.RI "\fBmenu::Menu\fP * \fBmenuInstance\fP"
+.br
+.ti -1c
+.RI "RenderWindow * \fBwindow\fP"
+.br
+.ti -1c
+.RI "bool \fBmenuLoaded\fP = false"
+.br
+.ti -1c
+.RI "bool \fBgameLoaded\fP = false"
+.br
+.ti -1c
+.RI "bool \fBshutdown\fP = false"
+.br
+.ti -1c
+.RI "int \fBcurrentLevel\fP = \fBMENU\fP"
+.br
+.in -1c
+.SS "Statyczne atrybuty prywatne"
+
+.in +1c
+.ti -1c
+.RI "static \fBEngine\fP * \fBinstance\fP = nullptr"
+.br
+.in -1c
+.SH "Dokumentacja konstruktora i destruktora"
+.PP 
+.SS "engine::Engine::Engine ()\fC [inline]\fP"
+
+.SS "engine::Engine::~Engine ()\fC [inline]\fP"
+
+.SH "Dokumentacja funkcji składowych"
+.PP 
+.SS "static \fBEngine\fP* engine::Engine::getInstance ()\fC [inline]\fP, \fC [static]\fP"
+
+.SS "static int engine::Engine::main ()\fC [inline]\fP, \fC [static]\fP"
+
+.SS "static void engine::Engine::release ()\fC [inline]\fP, \fC [static]\fP"
+
+.SH "Dokumentacja atrybutów składowych"
+.PP 
+.SS "\fBmanager::AssetManager\fP* engine::Engine::assetManager\fC [private]\fP"
+
+.SS "int engine::Engine::currentLevel = \fBMENU\fP\fC [private]\fP"
+
+.SS "bool engine::Engine::gameLoaded = false\fC [private]\fP"
+
+.SS "\fBEngine\fP * engine::Engine::instance = nullptr\fC [static]\fP, \fC [private]\fP"
+
+.SS "\fBmenu::Menu\fP* engine::Engine::menuInstance\fC [private]\fP"
+
+.SS "bool engine::Engine::menuLoaded = false\fC [private]\fP"
+
+.SS "bool engine::Engine::shutdown = false\fC [private]\fP"
+
+.SS "RenderWindow* engine::Engine::window\fC [private]\fP"
+
+
+.SH "Autor"
+.PP 
+Wygenerowano automatycznie z kodu źródłowego programem Doxygen dla Silnik graficzny\&.

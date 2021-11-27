@@ -1,0 +1,61 @@
+.TH "shapes::Polygon" 3 "So, 27 lis 2021" "Silnik graficzny" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+shapes::Polygon
+.SH SYNOPSIS
+.br
+.PP
+.SS "Metody publiczne"
+
+.in +1c
+.ti -1c
+.RI "\fBPolygon\fP ()"
+.br
+.ti -1c
+.RI "\fB~Polygon\fP ()"
+.br
+.ti -1c
+.RI "\fBPolygon\fP (std::vector< Vector2f > points, Color outlineColor, int thickness, Color fillColor)"
+.br
+.ti -1c
+.RI "\fBPolygon\fP (std::vector< Vector2f > points, Texture *texture, Vector2f position, bool setOrigin)"
+.br
+.ti -1c
+.RI "void \fBmove\fP (float x)"
+.br
+.ti -1c
+.RI "ConvexShape \fBgetPolygon\fP ()"
+.br
+.in -1c
+.SS "Atrybuty prywatne"
+
+.in +1c
+.ti -1c
+.RI "sf::ConvexShape \fBpolygon\fP"
+.br
+.in -1c
+.SH "Dokumentacja konstruktora i destruktora"
+.PP 
+.SS "shapes::Polygon::Polygon ()\fC [inline]\fP"
+
+.SS "shapes::Polygon::~Polygon ()\fC [inline]\fP"
+
+.SS "shapes::Polygon::Polygon (std::vector< Vector2f > points, Color outlineColor, int thickness, Color fillColor)\fC [inline]\fP"
+
+.SS "shapes::Polygon::Polygon (std::vector< Vector2f > points, Texture * texture, Vector2f position, bool setOrigin)\fC [inline]\fP"
+
+.SH "Dokumentacja funkcji składowych"
+.PP 
+.SS "ConvexShape shapes::Polygon::getPolygon ()\fC [inline]\fP"
+
+.SS "void shapes::Polygon::move (float x)\fC [inline]\fP"
+
+.SH "Dokumentacja atrybutów składowych"
+.PP 
+.SS "sf::ConvexShape shapes::Polygon::polygon\fC [private]\fP"
+
+
+.SH "Autor"
+.PP 
+Wygenerowano automatycznie z kodu źródłowego programem Doxygen dla Silnik graficzny\&.

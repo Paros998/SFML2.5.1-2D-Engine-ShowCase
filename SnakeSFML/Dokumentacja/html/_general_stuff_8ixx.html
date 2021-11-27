@@ -1,0 +1,460 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Silnik graficzny: Dokumentacja pliku C:/Users/Chomik/source/repos/SnakeSFMLv1/SnakeSFML/src/GeneralStuff.ixx</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Silnik graficzny
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#namespaces">Przestrzenie nazw</a> &#124;
+<a href="#enum-members">Wyliczenia</a> &#124;
+<a href="#func-members">Funkcje</a> &#124;
+<a href="#var-members">Zmienne</a>  </div>
+  <div class="headertitle">
+<div class="title">Dokumentacja pliku GeneralStuff.ixx</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;SFML/Graphics.hpp&gt;</code><br />
+<code>#include &lt;SFML/Audio.hpp&gt;</code><br />
+<code>#include &lt;time.h&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Przestrzenie nazw</h2></td></tr>
+<tr class="memitem:namespaceplayer_movement"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceplayer_movement.html">playerMovement</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceengine_consts"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceengine_consts.html">engineConsts</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacedirectories"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedirectories.html">directories</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceconsts"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsts.html">consts</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceglobal_vars"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceglobal_vars.html">globalVars</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceglobal_functions"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceglobal_functions.html">globalFunctions</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceloading_screen"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceloading_screen.html">loadingScreen</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacetextures"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetextures.html">textures</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacemusic"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemusic.html">music</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacesounds"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesounds.html">sounds</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceanimations"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceanimations.html">animations</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacemenu_assets"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets.html">menuAssets</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacemenu_assets_1_1main_menu"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets_1_1main_menu.html">menuAssets::mainMenu</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacemenu_assets_1_1after_start"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets_1_1after_start.html">menuAssets::afterStart</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacemenu_assets_1_1after_options"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets_1_1after_options.html">menuAssets::afterOptions</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacemenu_assets_1_1after_options_1_1sprites"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets_1_1after_options_1_1sprites.html">menuAssets::afterOptions::sprites</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Wyliczenia</h2></td></tr>
+<tr class="memitem:aa796f809a1bf39d01739066388baeaba"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceplayer_movement.html#aa796f809a1bf39d01739066388baeaba">playerMovement::direction</a> { <a class="el" href="namespaceplayer_movement.html#aa796f809a1bf39d01739066388baeabaaabe7a4b91e170ad026962805820ccaf4">playerMovement::NOTIMPORTANT</a>, 
+<a class="el" href="namespaceplayer_movement.html#aa796f809a1bf39d01739066388baeabaa83653c5637dbf40677fd869782aa074f">playerMovement::LEFT</a>, 
+<a class="el" href="namespaceplayer_movement.html#aa796f809a1bf39d01739066388baeabaa91b00c4cd3752a29e35c36c0730f63a1">playerMovement::RIGHT</a>
+ }</td></tr>
+<tr class="separator:aa796f809a1bf39d01739066388baeaba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2652fc61d12e25b4e88766ad2f19bb76"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceplayer_movement.html#a2652fc61d12e25b4e88766ad2f19bb76">playerMovement::actions</a> { <br />
+&#160;&#160;<a class="el" href="namespaceplayer_movement.html#a2652fc61d12e25b4e88766ad2f19bb76aa4296004e89590bcc7e3ec8f2ee8e10f">playerMovement::NEVERMIND</a>, 
+<a class="el" href="namespaceplayer_movement.html#a2652fc61d12e25b4e88766ad2f19bb76a8b75c8accb6635e8f273dc4acd0a1d5d">playerMovement::IDLE</a>, 
+<a class="el" href="namespaceplayer_movement.html#a2652fc61d12e25b4e88766ad2f19bb76a3c1208f6043c7d8b5ac1eec04c74705a">playerMovement::WALK</a>, 
+<a class="el" href="namespaceplayer_movement.html#a2652fc61d12e25b4e88766ad2f19bb76aed44dc957c9a9776e7198ee40e32bd2e">playerMovement::RUN</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespaceplayer_movement.html#a2652fc61d12e25b4e88766ad2f19bb76a6638a26d13e9b973fc638ad99a0d6bca">playerMovement::JUMP</a>
+<br />
+ }</td></tr>
+<tr class="separator:a2652fc61d12e25b4e88766ad2f19bb76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e792d5a31b3f1caec2515ca60362700"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceplayer_movement.html#a5e792d5a31b3f1caec2515ca60362700">playerMovement::fight</a> { <br />
+&#160;&#160;<a class="el" href="namespaceplayer_movement.html#a5e792d5a31b3f1caec2515ca60362700aa61abbdb88bda9ecf817f6bda776264c">playerMovement::NONE</a>, 
+<a class="el" href="namespaceplayer_movement.html#a5e792d5a31b3f1caec2515ca60362700a7967e2d53f54cacbdc0fe1902454e5ab">playerMovement::FIRST</a>, 
+<a class="el" href="namespaceplayer_movement.html#a5e792d5a31b3f1caec2515ca60362700a66a75755096d4eb927958be756106010">playerMovement::SECOND</a>, 
+<a class="el" href="namespaceplayer_movement.html#a5e792d5a31b3f1caec2515ca60362700a039ed422fdb6826c4b0c2521457ed47d">playerMovement::THIRD</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespaceplayer_movement.html#a5e792d5a31b3f1caec2515ca60362700af4dc62fe814a012e47d9ba69237210a7">playerMovement::JUMPATTACK</a>
+<br />
+ }</td></tr>
+<tr class="separator:a5e792d5a31b3f1caec2515ca60362700"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf0d36c970d61e7060204c1109f6a399"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetextures.html#abf0d36c970d61e7060204c1109f6a399">textures::levels</a> { <a class="el" href="namespacetextures.html#abf0d36c970d61e7060204c1109f6a399adbc42507a65d3679df35304b491f9c56">textures::LEVEL1</a>, 
+<a class="el" href="namespacetextures.html#abf0d36c970d61e7060204c1109f6a399a3794617809f8ca4b68a8b84089b0747c">textures::LEVEL2</a>, 
+<a class="el" href="namespacetextures.html#abf0d36c970d61e7060204c1109f6a399ab3486534f85284a10e6d8e36efd0ac1c">textures::LEVEL3</a>
+ }</td></tr>
+<tr class="separator:abf0d36c970d61e7060204c1109f6a399"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac60b2e47102bb1f3cd4f0e5fa91e0eb8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetextures.html#ac60b2e47102bb1f3cd4f0e5fa91e0eb8">textures::materials</a> { <br />
+&#160;&#160;<a class="el" href="namespacetextures.html#ac60b2e47102bb1f3cd4f0e5fa91e0eb8a8853c5d876621e4d6b94f9f5e559370a">textures::ROCK1</a>, 
+<a class="el" href="namespacetextures.html#ac60b2e47102bb1f3cd4f0e5fa91e0eb8abc21b3dfbffa3f4f3429cfb0db6bf734">textures::GRASS1</a>, 
+<a class="el" href="namespacetextures.html#ac60b2e47102bb1f3cd4f0e5fa91e0eb8a7bd370ab11c2e420ef98b400bb8dd95b">textures::SNOW1</a>, 
+<a class="el" href="namespacetextures.html#ac60b2e47102bb1f3cd4f0e5fa91e0eb8a9cc65e701d2c20c355bdaaf79eceb255">textures::ROCK2</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespacetextures.html#ac60b2e47102bb1f3cd4f0e5fa91e0eb8ada78525abba01a319cca119bc15b8f14">textures::GRASS2</a>, 
+<a class="el" href="namespacetextures.html#ac60b2e47102bb1f3cd4f0e5fa91e0eb8a641cf246175d779da03a6fb016cd7b21">textures::ROCK3</a>, 
+<a class="el" href="namespacetextures.html#ac60b2e47102bb1f3cd4f0e5fa91e0eb8af8330a889391f206ca3796720861780a">textures::GRASS3</a>, 
+<a class="el" href="namespacetextures.html#ac60b2e47102bb1f3cd4f0e5fa91e0eb8aa6dd022a14845b5287301029360ee689">textures::ROCK4</a>
+<br />
+ }</td></tr>
+<tr class="separator:ac60b2e47102bb1f3cd4f0e5fa91e0eb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab02a1fe4861673261753e5801394fcdd"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetextures.html#ab02a1fe4861673261753e5801394fcdd">textures::cupTexturesIndex</a> { <a class="el" href="namespacetextures.html#ab02a1fe4861673261753e5801394fcdda60150e5a21e4c6bc6cd02caa7ae73c39">textures::BRONZE</a>, 
+<a class="el" href="namespacetextures.html#ab02a1fe4861673261753e5801394fcdda82e83a4a8f8b546689e367c5ab46c7b9">textures::SILVER</a>, 
+<a class="el" href="namespacetextures.html#ab02a1fe4861673261753e5801394fcddaebf62a82ff0d199e0208a9eed36ba867">textures::GOLDEN</a>
+ }</td></tr>
+<tr class="separator:ab02a1fe4861673261753e5801394fcdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9ee5332130d1955388639221624a30a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetextures.html#af9ee5332130d1955388639221624a30a">textures::snakeTexturesIndexX</a> { <a class="el" href="namespacetextures.html#af9ee5332130d1955388639221624a30aa7e62d5b2f2fa524034f9b68123c6825a">textures::HEAD</a>, 
+<a class="el" href="namespacetextures.html#af9ee5332130d1955388639221624a30aac69a9979c1c3cbc5f5dbbac6dccd2123">textures::BODY</a>, 
+<a class="el" href="namespacetextures.html#af9ee5332130d1955388639221624a30aa317f7b43e0d18909922ce21d0b652bb2">textures::BODYTRANSPARENT</a>
+ }</td></tr>
+<tr class="separator:af9ee5332130d1955388639221624a30a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0823c2cfe40f006f15975c082737d8f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetextures.html#ac0823c2cfe40f006f15975c082737d8f">textures::snakeTexturesIndexY</a> { <br />
+&#160;&#160;<a class="el" href="namespacetextures.html#ac0823c2cfe40f006f15975c082737d8fab463c6ec3b706e15c9059ffa2f84aead">textures::GREEN</a>, 
+<a class="el" href="namespacetextures.html#ac0823c2cfe40f006f15975c082737d8faf2fb75b68f8b6f022fc7850c036a0501">textures::GREY</a>, 
+<a class="el" href="namespacetextures.html#ac0823c2cfe40f006f15975c082737d8fafc621ee01652a7ca51937e2a8052c5c1">textures::PINK</a>, 
+<a class="el" href="namespacetextures.html#ac0823c2cfe40f006f15975c082737d8fa9e582df8e5a8cee3641928234b618453">textures::CYAN</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespacetextures.html#ac0823c2cfe40f006f15975c082737d8fab68997111f8c190f80b5f0a62a07b03c">textures::BLUE</a>, 
+<a class="el" href="namespacetextures.html#ac0823c2cfe40f006f15975c082737d8fa85e8636068be2de1a21abee3c5e2abda">textures::RED</a>, 
+<a class="el" href="namespacetextures.html#ac0823c2cfe40f006f15975c082737d8faf72445b82708c03fda90b0a8c321ea18">textures::PURPLE</a>, 
+<a class="el" href="namespacetextures.html#ac0823c2cfe40f006f15975c082737d8faf72fe5333c078ca141d89e65b8e82f89">textures::GOLD</a>
+<br />
+ }</td></tr>
+<tr class="separator:ac0823c2cfe40f006f15975c082737d8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9af2585f7ecaa05b5433cf90482584c"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceanimations.html#ad9af2585f7ecaa05b5433cf90482584c">animations::animationTypes</a> { <a class="el" href="namespaceanimations.html#ad9af2585f7ecaa05b5433cf90482584caa287d5d1488c76d285aa1843bc87ff9d">animations::NORMAL</a>, 
+<a class="el" href="namespaceanimations.html#ad9af2585f7ecaa05b5433cf90482584cac006c4ae8ffe45d490747af2fa453d3e">animations::EATEN</a>
+ }</td></tr>
+<tr class="separator:ad9af2585f7ecaa05b5433cf90482584c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acda0b57293335403680662576715ab3e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets.html#acda0b57293335403680662576715ab3e">menuAssets::menuHelpersIndex</a> { <br />
+&#160;&#160;<a class="el" href="namespacemenu_assets.html#acda0b57293335403680662576715ab3ea90fed0be2428f2a90e68fd7935238d9e">menuAssets::PLUS</a>, 
+<a class="el" href="namespacemenu_assets.html#acda0b57293335403680662576715ab3ea48373987d0b65a1cbdb9bb8ceb416698">menuAssets::MINUS</a>, 
+<a class="el" href="namespacemenu_assets.html#acda0b57293335403680662576715ab3eac0f67ff55e5d988f27c58269c16f71f0">menuAssets::OPTIONS</a>, 
+<a class="el" href="namespacemenu_assets.html#acda0b57293335403680662576715ab3ea52e6cf52d9a86bc6ea031dbf4a373bc2">menuAssets::PEOPLE</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespacemenu_assets.html#acda0b57293335403680662576715ab3ea23769535ef5d89c05581f4fe54ebe887">menuAssets::CONTROLER</a>, 
+<a class="el" href="namespacemenu_assets.html#acda0b57293335403680662576715ab3eacdb59a5e9262d192074c04c7b0cec49f">menuAssets::DOWN</a>, 
+<a class="el" href="namespacemenu_assets.html#acda0b57293335403680662576715ab3eaf3f9dd4172b3efef2871852a2f45876b">menuAssets::UP</a>, 
+<a class="el" href="namespacemenu_assets.html#acda0b57293335403680662576715ab3ea74720493c039b86a3125176985e6172b">menuAssets::LEFT</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespacemenu_assets.html#acda0b57293335403680662576715ab3eaddb82da7e285e198750f13a205779e96">menuAssets::RIGHT</a>, 
+<a class="el" href="namespacemenu_assets.html#acda0b57293335403680662576715ab3eadf18a8e5ca9c56b2be9f7766189aab7d">menuAssets::APPLE</a>, 
+<a class="el" href="namespacemenu_assets.html#acda0b57293335403680662576715ab3ea0e8d81d69e89121b2d19e57d2fe4d5ea">menuAssets::GOLDAPPLE</a>, 
+<a class="el" href="namespacemenu_assets.html#acda0b57293335403680662576715ab3eabf52503afd45d7d667c0c1936bdb6c7a">menuAssets::HOLE</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespacemenu_assets.html#acda0b57293335403680662576715ab3eae941c56e7526ba54b81003aaa96ce690">menuAssets::OBSTRUCTION</a>, 
+<a class="el" href="namespacemenu_assets.html#acda0b57293335403680662576715ab3eaa1557d6da402beca2491749e0891eaba">menuAssets::ROCK</a>, 
+<a class="el" href="namespacemenu_assets.html#acda0b57293335403680662576715ab3eada0a1914e8605dea279a199aa5375911">menuAssets::SNAKEHEAD</a>
+<br />
+ }</td></tr>
+<tr class="separator:acda0b57293335403680662576715ab3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a422f88db90631d81965d672362f2e57f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets.html#a422f88db90631d81965d672362f2e57f">menuAssets::menuTips</a> { <br />
+&#160;&#160;<a class="el" href="namespacemenu_assets.html#a422f88db90631d81965d672362f2e57fa09f70146b44f861da1c8ad9603a9ce83">menuAssets::TIP1</a>, 
+<a class="el" href="namespacemenu_assets.html#a422f88db90631d81965d672362f2e57faccf5ce504fd69cd6920a5056ccaa26c7">menuAssets::TIP2</a>, 
+<a class="el" href="namespacemenu_assets.html#a422f88db90631d81965d672362f2e57faaf16cd54d02b53dc15dc6dc9e4a167b0">menuAssets::TIP3</a>, 
+<a class="el" href="namespacemenu_assets.html#a422f88db90631d81965d672362f2e57fa0a5e9881deb2228316f94e5359c64d7f">menuAssets::TIP4</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespacemenu_assets.html#a422f88db90631d81965d672362f2e57fa6aa0817218b240ec5fb6f5aabf1761bc">menuAssets::TIP5</a>, 
+<a class="el" href="namespacemenu_assets.html#a422f88db90631d81965d672362f2e57fa60236f90b094b1dda7843f2ff45fffba">menuAssets::TIP6</a>
+<br />
+ }</td></tr>
+<tr class="separator:a422f88db90631d81965d672362f2e57f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a1914798fe6a396a88609e41fdb2f3a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets_1_1main_menu.html#a9a1914798fe6a396a88609e41fdb2f3a">menuAssets::mainMenu::menuButtonsIndex</a> { <br />
+&#160;&#160;<a class="el" href="namespacemenu_assets_1_1main_menu.html#a9a1914798fe6a396a88609e41fdb2f3aaf9e04c2b9d4e7c92734ce4b8959ef9cf">menuAssets::mainMenu::START</a>, 
+<a class="el" href="namespacemenu_assets_1_1main_menu.html#a9a1914798fe6a396a88609e41fdb2f3aaabcaeb0053dfdb0a20b395ba6b8c189a">menuAssets::mainMenu::OPTIONS</a>, 
+<a class="el" href="namespacemenu_assets_1_1main_menu.html#a9a1914798fe6a396a88609e41fdb2f3aa7039dd764a7963974f64746e2fe58876">menuAssets::mainMenu::SCORES</a>, 
+<a class="el" href="namespacemenu_assets_1_1main_menu.html#a9a1914798fe6a396a88609e41fdb2f3aa62cead287d0b357fec30b296dde2336e">menuAssets::mainMenu::CREATORS</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespacemenu_assets_1_1main_menu.html#a9a1914798fe6a396a88609e41fdb2f3aa86e9d48d732a24f37e9048f600cc5bd8">menuAssets::mainMenu::EXIT</a>
+<br />
+ }</td></tr>
+<tr class="separator:a9a1914798fe6a396a88609e41fdb2f3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acda982833136123b096f98395ae0f4f7"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets_1_1after_start.html#acda982833136123b096f98395ae0f4f7">menuAssets::afterStart::startButtonsIndex</a> { <a class="el" href="namespacemenu_assets_1_1after_start.html#acda982833136123b096f98395ae0f4f7accc4a15469bccfa13632608a2fcb8863">menuAssets::afterStart::NEXT</a>, 
+<a class="el" href="namespacemenu_assets_1_1after_start.html#acda982833136123b096f98395ae0f4f7a0e5ccc9f9aa85f8823b1447d03695c4b">menuAssets::afterStart::BACK</a>
+ }</td></tr>
+<tr class="separator:acda982833136123b096f98395ae0f4f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09ba57bf16c9ef251986ae1497c01bb7"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets_1_1after_options.html#a09ba57bf16c9ef251986ae1497c01bb7">menuAssets::afterOptions::optionsButtonsIndex</a> { <a class="el" href="namespacemenu_assets_1_1after_options.html#a09ba57bf16c9ef251986ae1497c01bb7a140310fa206aa37f71847bc162976d6c">menuAssets::afterOptions::FULLSCREEN</a>, 
+<a class="el" href="namespacemenu_assets_1_1after_options.html#a09ba57bf16c9ef251986ae1497c01bb7a120f43180b0ba73e83eaa63f5d2dc52c">menuAssets::afterOptions::WINDOW</a>, 
+<a class="el" href="namespacemenu_assets_1_1after_options.html#a09ba57bf16c9ef251986ae1497c01bb7a7ba5a5ac01c4ba8f48a6d487d595bc93">menuAssets::afterOptions::BACK</a>
+ }</td></tr>
+<tr class="separator:a09ba57bf16c9ef251986ae1497c01bb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a853bc1e752c1bf28e0089816ef1fce87"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets_1_1after_options.html#a853bc1e752c1bf28e0089816ef1fce87">menuAssets::afterOptions::optionsTextIndex</a> { <br />
+&#160;&#160;<a class="el" href="namespacemenu_assets_1_1after_options.html#a853bc1e752c1bf28e0089816ef1fce87ad7fdd0d10117a214266979b39050ce6a">menuAssets::afterOptions::CONTROLS</a>, 
+<a class="el" href="namespacemenu_assets_1_1after_options.html#a853bc1e752c1bf28e0089816ef1fce87aef08e9348f35bd51675de79ecd8c0113">menuAssets::afterOptions::UP</a>, 
+<a class="el" href="namespacemenu_assets_1_1after_options.html#a853bc1e752c1bf28e0089816ef1fce87a4a37866f54ecbfda99bf6b49d33f86a3">menuAssets::afterOptions::DOWN</a>, 
+<a class="el" href="namespacemenu_assets_1_1after_options.html#a853bc1e752c1bf28e0089816ef1fce87afcccfa53a0466ec5c466ae87b4356368">menuAssets::afterOptions::RIGHT</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespacemenu_assets_1_1after_options.html#a853bc1e752c1bf28e0089816ef1fce87a1231f6a68a93be0425be8ebbb50bdb66">menuAssets::afterOptions::LEFT</a>, 
+<a class="el" href="namespacemenu_assets_1_1after_options.html#a853bc1e752c1bf28e0089816ef1fce87a046c2fa303d2569564257a8e17b46be5">menuAssets::afterOptions::OPTIONS</a>, 
+<a class="el" href="namespacemenu_assets_1_1after_options.html#a853bc1e752c1bf28e0089816ef1fce87a6ff6d9ed17cdf05db1e4f3de1f7f624c">menuAssets::afterOptions::MUSIC</a>, 
+<a class="el" href="namespacemenu_assets_1_1after_options.html#a853bc1e752c1bf28e0089816ef1fce87a46d26e67af1014bc73d472d5605885f6">menuAssets::afterOptions::SCREEN</a>
+<br />
+ }</td></tr>
+<tr class="separator:a853bc1e752c1bf28e0089816ef1fce87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0acd2f67127128f17468c56c8aa314c"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets_1_1after_options_1_1sprites.html#af0acd2f67127128f17468c56c8aa314c">menuAssets::afterOptions::sprites::optionsTextSprites</a> { <br />
+&#160;&#160;<a class="el" href="namespacemenu_assets_1_1after_options_1_1sprites.html#af0acd2f67127128f17468c56c8aa314ca7be3b74a41b3e37e1d96a209551c5a78">menuAssets::afterOptions::sprites::CONTROLS</a>, 
+<a class="el" href="namespacemenu_assets_1_1after_options_1_1sprites.html#af0acd2f67127128f17468c56c8aa314cac08611ecbb1a947b8dfcffe96ebcfc86">menuAssets::afterOptions::sprites::UP</a>, 
+<a class="el" href="namespacemenu_assets_1_1after_options_1_1sprites.html#af0acd2f67127128f17468c56c8aa314ca3a030095eba1590401bbf4315f64a302">menuAssets::afterOptions::sprites::DOWN</a>, 
+<a class="el" href="namespacemenu_assets_1_1after_options_1_1sprites.html#af0acd2f67127128f17468c56c8aa314cad6f013cad9ee40615bb0df70fd5e3a7a">menuAssets::afterOptions::sprites::RIGHT</a>, 
+<br />
+&#160;&#160;<a class="el" href="namespacemenu_assets_1_1after_options_1_1sprites.html#af0acd2f67127128f17468c56c8aa314ca1307eecbcb05c70422d978b6316e87c9">menuAssets::afterOptions::sprites::LEFT</a>, 
+<a class="el" href="namespacemenu_assets_1_1after_options_1_1sprites.html#af0acd2f67127128f17468c56c8aa314cadda15308f103dc84983f6e54b3ec6c3c">menuAssets::afterOptions::sprites::OPTIONS</a>
+<br />
+ }</td></tr>
+<tr class="separator:af0acd2f67127128f17468c56c8aa314c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2243005836e96d7cb68b8457db6b8b67"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets_1_1after_options_1_1sprites.html#a2243005836e96d7cb68b8457db6b8b67">menuAssets::afterOptions::sprites::optionsButtonsSpritesIndex</a> { <a class="el" href="namespacemenu_assets_1_1after_options_1_1sprites.html#a2243005836e96d7cb68b8457db6b8b67a5912c69bfcaab2315161448937a19edf">menuAssets::afterOptions::sprites::PLUS</a>, 
+<a class="el" href="namespacemenu_assets_1_1after_options_1_1sprites.html#a2243005836e96d7cb68b8457db6b8b67a86ad8ca1ef4c4a356288b0ccf451c65f">menuAssets::afterOptions::sprites::MINUS</a>
+ }</td></tr>
+<tr class="separator:a2243005836e96d7cb68b8457db6b8b67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c8bf2fd0a52ed9ac1f0aea485803939"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets.html#a4c8bf2fd0a52ed9ac1f0aea485803939">menuAssets::creatorsIndex</a> { <a class="el" href="namespacemenu_assets.html#a4c8bf2fd0a52ed9ac1f0aea485803939a35060e2c12f8c97f8033dbe4d9fc604d">menuAssets::DOMINIK</a>, 
+<a class="el" href="namespacemenu_assets.html#a4c8bf2fd0a52ed9ac1f0aea485803939aad61162b38a8bbbf3afe34b86a4185f3">menuAssets::PATRYK</a>
+ }</td></tr>
+<tr class="separator:a4c8bf2fd0a52ed9ac1f0aea485803939"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funkcje</h2></td></tr>
+<tr class="memitem:af2f58f59eabbb666491fe09e96abb1dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceglobal_functions.html#af2f58f59eabbb666491fe09e96abb1dd">globalFunctions::generate</a> (float &amp;var, int parameter)</td></tr>
+<tr class="separator:af2f58f59eabbb666491fe09e96abb1dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3894b8db9c33059956bf04aaeaa40a52"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceglobal_functions.html#a3894b8db9c33059956bf04aaeaa40a52">globalFunctions::collision</a> (Sprite first, Sprite second)</td></tr>
+<tr class="separator:a3894b8db9c33059956bf04aaeaa40a52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4bcc09cb78dfe80d1496808333493fb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceglobal_functions.html#aa4bcc09cb78dfe80d1496808333493fb">globalFunctions::generate</a> (int parameter)</td></tr>
+<tr class="separator:aa4bcc09cb78dfe80d1496808333493fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a481c33db83129992b58cca87f6a77a46"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceglobal_functions.html#a481c33db83129992b58cca87f6a77a46">globalFunctions::findHorizontallyCenteredPositionOfGivenText</a> (String text)</td></tr>
+<tr class="separator:a481c33db83129992b58cca87f6a77a46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2f5a267e2440094de01bfd26212d1fd"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceglobal_functions.html#ad2f5a267e2440094de01bfd26212d1fd">globalFunctions::getHalfOfSizeOfGivenText</a> (String text)</td></tr>
+<tr class="separator:ad2f5a267e2440094de01bfd26212d1fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a647d321f69504bcbd27ad68d39be73b1"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceglobal_functions.html#a647d321f69504bcbd27ad68d39be73b1">globalFunctions::getFullSizeOfGivenText</a> (String text)</td></tr>
+<tr class="separator:a647d321f69504bcbd27ad68d39be73b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a643c069eac10d92ef05708c7929e369a"><td class="memItemLeft" align="right" valign="top">Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceglobal_functions.html#a643c069eac10d92ef05708c7929e369a">globalFunctions::getCenterOfTheScreen</a> ()</td></tr>
+<tr class="separator:a643c069eac10d92ef05708c7929e369a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b8a1f749ad0721ed6fa639d7d21856e"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceglobal_functions.html#a1b8a1f749ad0721ed6fa639d7d21856e">globalFunctions::getMusicLevelInText</a> ()</td></tr>
+<tr class="separator:a1b8a1f749ad0721ed6fa639d7d21856e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a365c02780e97dfd5fe4ad929b4d998de"><td class="memItemLeft" align="right" valign="top">Vector2u&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceloading_screen.html#a365c02780e97dfd5fe4ad929b4d998de">loadingScreen::spinnerImages</a> (24, 1)</td></tr>
+<tr class="separator:a365c02780e97dfd5fe4ad929b4d998de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa981beb7d8f80400cca250af883bf68d"><td class="memItemLeft" align="right" valign="top">Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceloading_screen.html#aa981beb7d8f80400cca250af883bf68d">loadingScreen::spinnerScale</a> (2.0f, 2.0f)</td></tr>
+<tr class="separator:aa981beb7d8f80400cca250af883bf68d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Zmienne</h2></td></tr>
+<tr class="memitem:a34ed0d112017eae64f7f786d1cb91729"><td class="memItemLeft" align="right" valign="top">export module&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_general_stuff_8ixx.html#a34ed0d112017eae64f7f786d1cb91729">GeneralStuff</a></td></tr>
+<tr class="separator:a34ed0d112017eae64f7f786d1cb91729"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3874ecfc78ea0df7351fdea5a6efd4be"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceengine_consts.html#a3874ecfc78ea0df7351fdea5a6efd4be">engineConsts::SCREEN_WIDTH</a> = 1920</td></tr>
+<tr class="separator:a3874ecfc78ea0df7351fdea5a6efd4be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a080fa7b1bc7f7c7715f842d017e9a925"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceengine_consts.html#a080fa7b1bc7f7c7715f842d017e9a925">engineConsts::SCREEN_HEIGHT</a> = 1080</td></tr>
+<tr class="separator:a080fa7b1bc7f7c7715f842d017e9a925"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e84436306c7cf093d074b1b06a77193"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedirectories.html#a7e84436306c7cf093d074b1b06a77193">directories::SPRITES_DIRECTORY</a> = &quot;./assets/SpritesTextures/<a class="el" href="main_8cpp.html#ae6de2b0b43153e8a58dff8b8546e3dc8">Engine</a>&quot;</td></tr>
+<tr class="separator:a7e84436306c7cf093d074b1b06a77193"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b3c95dd154aed3c943e58471d6e135c"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedirectories.html#a8b3c95dd154aed3c943e58471d6e135c">directories::FONTS_DIRECTORY</a> = &quot;./assets/Fonts&quot;</td></tr>
+<tr class="separator:a8b3c95dd154aed3c943e58471d6e135c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2e9df081f7b084920392e5f4a4d4637"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsts.html#ab2e9df081f7b084920392e5f4a4d4637">consts::BOARD_HEIGHT</a> = 12</td></tr>
+<tr class="separator:ab2e9df081f7b084920392e5f4a4d4637"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0bed0ea452159e1c8bf5000dbbcf98f"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsts.html#aa0bed0ea452159e1c8bf5000dbbcf98f">consts::BOARD_WIDTH</a> = 24</td></tr>
+<tr class="separator:aa0bed0ea452159e1c8bf5000dbbcf98f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02ffbba7971b328e4fdf33ae339a55b9"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsts.html#a02ffbba7971b328e4fdf33ae339a55b9">consts::START_X</a> = 200</td></tr>
+<tr class="separator:a02ffbba7971b328e4fdf33ae339a55b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6aadd728b0ef182efdd644cdb28eba7"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsts.html#ad6aadd728b0ef182efdd644cdb28eba7">consts::START_Y</a> = 120</td></tr>
+<tr class="separator:ad6aadd728b0ef182efdd644cdb28eba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84c70cd51270849659cf4b3ab24ef555"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsts.html#a84c70cd51270849659cf4b3ab24ef555">consts::END_X</a> = START_X + (64 * (BOARD_WIDTH - 1))</td></tr>
+<tr class="separator:a84c70cd51270849659cf4b3ab24ef555"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a949d5755dec47ccd2b3055ff7c20ddd9"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsts.html#a949d5755dec47ccd2b3055ff7c20ddd9">consts::END_Y</a> = START_Y + (64 * (BOARD_HEIGHT - 1))</td></tr>
+<tr class="separator:a949d5755dec47ccd2b3055ff7c20ddd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4a33fee0004429b7d0cb92f77e9836c"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsts.html#ae4a33fee0004429b7d0cb92f77e9836c">consts::ROW_SIZE</a> = 64</td></tr>
+<tr class="separator:ae4a33fee0004429b7d0cb92f77e9836c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bc4cf83f29d8d34c67c06c6bfdac1f0"><td class="memItemLeft" align="right" valign="top">Color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsts.html#a4bc4cf83f29d8d34c67c06c6bfdac1f0">consts::gold</a> = Color(255, 215, 0, 255)</td></tr>
+<tr class="separator:a4bc4cf83f29d8d34c67c06c6bfdac1f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9aa2d2a80fdbdd3a4974c131d46ea3d0"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsts.html#a9aa2d2a80fdbdd3a4974c131d46ea3d0">consts::SCREEN_WIDTH</a> = 1920</td></tr>
+<tr class="separator:a9aa2d2a80fdbdd3a4974c131d46ea3d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea418a3c29319f09c6ba3e473343b7f3"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsts.html#aea418a3c29319f09c6ba3e473343b7f3">consts::SCREEN_HEIGHT</a> = 1080</td></tr>
+<tr class="separator:aea418a3c29319f09c6ba3e473343b7f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ca8375c7222dee436ee5b6c031b9fc0"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceconsts.html#a7ca8375c7222dee436ee5b6c031b9fc0">consts::APPLES_SCALER</a> = 0.26f</td></tr>
+<tr class="separator:a7ca8375c7222dee436ee5b6c031b9fc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46c6708212740efec1a48ea5d174879e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceglobal_vars.html#a46c6708212740efec1a48ea5d174879e">globalVars::snakeSkinNum</a> = 0</td></tr>
+<tr class="separator:a46c6708212740efec1a48ea5d174879e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea754e89a6d2c5555da688385442ff1a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceglobal_vars.html#aea754e89a6d2c5555da688385442ff1a">globalVars::playerScore</a> = 0</td></tr>
+<tr class="separator:aea754e89a6d2c5555da688385442ff1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72fc2d7cf68b2cb8237a9c9e21daa749"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceglobal_vars.html#a72fc2d7cf68b2cb8237a9c9e21daa749">globalVars::musicLevel</a> = 15.0f</td></tr>
+<tr class="separator:a72fc2d7cf68b2cb8237a9c9e21daa749"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5732512a7b259f95293c7b5baabf115c"><td class="memItemLeft" align="right" valign="top">Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceglobal_vars.html#a5732512a7b259f95293c7b5baabf115c">globalVars::screenRatio</a> = { 1.0f,1.0f }</td></tr>
+<tr class="separator:a5732512a7b259f95293c7b5baabf115c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2036ee5897fc493c01e0216dd006c41"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceglobal_vars.html#ae2036ee5897fc493c01e0216dd006c41">globalVars::fontSize</a> = 40</td></tr>
+<tr class="separator:ae2036ee5897fc493c01e0216dd006c41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0aad080d60ad2525bb33d4c7df89e635"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceloading_screen.html#a0aad080d60ad2525bb33d4c7df89e635">loadingScreen::spinnerTextureLocation</a> = &quot;assets/LoadingScreen/spinner.png&quot;</td></tr>
+<tr class="separator:a0aad080d60ad2525bb33d4c7df89e635"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefdcc9889669716b1e46f6ce4124ea3d"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceloading_screen.html#aefdcc9889669716b1e46f6ce4124ea3d">loadingScreen::backgroundTextureLocation</a> = &quot;assets/LoadingScreen/background.jpg&quot;</td></tr>
+<tr class="separator:aefdcc9889669716b1e46f6ce4124ea3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a447bf886428f2be519b36649994ecf7a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceloading_screen.html#a447bf886428f2be519b36649994ecf7a">loadingScreen::numberOfSpinnerFrames</a> = 24</td></tr>
+<tr class="separator:a447bf886428f2be519b36649994ecf7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeefccd326a49ae7ad246dbf2aec2420a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceloading_screen.html#aeefccd326a49ae7ad246dbf2aec2420a">loadingScreen::spinnerFrameSwitchTime</a> = 1.0f / (float)numberOfSpinnerFrames</td></tr>
+<tr class="separator:aeefccd326a49ae7ad246dbf2aec2420a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea9ba6a8bd3d6fe0747d827d44a8c884"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetextures.html#aea9ba6a8bd3d6fe0747d827d44a8c884">textures::materialsOnLevel</a> [3][3]</td></tr>
+<tr class="separator:aea9ba6a8bd3d6fe0747d827d44a8c884"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add5a501c2990e64429f5c06f3a1e92c8"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetextures.html#add5a501c2990e64429f5c06f3a1e92c8">textures::mapTexturesLocation</a> [8]</td></tr>
+<tr class="separator:add5a501c2990e64429f5c06f3a1e92c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeaee0aaa9ecf80c4c0de4c6586758db4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetextures.html#aeaee0aaa9ecf80c4c0de4c6586758db4">textures::numOfObstructions</a> = 3</td></tr>
+<tr class="separator:aeaee0aaa9ecf80c4c0de4c6586758db4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4f594ce373aec1fadc42f59f6ac10c5"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetextures.html#af4f594ce373aec1fadc42f59f6ac10c5">textures::rocksTexturesLocation</a> [3]</td></tr>
+<tr class="separator:af4f594ce373aec1fadc42f59f6ac10c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3dd17ff737f240589197cd75c078360"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetextures.html#ab3dd17ff737f240589197cd75c078360">textures::teleportTextureLocation</a> = &quot;assets/SpritesTextures/Map/holeTexture.png&quot;</td></tr>
+<tr class="separator:ab3dd17ff737f240589197cd75c078360"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29556d31fecda0b0b609ea300ef4fd79"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetextures.html#a29556d31fecda0b0b609ea300ef4fd79">textures::cupTexturesLocation</a> [3]</td></tr>
+<tr class="separator:a29556d31fecda0b0b609ea300ef4fd79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4301e94261563eca83c1374cf7306ca"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetextures.html#af4301e94261563eca83c1374cf7306ca">textures::snakeTexturesLocation</a> [3][8]</td></tr>
+<tr class="separator:af4301e94261563eca83c1374cf7306ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a491b8f77a7f4b555480aadbafd929999"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemusic.html#a491b8f77a7f4b555480aadbafd929999">music::levelsMusicLocation</a> [3]</td></tr>
+<tr class="separator:a491b8f77a7f4b555480aadbafd929999"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60d84dd568997d9a29d9b8e84273df4d"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemusic.html#a60d84dd568997d9a29d9b8e84273df4d">music::menuMusic</a> [4]</td></tr>
+<tr class="separator:a60d84dd568997d9a29d9b8e84273df4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4375d8bf3489b3166391dc014569a8b"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesounds.html#ac4375d8bf3489b3166391dc014569a8b">sounds::eatingSoundLocation</a> = &quot;assets/Sounds/appleEaten.wav&quot;</td></tr>
+<tr class="separator:ac4375d8bf3489b3166391dc014569a8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36d86492e46db42bf14f502c1c3964ba"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesounds.html#a36d86492e46db42bf14f502c1c3964ba">sounds::stepsSoundLocation</a> [3]</td></tr>
+<tr class="separator:a36d86492e46db42bf14f502c1c3964ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addafb90914716d088cd3f0a310d1f54f"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesounds.html#addafb90914716d088cd3f0a310d1f54f">sounds::snakeHittingSoundLocation</a> [3]</td></tr>
+<tr class="separator:addafb90914716d088cd3f0a310d1f54f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5639851cd3bba781f08e7d74864cdb2"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesounds.html#ac5639851cd3bba781f08e7d74864cdb2">sounds::menuClickSound</a> = &quot;assets/Sounds/misc_menu_2.wav&quot;</td></tr>
+<tr class="separator:ac5639851cd3bba781f08e7d74864cdb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a335a6619b724b070a68265867c4cdd01"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceanimations.html#a335a6619b724b070a68265867c4cdd01">animations::normalAppleAnimations</a> [2]</td></tr>
+<tr class="separator:a335a6619b724b070a68265867c4cdd01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e2031ddaa844b950da43fa6bc9ec83b"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceanimations.html#a3e2031ddaa844b950da43fa6bc9ec83b">animations::goldAppleAnimations</a> [2]</td></tr>
+<tr class="separator:a3e2031ddaa844b950da43fa6bc9ec83b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e4955c5eb0ea38614750531f0ce9626"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets.html#a5e4955c5eb0ea38614750531f0ce9626">menuAssets::menuTexture</a> = &quot;assets/MenuTextures/menuBackground.png&quot;</td></tr>
+<tr class="separator:a5e4955c5eb0ea38614750531f0ce9626"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04d94afb94fa1ae9e931f3400a9f33c1"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets.html#a04d94afb94fa1ae9e931f3400a9f33c1">menuAssets::logoTexture</a> = &quot;assets/MenuTextures/menuLogo.png&quot;</td></tr>
+<tr class="separator:a04d94afb94fa1ae9e931f3400a9f33c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afab99451fd72a1b5465994815527c681"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets.html#afab99451fd72a1b5465994815527c681">menuAssets::pointerTexture</a> = &quot;assets/MenuTextures/pointer.png&quot;</td></tr>
+<tr class="separator:afab99451fd72a1b5465994815527c681"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd538c21d0cf3136688291f7f1b87d1b"><td class="memItemLeft" align="right" valign="top">Vector2u&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets.html#acd538c21d0cf3136688291f7f1b87d1b">menuAssets::pointerImageCount</a> = { 20,1 }</td></tr>
+<tr class="separator:acd538c21d0cf3136688291f7f1b87d1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ad3f65b310deab51ce2f5888cd3489f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets.html#a8ad3f65b310deab51ce2f5888cd3489f">menuAssets::pointerSwitchTime</a> = 1.0f / pointerImageCount.x</td></tr>
+<tr class="separator:a8ad3f65b310deab51ce2f5888cd3489f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46674b3e48e1d828d6dc32315753e2bb"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets.html#a46674b3e48e1d828d6dc32315753e2bb">menuAssets::menuHelpersTextures</a> [15]</td></tr>
+<tr class="separator:a46674b3e48e1d828d6dc32315753e2bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c4a34f95d130bd0a8056f7ec83a002e"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets.html#a8c4a34f95d130bd0a8056f7ec83a002e">menuAssets::menuTipsStrings</a> [6]</td></tr>
+<tr class="separator:a8c4a34f95d130bd0a8056f7ec83a002e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a486bdc0b101bf671a74cbb974dbea372"><td class="memItemLeft" align="right" valign="top">Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets.html#a486bdc0b101bf671a74cbb974dbea372">menuAssets::menuTipsPosition</a> [6]</td></tr>
+<tr class="separator:a486bdc0b101bf671a74cbb974dbea372"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1874eff5acd046883f059c7b0a22c112"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets.html#a1874eff5acd046883f059c7b0a22c112">menuAssets::fontLocation</a> = &quot;assets/Fonts/snap/snap itc.ttf&quot;</td></tr>
+<tr class="separator:a1874eff5acd046883f059c7b0a22c112"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0f6e573c5da04cf00d72dcef24eb74c"><td class="memItemLeft" align="right" valign="top">Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets.html#ad0f6e573c5da04cf00d72dcef24eb74c">menuAssets::backButtonPosition</a> = { <a class="el" href="namespaceglobal_functions.html#a481c33db83129992b58cca87f6a77a46">globalFunctions::findHorizontallyCenteredPositionOfGivenText</a>(&quot;BACK&quot;),900.0f}</td></tr>
+<tr class="separator:ad0f6e573c5da04cf00d72dcef24eb74c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9d178c599b1061d59aa6449e3e4fd10"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets_1_1main_menu.html#ad9d178c599b1061d59aa6449e3e4fd10">menuAssets::mainMenu::menuButtonsText</a> [5] = {&quot;START&quot;,&quot;<a class="el" href="_menu_8ixx.html#a06fc87d81c62e9abb8790b6e5713c55ba1b20f1b4adb6ff9778b284fb46f6f99d">OPTIONS</a>&quot;,&quot;SCORES&quot;,&quot;CREATORS&quot;,&quot;EXIT&quot;}</td></tr>
+<tr class="separator:ad9d178c599b1061d59aa6449e3e4fd10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a949a5111f9c4348933cf3c8dad937ef1"><td class="memItemLeft" align="right" valign="top">Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets_1_1main_menu.html#a949a5111f9c4348933cf3c8dad937ef1">menuAssets::mainMenu::menuButtonsPosition</a> [5]</td></tr>
+<tr class="separator:a949a5111f9c4348933cf3c8dad937ef1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1893c64e89d567f35faa62d0cc11d70"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets_1_1after_start.html#ab1893c64e89d567f35faa62d0cc11d70">menuAssets::afterStart::startButtonsText</a> [2] = {&quot;NEXT&quot;,&quot;BACK&quot;}</td></tr>
+<tr class="separator:ab1893c64e89d567f35faa62d0cc11d70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a723a9aa6c7936ad8a6e598387c612eb8"><td class="memItemLeft" align="right" valign="top">Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets_1_1after_start.html#a723a9aa6c7936ad8a6e598387c612eb8">menuAssets::afterStart::startButtonsPositionY</a> [2]</td></tr>
+<tr class="separator:a723a9aa6c7936ad8a6e598387c612eb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d0cc57e2541d45117dd47ea368961b6"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets_1_1after_options.html#a8d0cc57e2541d45117dd47ea368961b6">menuAssets::afterOptions::optionsButtonsText</a> [3] = { &quot;FULLSCREEN&quot;,&quot;WINDOWED&quot;,&quot;BACK&quot; }</td></tr>
+<tr class="separator:a8d0cc57e2541d45117dd47ea368961b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc9cf8a48f92323bfc98503545124bd2"><td class="memItemLeft" align="right" valign="top">Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets_1_1after_options.html#acc9cf8a48f92323bfc98503545124bd2">menuAssets::afterOptions::optionsButtonsPosition</a> [3]</td></tr>
+<tr class="separator:acc9cf8a48f92323bfc98503545124bd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a98f5676df55e5f7977a50dd19bc1cc"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets_1_1after_options.html#a0a98f5676df55e5f7977a50dd19bc1cc">menuAssets::afterOptions::optionsText</a> [8] = {&quot;Controls&quot;,&quot;Move Up&quot;,&quot;Move Down&quot;,&quot;Move Right&quot;,&quot;Move Left&quot;,&quot;Options&quot;,&quot;Music&quot;,&quot;Screen&quot;}</td></tr>
+<tr class="separator:a0a98f5676df55e5f7977a50dd19bc1cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a9d307c593398b1e9087d2a10348fa5"><td class="memItemLeft" align="right" valign="top">Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets_1_1after_options.html#a7a9d307c593398b1e9087d2a10348fa5">menuAssets::afterOptions::optionsTextPosition</a> [8]</td></tr>
+<tr class="separator:a7a9d307c593398b1e9087d2a10348fa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada30148a3e28af77eb53cc906e652ab6"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets_1_1after_options.html#ada30148a3e28af77eb53cc906e652ab6">menuAssets::afterOptions::optionsTextSprites</a> [6]</td></tr>
+<tr class="separator:ada30148a3e28af77eb53cc906e652ab6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac48c343f18d8b09cfb6e20fc26b9aaad"><td class="memItemLeft" align="right" valign="top">Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets_1_1after_options_1_1sprites.html#ac48c343f18d8b09cfb6e20fc26b9aaad">menuAssets::afterOptions::sprites::optionsTextSpritesPositions</a> [6]</td></tr>
+<tr class="separator:ac48c343f18d8b09cfb6e20fc26b9aaad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb8a5f6772d3035f2399cb5ce2bdecaa"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets_1_1after_options_1_1sprites.html#abb8a5f6772d3035f2399cb5ce2bdecaa">menuAssets::afterOptions::sprites::optionsButtonsSprites</a> [2]</td></tr>
+<tr class="separator:abb8a5f6772d3035f2399cb5ce2bdecaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cf39038244d2c7eea2c61b9650e9187"><td class="memItemLeft" align="right" valign="top">Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets_1_1after_options_1_1sprites.html#a8cf39038244d2c7eea2c61b9650e9187">menuAssets::afterOptions::sprites::optionsButtonsSpritesPositions</a> [2]</td></tr>
+<tr class="separator:a8cf39038244d2c7eea2c61b9650e9187"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab505ff1d89e213df9d85dfffc9dad82e"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets_1_1after_options.html#ab505ff1d89e213df9d85dfffc9dad82e">menuAssets::afterOptions::optionsMusicLevelInPercent</a> = <a class="el" href="namespaceglobal_functions.html#a1b8a1f749ad0721ed6fa639d7d21856e">globalFunctions::getMusicLevelInText</a>()</td></tr>
+<tr class="separator:ab505ff1d89e213df9d85dfffc9dad82e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ccb76678201ddff9b40c009c113d5a0"><td class="memItemLeft" align="right" valign="top">Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets_1_1after_options.html#a3ccb76678201ddff9b40c009c113d5a0">menuAssets::afterOptions::optionsMusicLevelInPercentPosition</a></td></tr>
+<tr class="separator:a3ccb76678201ddff9b40c009c113d5a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ea93b224707e85fe51d831a91da87ba"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets.html#a9ea93b224707e85fe51d831a91da87ba">menuAssets::scoresButtonText</a> = &quot;BACK&quot;</td></tr>
+<tr class="separator:a9ea93b224707e85fe51d831a91da87ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1eec15cdf8f756770b721be917045d68"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets.html#a1eec15cdf8f756770b721be917045d68">menuAssets::creatorsText</a> [2] = {&quot;Dominik Grudzien&quot;,&quot;Patryk Grzywacz&quot;}</td></tr>
+<tr class="separator:a1eec15cdf8f756770b721be917045d68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49a6e83c97292928315eddf54de014cc"><td class="memItemLeft" align="right" valign="top">Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets.html#a49a6e83c97292928315eddf54de014cc">menuAssets::creatorsTextPosition</a> [2]</td></tr>
+<tr class="separator:a49a6e83c97292928315eddf54de014cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bbdcd2cef0e8d748ddfeaf279dc8a6a"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemenu_assets.html#a4bbdcd2cef0e8d748ddfeaf279dc8a6a">menuAssets::creatorsButtonText</a> = &quot;BACK&quot;</td></tr>
+<tr class="separator:a4bbdcd2cef0e8d748ddfeaf279dc8a6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Dokumentacja zmiennych</h2>
+<a id="a34ed0d112017eae64f7f786d1cb91729"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34ed0d112017eae64f7f786d1cb91729">&#9670;&nbsp;</a></span>GeneralStuff</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">export module GeneralStuff</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano przez &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>

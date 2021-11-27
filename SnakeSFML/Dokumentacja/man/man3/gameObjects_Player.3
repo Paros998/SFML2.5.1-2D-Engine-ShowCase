@@ -1,0 +1,172 @@
+.TH "gameObjects::Player" 3 "So, 27 lis 2021" "Silnik graficzny" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+gameObjects::Player \- Klasa gracza, która obsługuje animacje oraz klawiaturę i myszkę\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Dziedziczy \fBgameObjects::AnimatedObject\fP\&.
+.SS "Metody publiczne"
+
+.in +1c
+.ti -1c
+.RI "\fBPlayer\fP (string texturePath, Vector2u animationSize, Vector2u \fBidleAnimationSpriteSheetPos\fP, float animationSpeed, Vector2f startPosition)"
+.br
+.RI "Konstruktor inicjujący klasy bazowe oraz ruchy gracza\&. "
+.ti -1c
+.RI "void \fBupdateMovement\fP (int \fBdirection\fP, int \fBaction\fP, int \fBfight\fP)"
+.br
+.RI "Metoda aktualizująca kierunek poruszania się gracza oraz określone akcje\&. "
+.ti -1c
+.RI "void \fBanimateIdle\fP ()"
+.br
+.RI "Metoda aktualizująca animację spoczynku\&. "
+.ti -1c
+.RI "void \fBupdate\fP ()"
+.br
+.RI "Metoda animująca gracza poprzez pobieranie aktualnego obrazka ze spritesheet'u\&. "
+.in -1c
+.SS "Typy prywatne"
+
+.in +1c
+.ti -1c
+.RI "enum \fBmovement\fP { \fBnone\fP, \fBjumpUP\fP, \fBbackFromJump\fP, \fBwalkLeft\fP, \fBrunLeft\fP, \fBjumpLeft\fP, \fBjumpAttackLeft\fP, \fBwalkRight\fP, \fBrunRight\fP, \fBjumpRight\fP, \fBjumpAttackRight\fP }"
+.br
+.ti -1c
+.RI "enum \fBanimations\fP { \fBidle\fP, \fBjump\fP, \fBjumpattack\fP, \fBrun\fP, \fBswingA\fP, \fBswingB\fP, \fBswingC\fP, \fBwalk\fP }"
+.br
+.in -1c
+.SS "Atrybuty prywatne"
+
+.in +1c
+.ti -1c
+.RI "Vector2u \fBidleAnimationSpriteSheetPos\fP"
+.br
+.ti -1c
+.RI "vector< Vector2f > \fBdirections\fP"
+.br
+.ti -1c
+.RI "int \fBfacing\fP = 2"
+.br
+.RI "From General Stuff\&. "
+.ti -1c
+.RI "int \fBaction\fP = 1"
+.br
+.RI "enum direction "
+.ti -1c
+.RI "int \fBfight\fP = 0"
+.br
+.RI "enum actions "
+.ti -1c
+.RI "float \fBjumpCooldown\fP = 1\&.f"
+.br
+.RI "enum fight "
+.ti -1c
+.RI "float \fBjumpTime\fP = 0\&.f"
+.br
+.in -1c
+.SS "Dodatkowe Dziedziczone Składowe"
+.SH "Opis szczegółowy"
+.PP 
+Klasa gracza, która obsługuje animacje oraz klawiaturę i myszkę\&. 
+.SH "Dokumentacja składowych wyliczanych"
+.PP 
+.SS "enum \fBgameObjects::Player::animations\fP\fC [private]\fP"
+
+.PP
+\fBWartości wyliczeń\fP
+.in +1c
+.TP
+\fB\fIidle \fP\fP
+.TP
+\fB\fIjump \fP\fP
+.TP
+\fB\fIjumpattack \fP\fP
+.TP
+\fB\fIrun \fP\fP
+.TP
+\fB\fIswingA \fP\fP
+.TP
+\fB\fIswingB \fP\fP
+.TP
+\fB\fIswingC \fP\fP
+.TP
+\fB\fIwalk \fP\fP
+.SS "enum \fBgameObjects::Player::movement\fP\fC [private]\fP"
+
+.PP
+\fBWartości wyliczeń\fP
+.in +1c
+.TP
+\fB\fInone \fP\fP
+.TP
+\fB\fIjumpUP \fP\fP
+.TP
+\fB\fIbackFromJump \fP\fP
+.TP
+\fB\fIwalkLeft \fP\fP
+.TP
+\fB\fIrunLeft \fP\fP
+.TP
+\fB\fIjumpLeft \fP\fP
+.TP
+\fB\fIjumpAttackLeft \fP\fP
+.TP
+\fB\fIwalkRight \fP\fP
+.TP
+\fB\fIrunRight \fP\fP
+.TP
+\fB\fIjumpRight \fP\fP
+.TP
+\fB\fIjumpAttackRight \fP\fP
+.SH "Dokumentacja konstruktora i destruktora"
+.PP 
+.SS "gameObjects::Player::Player (string texturePath, Vector2u animationSize, Vector2u idleAnimationSpriteSheetPos, float animationSpeed, Vector2f startPosition)\fC [inline]\fP"
+
+.PP
+Konstruktor inicjujący klasy bazowe oraz ruchy gracza\&. Indexes of this directions are in enum movement
+.SH "Dokumentacja funkcji składowych"
+.PP 
+.SS "void gameObjects::Player::animateIdle ()\fC [inline]\fP"
+
+.PP
+Metoda aktualizująca animację spoczynku\&. 
+.SS "void gameObjects::Player::update ()\fC [inline]\fP"
+
+.PP
+Metoda animująca gracza poprzez pobieranie aktualnego obrazka ze spritesheet'u\&. 
+.SS "void gameObjects::Player::updateMovement (int direction, int action, int fight)\fC [inline]\fP"
+
+.PP
+Metoda aktualizująca kierunek poruszania się gracza oraz określone akcje\&. 
+.SH "Dokumentacja atrybutów składowych"
+.PP 
+.SS "int gameObjects::Player::action = 1\fC [private]\fP"
+
+.PP
+enum direction 
+.SS "vector<Vector2f> gameObjects::Player::directions\fC [private]\fP"
+
+.SS "int gameObjects::Player::facing = 2\fC [private]\fP"
+
+.PP
+From General Stuff\&. 
+.SS "int gameObjects::Player::fight = 0\fC [private]\fP"
+
+.PP
+enum actions 
+.SS "Vector2u gameObjects::Player::idleAnimationSpriteSheetPos\fC [private]\fP"
+
+.SS "float gameObjects::Player::jumpCooldown = 1\&.f\fC [private]\fP"
+
+.PP
+enum fight 
+.SS "float gameObjects::Player::jumpTime = 0\&.f\fC [private]\fP"
+
+
+.SH "Autor"
+.PP 
+Wygenerowano automatycznie z kodu źródłowego programem Doxygen dla Silnik graficzny\&.

@@ -1,0 +1,122 @@
+.TH "effects::Star" 3 "So, 27 lis 2021" "Silnik graficzny" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+effects::Star
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Dziedziczy Shape\&.
+.SS "Metody publiczne"
+
+.in +1c
+.ti -1c
+.RI "Vector2f \fBgetPosition\fP ()"
+.br
+.ti -1c
+.RI "\fBStar\fP ()"
+.br
+.ti -1c
+.RI "\fB~Star\fP ()"
+.br
+.ti -1c
+.RI "\fBStar\fP (Vector2f \fBposition\fP)"
+.br
+.ti -1c
+.RI "void \fBmove\fP (float x)"
+.br
+.ti -1c
+.RI "void \fBupdate\fP (float rawTime)"
+.br
+.ti -1c
+.RI "virtual std::size_t \fBgetPointCount\fP () const override"
+.br
+.ti -1c
+.RI "virtual Vector2f \fBgetPoint\fP (std::size_t index) const override"
+.br
+.in -1c
+.SS "Metody prywatne"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBdraw\fP (sf::RenderTarget &target, sf::RenderStates states) const override"
+.br
+.ti -1c
+.RI "void \fBcalculateVertices\fP ()"
+.br
+.in -1c
+.SS "Atrybuty prywatne"
+
+.in +1c
+.ti -1c
+.RI "VertexArray \fBm_vertices\fP"
+.br
+.ti -1c
+.RI "VertexArray \fBm_outlineVertices\fP"
+.br
+.ti -1c
+.RI "int \fBsize\fP"
+.br
+.ti -1c
+.RI "float \fBflashTime\fP = float(rand() % 2) + (rand() % 100 / 100\&.f)"
+.br
+.ti -1c
+.RI "float \fBswitchTime\fP"
+.br
+.ti -1c
+.RI "float \fBdeltaTime\fP = 0\&.f"
+.br
+.ti -1c
+.RI "bool \fBisSwitched\fP = false"
+.br
+.ti -1c
+.RI "Vector2f \fBposition\fP"
+.br
+.in -1c
+.SH "Dokumentacja konstruktora i destruktora"
+.PP 
+.SS "effects::Star::Star ()\fC [inline]\fP"
+
+.SS "effects::Star::~Star ()\fC [inline]\fP"
+
+.SS "effects::Star::Star (Vector2f position)\fC [inline]\fP"
+
+.SH "Dokumentacja funkcji składowych"
+.PP 
+.SS "void effects::Star::calculateVertices ()\fC [inline]\fP, \fC [private]\fP"
+
+.SS "virtual void effects::Star::draw (sf::RenderTarget & target, sf::RenderStates states) const\fC [inline]\fP, \fC [override]\fP, \fC [private]\fP, \fC [virtual]\fP"
+
+.SS "virtual Vector2f effects::Star::getPoint (std::size_t index) const\fC [inline]\fP, \fC [override]\fP, \fC [virtual]\fP"
+
+.SS "virtual std::size_t effects::Star::getPointCount () const\fC [inline]\fP, \fC [override]\fP, \fC [virtual]\fP"
+
+.SS "Vector2f effects::Star::getPosition ()\fC [inline]\fP"
+
+.SS "void effects::Star::move (float x)\fC [inline]\fP"
+
+.SS "void effects::Star::update (float rawTime)\fC [inline]\fP"
+
+.SH "Dokumentacja atrybutów składowych"
+.PP 
+.SS "float effects::Star::deltaTime = 0\&.f\fC [private]\fP"
+
+.SS "float effects::Star::flashTime = float(rand() % 2) + (rand() % 100 / 100\&.f)\fC [private]\fP"
+
+.SS "bool effects::Star::isSwitched = false\fC [private]\fP"
+
+.SS "VertexArray effects::Star::m_outlineVertices\fC [private]\fP"
+
+.SS "VertexArray effects::Star::m_vertices\fC [private]\fP"
+
+.SS "Vector2f effects::Star::position\fC [private]\fP"
+
+.SS "int effects::Star::size\fC [private]\fP"
+
+.SS "float effects::Star::switchTime\fC [private]\fP"
+
+
+.SH "Autor"
+.PP 
+Wygenerowano automatycznie z kodu źródłowego programem Doxygen dla Silnik graficzny\&.

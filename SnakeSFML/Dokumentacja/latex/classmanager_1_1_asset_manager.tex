@@ -1,0 +1,185 @@
+\doxysection{Dokumentacja klasy manager\+::Asset\+Manager}
+\label{classmanager_1_1_asset_manager}\index{manager::AssetManager@{manager::AssetManager}}
+\doxysubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Asset\+Manager} (Render\+Window $\ast$\textbf{ game\+Window})
+\item 
+\textbf{ $\sim$\+Asset\+Manager} ()
+\item 
+void \textbf{ release\+Menu\+Resources} ()
+\item 
+void \textbf{ release\+Game\+Resources} ()
+\item 
+bool \textbf{ load\+Main\+Menu} ()
+\item 
+bool \textbf{ load\+Game\+Levels} ()
+\item 
+void \textbf{ load\+Assets\+For\+Menu} ()
+\item 
+void \textbf{ load\+Assets\+For\+Game} ()
+\item 
+\textbf{ Asset\+Manager} $\ast$ \textbf{ get\+Asset\+Manager} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Metody prywatne}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ draw\+Loading\+Screen} ()
+\item 
+void \textbf{ release\+Resources} ()
+\item 
+void \textbf{ prepare\+Loading\+Screen} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Atrybuty prywatne}
+\begin{DoxyCompactItemize}
+\item 
+Render\+Window $\ast$ \textbf{ game\+Window}
+\item 
+\textbf{ Animator} $\ast$ \textbf{ loading\+Animator}
+\item 
+sf\+::\+Texture \textbf{ loading\+Background\+Texture}
+\item 
+Sprite \textbf{ loading\+Background\+Sprite}
+\item 
+sf\+::\+Texture \textbf{ loading\+Spinner\+Texture}
+\item 
+Sprite \textbf{ loading\+Spinner\+Sprite}
+\item 
+std\+::thread \textbf{ menu\+Thread} \{ \&\textbf{ Asset\+Manager\+::load\+Assets\+For\+Menu},this\}
+\item 
+std\+::thread \textbf{ game\+Thread} \{ \&\textbf{ Asset\+Manager\+::load\+Assets\+For\+Game},this\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Dokumentacja konstruktora i destruktora}
+\mbox{\label{classmanager_1_1_asset_manager_a3a240ca2c8da7c5706f9dc8550c01db3}} 
+\index{manager::AssetManager@{manager::AssetManager}!AssetManager@{AssetManager}}
+\index{AssetManager@{AssetManager}!manager::AssetManager@{manager::AssetManager}}
+\doxysubsubsection{AssetManager()}
+{\footnotesize\ttfamily manager\+::\+Asset\+Manager\+::\+Asset\+Manager (\begin{DoxyParamCaption}\item[{Render\+Window $\ast$}]{game\+Window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classmanager_1_1_asset_manager_ac1caaf6f039f02c8e97d2425bddf41f1}} 
+\index{manager::AssetManager@{manager::AssetManager}!````~AssetManager@{$\sim$AssetManager}}
+\index{````~AssetManager@{$\sim$AssetManager}!manager::AssetManager@{manager::AssetManager}}
+\doxysubsubsection{$\sim$AssetManager()}
+{\footnotesize\ttfamily manager\+::\+Asset\+Manager\+::$\sim$\+Asset\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Dokumentacja funkcji składowych}
+\mbox{\label{classmanager_1_1_asset_manager_ace83e5aa897af6dbc7b6fb4a6364725c}} 
+\index{manager::AssetManager@{manager::AssetManager}!drawLoadingScreen@{drawLoadingScreen}}
+\index{drawLoadingScreen@{drawLoadingScreen}!manager::AssetManager@{manager::AssetManager}}
+\doxysubsubsection{drawLoadingScreen()}
+{\footnotesize\ttfamily void manager\+::\+Asset\+Manager\+::draw\+Loading\+Screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\label{classmanager_1_1_asset_manager_a24fe6dd4fe89aa895295ee97400dba49}} 
+\index{manager::AssetManager@{manager::AssetManager}!getAssetManager@{getAssetManager}}
+\index{getAssetManager@{getAssetManager}!manager::AssetManager@{manager::AssetManager}}
+\doxysubsubsection{getAssetManager()}
+{\footnotesize\ttfamily \textbf{ Asset\+Manager}$\ast$ manager\+::\+Asset\+Manager\+::get\+Asset\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classmanager_1_1_asset_manager_aea4f2ad6b331d366036e05f0ce8b0501}} 
+\index{manager::AssetManager@{manager::AssetManager}!loadAssetsForGame@{loadAssetsForGame}}
+\index{loadAssetsForGame@{loadAssetsForGame}!manager::AssetManager@{manager::AssetManager}}
+\doxysubsubsection{loadAssetsForGame()}
+{\footnotesize\ttfamily void manager\+::\+Asset\+Manager\+::load\+Assets\+For\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classmanager_1_1_asset_manager_ad9fec7d11b64c2a83c534410ed52a0c1}} 
+\index{manager::AssetManager@{manager::AssetManager}!loadAssetsForMenu@{loadAssetsForMenu}}
+\index{loadAssetsForMenu@{loadAssetsForMenu}!manager::AssetManager@{manager::AssetManager}}
+\doxysubsubsection{loadAssetsForMenu()}
+{\footnotesize\ttfamily void manager\+::\+Asset\+Manager\+::load\+Assets\+For\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classmanager_1_1_asset_manager_aa8f788dea124881324ccc5c319985816}} 
+\index{manager::AssetManager@{manager::AssetManager}!loadGameLevels@{loadGameLevels}}
+\index{loadGameLevels@{loadGameLevels}!manager::AssetManager@{manager::AssetManager}}
+\doxysubsubsection{loadGameLevels()}
+{\footnotesize\ttfamily bool manager\+::\+Asset\+Manager\+::load\+Game\+Levels (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classmanager_1_1_asset_manager_a62eb3b901039a790f06f1cdeda2a2c9a}} 
+\index{manager::AssetManager@{manager::AssetManager}!loadMainMenu@{loadMainMenu}}
+\index{loadMainMenu@{loadMainMenu}!manager::AssetManager@{manager::AssetManager}}
+\doxysubsubsection{loadMainMenu()}
+{\footnotesize\ttfamily bool manager\+::\+Asset\+Manager\+::load\+Main\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classmanager_1_1_asset_manager_aa0238db9c65cdd87c5189ba7da45bda2}} 
+\index{manager::AssetManager@{manager::AssetManager}!prepareLoadingScreen@{prepareLoadingScreen}}
+\index{prepareLoadingScreen@{prepareLoadingScreen}!manager::AssetManager@{manager::AssetManager}}
+\doxysubsubsection{prepareLoadingScreen()}
+{\footnotesize\ttfamily void manager\+::\+Asset\+Manager\+::prepare\+Loading\+Screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\label{classmanager_1_1_asset_manager_a20a651bfa364e84e1d6d650138afe3d7}} 
+\index{manager::AssetManager@{manager::AssetManager}!releaseGameResources@{releaseGameResources}}
+\index{releaseGameResources@{releaseGameResources}!manager::AssetManager@{manager::AssetManager}}
+\doxysubsubsection{releaseGameResources()}
+{\footnotesize\ttfamily void manager\+::\+Asset\+Manager\+::release\+Game\+Resources (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classmanager_1_1_asset_manager_aa62286474415d44c3f6b24b57c882686}} 
+\index{manager::AssetManager@{manager::AssetManager}!releaseMenuResources@{releaseMenuResources}}
+\index{releaseMenuResources@{releaseMenuResources}!manager::AssetManager@{manager::AssetManager}}
+\doxysubsubsection{releaseMenuResources()}
+{\footnotesize\ttfamily void manager\+::\+Asset\+Manager\+::release\+Menu\+Resources (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classmanager_1_1_asset_manager_ac43c77b17023dea5084bac706bd0942c}} 
+\index{manager::AssetManager@{manager::AssetManager}!releaseResources@{releaseResources}}
+\index{releaseResources@{releaseResources}!manager::AssetManager@{manager::AssetManager}}
+\doxysubsubsection{releaseResources()}
+{\footnotesize\ttfamily void manager\+::\+Asset\+Manager\+::release\+Resources (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+\doxysubsection{Dokumentacja atrybutów składowych}
+\mbox{\label{classmanager_1_1_asset_manager_a5937727c5b107c14637be2359b7b2431}} 
+\index{manager::AssetManager@{manager::AssetManager}!gameThread@{gameThread}}
+\index{gameThread@{gameThread}!manager::AssetManager@{manager::AssetManager}}
+\doxysubsubsection{gameThread}
+{\footnotesize\ttfamily std\+::thread manager\+::\+Asset\+Manager\+::game\+Thread \{ \&\textbf{ Asset\+Manager\+::load\+Assets\+For\+Game},this\}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classmanager_1_1_asset_manager_ac7f147cbc27bc7d9722b646529624142}} 
+\index{manager::AssetManager@{manager::AssetManager}!gameWindow@{gameWindow}}
+\index{gameWindow@{gameWindow}!manager::AssetManager@{manager::AssetManager}}
+\doxysubsubsection{gameWindow}
+{\footnotesize\ttfamily Render\+Window$\ast$ manager\+::\+Asset\+Manager\+::game\+Window\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classmanager_1_1_asset_manager_ad678068e39165c2632df76ae3d400491}} 
+\index{manager::AssetManager@{manager::AssetManager}!loadingAnimator@{loadingAnimator}}
+\index{loadingAnimator@{loadingAnimator}!manager::AssetManager@{manager::AssetManager}}
+\doxysubsubsection{loadingAnimator}
+{\footnotesize\ttfamily \textbf{ Animator}$\ast$ manager\+::\+Asset\+Manager\+::loading\+Animator\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classmanager_1_1_asset_manager_a58c33c3631390ab7c6bd99550646739d}} 
+\index{manager::AssetManager@{manager::AssetManager}!loadingBackgroundSprite@{loadingBackgroundSprite}}
+\index{loadingBackgroundSprite@{loadingBackgroundSprite}!manager::AssetManager@{manager::AssetManager}}
+\doxysubsubsection{loadingBackgroundSprite}
+{\footnotesize\ttfamily Sprite manager\+::\+Asset\+Manager\+::loading\+Background\+Sprite\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classmanager_1_1_asset_manager_a85a497af576c2622b1b6a86e9e963137}} 
+\index{manager::AssetManager@{manager::AssetManager}!loadingBackgroundTexture@{loadingBackgroundTexture}}
+\index{loadingBackgroundTexture@{loadingBackgroundTexture}!manager::AssetManager@{manager::AssetManager}}
+\doxysubsubsection{loadingBackgroundTexture}
+{\footnotesize\ttfamily sf\+::\+Texture manager\+::\+Asset\+Manager\+::loading\+Background\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classmanager_1_1_asset_manager_a2563fbf24ac7e8c320fe6aff0605bcf0}} 
+\index{manager::AssetManager@{manager::AssetManager}!loadingSpinnerSprite@{loadingSpinnerSprite}}
+\index{loadingSpinnerSprite@{loadingSpinnerSprite}!manager::AssetManager@{manager::AssetManager}}
+\doxysubsubsection{loadingSpinnerSprite}
+{\footnotesize\ttfamily Sprite manager\+::\+Asset\+Manager\+::loading\+Spinner\+Sprite\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classmanager_1_1_asset_manager_a9b8c5686bcf68249f5c5e24f82439427}} 
+\index{manager::AssetManager@{manager::AssetManager}!loadingSpinnerTexture@{loadingSpinnerTexture}}
+\index{loadingSpinnerTexture@{loadingSpinnerTexture}!manager::AssetManager@{manager::AssetManager}}
+\doxysubsubsection{loadingSpinnerTexture}
+{\footnotesize\ttfamily sf\+::\+Texture manager\+::\+Asset\+Manager\+::loading\+Spinner\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classmanager_1_1_asset_manager_ac0a0f8455cd71a25b16c8b0f1a07497c}} 
+\index{manager::AssetManager@{manager::AssetManager}!menuThread@{menuThread}}
+\index{menuThread@{menuThread}!manager::AssetManager@{manager::AssetManager}}
+\doxysubsubsection{menuThread}
+{\footnotesize\ttfamily std\+::thread manager\+::\+Asset\+Manager\+::menu\+Thread \{ \&\textbf{ Asset\+Manager\+::load\+Assets\+For\+Menu},this\}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Chomik/source/repos/\+Snake\+S\+F\+M\+Lv1/\+Snake\+S\+F\+M\+L/src/\textbf{ Assets\+Manager.\+ixx}\end{DoxyCompactItemize}

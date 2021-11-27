@@ -1,0 +1,61 @@
+.TH "effects::SnowParticleSystem" 3 "So, 27 lis 2021" "Silnik graficzny" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+effects::SnowParticleSystem
+.SH SYNOPSIS
+.br
+.PP
+.SS "Metody publiczne"
+
+.in +1c
+.ti -1c
+.RI "\fBSnowParticleSystem\fP (int \fBnumberOfSnows\fP, IntRect rectangle)"
+.br
+.ti -1c
+.RI "void \fBupdate\fP (float rawTime, Vector2f windowSize)"
+.br
+.ti -1c
+.RI "int \fBgetNumberOfSnows\fP ()"
+.br
+.ti -1c
+.RI "\fBSnow\fP \fBgetSnow\fP (int index)"
+.br
+.in -1c
+.SS "Atrybuty prywatne"
+
+.in +1c
+.ti -1c
+.RI "int \fBnumberOfSnows\fP"
+.br
+.ti -1c
+.RI "\fBSnow\fP * \fBsnows\fP"
+.br
+.ti -1c
+.RI "IntRect \fBwindowRectangle\fP"
+.br
+.in -1c
+.SH "Dokumentacja konstruktora i destruktora"
+.PP 
+.SS "effects::SnowParticleSystem::SnowParticleSystem (int numberOfSnows, IntRect rectangle)\fC [inline]\fP"
+
+.SH "Dokumentacja funkcji składowych"
+.PP 
+.SS "int effects::SnowParticleSystem::getNumberOfSnows ()\fC [inline]\fP"
+
+.SS "\fBSnow\fP effects::SnowParticleSystem::getSnow (int index)\fC [inline]\fP"
+
+.SS "void effects::SnowParticleSystem::update (float rawTime, Vector2f windowSize)\fC [inline]\fP"
+
+.SH "Dokumentacja atrybutów składowych"
+.PP 
+.SS "int effects::SnowParticleSystem::numberOfSnows\fC [private]\fP"
+
+.SS "\fBSnow\fP* effects::SnowParticleSystem::snows\fC [private]\fP"
+
+.SS "IntRect effects::SnowParticleSystem::windowRectangle\fC [private]\fP"
+
+
+.SH "Autor"
+.PP 
+Wygenerowano automatycznie z kodu źródłowego programem Doxygen dla Silnik graficzny\&.

@@ -1,0 +1,124 @@
+\doxysection{Dokumentacja pliku C\+:/\+Users/\+Chomik/source/repos/\+Snake\+S\+F\+M\+Lv1/\+Snake\+S\+F\+M\+L/src/\+Assets\+Manager.ixx}
+\label{_assets_manager_8ixx}\index{C:/Users/Chomik/source/repos/SnakeSFMLv1/SnakeSFML/src/AssetsManager.ixx@{C:/Users/Chomik/source/repos/SnakeSFMLv1/SnakeSFML/src/AssetsManager.ixx}}
+{\ttfamily \#include $<$S\+F\+M\+L/\+System.\+hpp$>$}\newline
+{\ttfamily \#include $<$S\+F\+M\+L/\+Graphics.\+hpp$>$}\newline
+{\ttfamily \#include $<$S\+F\+M\+L/\+Audio.\+hpp$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$future$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsection*{Komponenty}
+\begin{DoxyCompactItemize}
+\item 
+class \textbf{ manager\+::\+Asset\+Manager}
+\end{DoxyCompactItemize}
+\doxysubsection*{Przestrzenie nazw}
+\begin{DoxyCompactItemize}
+\item 
+ \textbf{ manager}
+\item 
+ \textbf{ manager\+::menu\+Elements}
+\item 
+ \textbf{ manager\+::game\+Levels\+Elements}
+\end{DoxyCompactItemize}
+\doxysubsection*{Zmienne}
+\begin{DoxyCompactItemize}
+\item 
+import \textbf{ General\+Stuff}
+\item 
+import \textbf{ Animation}
+\item 
+export module \textbf{ Assets\+Manager}
+\item 
+static std\+::atomic$<$ bool $>$ \textbf{ menu\+Loading\+Completed} = false
+\item 
+static std\+::atomic$<$ bool $>$ \textbf{ game\+Loading\+Completed} = false
+\item 
+static std\+::atomic$<$ bool $>$ \textbf{ already\+Loading} = false
+\item 
+Font \textbf{ manager\+::menu\+Elements\+::font}
+\item 
+Music $\ast$ \textbf{ manager\+::menu\+Elements\+::menu\+Songs}
+\item 
+Sound \textbf{ manager\+::menu\+Elements\+::menu\+Click\+Sound}
+\item 
+Sound\+Buffer \textbf{ manager\+::menu\+Elements\+::menu\+Click\+Sound\+Buffer}
+\item 
+sf\+::\+Texture \textbf{ manager\+::menu\+Elements\+::menu\+Pointer\+Texture}
+\item 
+Sprite \textbf{ manager\+::menu\+Elements\+::menu\+Pointer\+Sprite}
+\item 
+\textbf{ Animator} $\ast$ \textbf{ manager\+::menu\+Elements\+::menu\+Pointer\+Animator}
+\item 
+sf\+::\+Texture \textbf{ manager\+::menu\+Elements\+::menu\+Background\+Texture}
+\item 
+Sprite \textbf{ manager\+::menu\+Elements\+::menu\+Background\+Sprite}
+\item 
+sf\+::\+Texture \textbf{ manager\+::menu\+Elements\+::menu\+Logo\+Texture}
+\item 
+Sprite \textbf{ manager\+::menu\+Elements\+::menu\+Logo\+Sprite}
+\item 
+Text $\ast$ \textbf{ manager\+::menu\+Elements\+::menu\+Text\+Buttons}
+\item 
+Text $\ast$ \textbf{ manager\+::menu\+Elements\+::tips\+Text}
+\item 
+Text $\ast$ \textbf{ manager\+::menu\+Elements\+::start\+Text\+Buttons}
+\item 
+sf\+::\+Texture $\ast$ \textbf{ manager\+::menu\+Elements\+::options\+Symbols\+Textures}
+\item 
+Sprite $\ast$ \textbf{ manager\+::menu\+Elements\+::options\+Symbols\+Sprites}
+\item 
+sf\+::\+Texture $\ast$ \textbf{ manager\+::menu\+Elements\+::options\+Buttons\+Textures}
+\item 
+Sprite $\ast$ \textbf{ manager\+::menu\+Elements\+::options\+Buttons\+Sprites}
+\item 
+Text $\ast$ \textbf{ manager\+::menu\+Elements\+::options\+Text\+Labels}
+\item 
+Text $\ast$ \textbf{ manager\+::menu\+Elements\+::options\+Text\+Buttons}
+\item 
+Text \textbf{ manager\+::menu\+Elements\+::options\+Music\+Level\+Text}
+\item 
+Text \textbf{ manager\+::menu\+Elements\+::back\+Button\+Text}
+\item 
+Text $\ast$ \textbf{ manager\+::menu\+Elements\+::creadits\+Text}
+\item 
+Font \textbf{ manager\+::game\+Levels\+Elements\+::font}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Dokumentacja zmiennych}
+\mbox{\label{_assets_manager_8ixx_aa9d929c5853797e1ee6f57e2542e08ab}} 
+\index{AssetsManager.ixx@{AssetsManager.ixx}!alreadyLoading@{alreadyLoading}}
+\index{alreadyLoading@{alreadyLoading}!AssetsManager.ixx@{AssetsManager.ixx}}
+\doxysubsubsection{alreadyLoading}
+{\footnotesize\ttfamily std\+::atomic$<$bool$>$ already\+Loading = false\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\label{_assets_manager_8ixx_af90cfd9bedd25e81fdfc9aa35c56b88a}} 
+\index{AssetsManager.ixx@{AssetsManager.ixx}!Animation@{Animation}}
+\index{Animation@{Animation}!AssetsManager.ixx@{AssetsManager.ixx}}
+\doxysubsubsection{Animation}
+{\footnotesize\ttfamily import Animation}
+
+\mbox{\label{_assets_manager_8ixx_a54ff8e5932f63e487a51457ce17f2baa}} 
+\index{AssetsManager.ixx@{AssetsManager.ixx}!AssetsManager@{AssetsManager}}
+\index{AssetsManager@{AssetsManager}!AssetsManager.ixx@{AssetsManager.ixx}}
+\doxysubsubsection{AssetsManager}
+{\footnotesize\ttfamily export module Assets\+Manager}
+
+\mbox{\label{_assets_manager_8ixx_afdf74e01d33a296d9b7cdb5a3b3e83c8}} 
+\index{AssetsManager.ixx@{AssetsManager.ixx}!gameLoadingCompleted@{gameLoadingCompleted}}
+\index{gameLoadingCompleted@{gameLoadingCompleted}!AssetsManager.ixx@{AssetsManager.ixx}}
+\doxysubsubsection{gameLoadingCompleted}
+{\footnotesize\ttfamily std\+::atomic$<$bool$>$ game\+Loading\+Completed = false\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\label{_assets_manager_8ixx_a2697a39390397ef5f00887c592770369}} 
+\index{AssetsManager.ixx@{AssetsManager.ixx}!GeneralStuff@{GeneralStuff}}
+\index{GeneralStuff@{GeneralStuff}!AssetsManager.ixx@{AssetsManager.ixx}}
+\doxysubsubsection{GeneralStuff}
+{\footnotesize\ttfamily import General\+Stuff}
+
+\mbox{\label{_assets_manager_8ixx_a81fcbba84faddc057fca187753ad79e5}} 
+\index{AssetsManager.ixx@{AssetsManager.ixx}!menuLoadingCompleted@{menuLoadingCompleted}}
+\index{menuLoadingCompleted@{menuLoadingCompleted}!AssetsManager.ixx@{AssetsManager.ixx}}
+\doxysubsubsection{menuLoadingCompleted}
+{\footnotesize\ttfamily std\+::atomic$<$bool$>$ menu\+Loading\+Completed = false\hspace{0.3cm}{\ttfamily [static]}}
+

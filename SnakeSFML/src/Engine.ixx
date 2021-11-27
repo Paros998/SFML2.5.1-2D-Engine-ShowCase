@@ -83,11 +83,6 @@ export namespace graphicsEngine {
 			loadingAnimator->setStartFrame();
 		}
 
-
-		void handleError(string message) {
-			cout << message << endl;
-		}
-
 	public:
 		GraphicsEngine() {
 			string arialFontPath = FONTS_DIRECTORY + "/arial.ttf";
@@ -273,3 +268,183 @@ export namespace graphicsEngine {
 }
 
 graphicsEngine::GraphicsEngine* graphicsEngine::GraphicsEngine::instance = nullptr;
+
+/*! \file Engine.ixx
+	\brief Plik modu³owy zawieraj¹cy deklaracjê klasy silnika graficznego.
+*/
+
+/*! \namespace graphicsEngine
+	\brief Przestrzeñ nazw zawieraj¹ca definicjê klasy silnika graficznego
+*/
+
+/*! \class graphicsEngine::GraphicsEngine
+	\brief Klasa typu singleton odpowiedzialna za
+	inicjacje i wyœwietlanie obiektów graficznych, tekstur, obs³ugi klawiatury i myszki.
+	Dodatkowo wyœwietla informacje statystyczne.
+*/
+
+/*! \var graphicsEngine::GraphicsEngine graphicsEngine::GraphicsEngine::instance
+	\brief Instancja singletonu klasy GraphicsEngine.
+*/
+
+/**
+ * \enum graphicsEngine::GraphicsEngine::InfoTextTypes
+ * \brief Typ wyliczeniowy, okreœlaj¹cy koordynaty po³o¿enia myszki i wyœwietlanie klatek na sekundê
+ */
+
+/**
+ * \var Font graphicsEngine::GraphicsEngine::infoFont
+ * \brief Czcionka do wyœwietlania informacji w silniku graficznym.
+ */
+
+/**
+ * \var vector<Text> graphicsEngine::GraphicsEngine::infoTexts
+ * \brief Kontener przechowuj¹cy informacje dotycz¹ce silnika graficznego.
+ */
+
+/**
+ * \var RenderWindow* graphicsEngine::GraphicsEngine::window
+ * \brief Okno, renderuj¹ce obiekty graficzne.
+ */
+
+/**
+ * \var Animator* graphicsEngine::GraphicsEngine::loadingAnimator
+ * \brief Obiekt, animuj¹cy ³adowanie obiektów graficznych.
+ */
+
+/**
+ * \var sf::Texture graphicsEngine::GraphicsEngine::loadingBackgroundTexture
+ * \brief Tekstura t³a podczas ³adowania.
+ */
+
+/**
+ * \var Sprite graphicsEngine::GraphicsEngine::loadingBackgroundSprite
+ * \brief Bitmapa t³a podczas ³adowania.
+ */
+
+/**
+ * \var sf::Texture graphicsEngine::GraphicsEngine::loadingSpinnerTexture
+ * \brief Tekstura (spritesheet) krêcio³ka przedstawiaj¹cego stan ³adowania.
+ */
+
+/**
+ * \var Sprite graphicsEngine::GraphicsEngine::loadingSpinnerSprite
+ * \brief Bitmapa krêcio³ka przedstawiaj¹cego stan ³adowania.
+ */
+
+/**
+ * \var Player* graphicsEngine::GraphicsEngine::player
+ * \brief Obiekt klasy gracza
+ */
+
+/**
+ * \var GameObject* graphicsEngine::GraphicsEngine::greyStone
+ * Obiekt klasy GameObject przedstawiaj¹cy szary kamieñ
+ */
+
+/**
+ * \var GameObject* graphicsEngine::GraphicsEngine::brownStone
+ * Obiekt klasy GameObject przedstawiaj¹cy br¹zowy kamieñ
+ */
+
+/**
+ * \fn graphicsEngine::GraphicsEngine::GraphicsEngine()
+ * \brief Kontruktor klasy GraphicsEngine, inicjuj¹cy obiekty graficzne i teksty statystyczne.
+ */
+
+/**
+ * \fn graphicsEngine::GraphicsEngine::~GraphicsEngine()
+ * \brief Destruktor klasy GraphicsEngine, sprz¹taj¹cy po pracy silnika graficznego.
+ */
+
+/**
+ * \fn void graphicsEngine::GraphicsEngine::handleKeybardOnPressed()
+ * \brief Metoda obs³uguj¹ca klawiaturê do momentu zwolnienia klawisza.
+ * 
+ * \return void
+ */
+
+/**
+ * \fn void graphicsEngine::GraphicsEngine::handleKeyboardOnClick()
+ * \brief Metoda obs³uguj¹ca klawiaturê. Odczytuje naciœniêcie klawisza i wykonuje siê tylko raz.
+ * 
+ * \param Event event - Wydarzenie w bibliotece SFML.
+ * \param bool shouldExitOnEscape - Flaga, okreœlaj¹ca czy zakoñczyæ pracê silnika po wciœnieciu klawisza Escape.
+ * 
+ * \return void
+ */
+
+/**
+ * \fn void graphicsEngine::GraphicsEngine::handleMouseOnPressed()
+ * \brief Metoda obs³uguj¹ca myszkê do momentu zwolnienia klawisza.
+ * 
+ * \return void
+ */
+
+/**
+ * \fn void graphicsEngine::GraphicsEngine::showMouseCoordinates()	
+ * \brief Metoda wyœwietlaj¹ca po³o¿enie kursora myszki wzglêdem okna silnika graficznego.
+ * 
+ * \return void
+ */
+
+/**
+ * \fn void graphicsEngine::GraphicsEngine::showFps()
+ * \brief Metoda wyœwietlaj¹ca aktualn¹ liczbê klatek na sekundê.
+ * 
+ * \param Clock& frameRateClock - Referencja obiektu zegara.
+ * 
+ * \return void
+ */
+
+/**
+ * \fn void graphicsEngine::GraphicsEngine::main()
+ * \brief G³ówna metoda silnika graficznego.
+ * 
+ * - Jest ona wywo³ywana w g³ównej funkcji programu.
+ * - Zawiera g³ówn¹ pêtlê silnika.
+ * - Inicjuje silnik za pomoc¹ parametrów.
+ * 
+ * \param int windowWidth - Szerokoœæ ekranu okna.
+ * \param int windowHeight - Wysokoœæ ekranu okna.
+ * \param const Color clearColor - Kolor, który domyœlnie czyœci ekran silnika.
+ * \param bool isWindowed - Flaga, okreœlaj¹ca czy otwieraæ okno w trybie okienkowym.
+ * \param bool shouldExitOnEscape - Flaga, okreœlaj¹ca czy zakoñczyæ pracê silnika po wciœnieciu klawisza Escape.
+ * \param bool hasMouseSupport - Flaga, okreœlaj¹ca czy w³¹czyæ obs³ugê myszki.
+ * \param bool hasKeyboardSupport - Flaga, okreœlaj¹ca czy w³¹czyæ obs³ugê klawiatury.
+ * \param bool shouldDebug - Flaga, okreœlaj¹ca czy w³¹czyæ tryb debugowania (klatki na sekundê, pozycja).
+ * 
+ * \return void
+ */
+
+/**
+ * \fn static GraphicsEngine* graphicsEngine::GraphicsEngine::getInstance()
+ * \brief Metoda zwracaj¹ca niepowtarzaln¹ instancjê silnika.
+ * 
+ * \return GraphicsEngine* Instancja silnika graficznego.
+ */
+
+/**
+ * \fn void graphicsEngine::GraphicsEngine::drawLoadingScreen()
+ * \brief Metoda rysuj¹ca ekran ³adowania.
+ * 
+ * \param RenderWindow& window - Referencja obiektu okna.
+ * 
+ * \return void
+ */
+
+/**
+ * \fn void graphicsEngine::GraphicsEngine::releaseResources()
+ * \brief Metoda zwalniaj¹ca pamiêæ z obiektów ekranu ³adowania.
+ * 
+ * \return void
+ */
+
+/**
+ * \fn void graphicsEngine::GraphicsEngine::prepareLoadingScreen()
+ * \brief Metoda inicujuj¹ca obiekty graficzne do ekranu ³adowania.
+ * 
+ * \param RenderWindow& window - Referencja obiektu okna.
+ * 
+ * \return void
+ */

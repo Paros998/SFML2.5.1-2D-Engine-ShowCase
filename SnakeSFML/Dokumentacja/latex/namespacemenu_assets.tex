@@ -1,0 +1,334 @@
+\doxysection{Dokumentacja przestrzeni nazw menu\+Assets}
+\label{namespacemenu_assets}\index{menuAssets@{menuAssets}}
+\doxysubsection*{Przestrzenie nazw}
+\begin{DoxyCompactItemize}
+\item 
+ \textbf{ after\+Options}
+\item 
+ \textbf{ after\+Start}
+\item 
+ \textbf{ main\+Menu}
+\end{DoxyCompactItemize}
+\doxysubsection*{Wyliczenia}
+\begin{DoxyCompactItemize}
+\item 
+enum \textbf{ menu\+Helpers\+Index} \{ \newline
+\textbf{ P\+L\+US}, 
+\textbf{ M\+I\+N\+US}, 
+\textbf{ O\+P\+T\+I\+O\+NS}, 
+\textbf{ P\+E\+O\+P\+LE}, 
+\newline
+\textbf{ C\+O\+N\+T\+R\+O\+L\+ER}, 
+\textbf{ D\+O\+WN}, 
+\textbf{ UP}, 
+\textbf{ L\+E\+FT}, 
+\newline
+\textbf{ R\+I\+G\+HT}, 
+\textbf{ A\+P\+P\+LE}, 
+\textbf{ G\+O\+L\+D\+A\+P\+P\+LE}, 
+\textbf{ H\+O\+LE}, 
+\newline
+\textbf{ O\+B\+S\+T\+R\+U\+C\+T\+I\+ON}, 
+\textbf{ R\+O\+CK}, 
+\textbf{ S\+N\+A\+K\+E\+H\+E\+AD}
+ \}
+\item 
+enum \textbf{ menu\+Tips} \{ \newline
+\textbf{ T\+I\+P1}, 
+\textbf{ T\+I\+P2}, 
+\textbf{ T\+I\+P3}, 
+\textbf{ T\+I\+P4}, 
+\newline
+\textbf{ T\+I\+P5}, 
+\textbf{ T\+I\+P6}
+ \}
+\item 
+enum \textbf{ creators\+Index} \{ \textbf{ D\+O\+M\+I\+N\+IK}, 
+\textbf{ P\+A\+T\+R\+YK}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Zmienne}
+\begin{DoxyCompactItemize}
+\item 
+String \textbf{ menu\+Texture} = \char`\"{}assets/Menu\+Textures/menu\+Background.\+png\char`\"{}
+\item 
+String \textbf{ logo\+Texture} = \char`\"{}assets/Menu\+Textures/menu\+Logo.\+png\char`\"{}
+\item 
+String \textbf{ pointer\+Texture} = \char`\"{}assets/Menu\+Textures/pointer.\+png\char`\"{}
+\item 
+Vector2u \textbf{ pointer\+Image\+Count} = \{ 20,1 \}
+\item 
+float \textbf{ pointer\+Switch\+Time} = 1.\+0f / pointer\+Image\+Count.\+x
+\item 
+String \textbf{ menu\+Helpers\+Textures} [15]
+\item 
+String \textbf{ menu\+Tips\+Strings} [6]
+\item 
+Vector2f \textbf{ menu\+Tips\+Position} [6]
+\item 
+String \textbf{ font\+Location} = \char`\"{}assets/Fonts/snap/snap itc.\+ttf\char`\"{}
+\item 
+Vector2f \textbf{ back\+Button\+Position} = \{ \textbf{ global\+Functions\+::find\+Horizontally\+Centered\+Position\+Of\+Given\+Text}(\char`\"{}B\+A\+CK\char`\"{}),900.\+0f\}
+\item 
+String \textbf{ scores\+Button\+Text} = \char`\"{}B\+A\+CK\char`\"{}
+\item 
+String \textbf{ creators\+Text} [2] = \{\char`\"{}Dominik Grudzien\char`\"{},\char`\"{}Patryk Grzywacz\char`\"{}\}
+\item 
+Vector2f \textbf{ creators\+Text\+Position} [2]
+\item 
+String \textbf{ creators\+Button\+Text} = \char`\"{}B\+A\+CK\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Dokumentacja typów wyliczanych}
+\mbox{\label{namespacemenu_assets_a4c8bf2fd0a52ed9ac1f0aea485803939}} 
+\index{menuAssets@{menuAssets}!creatorsIndex@{creatorsIndex}}
+\index{creatorsIndex@{creatorsIndex}!menuAssets@{menuAssets}}
+\doxysubsubsection{creatorsIndex}
+{\footnotesize\ttfamily enum \textbf{ menu\+Assets\+::creators\+Index}}
+
+\begin{DoxyEnumFields}{Wartości wyliczeń}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DOMINIK@{DOMINIK}!menuAssets@{menuAssets}}\index{menuAssets@{menuAssets}!DOMINIK@{DOMINIK}}}\mbox{\label{namespacemenu_assets_a4c8bf2fd0a52ed9ac1f0aea485803939a35060e2c12f8c97f8033dbe4d9fc604d}} 
+D\+O\+M\+I\+N\+IK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PATRYK@{PATRYK}!menuAssets@{menuAssets}}\index{menuAssets@{menuAssets}!PATRYK@{PATRYK}}}\mbox{\label{namespacemenu_assets_a4c8bf2fd0a52ed9ac1f0aea485803939aad61162b38a8bbbf3afe34b86a4185f3}} 
+P\+A\+T\+R\+YK&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\label{namespacemenu_assets_acda0b57293335403680662576715ab3e}} 
+\index{menuAssets@{menuAssets}!menuHelpersIndex@{menuHelpersIndex}}
+\index{menuHelpersIndex@{menuHelpersIndex}!menuAssets@{menuAssets}}
+\doxysubsubsection{menuHelpersIndex}
+{\footnotesize\ttfamily enum \textbf{ menu\+Assets\+::menu\+Helpers\+Index}}
+
+\begin{DoxyEnumFields}{Wartości wyliczeń}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PLUS@{PLUS}!menuAssets@{menuAssets}}\index{menuAssets@{menuAssets}!PLUS@{PLUS}}}\mbox{\label{namespacemenu_assets_acda0b57293335403680662576715ab3ea90fed0be2428f2a90e68fd7935238d9e}} 
+P\+L\+US&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MINUS@{MINUS}!menuAssets@{menuAssets}}\index{menuAssets@{menuAssets}!MINUS@{MINUS}}}\mbox{\label{namespacemenu_assets_acda0b57293335403680662576715ab3ea48373987d0b65a1cbdb9bb8ceb416698}} 
+M\+I\+N\+US&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OPTIONS@{OPTIONS}!menuAssets@{menuAssets}}\index{menuAssets@{menuAssets}!OPTIONS@{OPTIONS}}}\mbox{\label{namespacemenu_assets_acda0b57293335403680662576715ab3eac0f67ff55e5d988f27c58269c16f71f0}} 
+O\+P\+T\+I\+O\+NS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PEOPLE@{PEOPLE}!menuAssets@{menuAssets}}\index{menuAssets@{menuAssets}!PEOPLE@{PEOPLE}}}\mbox{\label{namespacemenu_assets_acda0b57293335403680662576715ab3ea52e6cf52d9a86bc6ea031dbf4a373bc2}} 
+P\+E\+O\+P\+LE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONTROLER@{CONTROLER}!menuAssets@{menuAssets}}\index{menuAssets@{menuAssets}!CONTROLER@{CONTROLER}}}\mbox{\label{namespacemenu_assets_acda0b57293335403680662576715ab3ea23769535ef5d89c05581f4fe54ebe887}} 
+C\+O\+N\+T\+R\+O\+L\+ER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DOWN@{DOWN}!menuAssets@{menuAssets}}\index{menuAssets@{menuAssets}!DOWN@{DOWN}}}\mbox{\label{namespacemenu_assets_acda0b57293335403680662576715ab3eacdb59a5e9262d192074c04c7b0cec49f}} 
+D\+O\+WN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UP@{UP}!menuAssets@{menuAssets}}\index{menuAssets@{menuAssets}!UP@{UP}}}\mbox{\label{namespacemenu_assets_acda0b57293335403680662576715ab3eaf3f9dd4172b3efef2871852a2f45876b}} 
+UP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEFT@{LEFT}!menuAssets@{menuAssets}}\index{menuAssets@{menuAssets}!LEFT@{LEFT}}}\mbox{\label{namespacemenu_assets_acda0b57293335403680662576715ab3ea74720493c039b86a3125176985e6172b}} 
+L\+E\+FT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RIGHT@{RIGHT}!menuAssets@{menuAssets}}\index{menuAssets@{menuAssets}!RIGHT@{RIGHT}}}\mbox{\label{namespacemenu_assets_acda0b57293335403680662576715ab3eaddb82da7e285e198750f13a205779e96}} 
+R\+I\+G\+HT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{APPLE@{APPLE}!menuAssets@{menuAssets}}\index{menuAssets@{menuAssets}!APPLE@{APPLE}}}\mbox{\label{namespacemenu_assets_acda0b57293335403680662576715ab3eadf18a8e5ca9c56b2be9f7766189aab7d}} 
+A\+P\+P\+LE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GOLDAPPLE@{GOLDAPPLE}!menuAssets@{menuAssets}}\index{menuAssets@{menuAssets}!GOLDAPPLE@{GOLDAPPLE}}}\mbox{\label{namespacemenu_assets_acda0b57293335403680662576715ab3ea0e8d81d69e89121b2d19e57d2fe4d5ea}} 
+G\+O\+L\+D\+A\+P\+P\+LE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HOLE@{HOLE}!menuAssets@{menuAssets}}\index{menuAssets@{menuAssets}!HOLE@{HOLE}}}\mbox{\label{namespacemenu_assets_acda0b57293335403680662576715ab3eabf52503afd45d7d667c0c1936bdb6c7a}} 
+H\+O\+LE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OBSTRUCTION@{OBSTRUCTION}!menuAssets@{menuAssets}}\index{menuAssets@{menuAssets}!OBSTRUCTION@{OBSTRUCTION}}}\mbox{\label{namespacemenu_assets_acda0b57293335403680662576715ab3eae941c56e7526ba54b81003aaa96ce690}} 
+O\+B\+S\+T\+R\+U\+C\+T\+I\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ROCK@{ROCK}!menuAssets@{menuAssets}}\index{menuAssets@{menuAssets}!ROCK@{ROCK}}}\mbox{\label{namespacemenu_assets_acda0b57293335403680662576715ab3eaa1557d6da402beca2491749e0891eaba}} 
+R\+O\+CK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SNAKEHEAD@{SNAKEHEAD}!menuAssets@{menuAssets}}\index{menuAssets@{menuAssets}!SNAKEHEAD@{SNAKEHEAD}}}\mbox{\label{namespacemenu_assets_acda0b57293335403680662576715ab3eada0a1914e8605dea279a199aa5375911}} 
+S\+N\+A\+K\+E\+H\+E\+AD&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\label{namespacemenu_assets_a422f88db90631d81965d672362f2e57f}} 
+\index{menuAssets@{menuAssets}!menuTips@{menuTips}}
+\index{menuTips@{menuTips}!menuAssets@{menuAssets}}
+\doxysubsubsection{menuTips}
+{\footnotesize\ttfamily enum \textbf{ menu\+Assets\+::menu\+Tips}}
+
+\begin{DoxyEnumFields}{Wartości wyliczeń}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TIP1@{TIP1}!menuAssets@{menuAssets}}\index{menuAssets@{menuAssets}!TIP1@{TIP1}}}\mbox{\label{namespacemenu_assets_a422f88db90631d81965d672362f2e57fa09f70146b44f861da1c8ad9603a9ce83}} 
+T\+I\+P1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TIP2@{TIP2}!menuAssets@{menuAssets}}\index{menuAssets@{menuAssets}!TIP2@{TIP2}}}\mbox{\label{namespacemenu_assets_a422f88db90631d81965d672362f2e57faccf5ce504fd69cd6920a5056ccaa26c7}} 
+T\+I\+P2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TIP3@{TIP3}!menuAssets@{menuAssets}}\index{menuAssets@{menuAssets}!TIP3@{TIP3}}}\mbox{\label{namespacemenu_assets_a422f88db90631d81965d672362f2e57faaf16cd54d02b53dc15dc6dc9e4a167b0}} 
+T\+I\+P3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TIP4@{TIP4}!menuAssets@{menuAssets}}\index{menuAssets@{menuAssets}!TIP4@{TIP4}}}\mbox{\label{namespacemenu_assets_a422f88db90631d81965d672362f2e57fa0a5e9881deb2228316f94e5359c64d7f}} 
+T\+I\+P4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TIP5@{TIP5}!menuAssets@{menuAssets}}\index{menuAssets@{menuAssets}!TIP5@{TIP5}}}\mbox{\label{namespacemenu_assets_a422f88db90631d81965d672362f2e57fa6aa0817218b240ec5fb6f5aabf1761bc}} 
+T\+I\+P5&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TIP6@{TIP6}!menuAssets@{menuAssets}}\index{menuAssets@{menuAssets}!TIP6@{TIP6}}}\mbox{\label{namespacemenu_assets_a422f88db90631d81965d672362f2e57fa60236f90b094b1dda7843f2ff45fffba}} 
+T\+I\+P6&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Dokumentacja zmiennych}
+\mbox{\label{namespacemenu_assets_ad0f6e573c5da04cf00d72dcef24eb74c}} 
+\index{menuAssets@{menuAssets}!backButtonPosition@{backButtonPosition}}
+\index{backButtonPosition@{backButtonPosition}!menuAssets@{menuAssets}}
+\doxysubsubsection{backButtonPosition}
+{\footnotesize\ttfamily Vector2f menu\+Assets\+::back\+Button\+Position = \{ \textbf{ global\+Functions\+::find\+Horizontally\+Centered\+Position\+Of\+Given\+Text}(\char`\"{}B\+A\+CK\char`\"{}),900.\+0f\}}
+
+\mbox{\label{namespacemenu_assets_a4bbdcd2cef0e8d748ddfeaf279dc8a6a}} 
+\index{menuAssets@{menuAssets}!creatorsButtonText@{creatorsButtonText}}
+\index{creatorsButtonText@{creatorsButtonText}!menuAssets@{menuAssets}}
+\doxysubsubsection{creatorsButtonText}
+{\footnotesize\ttfamily String menu\+Assets\+::creators\+Button\+Text = \char`\"{}B\+A\+CK\char`\"{}}
+
+\mbox{\label{namespacemenu_assets_a1eec15cdf8f756770b721be917045d68}} 
+\index{menuAssets@{menuAssets}!creatorsText@{creatorsText}}
+\index{creatorsText@{creatorsText}!menuAssets@{menuAssets}}
+\doxysubsubsection{creatorsText}
+{\footnotesize\ttfamily String menu\+Assets\+::creators\+Text[2] = \{\char`\"{}Dominik Grudzien\char`\"{},\char`\"{}Patryk Grzywacz\char`\"{}\}}
+
+\mbox{\label{namespacemenu_assets_a49a6e83c97292928315eddf54de014cc}} 
+\index{menuAssets@{menuAssets}!creatorsTextPosition@{creatorsTextPosition}}
+\index{creatorsTextPosition@{creatorsTextPosition}!menuAssets@{menuAssets}}
+\doxysubsubsection{creatorsTextPosition}
+{\footnotesize\ttfamily Vector2f menu\+Assets\+::creators\+Text\+Position[2]}
+
+{\bfseries Wartość początkowa\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{        \{globalFunctions::findHorizontallyCenteredPositionOfGivenText(creatorsText[DOMINIK]),300.0f \},}
+\DoxyCodeLine{        \{globalFunctions::findHorizontallyCenteredPositionOfGivenText(creatorsText[PATRYK]),400.0f\}}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+\mbox{\label{namespacemenu_assets_a1874eff5acd046883f059c7b0a22c112}} 
+\index{menuAssets@{menuAssets}!fontLocation@{fontLocation}}
+\index{fontLocation@{fontLocation}!menuAssets@{menuAssets}}
+\doxysubsubsection{fontLocation}
+{\footnotesize\ttfamily String menu\+Assets\+::font\+Location = \char`\"{}assets/Fonts/snap/snap itc.\+ttf\char`\"{}}
+
+\mbox{\label{namespacemenu_assets_a04d94afb94fa1ae9e931f3400a9f33c1}} 
+\index{menuAssets@{menuAssets}!logoTexture@{logoTexture}}
+\index{logoTexture@{logoTexture}!menuAssets@{menuAssets}}
+\doxysubsubsection{logoTexture}
+{\footnotesize\ttfamily String menu\+Assets\+::logo\+Texture = \char`\"{}assets/Menu\+Textures/menu\+Logo.\+png\char`\"{}}
+
+\mbox{\label{namespacemenu_assets_a46674b3e48e1d828d6dc32315753e2bb}} 
+\index{menuAssets@{menuAssets}!menuHelpersTextures@{menuHelpersTextures}}
+\index{menuHelpersTextures@{menuHelpersTextures}!menuAssets@{menuAssets}}
+\doxysubsubsection{menuHelpersTextures}
+{\footnotesize\ttfamily String menu\+Assets\+::menu\+Helpers\+Textures[15]}
+
+{\bfseries Wartość początkowa\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{        \textcolor{stringliteral}{"assets/Buttons/plus.png"},}
+\DoxyCodeLine{        \textcolor{stringliteral}{"assets/Buttons/minus.png"},}
+\DoxyCodeLine{        \textcolor{stringliteral}{"assets/Buttons/options.png"},}
+\DoxyCodeLine{        \textcolor{stringliteral}{"assets/Buttons/people.png"},}
+\DoxyCodeLine{        \textcolor{stringliteral}{"assets/Buttons/controler.png"},}
+\DoxyCodeLine{        \textcolor{stringliteral}{"assets/Buttons/down.png"},}
+\DoxyCodeLine{        \textcolor{stringliteral}{"assets/Buttons/up.png"},}
+\DoxyCodeLine{        \textcolor{stringliteral}{"assets/Buttons/left.png"},}
+\DoxyCodeLine{        \textcolor{stringliteral}{"assets/Buttons/right.png"},}
+\DoxyCodeLine{        \textcolor{stringliteral}{"assets/MenuTextures/apple.png"},}
+\DoxyCodeLine{        \textcolor{stringliteral}{"assets/MenuTextures/goldApple.png"},}
+\DoxyCodeLine{        \textcolor{stringliteral}{"assets/SpritesTextures/Map/hole.png"},}
+\DoxyCodeLine{        \textcolor{stringliteral}{"assets/SpritesTextures/Map/przeszkoda1.png"},}
+\DoxyCodeLine{        \textcolor{stringliteral}{"assets/SpritesTextures/Map/kamien3.png"},}
+\DoxyCodeLine{        \textcolor{stringliteral}{"assets/SpritesTextures/Player\&Things/snakeHead.png"}}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+\mbox{\label{namespacemenu_assets_a5e4955c5eb0ea38614750531f0ce9626}} 
+\index{menuAssets@{menuAssets}!menuTexture@{menuTexture}}
+\index{menuTexture@{menuTexture}!menuAssets@{menuAssets}}
+\doxysubsubsection{menuTexture}
+{\footnotesize\ttfamily String menu\+Assets\+::menu\+Texture = \char`\"{}assets/Menu\+Textures/menu\+Background.\+png\char`\"{}}
+
+\mbox{\label{namespacemenu_assets_a486bdc0b101bf671a74cbb974dbea372}} 
+\index{menuAssets@{menuAssets}!menuTipsPosition@{menuTipsPosition}}
+\index{menuTipsPosition@{menuTipsPosition}!menuAssets@{menuAssets}}
+\doxysubsubsection{menuTipsPosition}
+{\footnotesize\ttfamily Vector2f menu\+Assets\+::menu\+Tips\+Position[6]}
+
+{\bfseries Wartość początkowa\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{        \{globalFunctions::findHorizontallyCenteredPositionOfGivenText(menuTipsStrings[TIP1]),300.0f\},}
+\DoxyCodeLine{        \{globalFunctions::findHorizontallyCenteredPositionOfGivenText(menuTipsStrings[TIP2]),390.0f\},}
+\DoxyCodeLine{        \{globalFunctions::findHorizontallyCenteredPositionOfGivenText(menuTipsStrings[TIP3]),480.0f\},}
+\DoxyCodeLine{        \{globalFunctions::findHorizontallyCenteredPositionOfGivenText(menuTipsStrings[TIP4]),570.0f\},}
+\DoxyCodeLine{        \{globalFunctions::findHorizontallyCenteredPositionOfGivenText(menuTipsStrings[TIP5]),660.0f\},}
+\DoxyCodeLine{        \{globalFunctions::findHorizontallyCenteredPositionOfGivenText(menuTipsStrings[TIP6]),750.0f\}}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+\mbox{\label{namespacemenu_assets_a8c4a34f95d130bd0a8056f7ec83a002e}} 
+\index{menuAssets@{menuAssets}!menuTipsStrings@{menuTipsStrings}}
+\index{menuTipsStrings@{menuTipsStrings}!menuAssets@{menuAssets}}
+\doxysubsubsection{menuTipsStrings}
+{\footnotesize\ttfamily String menu\+Assets\+::menu\+Tips\+Strings[6]}
+
+{\bfseries Wartość początkowa\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{ \textcolor{stringliteral}{"Finish levels by eating apples!"},\textcolor{stringliteral}{"When you hit combo five times in a row you'll get more points and invulnerability!"},}
+\DoxyCodeLine{        \textcolor{stringliteral}{"Be wise to use the hole teleportation system!"},\textcolor{stringliteral}{"Better avoid these little different thing!"},\textcolor{stringliteral}{"Don't be afraid of hitting the walls!"},}
+\DoxyCodeLine{        \textcolor{stringliteral}{"Better not try to eat yourself, it c'ld get pretty nasty!"} \}}
+
+\end{DoxyCode}
+\mbox{\label{namespacemenu_assets_acd538c21d0cf3136688291f7f1b87d1b}} 
+\index{menuAssets@{menuAssets}!pointerImageCount@{pointerImageCount}}
+\index{pointerImageCount@{pointerImageCount}!menuAssets@{menuAssets}}
+\doxysubsubsection{pointerImageCount}
+{\footnotesize\ttfamily Vector2u menu\+Assets\+::pointer\+Image\+Count = \{ 20,1 \}}
+
+\mbox{\label{namespacemenu_assets_a8ad3f65b310deab51ce2f5888cd3489f}} 
+\index{menuAssets@{menuAssets}!pointerSwitchTime@{pointerSwitchTime}}
+\index{pointerSwitchTime@{pointerSwitchTime}!menuAssets@{menuAssets}}
+\doxysubsubsection{pointerSwitchTime}
+{\footnotesize\ttfamily float menu\+Assets\+::pointer\+Switch\+Time = 1.\+0f / pointer\+Image\+Count.\+x}
+
+\mbox{\label{namespacemenu_assets_afab99451fd72a1b5465994815527c681}} 
+\index{menuAssets@{menuAssets}!pointerTexture@{pointerTexture}}
+\index{pointerTexture@{pointerTexture}!menuAssets@{menuAssets}}
+\doxysubsubsection{pointerTexture}
+{\footnotesize\ttfamily String menu\+Assets\+::pointer\+Texture = \char`\"{}assets/Menu\+Textures/pointer.\+png\char`\"{}}
+
+\mbox{\label{namespacemenu_assets_a9ea93b224707e85fe51d831a91da87ba}} 
+\index{menuAssets@{menuAssets}!scoresButtonText@{scoresButtonText}}
+\index{scoresButtonText@{scoresButtonText}!menuAssets@{menuAssets}}
+\doxysubsubsection{scoresButtonText}
+{\footnotesize\ttfamily String menu\+Assets\+::scores\+Button\+Text = \char`\"{}B\+A\+CK\char`\"{}}
+

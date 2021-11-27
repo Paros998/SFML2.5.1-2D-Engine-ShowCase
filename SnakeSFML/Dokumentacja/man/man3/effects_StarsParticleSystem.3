@@ -1,0 +1,61 @@
+.TH "effects::StarsParticleSystem" 3 "So, 27 lis 2021" "Silnik graficzny" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+effects::StarsParticleSystem
+.SH SYNOPSIS
+.br
+.PP
+.SS "Metody publiczne"
+
+.in +1c
+.ti -1c
+.RI "\fBStarsParticleSystem\fP (int \fBnumberOfStars\fP, IntRect rectangle)"
+.br
+.ti -1c
+.RI "void \fBupdate\fP (float rawTime)"
+.br
+.ti -1c
+.RI "void \fBmove\fP (float x)"
+.br
+.ti -1c
+.RI "int \fBgetNumberOfStars\fP ()"
+.br
+.ti -1c
+.RI "\fBStar\fP \fBgetStar\fP (int index)"
+.br
+.in -1c
+.SS "Atrybuty prywatne"
+
+.in +1c
+.ti -1c
+.RI "int \fBnumberOfStars\fP"
+.br
+.ti -1c
+.RI "\fBStar\fP * \fBstars\fP"
+.br
+.in -1c
+.SH "Dokumentacja konstruktora i destruktora"
+.PP 
+.SS "effects::StarsParticleSystem::StarsParticleSystem (int numberOfStars, IntRect rectangle)\fC [inline]\fP"
+
+.SH "Dokumentacja funkcji składowych"
+.PP 
+.SS "int effects::StarsParticleSystem::getNumberOfStars ()\fC [inline]\fP"
+
+.SS "\fBStar\fP effects::StarsParticleSystem::getStar (int index)\fC [inline]\fP"
+
+.SS "void effects::StarsParticleSystem::move (float x)\fC [inline]\fP"
+
+.SS "void effects::StarsParticleSystem::update (float rawTime)\fC [inline]\fP"
+
+.SH "Dokumentacja atrybutów składowych"
+.PP 
+.SS "int effects::StarsParticleSystem::numberOfStars\fC [private]\fP"
+
+.SS "\fBStar\fP* effects::StarsParticleSystem::stars\fC [private]\fP"
+
+
+.SH "Autor"
+.PP 
+Wygenerowano automatycznie z kodu źródłowego programem Doxygen dla Silnik graficzny\&.

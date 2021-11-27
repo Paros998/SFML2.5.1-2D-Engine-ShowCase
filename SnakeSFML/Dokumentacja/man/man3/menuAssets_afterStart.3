@@ -1,0 +1,52 @@
+.TH "menuAssets::afterStart" 3 "So, 27 lis 2021" "Silnik graficzny" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+menuAssets::afterStart
+.SH SYNOPSIS
+.br
+.PP
+.SS "Wyliczenia"
+
+.in +1c
+.ti -1c
+.RI "enum \fBstartButtonsIndex\fP { \fBNEXT\fP, \fBBACK\fP }"
+.br
+.in -1c
+.SS "Zmienne"
+
+.in +1c
+.ti -1c
+.RI "String \fBstartButtonsText\fP [2] = {'NEXT','\fBBACK\fP'}"
+.br
+.ti -1c
+.RI "Vector2f \fBstartButtonsPositionY\fP [2]"
+.br
+.in -1c
+.SH "Dokumentacja typów wyliczanych"
+.PP 
+.SS "enum \fBmenuAssets::afterStart::startButtonsIndex\fP"
+
+.PP
+\fBWartości wyliczeń\fP
+.in +1c
+.TP
+\fB\fINEXT \fP\fP
+.TP
+\fB\fIBACK \fP\fP
+.SH "Dokumentacja zmiennych"
+.PP 
+.SS "Vector2f menuAssets::afterStart::startButtonsPositionY[2]"
+\fBWartość początkowa:\fP
+.PP
+.nf
+= { 
+            {globalFunctions::findHorizontallyCenteredPositionOfGivenText(startButtonsText[NEXT]),250\&.0f },
+            backButtonPosition
+        }
+.fi
+.SS "String menuAssets::afterStart::startButtonsText[2] = {'NEXT','\fBBACK\fP'}"
+
+.SH "Autor"
+.PP 
+Wygenerowano automatycznie z kodu źródłowego programem Doxygen dla Silnik graficzny\&.

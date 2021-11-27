@@ -1,0 +1,506 @@
+\doxysection{Dokumentacja klasy shapes\+::Circle}
+\label{classshapes_1_1_circle}\index{shapes::Circle@{shapes::Circle}}
+Diagram dziedziczenia dla shapes\+::Circle\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classshapes_1_1_circle}
+\end{center}
+\end{figure}
+\doxysubsection*{Typy publiczne}
+\begin{DoxyCompactItemize}
+\item 
+enum \textbf{ Precision} \{ \textbf{ Normal}, 
+\textbf{ Four\+Times}, 
+\textbf{ Eight\+Times}
+ \}
+\item 
+enum \textbf{ Type\+Of\+Circle} \{ \textbf{ Round}, 
+\textbf{ Elipse}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ $\sim$\+Circle} ()
+\item 
+void \textbf{ move} (float x)
+\item 
+void \textbf{ set\+Outline\+Color} (Color color)
+\item 
+\textbf{ Circle} (\textbf{ Point2D} \textbf{ middle}, int \textbf{ radius}, bool fill\+Circle)
+\item 
+\textbf{ Circle} (\textbf{ Point2D} \textbf{ middle}, int \textbf{ radius}, bool whatever, int \textbf{ radiusY}, bool fill\+Circle)
+\item 
+\textbf{ Circle} (\textbf{ Point2D} \textbf{ middle}, int \textbf{ radius}, int precision, bool fill\+Circle)
+\item 
+\textbf{ Circle} (\textbf{ Point2D} \textbf{ middle}, int \textbf{ radius}, bool whatever, int \textbf{ radiusY}, int precision, bool fill\+Circle)
+\item 
+\textbf{ Circle} (\textbf{ Point2D} \textbf{ middle}, int \textbf{ radius}, bool fill\+Circle, Color fill\+Color)
+\item 
+\textbf{ Circle} (\textbf{ Point2D} \textbf{ middle}, int \textbf{ radius}, bool whatever, int \textbf{ radiusY}, bool fill\+Circle, Color fill\+Color)
+\item 
+\textbf{ Circle} (\textbf{ Point2D} \textbf{ middle}, int \textbf{ radius}, int precision, bool fill\+Circle, Color fill\+Color)
+\item 
+\textbf{ Circle} (\textbf{ Point2D} \textbf{ middle}, int \textbf{ radius}, bool whatever, int \textbf{ radiusY}, int precision, bool fill\+Circle, Color fill\+Color)
+\item 
+\textbf{ Circle} (\textbf{ Point2D} \textbf{ middle}, int \textbf{ radius}, bool fill\+Circle, Color fill\+Color, bool no\+Outline)
+\item 
+\textbf{ Circle} (\textbf{ Point2D} \textbf{ middle}, int \textbf{ radius}, bool whatever, int \textbf{ radiusY}, bool fill\+Circle, Color fill\+Color, bool no\+Outline)
+\item 
+\textbf{ Circle} (\textbf{ Point2D} \textbf{ middle}, int \textbf{ radius}, int precision, bool fill\+Circle, Color fill\+Color, bool no\+Outline)
+\item 
+\textbf{ Circle} (\textbf{ Point2D} \textbf{ middle}, int \textbf{ radius}, bool whatever, int \textbf{ radiusY}, int precision, bool fill\+Circle, Color fill\+Color, bool no\+Outline)
+\item 
+\textbf{ Circle} (\textbf{ Point2D} \textbf{ middle}, int \textbf{ radius}, Color outline\+Color, Color fill\+Color)
+\item 
+\textbf{ Circle} (\textbf{ Point2D} \textbf{ middle}, int \textbf{ radius}, bool whatever, int \textbf{ radiusY}, Color outline\+Color, Color fill\+Color)
+\item 
+\textbf{ Circle} (\textbf{ Point2D} \textbf{ middle}, int \textbf{ radius}, int precision, Color outline\+Color, Color fill\+Color)
+\item 
+\textbf{ Circle} (\textbf{ Point2D} \textbf{ middle}, int \textbf{ radius}, bool whatever, int \textbf{ radiusY}, int precision, Color outline\+Color, Color fill\+Color)
+\item 
+\textbf{ Circle} (\textbf{ Point2D} \textbf{ middle}, int \textbf{ radius}, int \textbf{ radiusY}, int precision, Texture $\ast$texture)
+\item 
+\textbf{ Circle} (\textbf{ Point2D} \textbf{ middle}, int \textbf{ radius}, int \textbf{ radiusY}, int precision, std\+::vector$<$ Color $>$ \textbf{ m\+\_\+fill\+Colors}, bool render\+Outline, Color \textbf{ m\+\_\+outline\+Color})
+\item 
+virtual std\+::size\+\_\+t \textbf{ get\+Point\+Count} () const override
+\item 
+virtual Vector2f \textbf{ get\+Point} (std\+::size\+\_\+t index) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Metody prywatne}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \textbf{ draw} (sf\+::\+Render\+Target \&target, sf\+::\+Render\+States states) const override
+\item 
+void \textbf{ calculate\+Outline\+Vertices} ()
+\item 
+void \textbf{ calculate\+Outline\+Vertices} (int precision)
+\item 
+void \textbf{ calculate\+Fill\+Vertices} (bool multiple\+Colours)
+\item 
+void \textbf{ calculate\+Fill\+Vertices\+As\+Lines} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Atrybuty prywatne}
+\begin{DoxyCompactItemize}
+\item 
+const float \textbf{ radian2\+PI} = 6.\+28
+\item 
+const int \textbf{ max\+Angle} = 360
+\item 
+const int \textbf{ P\+I\+\_\+4} = 90
+\item 
+const int \textbf{ P\+I\+\_\+8} = 45
+\item 
+const Texture $\ast$ \textbf{ m\+\_\+texture}
+\begin{DoxyCompactList}\small\item\em Texture of the shape. \end{DoxyCompactList}\item 
+Int\+Rect \textbf{ m\+\_\+texture\+Rect}
+\begin{DoxyCompactList}\small\item\em Rectangle defining the area of the source texture to display. \end{DoxyCompactList}\item 
+Color \textbf{ m\+\_\+fill\+Color}
+\begin{DoxyCompactList}\small\item\em Fill color. \end{DoxyCompactList}\item 
+Color \textbf{ m\+\_\+outline\+Color}
+\begin{DoxyCompactList}\small\item\em Outline color. \end{DoxyCompactList}\item 
+float \textbf{ m\+\_\+outline\+Thickness}
+\begin{DoxyCompactList}\small\item\em Thickness of the shape\textquotesingle{}s outline. \end{DoxyCompactList}\item 
+Vertex\+Array \textbf{ m\+\_\+vertices}
+\begin{DoxyCompactList}\small\item\em Vertex array containing the fill geometry. \end{DoxyCompactList}\item 
+Vertex\+Array \textbf{ m\+\_\+outline\+Vertices}
+\begin{DoxyCompactList}\small\item\em Vertex array containing the outline geometry. \end{DoxyCompactList}\item 
+Float\+Rect \textbf{ m\+\_\+inside\+Bounds}
+\begin{DoxyCompactList}\small\item\em Bounding rectangle of the inside (fill) \end{DoxyCompactList}\item 
+Float\+Rect \textbf{ m\+\_\+bounds}
+\begin{DoxyCompactList}\small\item\em Bounding rectangle of the whole line. \end{DoxyCompactList}\item 
+\textbf{ Point2D} \textbf{ middle}
+\begin{DoxyCompactList}\small\item\em middle point of circle \end{DoxyCompactList}\item 
+int \textbf{ radius}
+\begin{DoxyCompactList}\small\item\em radius of the circle or horizontal radius of elipse \end{DoxyCompactList}\item 
+int \textbf{ radiusY}
+\begin{DoxyCompactList}\small\item\em vertical radius of elipse \end{DoxyCompactList}\item 
+int \textbf{ type}
+\begin{DoxyCompactList}\small\item\em defines the type of this circle \end{DoxyCompactList}\item 
+std\+::vector$<$ Color $>$ \textbf{ m\+\_\+fill\+Colors}
+\begin{DoxyCompactList}\small\item\em Multiple colours to shape a better texture. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Dokumentacja składowych wyliczanych}
+\mbox{\label{classshapes_1_1_circle_aaa00f0d07cad4c2aea5f9ce735ed4ac3}} 
+\index{shapes::Circle@{shapes::Circle}!Precision@{Precision}}
+\index{Precision@{Precision}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{Precision}
+{\footnotesize\ttfamily enum \textbf{ shapes\+::\+Circle\+::\+Precision}}
+
+\begin{DoxyEnumFields}{Wartości wyliczeń}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Normal@{Normal}!shapes::Circle@{shapes::Circle}}\index{shapes::Circle@{shapes::Circle}!Normal@{Normal}}}\mbox{\label{classshapes_1_1_circle_aaa00f0d07cad4c2aea5f9ce735ed4ac3a8e74152cceec662f48e0f84fde7437a8}} 
+Normal&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FourTimes@{FourTimes}!shapes::Circle@{shapes::Circle}}\index{shapes::Circle@{shapes::Circle}!FourTimes@{FourTimes}}}\mbox{\label{classshapes_1_1_circle_aaa00f0d07cad4c2aea5f9ce735ed4ac3ada32807897609983548e00f2f1c7ba64}} 
+Four\+Times&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EightTimes@{EightTimes}!shapes::Circle@{shapes::Circle}}\index{shapes::Circle@{shapes::Circle}!EightTimes@{EightTimes}}}\mbox{\label{classshapes_1_1_circle_aaa00f0d07cad4c2aea5f9ce735ed4ac3a86aa34fa1fadd4c0355d6b55fd3c6373}} 
+Eight\+Times&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\label{classshapes_1_1_circle_a40e178dc03426b5253c81e251edb0ddd}} 
+\index{shapes::Circle@{shapes::Circle}!TypeOfCircle@{TypeOfCircle}}
+\index{TypeOfCircle@{TypeOfCircle}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{TypeOfCircle}
+{\footnotesize\ttfamily enum \textbf{ shapes\+::\+Circle\+::\+Type\+Of\+Circle}}
+
+\begin{DoxyEnumFields}{Wartości wyliczeń}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Round@{Round}!shapes::Circle@{shapes::Circle}}\index{shapes::Circle@{shapes::Circle}!Round@{Round}}}\mbox{\label{classshapes_1_1_circle_a40e178dc03426b5253c81e251edb0ddda66469712ee8dd1727f692be505965ca7}} 
+Round&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Elipse@{Elipse}!shapes::Circle@{shapes::Circle}}\index{shapes::Circle@{shapes::Circle}!Elipse@{Elipse}}}\mbox{\label{classshapes_1_1_circle_a40e178dc03426b5253c81e251edb0dddaa3373d0408cf590d883a7caad2ccd88f}} 
+Elipse&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Dokumentacja konstruktora i destruktora}
+\mbox{\label{classshapes_1_1_circle_af96072caa97fe899aac3ce5e3925cf65}} 
+\index{shapes::Circle@{shapes::Circle}!````~Circle@{$\sim$Circle}}
+\index{````~Circle@{$\sim$Circle}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{$\sim$Circle()}
+{\footnotesize\ttfamily shapes\+::\+Circle\+::$\sim$\+Circle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classshapes_1_1_circle_ae2d57d5c68d38462ae278f01264f4d2a}} 
+\index{shapes::Circle@{shapes::Circle}!Circle@{Circle}}
+\index{Circle@{Circle}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{Circle()\hspace{0.1cm}{\footnotesize\ttfamily [1/18]}}
+{\footnotesize\ttfamily shapes\+::\+Circle\+::\+Circle (\begin{DoxyParamCaption}\item[{\textbf{ Point2D}}]{middle,  }\item[{int}]{radius,  }\item[{bool}]{fill\+Circle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classshapes_1_1_circle_a492ff0df34fa305e01d7de2b6fbc774c}} 
+\index{shapes::Circle@{shapes::Circle}!Circle@{Circle}}
+\index{Circle@{Circle}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{Circle()\hspace{0.1cm}{\footnotesize\ttfamily [2/18]}}
+{\footnotesize\ttfamily shapes\+::\+Circle\+::\+Circle (\begin{DoxyParamCaption}\item[{\textbf{ Point2D}}]{middle,  }\item[{int}]{radius,  }\item[{bool}]{whatever,  }\item[{int}]{radiusY,  }\item[{bool}]{fill\+Circle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classshapes_1_1_circle_a29a71a3b10060407b00a2b86643a51de}} 
+\index{shapes::Circle@{shapes::Circle}!Circle@{Circle}}
+\index{Circle@{Circle}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{Circle()\hspace{0.1cm}{\footnotesize\ttfamily [3/18]}}
+{\footnotesize\ttfamily shapes\+::\+Circle\+::\+Circle (\begin{DoxyParamCaption}\item[{\textbf{ Point2D}}]{middle,  }\item[{int}]{radius,  }\item[{int}]{precision,  }\item[{bool}]{fill\+Circle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classshapes_1_1_circle_afc0a2752a3013e7199429d411eb5dbce}} 
+\index{shapes::Circle@{shapes::Circle}!Circle@{Circle}}
+\index{Circle@{Circle}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{Circle()\hspace{0.1cm}{\footnotesize\ttfamily [4/18]}}
+{\footnotesize\ttfamily shapes\+::\+Circle\+::\+Circle (\begin{DoxyParamCaption}\item[{\textbf{ Point2D}}]{middle,  }\item[{int}]{radius,  }\item[{bool}]{whatever,  }\item[{int}]{radiusY,  }\item[{int}]{precision,  }\item[{bool}]{fill\+Circle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classshapes_1_1_circle_af7c1d15eb1d57ca2eac4d52f4329851f}} 
+\index{shapes::Circle@{shapes::Circle}!Circle@{Circle}}
+\index{Circle@{Circle}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{Circle()\hspace{0.1cm}{\footnotesize\ttfamily [5/18]}}
+{\footnotesize\ttfamily shapes\+::\+Circle\+::\+Circle (\begin{DoxyParamCaption}\item[{\textbf{ Point2D}}]{middle,  }\item[{int}]{radius,  }\item[{bool}]{fill\+Circle,  }\item[{Color}]{fill\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classshapes_1_1_circle_a068bfd3a7fc46ef142515d03c4d77298}} 
+\index{shapes::Circle@{shapes::Circle}!Circle@{Circle}}
+\index{Circle@{Circle}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{Circle()\hspace{0.1cm}{\footnotesize\ttfamily [6/18]}}
+{\footnotesize\ttfamily shapes\+::\+Circle\+::\+Circle (\begin{DoxyParamCaption}\item[{\textbf{ Point2D}}]{middle,  }\item[{int}]{radius,  }\item[{bool}]{whatever,  }\item[{int}]{radiusY,  }\item[{bool}]{fill\+Circle,  }\item[{Color}]{fill\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classshapes_1_1_circle_ad65a3c0f92d229ceaa99f2e45e372fac}} 
+\index{shapes::Circle@{shapes::Circle}!Circle@{Circle}}
+\index{Circle@{Circle}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{Circle()\hspace{0.1cm}{\footnotesize\ttfamily [7/18]}}
+{\footnotesize\ttfamily shapes\+::\+Circle\+::\+Circle (\begin{DoxyParamCaption}\item[{\textbf{ Point2D}}]{middle,  }\item[{int}]{radius,  }\item[{int}]{precision,  }\item[{bool}]{fill\+Circle,  }\item[{Color}]{fill\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classshapes_1_1_circle_a777a649af32f4c2f4ba613d598286861}} 
+\index{shapes::Circle@{shapes::Circle}!Circle@{Circle}}
+\index{Circle@{Circle}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{Circle()\hspace{0.1cm}{\footnotesize\ttfamily [8/18]}}
+{\footnotesize\ttfamily shapes\+::\+Circle\+::\+Circle (\begin{DoxyParamCaption}\item[{\textbf{ Point2D}}]{middle,  }\item[{int}]{radius,  }\item[{bool}]{whatever,  }\item[{int}]{radiusY,  }\item[{int}]{precision,  }\item[{bool}]{fill\+Circle,  }\item[{Color}]{fill\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classshapes_1_1_circle_ad81d33923c587fe41b3cba28b5fa2faa}} 
+\index{shapes::Circle@{shapes::Circle}!Circle@{Circle}}
+\index{Circle@{Circle}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{Circle()\hspace{0.1cm}{\footnotesize\ttfamily [9/18]}}
+{\footnotesize\ttfamily shapes\+::\+Circle\+::\+Circle (\begin{DoxyParamCaption}\item[{\textbf{ Point2D}}]{middle,  }\item[{int}]{radius,  }\item[{bool}]{fill\+Circle,  }\item[{Color}]{fill\+Color,  }\item[{bool}]{no\+Outline }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classshapes_1_1_circle_a6a97e064b2fd743c588509a515048085}} 
+\index{shapes::Circle@{shapes::Circle}!Circle@{Circle}}
+\index{Circle@{Circle}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{Circle()\hspace{0.1cm}{\footnotesize\ttfamily [10/18]}}
+{\footnotesize\ttfamily shapes\+::\+Circle\+::\+Circle (\begin{DoxyParamCaption}\item[{\textbf{ Point2D}}]{middle,  }\item[{int}]{radius,  }\item[{bool}]{whatever,  }\item[{int}]{radiusY,  }\item[{bool}]{fill\+Circle,  }\item[{Color}]{fill\+Color,  }\item[{bool}]{no\+Outline }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classshapes_1_1_circle_aaca226b3dd9972e6f61823f76993f909}} 
+\index{shapes::Circle@{shapes::Circle}!Circle@{Circle}}
+\index{Circle@{Circle}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{Circle()\hspace{0.1cm}{\footnotesize\ttfamily [11/18]}}
+{\footnotesize\ttfamily shapes\+::\+Circle\+::\+Circle (\begin{DoxyParamCaption}\item[{\textbf{ Point2D}}]{middle,  }\item[{int}]{radius,  }\item[{int}]{precision,  }\item[{bool}]{fill\+Circle,  }\item[{Color}]{fill\+Color,  }\item[{bool}]{no\+Outline }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classshapes_1_1_circle_a57a635eb5992d44be1ba4cf2144e2af1}} 
+\index{shapes::Circle@{shapes::Circle}!Circle@{Circle}}
+\index{Circle@{Circle}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{Circle()\hspace{0.1cm}{\footnotesize\ttfamily [12/18]}}
+{\footnotesize\ttfamily shapes\+::\+Circle\+::\+Circle (\begin{DoxyParamCaption}\item[{\textbf{ Point2D}}]{middle,  }\item[{int}]{radius,  }\item[{bool}]{whatever,  }\item[{int}]{radiusY,  }\item[{int}]{precision,  }\item[{bool}]{fill\+Circle,  }\item[{Color}]{fill\+Color,  }\item[{bool}]{no\+Outline }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classshapes_1_1_circle_a2bf2a0495391823d5692b543d973bcc7}} 
+\index{shapes::Circle@{shapes::Circle}!Circle@{Circle}}
+\index{Circle@{Circle}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{Circle()\hspace{0.1cm}{\footnotesize\ttfamily [13/18]}}
+{\footnotesize\ttfamily shapes\+::\+Circle\+::\+Circle (\begin{DoxyParamCaption}\item[{\textbf{ Point2D}}]{middle,  }\item[{int}]{radius,  }\item[{Color}]{outline\+Color,  }\item[{Color}]{fill\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classshapes_1_1_circle_abc265c6fcd7a8eae4be28eb3db6bb4be}} 
+\index{shapes::Circle@{shapes::Circle}!Circle@{Circle}}
+\index{Circle@{Circle}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{Circle()\hspace{0.1cm}{\footnotesize\ttfamily [14/18]}}
+{\footnotesize\ttfamily shapes\+::\+Circle\+::\+Circle (\begin{DoxyParamCaption}\item[{\textbf{ Point2D}}]{middle,  }\item[{int}]{radius,  }\item[{bool}]{whatever,  }\item[{int}]{radiusY,  }\item[{Color}]{outline\+Color,  }\item[{Color}]{fill\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classshapes_1_1_circle_a2baaf24f7c458db2333b0de7dc195f3f}} 
+\index{shapes::Circle@{shapes::Circle}!Circle@{Circle}}
+\index{Circle@{Circle}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{Circle()\hspace{0.1cm}{\footnotesize\ttfamily [15/18]}}
+{\footnotesize\ttfamily shapes\+::\+Circle\+::\+Circle (\begin{DoxyParamCaption}\item[{\textbf{ Point2D}}]{middle,  }\item[{int}]{radius,  }\item[{int}]{precision,  }\item[{Color}]{outline\+Color,  }\item[{Color}]{fill\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classshapes_1_1_circle_a6586b3bb19a30747c37dfcb9b95211bc}} 
+\index{shapes::Circle@{shapes::Circle}!Circle@{Circle}}
+\index{Circle@{Circle}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{Circle()\hspace{0.1cm}{\footnotesize\ttfamily [16/18]}}
+{\footnotesize\ttfamily shapes\+::\+Circle\+::\+Circle (\begin{DoxyParamCaption}\item[{\textbf{ Point2D}}]{middle,  }\item[{int}]{radius,  }\item[{bool}]{whatever,  }\item[{int}]{radiusY,  }\item[{int}]{precision,  }\item[{Color}]{outline\+Color,  }\item[{Color}]{fill\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classshapes_1_1_circle_ad7482d149a487459426b31ef963464f9}} 
+\index{shapes::Circle@{shapes::Circle}!Circle@{Circle}}
+\index{Circle@{Circle}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{Circle()\hspace{0.1cm}{\footnotesize\ttfamily [17/18]}}
+{\footnotesize\ttfamily shapes\+::\+Circle\+::\+Circle (\begin{DoxyParamCaption}\item[{\textbf{ Point2D}}]{middle,  }\item[{int}]{radius,  }\item[{int}]{radiusY,  }\item[{int}]{precision,  }\item[{Texture $\ast$}]{texture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classshapes_1_1_circle_a9b2e52930c3833c86b8bb824e040997e}} 
+\index{shapes::Circle@{shapes::Circle}!Circle@{Circle}}
+\index{Circle@{Circle}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{Circle()\hspace{0.1cm}{\footnotesize\ttfamily [18/18]}}
+{\footnotesize\ttfamily shapes\+::\+Circle\+::\+Circle (\begin{DoxyParamCaption}\item[{\textbf{ Point2D}}]{middle,  }\item[{int}]{radius,  }\item[{int}]{radiusY,  }\item[{int}]{precision,  }\item[{std\+::vector$<$ Color $>$}]{m\+\_\+fill\+Colors,  }\item[{bool}]{render\+Outline,  }\item[{Color}]{m\+\_\+outline\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Dokumentacja funkcji składowych}
+\mbox{\label{classshapes_1_1_circle_a34b90f63b7bdc3d7570047ec8c9a2101}} 
+\index{shapes::Circle@{shapes::Circle}!calculateFillVertices@{calculateFillVertices}}
+\index{calculateFillVertices@{calculateFillVertices}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{calculateFillVertices()}
+{\footnotesize\ttfamily void shapes\+::\+Circle\+::calculate\+Fill\+Vertices (\begin{DoxyParamCaption}\item[{bool}]{multiple\+Colours }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\label{classshapes_1_1_circle_ace4c07bcda9cc92665583896b1175124}} 
+\index{shapes::Circle@{shapes::Circle}!calculateFillVerticesAsLines@{calculateFillVerticesAsLines}}
+\index{calculateFillVerticesAsLines@{calculateFillVerticesAsLines}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{calculateFillVerticesAsLines()}
+{\footnotesize\ttfamily void shapes\+::\+Circle\+::calculate\+Fill\+Vertices\+As\+Lines (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\label{classshapes_1_1_circle_a469fd3b1f0e256472845feadc7eb11f5}} 
+\index{shapes::Circle@{shapes::Circle}!calculateOutlineVertices@{calculateOutlineVertices}}
+\index{calculateOutlineVertices@{calculateOutlineVertices}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{calculateOutlineVertices()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void shapes\+::\+Circle\+::calculate\+Outline\+Vertices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\label{classshapes_1_1_circle_ad826bdb14a858d9405d79689ab405feb}} 
+\index{shapes::Circle@{shapes::Circle}!calculateOutlineVertices@{calculateOutlineVertices}}
+\index{calculateOutlineVertices@{calculateOutlineVertices}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{calculateOutlineVertices()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void shapes\+::\+Circle\+::calculate\+Outline\+Vertices (\begin{DoxyParamCaption}\item[{int}]{precision }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\label{classshapes_1_1_circle_a976db3f1a7cbbe68dcd4e14ef7b19658}} 
+\index{shapes::Circle@{shapes::Circle}!draw@{draw}}
+\index{draw@{draw}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{draw()}
+{\footnotesize\ttfamily virtual void shapes\+::\+Circle\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \&}]{target,  }\item[{sf\+::\+Render\+States}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+\mbox{\label{classshapes_1_1_circle_a5ca8a1ad2cc896798560cb4c1f1ba1a9}} 
+\index{shapes::Circle@{shapes::Circle}!getPoint@{getPoint}}
+\index{getPoint@{getPoint}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{getPoint()}
+{\footnotesize\ttfamily virtual Vector2f shapes\+::\+Circle\+::get\+Point (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\mbox{\label{classshapes_1_1_circle_add9d5ee29c131244411c1492e9b2fd12}} 
+\index{shapes::Circle@{shapes::Circle}!getPointCount@{getPointCount}}
+\index{getPointCount@{getPointCount}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{getPointCount()}
+{\footnotesize\ttfamily virtual std\+::size\+\_\+t shapes\+::\+Circle\+::get\+Point\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\mbox{\label{classshapes_1_1_circle_a7e48183c15bfac948903351a21967c12}} 
+\index{shapes::Circle@{shapes::Circle}!move@{move}}
+\index{move@{move}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{move()}
+{\footnotesize\ttfamily void shapes\+::\+Circle\+::move (\begin{DoxyParamCaption}\item[{float}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classshapes_1_1_circle_ad957233a4f0a4cc7b22d6ededf6bb424}} 
+\index{shapes::Circle@{shapes::Circle}!setOutlineColor@{setOutlineColor}}
+\index{setOutlineColor@{setOutlineColor}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{setOutlineColor()}
+{\footnotesize\ttfamily void shapes\+::\+Circle\+::set\+Outline\+Color (\begin{DoxyParamCaption}\item[{Color}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Dokumentacja atrybutów składowych}
+\mbox{\label{classshapes_1_1_circle_a5a1cce33ba92086a508fce1e45d57730}} 
+\index{shapes::Circle@{shapes::Circle}!m\_bounds@{m\_bounds}}
+\index{m\_bounds@{m\_bounds}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{m\_bounds}
+{\footnotesize\ttfamily Float\+Rect shapes\+::\+Circle\+::m\+\_\+bounds\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Bounding rectangle of the whole line. 
+
+\mbox{\label{classshapes_1_1_circle_ae62c6ef7a994bd85fd9248c3ef56f583}} 
+\index{shapes::Circle@{shapes::Circle}!m\_fillColor@{m\_fillColor}}
+\index{m\_fillColor@{m\_fillColor}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{m\_fillColor}
+{\footnotesize\ttfamily Color shapes\+::\+Circle\+::m\+\_\+fill\+Color\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Fill color. 
+
+\mbox{\label{classshapes_1_1_circle_a852f9248b294ff746fe9fd420799f5ff}} 
+\index{shapes::Circle@{shapes::Circle}!m\_fillColors@{m\_fillColors}}
+\index{m\_fillColors@{m\_fillColors}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{m\_fillColors}
+{\footnotesize\ttfamily std\+::vector$<$Color$>$ shapes\+::\+Circle\+::m\+\_\+fill\+Colors\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Multiple colours to shape a better texture. 
+
+\mbox{\label{classshapes_1_1_circle_a661eb96ad6f9b55293d0f44a255f94c9}} 
+\index{shapes::Circle@{shapes::Circle}!m\_insideBounds@{m\_insideBounds}}
+\index{m\_insideBounds@{m\_insideBounds}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{m\_insideBounds}
+{\footnotesize\ttfamily Float\+Rect shapes\+::\+Circle\+::m\+\_\+inside\+Bounds\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Bounding rectangle of the inside (fill) 
+
+\mbox{\label{classshapes_1_1_circle_a227d610e349a390883a30c345d80eb95}} 
+\index{shapes::Circle@{shapes::Circle}!m\_outlineColor@{m\_outlineColor}}
+\index{m\_outlineColor@{m\_outlineColor}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{m\_outlineColor}
+{\footnotesize\ttfamily Color shapes\+::\+Circle\+::m\+\_\+outline\+Color\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Outline color. 
+
+\mbox{\label{classshapes_1_1_circle_ab53f36368304cfdc7a1b61c8a104234a}} 
+\index{shapes::Circle@{shapes::Circle}!m\_outlineThickness@{m\_outlineThickness}}
+\index{m\_outlineThickness@{m\_outlineThickness}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{m\_outlineThickness}
+{\footnotesize\ttfamily float shapes\+::\+Circle\+::m\+\_\+outline\+Thickness\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Thickness of the shape\textquotesingle{}s outline. 
+
+\mbox{\label{classshapes_1_1_circle_a790f5f565211a310d9724ca917b21883}} 
+\index{shapes::Circle@{shapes::Circle}!m\_outlineVertices@{m\_outlineVertices}}
+\index{m\_outlineVertices@{m\_outlineVertices}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{m\_outlineVertices}
+{\footnotesize\ttfamily Vertex\+Array shapes\+::\+Circle\+::m\+\_\+outline\+Vertices\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vertex array containing the outline geometry. 
+
+\mbox{\label{classshapes_1_1_circle_a2c4baf967ca7ae9249fd6d4f880c2d0d}} 
+\index{shapes::Circle@{shapes::Circle}!m\_texture@{m\_texture}}
+\index{m\_texture@{m\_texture}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{m\_texture}
+{\footnotesize\ttfamily const Texture$\ast$ shapes\+::\+Circle\+::m\+\_\+texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Texture of the shape. 
+
+\mbox{\label{classshapes_1_1_circle_a6991195971a74d0e8e93121767be2c51}} 
+\index{shapes::Circle@{shapes::Circle}!m\_textureRect@{m\_textureRect}}
+\index{m\_textureRect@{m\_textureRect}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{m\_textureRect}
+{\footnotesize\ttfamily Int\+Rect shapes\+::\+Circle\+::m\+\_\+texture\+Rect\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Rectangle defining the area of the source texture to display. 
+
+\mbox{\label{classshapes_1_1_circle_a6e5b7ad2822e2c9c0e807f253a33532f}} 
+\index{shapes::Circle@{shapes::Circle}!m\_vertices@{m\_vertices}}
+\index{m\_vertices@{m\_vertices}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{m\_vertices}
+{\footnotesize\ttfamily Vertex\+Array shapes\+::\+Circle\+::m\+\_\+vertices\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vertex array containing the fill geometry. 
+
+\mbox{\label{classshapes_1_1_circle_a69630dc941c5d5b99223dd649842e375}} 
+\index{shapes::Circle@{shapes::Circle}!maxAngle@{maxAngle}}
+\index{maxAngle@{maxAngle}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{maxAngle}
+{\footnotesize\ttfamily const int shapes\+::\+Circle\+::max\+Angle = 360\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classshapes_1_1_circle_a8016cf9ba0269d3916271fa447c00157}} 
+\index{shapes::Circle@{shapes::Circle}!middle@{middle}}
+\index{middle@{middle}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{middle}
+{\footnotesize\ttfamily \textbf{ Point2D} shapes\+::\+Circle\+::middle\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+middle point of circle 
+
+\mbox{\label{classshapes_1_1_circle_adeb41bcb7799e81649bf9f11fbdf68ea}} 
+\index{shapes::Circle@{shapes::Circle}!PI\_4@{PI\_4}}
+\index{PI\_4@{PI\_4}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{PI\_4}
+{\footnotesize\ttfamily const int shapes\+::\+Circle\+::\+P\+I\+\_\+4 = 90\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classshapes_1_1_circle_ac2d41051f8e5b306b8fab16922756057}} 
+\index{shapes::Circle@{shapes::Circle}!PI\_8@{PI\_8}}
+\index{PI\_8@{PI\_8}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{PI\_8}
+{\footnotesize\ttfamily const int shapes\+::\+Circle\+::\+P\+I\+\_\+8 = 45\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classshapes_1_1_circle_a3f311104ff87838620a39dfb46e9e46f}} 
+\index{shapes::Circle@{shapes::Circle}!radian2PI@{radian2PI}}
+\index{radian2PI@{radian2PI}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{radian2PI}
+{\footnotesize\ttfamily const float shapes\+::\+Circle\+::radian2\+PI = 6.\+28\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classshapes_1_1_circle_a9e917ba9d222ba534848d7eb2b6c2450}} 
+\index{shapes::Circle@{shapes::Circle}!radius@{radius}}
+\index{radius@{radius}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{radius}
+{\footnotesize\ttfamily int shapes\+::\+Circle\+::radius\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+radius of the circle or horizontal radius of elipse 
+
+\mbox{\label{classshapes_1_1_circle_a5073ba6434c798bdccc06b0238cd150a}} 
+\index{shapes::Circle@{shapes::Circle}!radiusY@{radiusY}}
+\index{radiusY@{radiusY}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{radiusY}
+{\footnotesize\ttfamily int shapes\+::\+Circle\+::radiusY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+vertical radius of elipse 
+
+\mbox{\label{classshapes_1_1_circle_a6fb28ff778e22e010121f57cb2ed6cbe}} 
+\index{shapes::Circle@{shapes::Circle}!type@{type}}
+\index{type@{type}!shapes::Circle@{shapes::Circle}}
+\doxysubsubsection{type}
+{\footnotesize\ttfamily int shapes\+::\+Circle\+::type\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+defines the type of this circle 
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Chomik/source/repos/\+Snake\+S\+F\+M\+Lv1/\+Snake\+S\+F\+M\+L/src/\textbf{ Render.\+ixx}\end{DoxyCompactItemize}

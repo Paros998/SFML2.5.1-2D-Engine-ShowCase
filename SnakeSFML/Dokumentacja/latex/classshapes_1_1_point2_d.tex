@@ -1,0 +1,195 @@
+\doxysection{Dokumentacja klasy shapes\+::Point2D}
+\label{classshapes_1_1_point2_d}\index{shapes::Point2D@{shapes::Point2D}}
+Diagram dziedziczenia dla shapes\+::Point2D\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classshapes_1_1_point2_d}
+\end{center}
+\end{figure}
+\doxysubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ $\sim$\+Point2D} ()
+\item 
+\textbf{ Point2D} ()
+\item 
+\textbf{ Point2D} (Vector2f \textbf{ point})
+\item 
+\textbf{ Point2D} (float x, float y)
+\item 
+\textbf{ Point2D} (Color fill\+Color)
+\item 
+\textbf{ Point2D} (Vector2f \textbf{ point}, Color fill\+Color)
+\item 
+\textbf{ Point2D} (float x, float y, Color fill\+Color)
+\item 
+virtual std\+::size\+\_\+t \textbf{ get\+Point\+Count} () const override
+\item 
+virtual Vector2f \textbf{ get\+Point} (std\+::size\+\_\+t index) const override
+\item 
+Color \textbf{ get\+Fill\+Color} ()
+\item 
+void \textbf{ set\+Fill\+Color} (Color new\+Color)
+\item 
+Vector2f \textbf{ get\+Cords} ()
+\item 
+void \textbf{ set\+Cords} ()
+\item 
+void \textbf{ set\+Cords} (Vector2f new\+Point)
+\item 
+void \textbf{ set\+Cords} (float x, float y)
+\end{DoxyCompactItemize}
+\doxysubsection*{Metody prywatne}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \textbf{ draw} (sf\+::\+Render\+Target \&target, sf\+::\+Render\+States states) const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Atrybuty prywatne}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Vector2f \textbf{ point}
+\begin{DoxyCompactList}\small\item\em Coordinates of the point. \end{DoxyCompactList}\item 
+sf\+::\+Vertex\+Array \textbf{ m\+\_\+vertices}
+\begin{DoxyCompactList}\small\item\em Vertex array containing the fill geometry. \end{DoxyCompactList}\item 
+sf\+::\+Color \textbf{ m\+\_\+fill\+Color}
+\begin{DoxyCompactList}\small\item\em Fill color. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Dokumentacja konstruktora i destruktora}
+\mbox{\label{classshapes_1_1_point2_d_a61362a3fb4de4bd28784aceb17f23fb9}} 
+\index{shapes::Point2D@{shapes::Point2D}!````~Point2D@{$\sim$Point2D}}
+\index{````~Point2D@{$\sim$Point2D}!shapes::Point2D@{shapes::Point2D}}
+\doxysubsubsection{$\sim$Point2D()}
+{\footnotesize\ttfamily shapes\+::\+Point2\+D\+::$\sim$\+Point2D (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classshapes_1_1_point2_d_afd4b166a231b5d3b70a9e8f01826b731}} 
+\index{shapes::Point2D@{shapes::Point2D}!Point2D@{Point2D}}
+\index{Point2D@{Point2D}!shapes::Point2D@{shapes::Point2D}}
+\doxysubsubsection{Point2D()\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily shapes\+::\+Point2\+D\+::\+Point2D (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classshapes_1_1_point2_d_a2e065c80f110db8dee5cde29b555d1c5}} 
+\index{shapes::Point2D@{shapes::Point2D}!Point2D@{Point2D}}
+\index{Point2D@{Point2D}!shapes::Point2D@{shapes::Point2D}}
+\doxysubsubsection{Point2D()\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily shapes\+::\+Point2\+D\+::\+Point2D (\begin{DoxyParamCaption}\item[{Vector2f}]{point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classshapes_1_1_point2_d_a70f5086db3f0cadab00884e515601084}} 
+\index{shapes::Point2D@{shapes::Point2D}!Point2D@{Point2D}}
+\index{Point2D@{Point2D}!shapes::Point2D@{shapes::Point2D}}
+\doxysubsubsection{Point2D()\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily shapes\+::\+Point2\+D\+::\+Point2D (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classshapes_1_1_point2_d_a521b712038dbbea291fb78d0882d589f}} 
+\index{shapes::Point2D@{shapes::Point2D}!Point2D@{Point2D}}
+\index{Point2D@{Point2D}!shapes::Point2D@{shapes::Point2D}}
+\doxysubsubsection{Point2D()\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily shapes\+::\+Point2\+D\+::\+Point2D (\begin{DoxyParamCaption}\item[{Color}]{fill\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classshapes_1_1_point2_d_abfc37a85b944ce6f3a21f32dbc24f499}} 
+\index{shapes::Point2D@{shapes::Point2D}!Point2D@{Point2D}}
+\index{Point2D@{Point2D}!shapes::Point2D@{shapes::Point2D}}
+\doxysubsubsection{Point2D()\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily shapes\+::\+Point2\+D\+::\+Point2D (\begin{DoxyParamCaption}\item[{Vector2f}]{point,  }\item[{Color}]{fill\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classshapes_1_1_point2_d_a1841396d1d16392699dac5afe547cc02}} 
+\index{shapes::Point2D@{shapes::Point2D}!Point2D@{Point2D}}
+\index{Point2D@{Point2D}!shapes::Point2D@{shapes::Point2D}}
+\doxysubsubsection{Point2D()\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily shapes\+::\+Point2\+D\+::\+Point2D (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{Color}]{fill\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Dokumentacja funkcji składowych}
+\mbox{\label{classshapes_1_1_point2_d_a029983c43b8ce1849f3a0f5455975c00}} 
+\index{shapes::Point2D@{shapes::Point2D}!draw@{draw}}
+\index{draw@{draw}!shapes::Point2D@{shapes::Point2D}}
+\doxysubsubsection{draw()}
+{\footnotesize\ttfamily virtual void shapes\+::\+Point2\+D\+::draw (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Target \&}]{target,  }\item[{sf\+::\+Render\+States}]{states }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+\mbox{\label{classshapes_1_1_point2_d_a938ae75c093f24740432c6a05e5092f2}} 
+\index{shapes::Point2D@{shapes::Point2D}!getCords@{getCords}}
+\index{getCords@{getCords}!shapes::Point2D@{shapes::Point2D}}
+\doxysubsubsection{getCords()}
+{\footnotesize\ttfamily Vector2f shapes\+::\+Point2\+D\+::get\+Cords (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classshapes_1_1_point2_d_a2c9d32bce8d1e48e6f5a85d7d23d253c}} 
+\index{shapes::Point2D@{shapes::Point2D}!getFillColor@{getFillColor}}
+\index{getFillColor@{getFillColor}!shapes::Point2D@{shapes::Point2D}}
+\doxysubsubsection{getFillColor()}
+{\footnotesize\ttfamily Color shapes\+::\+Point2\+D\+::get\+Fill\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classshapes_1_1_point2_d_aa5bbb15a4531dc494f591207f7c275ef}} 
+\index{shapes::Point2D@{shapes::Point2D}!getPoint@{getPoint}}
+\index{getPoint@{getPoint}!shapes::Point2D@{shapes::Point2D}}
+\doxysubsubsection{getPoint()}
+{\footnotesize\ttfamily virtual Vector2f shapes\+::\+Point2\+D\+::get\+Point (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\mbox{\label{classshapes_1_1_point2_d_af34f8c0b62b85235122c7be48f335eaa}} 
+\index{shapes::Point2D@{shapes::Point2D}!getPointCount@{getPointCount}}
+\index{getPointCount@{getPointCount}!shapes::Point2D@{shapes::Point2D}}
+\doxysubsubsection{getPointCount()}
+{\footnotesize\ttfamily virtual std\+::size\+\_\+t shapes\+::\+Point2\+D\+::get\+Point\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\mbox{\label{classshapes_1_1_point2_d_ae7b137698d96106076989e308d646258}} 
+\index{shapes::Point2D@{shapes::Point2D}!setCords@{setCords}}
+\index{setCords@{setCords}!shapes::Point2D@{shapes::Point2D}}
+\doxysubsubsection{setCords()\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void shapes\+::\+Point2\+D\+::set\+Cords (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classshapes_1_1_point2_d_a8d86bd29c34924b80137ca78a147145f}} 
+\index{shapes::Point2D@{shapes::Point2D}!setCords@{setCords}}
+\index{setCords@{setCords}!shapes::Point2D@{shapes::Point2D}}
+\doxysubsubsection{setCords()\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void shapes\+::\+Point2\+D\+::set\+Cords (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classshapes_1_1_point2_d_a896df5d464a0d7f0e0f0657921d950bd}} 
+\index{shapes::Point2D@{shapes::Point2D}!setCords@{setCords}}
+\index{setCords@{setCords}!shapes::Point2D@{shapes::Point2D}}
+\doxysubsubsection{setCords()\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void shapes\+::\+Point2\+D\+::set\+Cords (\begin{DoxyParamCaption}\item[{Vector2f}]{new\+Point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classshapes_1_1_point2_d_ac60723dccd473d1df7a05be0a2c86ddf}} 
+\index{shapes::Point2D@{shapes::Point2D}!setFillColor@{setFillColor}}
+\index{setFillColor@{setFillColor}!shapes::Point2D@{shapes::Point2D}}
+\doxysubsubsection{setFillColor()}
+{\footnotesize\ttfamily void shapes\+::\+Point2\+D\+::set\+Fill\+Color (\begin{DoxyParamCaption}\item[{Color}]{new\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Dokumentacja atrybutów składowych}
+\mbox{\label{classshapes_1_1_point2_d_a355c78e32c7f5710e54a88c0c4ab6765}} 
+\index{shapes::Point2D@{shapes::Point2D}!m\_fillColor@{m\_fillColor}}
+\index{m\_fillColor@{m\_fillColor}!shapes::Point2D@{shapes::Point2D}}
+\doxysubsubsection{m\_fillColor}
+{\footnotesize\ttfamily sf\+::\+Color shapes\+::\+Point2\+D\+::m\+\_\+fill\+Color\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Fill color. 
+
+\mbox{\label{classshapes_1_1_point2_d_a21def371eb6a27268ff698437db36361}} 
+\index{shapes::Point2D@{shapes::Point2D}!m\_vertices@{m\_vertices}}
+\index{m\_vertices@{m\_vertices}!shapes::Point2D@{shapes::Point2D}}
+\doxysubsubsection{m\_vertices}
+{\footnotesize\ttfamily sf\+::\+Vertex\+Array shapes\+::\+Point2\+D\+::m\+\_\+vertices\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vertex array containing the fill geometry. 
+
+\mbox{\label{classshapes_1_1_point2_d_a19c3d354a6c6b7657e87d8ef522b1791}} 
+\index{shapes::Point2D@{shapes::Point2D}!point@{point}}
+\index{point@{point}!shapes::Point2D@{shapes::Point2D}}
+\doxysubsubsection{point}
+{\footnotesize\ttfamily sf\+::\+Vector2f shapes\+::\+Point2\+D\+::point\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Coordinates of the point. 
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Chomik/source/repos/\+Snake\+S\+F\+M\+Lv1/\+Snake\+S\+F\+M\+L/src/\textbf{ Render.\+ixx}\end{DoxyCompactItemize}

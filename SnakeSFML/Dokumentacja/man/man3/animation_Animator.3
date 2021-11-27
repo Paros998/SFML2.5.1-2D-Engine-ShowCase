@@ -1,0 +1,100 @@
+.TH "animation::Animator" 3 "So, 27 lis 2021" "Silnik graficzny" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+animation::Animator
+.SH SYNOPSIS
+.br
+.PP
+.SS "Metody publiczne"
+
+.in +1c
+.ti -1c
+.RI "\fBAnimator\fP (Texture &texture, Sprite *\fBsprite\fP, Vector2u \fBimageNumber\fP, float \fBchangeTime\fP)"
+.br
+.ti -1c
+.RI "\fB~Animator\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdate\fP (int row)"
+.br
+.ti -1c
+.RI "void \fBupdate\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetStartFrame\fP ()"
+.br
+.ti -1c
+.RI "IntRect \fBgetCurrentFrame\fP ()"
+.br
+.in -1c
+.SS "Atrybuty publiczne"
+
+.in +1c
+.ti -1c
+.RI "IntRect \fBtextureArea\fP"
+.br
+.ti -1c
+.RI "Clock \fBclock\fP"
+.br
+.ti -1c
+.RI "float \fBfullTime\fP = 0\&.0f"
+.br
+.in -1c
+.SS "Atrybuty prywatne"
+
+.in +1c
+.ti -1c
+.RI "float \fBchangeTime\fP"
+.br
+.ti -1c
+.RI "float \fBdeltaTime\fP = 0\&.0f"
+.br
+.ti -1c
+.RI "Vector2u \fBcurrentImage\fP"
+.br
+.ti -1c
+.RI "Vector2u \fBimageNumber\fP"
+.br
+.ti -1c
+.RI "Sprite * \fBsprite\fP"
+.br
+.in -1c
+.SH "Dokumentacja konstruktora i destruktora"
+.PP 
+.SS "animation::Animator::Animator (Texture & texture, Sprite * sprite, Vector2u imageNumber, float changeTime)\fC [inline]\fP"
+
+.SS "animation::Animator::~Animator ()\fC [inline]\fP"
+
+.SH "Dokumentacja funkcji składowych"
+.PP 
+.SS "IntRect animation::Animator::getCurrentFrame ()\fC [inline]\fP"
+
+.SS "void animation::Animator::setStartFrame ()\fC [inline]\fP"
+
+.SS "void animation::Animator::update ()\fC [inline]\fP"
+
+.SS "void animation::Animator::update (int row)\fC [inline]\fP"
+
+.SH "Dokumentacja atrybutów składowych"
+.PP 
+.SS "float animation::Animator::changeTime\fC [private]\fP"
+
+.SS "Clock animation::Animator::clock"
+
+.SS "Vector2u animation::Animator::currentImage\fC [private]\fP"
+
+.SS "float animation::Animator::deltaTime = 0\&.0f\fC [private]\fP"
+
+.SS "float animation::Animator::fullTime = 0\&.0f"
+
+.SS "Vector2u animation::Animator::imageNumber\fC [private]\fP"
+
+.SS "Sprite* animation::Animator::sprite\fC [private]\fP"
+
+.SS "IntRect animation::Animator::textureArea"
+
+
+.SH "Autor"
+.PP 
+Wygenerowano automatycznie z kodu źródłowego programem Doxygen dla Silnik graficzny\&.

@@ -1,0 +1,215 @@
+.TH "menu::Menu" 3 "So, 27 lis 2021" "Silnik graficzny" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+menu::Menu
+.SH SYNOPSIS
+.br
+.PP
+.SS "Metody publiczne"
+
+.in +1c
+.ti -1c
+.RI "\fBMenu\fP (\fBAssetManager\fP *\fBmanager\fP, RenderWindow *\fBgameWindow\fP)"
+.br
+.ti -1c
+.RI "\fB~Menu\fP ()"
+.br
+.ti -1c
+.RI "bool \fBloadAssets\fP ()"
+.br
+.ti -1c
+.RI "bool \fBrender\fP ()"
+.br
+.in -1c
+.SS "Metody prywatne"
+
+.in +1c
+.ti -1c
+.RI "void \fBacquireAssetsPointers\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdateRenderAndLogic\fP ()"
+.br
+.ti -1c
+.RI "void \fBprepareForDraw\fP ()"
+.br
+.in -1c
+.SS "Atrybuty prywatne"
+
+.in +1c
+.ti -1c
+.RI "\fBmanager::AssetManager\fP * \fBmanager\fP"
+.br
+.ti -1c
+.RI "RenderWindow * \fBgameWindow\fP"
+.br
+.ti -1c
+.RI "int \fBwindowActive\fP = \fBMAIN\fP"
+.br
+.ti -1c
+.RI "int \fBactualWindowOption\fP = 0"
+.br
+.ti -1c
+.RI "Font \fBfont\fP"
+.br
+.ti -1c
+.RI "Music * \fBmenuSongs\fP"
+.br
+.ti -1c
+.RI "Sound \fBmenuClickSound\fP"
+.br
+.ti -1c
+.RI "SoundBuffer \fBmenuClickSoundBuffer\fP"
+.br
+.ti -1c
+.RI "sf::Texture \fBmenuPointerTexture\fP"
+.br
+.ti -1c
+.RI "Sprite \fBmenuPointerSprite\fP"
+.br
+.ti -1c
+.RI "\fBAnimator\fP * \fBmenuPointerAnimator\fP"
+.br
+.ti -1c
+.RI "sf::Texture \fBmenuBackgroundTexture\fP"
+.br
+.ti -1c
+.RI "Sprite \fBmenuBackgroundSprite\fP"
+.br
+.ti -1c
+.RI "sf::Texture \fBmenuLogoTexture\fP"
+.br
+.ti -1c
+.RI "Sprite \fBmenuLogoSprite\fP"
+.br
+.ti -1c
+.RI "Text * \fBmenuTextButtons\fP"
+.br
+.ti -1c
+.RI "Text * \fBtipsText\fP"
+.br
+.ti -1c
+.RI "Text * \fBstartTextButtons\fP"
+.br
+.ti -1c
+.RI "sf::Texture * \fBoptionsSymbolsTextures\fP"
+.br
+.ti -1c
+.RI "Sprite * \fBoptionsSymbolsSprites\fP"
+.br
+.ti -1c
+.RI "sf::Texture * \fBoptionsButtonsTextures\fP"
+.br
+.ti -1c
+.RI "Sprite * \fBoptionsButtonsSprites\fP"
+.br
+.ti -1c
+.RI "Text * \fBoptionsTextLabels\fP"
+.br
+.ti -1c
+.RI "Text * \fBoptionsTextButtons\fP"
+.br
+.ti -1c
+.RI "Text \fBoptionsMusicLevelText\fP"
+.br
+.ti -1c
+.RI "Text \fBbackButtonText\fP"
+.br
+.ti -1c
+.RI "Text * \fBcreaditsText\fP"
+.br
+.ti -1c
+.RI "bool \fBassetsLoaded\fP"
+.br
+.ti -1c
+.RI "bool \fBassetsStillLoading\fP"
+.br
+.ti -1c
+.RI "int \fBactualPage\fP = \fBMAIN\fP"
+.br
+.in -1c
+.SH "Dokumentacja konstruktora i destruktora"
+.PP 
+.SS "menu::Menu::Menu (\fBAssetManager\fP * manager, RenderWindow * gameWindow)\fC [inline]\fP"
+
+.SS "menu::Menu::~Menu ()\fC [inline]\fP"
+
+.SH "Dokumentacja funkcji składowych"
+.PP 
+.SS "void menu::Menu::acquireAssetsPointers ()\fC [inline]\fP, \fC [private]\fP"
+
+.SS "bool menu::Menu::loadAssets ()\fC [inline]\fP"
+
+.SS "void menu::Menu::prepareForDraw ()\fC [inline]\fP, \fC [private]\fP"
+
+.SS "bool menu::Menu::render ()\fC [inline]\fP"
+
+.SS "void menu::Menu::updateRenderAndLogic ()\fC [inline]\fP, \fC [private]\fP"
+
+.SH "Dokumentacja atrybutów składowych"
+.PP 
+.SS "int menu::Menu::actualPage = \fBMAIN\fP\fC [private]\fP"
+
+.SS "int menu::Menu::actualWindowOption = 0\fC [private]\fP"
+
+.SS "bool menu::Menu::assetsLoaded\fC [private]\fP"
+
+.SS "bool menu::Menu::assetsStillLoading\fC [private]\fP"
+
+.SS "Text menu::Menu::backButtonText\fC [private]\fP"
+
+.SS "Text* menu::Menu::creaditsText\fC [private]\fP"
+
+.SS "Font menu::Menu::font\fC [private]\fP"
+
+.SS "RenderWindow* menu::Menu::gameWindow\fC [private]\fP"
+
+.SS "\fBmanager::AssetManager\fP* menu::Menu::manager\fC [private]\fP"
+
+.SS "Sprite menu::Menu::menuBackgroundSprite\fC [private]\fP"
+
+.SS "sf::Texture menu::Menu::menuBackgroundTexture\fC [private]\fP"
+
+.SS "Sound menu::Menu::menuClickSound\fC [private]\fP"
+
+.SS "SoundBuffer menu::Menu::menuClickSoundBuffer\fC [private]\fP"
+
+.SS "Sprite menu::Menu::menuLogoSprite\fC [private]\fP"
+
+.SS "sf::Texture menu::Menu::menuLogoTexture\fC [private]\fP"
+
+.SS "\fBAnimator\fP* menu::Menu::menuPointerAnimator\fC [private]\fP"
+
+.SS "Sprite menu::Menu::menuPointerSprite\fC [private]\fP"
+
+.SS "sf::Texture menu::Menu::menuPointerTexture\fC [private]\fP"
+
+.SS "Music* menu::Menu::menuSongs\fC [private]\fP"
+
+.SS "Text* menu::Menu::menuTextButtons\fC [private]\fP"
+
+.SS "Sprite* menu::Menu::optionsButtonsSprites\fC [private]\fP"
+
+.SS "sf::Texture* menu::Menu::optionsButtonsTextures\fC [private]\fP"
+
+.SS "Text menu::Menu::optionsMusicLevelText\fC [private]\fP"
+
+.SS "Sprite* menu::Menu::optionsSymbolsSprites\fC [private]\fP"
+
+.SS "sf::Texture* menu::Menu::optionsSymbolsTextures\fC [private]\fP"
+
+.SS "Text* menu::Menu::optionsTextButtons\fC [private]\fP"
+
+.SS "Text* menu::Menu::optionsTextLabels\fC [private]\fP"
+
+.SS "Text* menu::Menu::startTextButtons\fC [private]\fP"
+
+.SS "Text* menu::Menu::tipsText\fC [private]\fP"
+
+.SS "int menu::Menu::windowActive = \fBMAIN\fP\fC [private]\fP"
+
+
+.SH "Autor"
+.PP 
+Wygenerowano automatycznie z kodu źródłowego programem Doxygen dla Silnik graficzny\&.

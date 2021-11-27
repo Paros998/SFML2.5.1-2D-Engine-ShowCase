@@ -1,0 +1,132 @@
+\doxysection{Dokumentacja klasy engine\+::Engine}
+\label{classengine_1_1_engine}\index{engine::Engine@{engine::Engine}}
+\doxysubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Engine} ()
+\item 
+\textbf{ $\sim$\+Engine} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Statyczne metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Engine} $\ast$ \textbf{ get\+Instance} ()
+\item 
+static void \textbf{ release} ()
+\item 
+static int \textbf{ main} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Atrybuty prywatne}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ manager\+::\+Asset\+Manager} $\ast$ \textbf{ asset\+Manager}
+\item 
+\textbf{ menu\+::\+Menu} $\ast$ \textbf{ menu\+Instance}
+\item 
+Render\+Window $\ast$ \textbf{ window}
+\item 
+bool \textbf{ menu\+Loaded} = false
+\item 
+bool \textbf{ game\+Loaded} = false
+\item 
+bool \textbf{ shutdown} = false
+\item 
+int \textbf{ current\+Level} = \textbf{ M\+E\+NU}
+\end{DoxyCompactItemize}
+\doxysubsection*{Statyczne atrybuty prywatne}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Engine} $\ast$ \textbf{ instance} = nullptr
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Dokumentacja konstruktora i destruktora}
+\mbox{\label{classengine_1_1_engine_a0dcc529aa9908f02fa8d6518d76204df}} 
+\index{engine::Engine@{engine::Engine}!Engine@{Engine}}
+\index{Engine@{Engine}!engine::Engine@{engine::Engine}}
+\doxysubsubsection{Engine()}
+{\footnotesize\ttfamily engine\+::\+Engine\+::\+Engine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classengine_1_1_engine_a2a756b35e10b0681f60c814206e62863}} 
+\index{engine::Engine@{engine::Engine}!````~Engine@{$\sim$Engine}}
+\index{````~Engine@{$\sim$Engine}!engine::Engine@{engine::Engine}}
+\doxysubsubsection{$\sim$Engine()}
+{\footnotesize\ttfamily engine\+::\+Engine\+::$\sim$\+Engine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Dokumentacja funkcji składowych}
+\mbox{\label{classengine_1_1_engine_ab5709a892ea6d0eb8d5615986cf5f899}} 
+\index{engine::Engine@{engine::Engine}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!engine::Engine@{engine::Engine}}
+\doxysubsubsection{getInstance()}
+{\footnotesize\ttfamily static \textbf{ Engine}$\ast$ engine\+::\+Engine\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\label{classengine_1_1_engine_a9aef358a6edd7cbf310dc70982de9786}} 
+\index{engine::Engine@{engine::Engine}!main@{main}}
+\index{main@{main}!engine::Engine@{engine::Engine}}
+\doxysubsubsection{main()}
+{\footnotesize\ttfamily static int engine\+::\+Engine\+::main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\label{classengine_1_1_engine_af42c5a90200e71502967e83700691b9d}} 
+\index{engine::Engine@{engine::Engine}!release@{release}}
+\index{release@{release}!engine::Engine@{engine::Engine}}
+\doxysubsubsection{release()}
+{\footnotesize\ttfamily static void engine\+::\+Engine\+::release (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+\doxysubsection{Dokumentacja atrybutów składowych}
+\mbox{\label{classengine_1_1_engine_a453cc865e97470644f863c0962d05399}} 
+\index{engine::Engine@{engine::Engine}!assetManager@{assetManager}}
+\index{assetManager@{assetManager}!engine::Engine@{engine::Engine}}
+\doxysubsubsection{assetManager}
+{\footnotesize\ttfamily \textbf{ manager\+::\+Asset\+Manager}$\ast$ engine\+::\+Engine\+::asset\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classengine_1_1_engine_ac96d3cfe3c194eb608846607fc56dd67}} 
+\index{engine::Engine@{engine::Engine}!currentLevel@{currentLevel}}
+\index{currentLevel@{currentLevel}!engine::Engine@{engine::Engine}}
+\doxysubsubsection{currentLevel}
+{\footnotesize\ttfamily int engine\+::\+Engine\+::current\+Level = \textbf{ M\+E\+NU}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classengine_1_1_engine_a206fecbdaf1c712a3f6e9f9fec4a4ba6}} 
+\index{engine::Engine@{engine::Engine}!gameLoaded@{gameLoaded}}
+\index{gameLoaded@{gameLoaded}!engine::Engine@{engine::Engine}}
+\doxysubsubsection{gameLoaded}
+{\footnotesize\ttfamily bool engine\+::\+Engine\+::game\+Loaded = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classengine_1_1_engine_a4ede8eba645ff3a8b3563ba15674ed94}} 
+\index{engine::Engine@{engine::Engine}!instance@{instance}}
+\index{instance@{instance}!engine::Engine@{engine::Engine}}
+\doxysubsubsection{instance}
+{\footnotesize\ttfamily \textbf{ Engine} $\ast$ engine\+::\+Engine\+::instance = nullptr\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\label{classengine_1_1_engine_aabfa0fe9382bc259f6e4560256c9aedf}} 
+\index{engine::Engine@{engine::Engine}!menuInstance@{menuInstance}}
+\index{menuInstance@{menuInstance}!engine::Engine@{engine::Engine}}
+\doxysubsubsection{menuInstance}
+{\footnotesize\ttfamily \textbf{ menu\+::\+Menu}$\ast$ engine\+::\+Engine\+::menu\+Instance\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classengine_1_1_engine_a65e6e0bb1290085ec6bec6143302e5f0}} 
+\index{engine::Engine@{engine::Engine}!menuLoaded@{menuLoaded}}
+\index{menuLoaded@{menuLoaded}!engine::Engine@{engine::Engine}}
+\doxysubsubsection{menuLoaded}
+{\footnotesize\ttfamily bool engine\+::\+Engine\+::menu\+Loaded = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classengine_1_1_engine_a16b5d0b7515add5ff416002f25f1ecf4}} 
+\index{engine::Engine@{engine::Engine}!shutdown@{shutdown}}
+\index{shutdown@{shutdown}!engine::Engine@{engine::Engine}}
+\doxysubsubsection{shutdown}
+{\footnotesize\ttfamily bool engine\+::\+Engine\+::shutdown = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classengine_1_1_engine_ad450f2e5093090649abc492488872a60}} 
+\index{engine::Engine@{engine::Engine}!window@{window}}
+\index{window@{window}!engine::Engine@{engine::Engine}}
+\doxysubsubsection{window}
+{\footnotesize\ttfamily Render\+Window$\ast$ engine\+::\+Engine\+::window\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Chomik/source/repos/\+Snake\+S\+F\+M\+Lv1/\+Snake\+S\+F\+M\+L/src/\textbf{ Snake\+Engine.\+ixx}\end{DoxyCompactItemize}

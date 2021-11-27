@@ -1,0 +1,220 @@
+.TH "menuAssets" 3 "So, 27 lis 2021" "Silnik graficzny" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+menuAssets
+.SH SYNOPSIS
+.br
+.PP
+.SS "Przestrzenie nazw"
+
+.in +1c
+.ti -1c
+.RI " \fBafterOptions\fP"
+.br
+.ti -1c
+.RI " \fBafterStart\fP"
+.br
+.ti -1c
+.RI " \fBmainMenu\fP"
+.br
+.in -1c
+.SS "Wyliczenia"
+
+.in +1c
+.ti -1c
+.RI "enum \fBmenuHelpersIndex\fP { \fBPLUS\fP, \fBMINUS\fP, \fBOPTIONS\fP, \fBPEOPLE\fP, \fBCONTROLER\fP, \fBDOWN\fP, \fBUP\fP, \fBLEFT\fP, \fBRIGHT\fP, \fBAPPLE\fP, \fBGOLDAPPLE\fP, \fBHOLE\fP, \fBOBSTRUCTION\fP, \fBROCK\fP, \fBSNAKEHEAD\fP }"
+.br
+.ti -1c
+.RI "enum \fBmenuTips\fP { \fBTIP1\fP, \fBTIP2\fP, \fBTIP3\fP, \fBTIP4\fP, \fBTIP5\fP, \fBTIP6\fP }"
+.br
+.ti -1c
+.RI "enum \fBcreatorsIndex\fP { \fBDOMINIK\fP, \fBPATRYK\fP }"
+.br
+.in -1c
+.SS "Zmienne"
+
+.in +1c
+.ti -1c
+.RI "String \fBmenuTexture\fP = 'assets/MenuTextures/menuBackground\&.png'"
+.br
+.ti -1c
+.RI "String \fBlogoTexture\fP = 'assets/MenuTextures/menuLogo\&.png'"
+.br
+.ti -1c
+.RI "String \fBpointerTexture\fP = 'assets/MenuTextures/pointer\&.png'"
+.br
+.ti -1c
+.RI "Vector2u \fBpointerImageCount\fP = { 20,1 }"
+.br
+.ti -1c
+.RI "float \fBpointerSwitchTime\fP = 1\&.0f / pointerImageCount\&.x"
+.br
+.ti -1c
+.RI "String \fBmenuHelpersTextures\fP [15]"
+.br
+.ti -1c
+.RI "String \fBmenuTipsStrings\fP [6]"
+.br
+.ti -1c
+.RI "Vector2f \fBmenuTipsPosition\fP [6]"
+.br
+.ti -1c
+.RI "String \fBfontLocation\fP = 'assets/Fonts/snap/snap itc\&.ttf'"
+.br
+.ti -1c
+.RI "Vector2f \fBbackButtonPosition\fP = { \fBglobalFunctions::findHorizontallyCenteredPositionOfGivenText\fP('BACK'),900\&.0f}"
+.br
+.ti -1c
+.RI "String \fBscoresButtonText\fP = 'BACK'"
+.br
+.ti -1c
+.RI "String \fBcreatorsText\fP [2] = {'Dominik Grudzien','Patryk Grzywacz'}"
+.br
+.ti -1c
+.RI "Vector2f \fBcreatorsTextPosition\fP [2]"
+.br
+.ti -1c
+.RI "String \fBcreatorsButtonText\fP = 'BACK'"
+.br
+.in -1c
+.SH "Dokumentacja typów wyliczanych"
+.PP 
+.SS "enum \fBmenuAssets::creatorsIndex\fP"
+
+.PP
+\fBWartości wyliczeń\fP
+.in +1c
+.TP
+\fB\fIDOMINIK \fP\fP
+.TP
+\fB\fIPATRYK \fP\fP
+.SS "enum \fBmenuAssets::menuHelpersIndex\fP"
+
+.PP
+\fBWartości wyliczeń\fP
+.in +1c
+.TP
+\fB\fIPLUS \fP\fP
+.TP
+\fB\fIMINUS \fP\fP
+.TP
+\fB\fIOPTIONS \fP\fP
+.TP
+\fB\fIPEOPLE \fP\fP
+.TP
+\fB\fICONTROLER \fP\fP
+.TP
+\fB\fIDOWN \fP\fP
+.TP
+\fB\fIUP \fP\fP
+.TP
+\fB\fILEFT \fP\fP
+.TP
+\fB\fIRIGHT \fP\fP
+.TP
+\fB\fIAPPLE \fP\fP
+.TP
+\fB\fIGOLDAPPLE \fP\fP
+.TP
+\fB\fIHOLE \fP\fP
+.TP
+\fB\fIOBSTRUCTION \fP\fP
+.TP
+\fB\fIROCK \fP\fP
+.TP
+\fB\fISNAKEHEAD \fP\fP
+.SS "enum \fBmenuAssets::menuTips\fP"
+
+.PP
+\fBWartości wyliczeń\fP
+.in +1c
+.TP
+\fB\fITIP1 \fP\fP
+.TP
+\fB\fITIP2 \fP\fP
+.TP
+\fB\fITIP3 \fP\fP
+.TP
+\fB\fITIP4 \fP\fP
+.TP
+\fB\fITIP5 \fP\fP
+.TP
+\fB\fITIP6 \fP\fP
+.SH "Dokumentacja zmiennych"
+.PP 
+.SS "Vector2f menuAssets::backButtonPosition = { \fBglobalFunctions::findHorizontallyCenteredPositionOfGivenText\fP('BACK'),900\&.0f}"
+
+.SS "String menuAssets::creatorsButtonText = 'BACK'"
+
+.SS "String menuAssets::creatorsText[2] = {'Dominik Grudzien','Patryk Grzywacz'}"
+
+.SS "Vector2f menuAssets::creatorsTextPosition[2]"
+\fBWartość początkowa:\fP
+.PP
+.nf
+= {
+        {globalFunctions::findHorizontallyCenteredPositionOfGivenText(creatorsText[DOMINIK]),300\&.0f },
+        {globalFunctions::findHorizontallyCenteredPositionOfGivenText(creatorsText[PATRYK]),400\&.0f}
+    }
+.fi
+.SS "String menuAssets::fontLocation = 'assets/Fonts/snap/snap itc\&.ttf'"
+
+.SS "String menuAssets::logoTexture = 'assets/MenuTextures/menuLogo\&.png'"
+
+.SS "String menuAssets::menuHelpersTextures[15]"
+\fBWartość początkowa:\fP
+.PP
+.nf
+= {
+        "assets/Buttons/plus\&.png",
+        "assets/Buttons/minus\&.png",
+        "assets/Buttons/options\&.png",
+        "assets/Buttons/people\&.png",
+        "assets/Buttons/controler\&.png",
+        "assets/Buttons/down\&.png",
+        "assets/Buttons/up\&.png",
+        "assets/Buttons/left\&.png",
+        "assets/Buttons/right\&.png",
+        "assets/MenuTextures/apple\&.png",
+        "assets/MenuTextures/goldApple\&.png",
+        "assets/SpritesTextures/Map/hole\&.png",
+        "assets/SpritesTextures/Map/przeszkoda1\&.png",
+        "assets/SpritesTextures/Map/kamien3\&.png",
+        "assets/SpritesTextures/Player&Things/snakeHead\&.png"
+    }
+.fi
+.SS "String menuAssets::menuTexture = 'assets/MenuTextures/menuBackground\&.png'"
+
+.SS "Vector2f menuAssets::menuTipsPosition[6]"
+\fBWartość początkowa:\fP
+.PP
+.nf
+= {
+        {globalFunctions::findHorizontallyCenteredPositionOfGivenText(menuTipsStrings[TIP1]),300\&.0f},
+        {globalFunctions::findHorizontallyCenteredPositionOfGivenText(menuTipsStrings[TIP2]),390\&.0f},
+        {globalFunctions::findHorizontallyCenteredPositionOfGivenText(menuTipsStrings[TIP3]),480\&.0f},
+        {globalFunctions::findHorizontallyCenteredPositionOfGivenText(menuTipsStrings[TIP4]),570\&.0f},
+        {globalFunctions::findHorizontallyCenteredPositionOfGivenText(menuTipsStrings[TIP5]),660\&.0f},
+        {globalFunctions::findHorizontallyCenteredPositionOfGivenText(menuTipsStrings[TIP6]),750\&.0f}
+    }
+.fi
+.SS "String menuAssets::menuTipsStrings[6]"
+\fBWartość początkowa:\fP
+.PP
+.nf
+= { "Finish levels by eating apples!","When you hit combo five times in a row you'll get more points and invulnerability!",
+        "Be wise to use the hole teleportation system!","Better avoid these little different thing!","Don't be afraid of hitting the walls!",
+        "Better not try to eat yourself, it c'ld get pretty nasty!" }
+.fi
+.SS "Vector2u menuAssets::pointerImageCount = { 20,1 }"
+
+.SS "float menuAssets::pointerSwitchTime = 1\&.0f / pointerImageCount\&.x"
+
+.SS "String menuAssets::pointerTexture = 'assets/MenuTextures/pointer\&.png'"
+
+.SS "String menuAssets::scoresButtonText = 'BACK'"
+
+.SH "Autor"
+.PP 
+Wygenerowano automatycznie z kodu źródłowego programem Doxygen dla Silnik graficzny\&.

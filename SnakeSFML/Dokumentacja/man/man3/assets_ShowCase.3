@@ -1,0 +1,187 @@
+.TH "assets::ShowCase" 3 "So, 27 lis 2021" "Silnik graficzny" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+assets::ShowCase
+.SH SYNOPSIS
+.br
+.PP
+.SS "Metody publiczne"
+
+.in +1c
+.ti -1c
+.RI "\fBShowCase\fP (RenderWindow *\fBwindow\fP)"
+.br
+.ti -1c
+.RI "void \fBload\fP ()"
+.br
+.ti -1c
+.RI "void \fBdraw\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdate\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdateSnow\fP ()"
+.br
+.in -1c
+.SS "Atrybuty publiczne"
+
+.in +1c
+.ti -1c
+.RI "std::atomic< bool > \fBloadingCompleted\fP"
+.br
+.in -1c
+.SS "Metody prywatne"
+
+.in +1c
+.ti -1c
+.RI "void \fBmoveBackgroundSky\fP (float rawTime)"
+.br
+.in -1c
+.SS "Atrybuty prywatne"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBLineSegment\fP > \fBlines\fP"
+.br
+.ti -1c
+.RI "std::vector< Vector2f > \fBSkyPolygonPoints\fP"
+.br
+.ti -1c
+.RI "std::vector< Vector2f > \fBForestPolygonPoints\fP"
+.br
+.ti -1c
+.RI "std::vector< Vector2f > \fBSnowPolygonPoints\fP"
+.br
+.ti -1c
+.RI "std::vector< Color > \fBmoonColors\fP"
+.br
+.ti -1c
+.RI "\fBCircle\fP * \fBkolo\fP"
+.br
+.ti -1c
+.RI "\fBCircle\fP * \fBkolo2\fP"
+.br
+.ti -1c
+.RI "\fBCircle\fP * \fBmoon\fP"
+.br
+.ti -1c
+.RI "\fBPolygon\fP \fBsky\fP"
+.br
+.ti -1c
+.RI "\fBPolygon\fP \fBforestBackground\fP"
+.br
+.ti -1c
+.RI "\fBPolygon\fP \fBwalkingBackground\fP"
+.br
+.ti -1c
+.RI "sf::ConvexShape \fBconvex\fP"
+.br
+.ti -1c
+.RI "\fBStarsParticleSystem\fP * \fBstars\fP"
+.br
+.ti -1c
+.RI "\fBSnowParticleSystem\fP * \fBsnows\fP"
+.br
+.ti -1c
+.RI "Texture \fBskyTexture\fP"
+.br
+.RI "Textures\&. "
+.ti -1c
+.RI "Texture \fBforestTexture\fP"
+.br
+.ti -1c
+.RI "Texture \fBsnowTexture\fP"
+.br
+.ti -1c
+.RI "Clock \fBupdateClock\fP"
+.br
+.ti -1c
+.RI "Clock \fBupdateClock2\fP"
+.br
+.ti -1c
+.RI "RenderWindow * \fBwindow\fP"
+.br
+.ti -1c
+.RI "int \fBdirection\fP = 1"
+.br
+.ti -1c
+.RI "float \fBmaxSkyOffset\fP = 100\&.f"
+.br
+.ti -1c
+.RI "float \fBactualSkyOffset\fP = 0\&.f"
+.br
+.in -1c
+.SH "Dokumentacja konstruktora i destruktora"
+.PP 
+.SS "assets::ShowCase::ShowCase (RenderWindow * window)\fC [inline]\fP"
+
+.SH "Dokumentacja funkcji składowych"
+.PP 
+.SS "void assets::ShowCase::draw ()\fC [inline]\fP"
+
+.SS "void assets::ShowCase::load ()\fC [inline]\fP"
+dont change the order here
+.SS "void assets::ShowCase::moveBackgroundSky (float rawTime)\fC [inline]\fP, \fC [private]\fP"
+
+.SS "void assets::ShowCase::update ()\fC [inline]\fP"
+
+.SS "void assets::ShowCase::updateSnow ()\fC [inline]\fP"
+
+.SH "Dokumentacja atrybutów składowych"
+.PP 
+.SS "float assets::ShowCase::actualSkyOffset = 0\&.f\fC [private]\fP"
+
+.SS "sf::ConvexShape assets::ShowCase::convex\fC [private]\fP"
+
+.SS "int assets::ShowCase::direction = 1\fC [private]\fP"
+
+.SS "\fBPolygon\fP assets::ShowCase::forestBackground\fC [private]\fP"
+
+.SS "std::vector<Vector2f> assets::ShowCase::ForestPolygonPoints\fC [private]\fP"
+
+.SS "Texture assets::ShowCase::forestTexture\fC [private]\fP"
+
+.SS "\fBCircle\fP* assets::ShowCase::kolo\fC [private]\fP"
+
+.SS "\fBCircle\fP* assets::ShowCase::kolo2\fC [private]\fP"
+
+.SS "std::vector<\fBLineSegment\fP> assets::ShowCase::lines\fC [private]\fP"
+
+.SS "std::atomic<bool> assets::ShowCase::loadingCompleted"
+
+.SS "float assets::ShowCase::maxSkyOffset = 100\&.f\fC [private]\fP"
+
+.SS "\fBCircle\fP* assets::ShowCase::moon\fC [private]\fP"
+
+.SS "std::vector<Color> assets::ShowCase::moonColors\fC [private]\fP"
+
+.SS "\fBPolygon\fP assets::ShowCase::sky\fC [private]\fP"
+
+.SS "std::vector<Vector2f> assets::ShowCase::SkyPolygonPoints\fC [private]\fP"
+
+.SS "Texture assets::ShowCase::skyTexture\fC [private]\fP"
+
+.PP
+Textures\&. 
+.SS "std::vector<Vector2f> assets::ShowCase::SnowPolygonPoints\fC [private]\fP"
+
+.SS "\fBSnowParticleSystem\fP* assets::ShowCase::snows\fC [private]\fP"
+
+.SS "Texture assets::ShowCase::snowTexture\fC [private]\fP"
+
+.SS "\fBStarsParticleSystem\fP* assets::ShowCase::stars\fC [private]\fP"
+
+.SS "Clock assets::ShowCase::updateClock\fC [private]\fP"
+
+.SS "Clock assets::ShowCase::updateClock2\fC [private]\fP"
+
+.SS "\fBPolygon\fP assets::ShowCase::walkingBackground\fC [private]\fP"
+
+.SS "RenderWindow* assets::ShowCase::window\fC [private]\fP"
+
+
+.SH "Autor"
+.PP 
+Wygenerowano automatycznie z kodu źródłowego programem Doxygen dla Silnik graficzny\&.

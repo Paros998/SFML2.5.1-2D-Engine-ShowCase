@@ -1,0 +1,130 @@
+.TH "manager::AssetManager" 3 "So, 27 lis 2021" "Silnik graficzny" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+manager::AssetManager
+.SH SYNOPSIS
+.br
+.PP
+.SS "Metody publiczne"
+
+.in +1c
+.ti -1c
+.RI "\fBAssetManager\fP (RenderWindow *\fBgameWindow\fP)"
+.br
+.ti -1c
+.RI "\fB~AssetManager\fP ()"
+.br
+.ti -1c
+.RI "void \fBreleaseMenuResources\fP ()"
+.br
+.ti -1c
+.RI "void \fBreleaseGameResources\fP ()"
+.br
+.ti -1c
+.RI "bool \fBloadMainMenu\fP ()"
+.br
+.ti -1c
+.RI "bool \fBloadGameLevels\fP ()"
+.br
+.ti -1c
+.RI "void \fBloadAssetsForMenu\fP ()"
+.br
+.ti -1c
+.RI "void \fBloadAssetsForGame\fP ()"
+.br
+.ti -1c
+.RI "\fBAssetManager\fP * \fBgetAssetManager\fP ()"
+.br
+.in -1c
+.SS "Metody prywatne"
+
+.in +1c
+.ti -1c
+.RI "void \fBdrawLoadingScreen\fP ()"
+.br
+.ti -1c
+.RI "void \fBreleaseResources\fP ()"
+.br
+.ti -1c
+.RI "void \fBprepareLoadingScreen\fP ()"
+.br
+.in -1c
+.SS "Atrybuty prywatne"
+
+.in +1c
+.ti -1c
+.RI "RenderWindow * \fBgameWindow\fP"
+.br
+.ti -1c
+.RI "\fBAnimator\fP * \fBloadingAnimator\fP"
+.br
+.ti -1c
+.RI "sf::Texture \fBloadingBackgroundTexture\fP"
+.br
+.ti -1c
+.RI "Sprite \fBloadingBackgroundSprite\fP"
+.br
+.ti -1c
+.RI "sf::Texture \fBloadingSpinnerTexture\fP"
+.br
+.ti -1c
+.RI "Sprite \fBloadingSpinnerSprite\fP"
+.br
+.ti -1c
+.RI "std::thread \fBmenuThread\fP { &\fBAssetManager::loadAssetsForMenu\fP,this}"
+.br
+.ti -1c
+.RI "std::thread \fBgameThread\fP { &\fBAssetManager::loadAssetsForGame\fP,this}"
+.br
+.in -1c
+.SH "Dokumentacja konstruktora i destruktora"
+.PP 
+.SS "manager::AssetManager::AssetManager (RenderWindow * gameWindow)\fC [inline]\fP"
+
+.SS "manager::AssetManager::~AssetManager ()\fC [inline]\fP"
+
+.SH "Dokumentacja funkcji składowych"
+.PP 
+.SS "void manager::AssetManager::drawLoadingScreen ()\fC [inline]\fP, \fC [private]\fP"
+
+.SS "\fBAssetManager\fP* manager::AssetManager::getAssetManager ()\fC [inline]\fP"
+
+.SS "void manager::AssetManager::loadAssetsForGame ()\fC [inline]\fP"
+
+.SS "void manager::AssetManager::loadAssetsForMenu ()\fC [inline]\fP"
+
+.SS "bool manager::AssetManager::loadGameLevels ()\fC [inline]\fP"
+
+.SS "bool manager::AssetManager::loadMainMenu ()\fC [inline]\fP"
+
+.SS "void manager::AssetManager::prepareLoadingScreen ()\fC [inline]\fP, \fC [private]\fP"
+
+.SS "void manager::AssetManager::releaseGameResources ()\fC [inline]\fP"
+
+.SS "void manager::AssetManager::releaseMenuResources ()\fC [inline]\fP"
+
+.SS "void manager::AssetManager::releaseResources ()\fC [inline]\fP, \fC [private]\fP"
+
+.SH "Dokumentacja atrybutów składowych"
+.PP 
+.SS "std::thread manager::AssetManager::gameThread { &\fBAssetManager::loadAssetsForGame\fP,this}\fC [private]\fP"
+
+.SS "RenderWindow* manager::AssetManager::gameWindow\fC [private]\fP"
+
+.SS "\fBAnimator\fP* manager::AssetManager::loadingAnimator\fC [private]\fP"
+
+.SS "Sprite manager::AssetManager::loadingBackgroundSprite\fC [private]\fP"
+
+.SS "sf::Texture manager::AssetManager::loadingBackgroundTexture\fC [private]\fP"
+
+.SS "Sprite manager::AssetManager::loadingSpinnerSprite\fC [private]\fP"
+
+.SS "sf::Texture manager::AssetManager::loadingSpinnerTexture\fC [private]\fP"
+
+.SS "std::thread manager::AssetManager::menuThread { &\fBAssetManager::loadAssetsForMenu\fP,this}\fC [private]\fP"
+
+
+.SH "Autor"
+.PP 
+Wygenerowano automatycznie z kodu źródłowego programem Doxygen dla Silnik graficzny\&.

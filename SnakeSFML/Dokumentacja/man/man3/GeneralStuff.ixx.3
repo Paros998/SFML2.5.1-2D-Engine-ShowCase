@@ -1,0 +1,378 @@
+.TH "C:/Users/Chomik/source/repos/SnakeSFMLv1/SnakeSFML/src/GeneralStuff.ixx" 3 "So, 27 lis 2021" "Silnik graficzny" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+C:/Users/Chomik/source/repos/SnakeSFMLv1/SnakeSFML/src/GeneralStuff.ixx
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <SFML/Graphics\&.hpp>\fP
+.br
+\fC#include <SFML/Audio\&.hpp>\fP
+.br
+\fC#include <time\&.h>\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include <fstream>\fP
+.br
+
+.SS "Przestrzenie nazw"
+
+.in +1c
+.ti -1c
+.RI " \fBplayerMovement\fP"
+.br
+.ti -1c
+.RI " \fBengineConsts\fP"
+.br
+.ti -1c
+.RI " \fBdirectories\fP"
+.br
+.ti -1c
+.RI " \fBconsts\fP"
+.br
+.ti -1c
+.RI " \fBglobalVars\fP"
+.br
+.ti -1c
+.RI " \fBglobalFunctions\fP"
+.br
+.ti -1c
+.RI " \fBloadingScreen\fP"
+.br
+.ti -1c
+.RI " \fBtextures\fP"
+.br
+.ti -1c
+.RI " \fBmusic\fP"
+.br
+.ti -1c
+.RI " \fBsounds\fP"
+.br
+.ti -1c
+.RI " \fBanimations\fP"
+.br
+.ti -1c
+.RI " \fBmenuAssets\fP"
+.br
+.ti -1c
+.RI " \fBmenuAssets::mainMenu\fP"
+.br
+.ti -1c
+.RI " \fBmenuAssets::afterStart\fP"
+.br
+.ti -1c
+.RI " \fBmenuAssets::afterOptions\fP"
+.br
+.ti -1c
+.RI " \fBmenuAssets::afterOptions::sprites\fP"
+.br
+.in -1c
+.SS "Wyliczenia"
+
+.in +1c
+.ti -1c
+.RI "enum \fBplayerMovement::direction\fP { \fBplayerMovement::NOTIMPORTANT\fP, \fBplayerMovement::LEFT\fP, \fBplayerMovement::RIGHT\fP }"
+.br
+.ti -1c
+.RI "enum \fBplayerMovement::actions\fP { \fBplayerMovement::NEVERMIND\fP, \fBplayerMovement::IDLE\fP, \fBplayerMovement::WALK\fP, \fBplayerMovement::RUN\fP, \fBplayerMovement::JUMP\fP }"
+.br
+.ti -1c
+.RI "enum \fBplayerMovement::fight\fP { \fBplayerMovement::NONE\fP, \fBplayerMovement::FIRST\fP, \fBplayerMovement::SECOND\fP, \fBplayerMovement::THIRD\fP, \fBplayerMovement::JUMPATTACK\fP }"
+.br
+.ti -1c
+.RI "enum \fBtextures::levels\fP { \fBtextures::LEVEL1\fP, \fBtextures::LEVEL2\fP, \fBtextures::LEVEL3\fP }"
+.br
+.ti -1c
+.RI "enum \fBtextures::materials\fP { \fBtextures::ROCK1\fP, \fBtextures::GRASS1\fP, \fBtextures::SNOW1\fP, \fBtextures::ROCK2\fP, \fBtextures::GRASS2\fP, \fBtextures::ROCK3\fP, \fBtextures::GRASS3\fP, \fBtextures::ROCK4\fP }"
+.br
+.ti -1c
+.RI "enum \fBtextures::cupTexturesIndex\fP { \fBtextures::BRONZE\fP, \fBtextures::SILVER\fP, \fBtextures::GOLDEN\fP }"
+.br
+.ti -1c
+.RI "enum \fBtextures::snakeTexturesIndexX\fP { \fBtextures::HEAD\fP, \fBtextures::BODY\fP, \fBtextures::BODYTRANSPARENT\fP }"
+.br
+.ti -1c
+.RI "enum \fBtextures::snakeTexturesIndexY\fP { \fBtextures::GREEN\fP, \fBtextures::GREY\fP, \fBtextures::PINK\fP, \fBtextures::CYAN\fP, \fBtextures::BLUE\fP, \fBtextures::RED\fP, \fBtextures::PURPLE\fP, \fBtextures::GOLD\fP }"
+.br
+.ti -1c
+.RI "enum \fBanimations::animationTypes\fP { \fBanimations::NORMAL\fP, \fBanimations::EATEN\fP }"
+.br
+.ti -1c
+.RI "enum \fBmenuAssets::menuHelpersIndex\fP { \fBmenuAssets::PLUS\fP, \fBmenuAssets::MINUS\fP, \fBmenuAssets::OPTIONS\fP, \fBmenuAssets::PEOPLE\fP, \fBmenuAssets::CONTROLER\fP, \fBmenuAssets::DOWN\fP, \fBmenuAssets::UP\fP, \fBmenuAssets::LEFT\fP, \fBmenuAssets::RIGHT\fP, \fBmenuAssets::APPLE\fP, \fBmenuAssets::GOLDAPPLE\fP, \fBmenuAssets::HOLE\fP, \fBmenuAssets::OBSTRUCTION\fP, \fBmenuAssets::ROCK\fP, \fBmenuAssets::SNAKEHEAD\fP }"
+.br
+.ti -1c
+.RI "enum \fBmenuAssets::menuTips\fP { \fBmenuAssets::TIP1\fP, \fBmenuAssets::TIP2\fP, \fBmenuAssets::TIP3\fP, \fBmenuAssets::TIP4\fP, \fBmenuAssets::TIP5\fP, \fBmenuAssets::TIP6\fP }"
+.br
+.ti -1c
+.RI "enum \fBmenuAssets::mainMenu::menuButtonsIndex\fP { \fBmenuAssets::mainMenu::START\fP, \fBmenuAssets::mainMenu::OPTIONS\fP, \fBmenuAssets::mainMenu::SCORES\fP, \fBmenuAssets::mainMenu::CREATORS\fP, \fBmenuAssets::mainMenu::EXIT\fP }"
+.br
+.ti -1c
+.RI "enum \fBmenuAssets::afterStart::startButtonsIndex\fP { \fBmenuAssets::afterStart::NEXT\fP, \fBmenuAssets::afterStart::BACK\fP }"
+.br
+.ti -1c
+.RI "enum \fBmenuAssets::afterOptions::optionsButtonsIndex\fP { \fBmenuAssets::afterOptions::FULLSCREEN\fP, \fBmenuAssets::afterOptions::WINDOW\fP, \fBmenuAssets::afterOptions::BACK\fP }"
+.br
+.ti -1c
+.RI "enum \fBmenuAssets::afterOptions::optionsTextIndex\fP { \fBmenuAssets::afterOptions::CONTROLS\fP, \fBmenuAssets::afterOptions::UP\fP, \fBmenuAssets::afterOptions::DOWN\fP, \fBmenuAssets::afterOptions::RIGHT\fP, \fBmenuAssets::afterOptions::LEFT\fP, \fBmenuAssets::afterOptions::OPTIONS\fP, \fBmenuAssets::afterOptions::MUSIC\fP, \fBmenuAssets::afterOptions::SCREEN\fP }"
+.br
+.ti -1c
+.RI "enum \fBmenuAssets::afterOptions::sprites::optionsTextSprites\fP { \fBmenuAssets::afterOptions::sprites::CONTROLS\fP, \fBmenuAssets::afterOptions::sprites::UP\fP, \fBmenuAssets::afterOptions::sprites::DOWN\fP, \fBmenuAssets::afterOptions::sprites::RIGHT\fP, \fBmenuAssets::afterOptions::sprites::LEFT\fP, \fBmenuAssets::afterOptions::sprites::OPTIONS\fP }"
+.br
+.ti -1c
+.RI "enum \fBmenuAssets::afterOptions::sprites::optionsButtonsSpritesIndex\fP { \fBmenuAssets::afterOptions::sprites::PLUS\fP, \fBmenuAssets::afterOptions::sprites::MINUS\fP }"
+.br
+.ti -1c
+.RI "enum \fBmenuAssets::creatorsIndex\fP { \fBmenuAssets::DOMINIK\fP, \fBmenuAssets::PATRYK\fP }"
+.br
+.in -1c
+.SS "Funkcje"
+
+.in +1c
+.ti -1c
+.RI "void \fBglobalFunctions::generate\fP (float &var, int parameter)"
+.br
+.ti -1c
+.RI "bool \fBglobalFunctions::collision\fP (Sprite first, Sprite second)"
+.br
+.ti -1c
+.RI "int \fBglobalFunctions::generate\fP (int parameter)"
+.br
+.ti -1c
+.RI "float \fBglobalFunctions::findHorizontallyCenteredPositionOfGivenText\fP (String text)"
+.br
+.ti -1c
+.RI "float \fBglobalFunctions::getHalfOfSizeOfGivenText\fP (String text)"
+.br
+.ti -1c
+.RI "float \fBglobalFunctions::getFullSizeOfGivenText\fP (String text)"
+.br
+.ti -1c
+.RI "Vector2f \fBglobalFunctions::getCenterOfTheScreen\fP ()"
+.br
+.ti -1c
+.RI "String \fBglobalFunctions::getMusicLevelInText\fP ()"
+.br
+.ti -1c
+.RI "Vector2u \fBloadingScreen::spinnerImages\fP (24, 1)"
+.br
+.ti -1c
+.RI "Vector2f \fBloadingScreen::spinnerScale\fP (2\&.0f, 2\&.0f)"
+.br
+.in -1c
+.SS "Zmienne"
+
+.in +1c
+.ti -1c
+.RI "export module \fBGeneralStuff\fP"
+.br
+.ti -1c
+.RI "constexpr int \fBengineConsts::SCREEN_WIDTH\fP = 1920"
+.br
+.ti -1c
+.RI "constexpr int \fBengineConsts::SCREEN_HEIGHT\fP = 1080"
+.br
+.ti -1c
+.RI "String \fBdirectories::SPRITES_DIRECTORY\fP = '\&./assets/SpritesTextures/\fBEngine\fP'"
+.br
+.ti -1c
+.RI "String \fBdirectories::FONTS_DIRECTORY\fP = '\&./assets/Fonts'"
+.br
+.ti -1c
+.RI "constexpr int \fBconsts::BOARD_HEIGHT\fP = 12"
+.br
+.ti -1c
+.RI "constexpr int \fBconsts::BOARD_WIDTH\fP = 24"
+.br
+.ti -1c
+.RI "constexpr int \fBconsts::START_X\fP = 200"
+.br
+.ti -1c
+.RI "constexpr int \fBconsts::START_Y\fP = 120"
+.br
+.ti -1c
+.RI "constexpr int \fBconsts::END_X\fP = START_X + (64 * (BOARD_WIDTH \- 1))"
+.br
+.ti -1c
+.RI "constexpr int \fBconsts::END_Y\fP = START_Y + (64 * (BOARD_HEIGHT \- 1))"
+.br
+.ti -1c
+.RI "constexpr int \fBconsts::ROW_SIZE\fP = 64"
+.br
+.ti -1c
+.RI "Color \fBconsts::gold\fP = Color(255, 215, 0, 255)"
+.br
+.ti -1c
+.RI "constexpr int \fBconsts::SCREEN_WIDTH\fP = 1920"
+.br
+.ti -1c
+.RI "constexpr int \fBconsts::SCREEN_HEIGHT\fP = 1080"
+.br
+.ti -1c
+.RI "constexpr float \fBconsts::APPLES_SCALER\fP = 0\&.26f"
+.br
+.ti -1c
+.RI "int \fBglobalVars::snakeSkinNum\fP = 0"
+.br
+.ti -1c
+.RI "int \fBglobalVars::playerScore\fP = 0"
+.br
+.ti -1c
+.RI "float \fBglobalVars::musicLevel\fP = 15\&.0f"
+.br
+.ti -1c
+.RI "Vector2f \fBglobalVars::screenRatio\fP = { 1\&.0f,1\&.0f }"
+.br
+.ti -1c
+.RI "int \fBglobalVars::fontSize\fP = 40"
+.br
+.ti -1c
+.RI "String \fBloadingScreen::spinnerTextureLocation\fP = 'assets/LoadingScreen/spinner\&.png'"
+.br
+.ti -1c
+.RI "String \fBloadingScreen::backgroundTextureLocation\fP = 'assets/LoadingScreen/background\&.jpg'"
+.br
+.ti -1c
+.RI "int \fBloadingScreen::numberOfSpinnerFrames\fP = 24"
+.br
+.ti -1c
+.RI "float \fBloadingScreen::spinnerFrameSwitchTime\fP = 1\&.0f / (float)numberOfSpinnerFrames"
+.br
+.ti -1c
+.RI "int \fBtextures::materialsOnLevel\fP [3][3]"
+.br
+.ti -1c
+.RI "String \fBtextures::mapTexturesLocation\fP [8]"
+.br
+.ti -1c
+.RI "int \fBtextures::numOfObstructions\fP = 3"
+.br
+.ti -1c
+.RI "String \fBtextures::rocksTexturesLocation\fP [3]"
+.br
+.ti -1c
+.RI "String \fBtextures::teleportTextureLocation\fP = 'assets/SpritesTextures/Map/holeTexture\&.png'"
+.br
+.ti -1c
+.RI "String \fBtextures::cupTexturesLocation\fP [3]"
+.br
+.ti -1c
+.RI "String \fBtextures::snakeTexturesLocation\fP [3][8]"
+.br
+.ti -1c
+.RI "String \fBmusic::levelsMusicLocation\fP [3]"
+.br
+.ti -1c
+.RI "String \fBmusic::menuMusic\fP [4]"
+.br
+.ti -1c
+.RI "String \fBsounds::eatingSoundLocation\fP = 'assets/Sounds/appleEaten\&.wav'"
+.br
+.ti -1c
+.RI "String \fBsounds::stepsSoundLocation\fP [3]"
+.br
+.ti -1c
+.RI "String \fBsounds::snakeHittingSoundLocation\fP [3]"
+.br
+.ti -1c
+.RI "String \fBsounds::menuClickSound\fP = 'assets/Sounds/misc_menu_2\&.wav'"
+.br
+.ti -1c
+.RI "String \fBanimations::normalAppleAnimations\fP [2]"
+.br
+.ti -1c
+.RI "String \fBanimations::goldAppleAnimations\fP [2]"
+.br
+.ti -1c
+.RI "String \fBmenuAssets::menuTexture\fP = 'assets/MenuTextures/menuBackground\&.png'"
+.br
+.ti -1c
+.RI "String \fBmenuAssets::logoTexture\fP = 'assets/MenuTextures/menuLogo\&.png'"
+.br
+.ti -1c
+.RI "String \fBmenuAssets::pointerTexture\fP = 'assets/MenuTextures/pointer\&.png'"
+.br
+.ti -1c
+.RI "Vector2u \fBmenuAssets::pointerImageCount\fP = { 20,1 }"
+.br
+.ti -1c
+.RI "float \fBmenuAssets::pointerSwitchTime\fP = 1\&.0f / pointerImageCount\&.x"
+.br
+.ti -1c
+.RI "String \fBmenuAssets::menuHelpersTextures\fP [15]"
+.br
+.ti -1c
+.RI "String \fBmenuAssets::menuTipsStrings\fP [6]"
+.br
+.ti -1c
+.RI "Vector2f \fBmenuAssets::menuTipsPosition\fP [6]"
+.br
+.ti -1c
+.RI "String \fBmenuAssets::fontLocation\fP = 'assets/Fonts/snap/snap itc\&.ttf'"
+.br
+.ti -1c
+.RI "Vector2f \fBmenuAssets::backButtonPosition\fP = { \fBglobalFunctions::findHorizontallyCenteredPositionOfGivenText\fP('BACK'),900\&.0f}"
+.br
+.ti -1c
+.RI "String \fBmenuAssets::mainMenu::menuButtonsText\fP [5] = {'START','\fBOPTIONS\fP','SCORES','CREATORS','EXIT'}"
+.br
+.ti -1c
+.RI "Vector2f \fBmenuAssets::mainMenu::menuButtonsPosition\fP [5]"
+.br
+.ti -1c
+.RI "String \fBmenuAssets::afterStart::startButtonsText\fP [2] = {'NEXT','BACK'}"
+.br
+.ti -1c
+.RI "Vector2f \fBmenuAssets::afterStart::startButtonsPositionY\fP [2]"
+.br
+.ti -1c
+.RI "String \fBmenuAssets::afterOptions::optionsButtonsText\fP [3] = { 'FULLSCREEN','WINDOWED','BACK' }"
+.br
+.ti -1c
+.RI "Vector2f \fBmenuAssets::afterOptions::optionsButtonsPosition\fP [3]"
+.br
+.ti -1c
+.RI "String \fBmenuAssets::afterOptions::optionsText\fP [8] = {'Controls','Move Up','Move Down','Move Right','Move Left','Options','Music','Screen'}"
+.br
+.ti -1c
+.RI "Vector2f \fBmenuAssets::afterOptions::optionsTextPosition\fP [8]"
+.br
+.ti -1c
+.RI "String \fBmenuAssets::afterOptions::optionsTextSprites\fP [6]"
+.br
+.ti -1c
+.RI "Vector2f \fBmenuAssets::afterOptions::sprites::optionsTextSpritesPositions\fP [6]"
+.br
+.ti -1c
+.RI "String \fBmenuAssets::afterOptions::sprites::optionsButtonsSprites\fP [2]"
+.br
+.ti -1c
+.RI "Vector2f \fBmenuAssets::afterOptions::sprites::optionsButtonsSpritesPositions\fP [2]"
+.br
+.ti -1c
+.RI "String \fBmenuAssets::afterOptions::optionsMusicLevelInPercent\fP = \fBglobalFunctions::getMusicLevelInText\fP()"
+.br
+.ti -1c
+.RI "Vector2f \fBmenuAssets::afterOptions::optionsMusicLevelInPercentPosition\fP"
+.br
+.ti -1c
+.RI "String \fBmenuAssets::scoresButtonText\fP = 'BACK'"
+.br
+.ti -1c
+.RI "String \fBmenuAssets::creatorsText\fP [2] = {'Dominik Grudzien','Patryk Grzywacz'}"
+.br
+.ti -1c
+.RI "Vector2f \fBmenuAssets::creatorsTextPosition\fP [2]"
+.br
+.ti -1c
+.RI "String \fBmenuAssets::creatorsButtonText\fP = 'BACK'"
+.br
+.in -1c
+.SH "Dokumentacja zmiennych"
+.PP 
+.SS "export module GeneralStuff"
+
+.SH "Autor"
+.PP 
+Wygenerowano automatycznie z kodu źródłowego programem Doxygen dla Silnik graficzny\&.

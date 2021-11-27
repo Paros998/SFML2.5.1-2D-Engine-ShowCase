@@ -1,0 +1,283 @@
+\doxysection{Dokumentacja klasy game\+Objects\+::Player}
+\label{classgame_objects_1_1_player}\index{gameObjects::Player@{gameObjects::Player}}
+
+
+Klasa gracza, która obsługuje animacje oraz klawiaturę i myszkę.  
+
+
+Diagram dziedziczenia dla game\+Objects\+::Player\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classgame_objects_1_1_player}
+\end{center}
+\end{figure}
+\doxysubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Player} (string texture\+Path, Vector2u animation\+Size, Vector2u \textbf{ idle\+Animation\+Sprite\+Sheet\+Pos}, float animation\+Speed, Vector2f start\+Position)
+\begin{DoxyCompactList}\small\item\em Konstruktor inicjujący klasy bazowe oraz ruchy gracza. \end{DoxyCompactList}\item 
+void \textbf{ update\+Movement} (int \textbf{ direction}, int \textbf{ action}, int \textbf{ fight})
+\begin{DoxyCompactList}\small\item\em Metoda aktualizująca kierunek poruszania się gracza oraz określone akcje. \end{DoxyCompactList}\item 
+void \textbf{ animate\+Idle} ()
+\begin{DoxyCompactList}\small\item\em Metoda aktualizująca animację spoczynku. \end{DoxyCompactList}\item 
+void \textbf{ update} ()
+\begin{DoxyCompactList}\small\item\em Metoda animująca gracza poprzez pobieranie aktualnego obrazka ze spritesheet\textquotesingle{}u. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typy prywatne}
+\begin{DoxyCompactItemize}
+\item 
+enum \textbf{ movement} \{ \newline
+\textbf{ none}, 
+\textbf{ jump\+UP}, 
+\textbf{ back\+From\+Jump}, 
+\textbf{ walk\+Left}, 
+\newline
+\textbf{ run\+Left}, 
+\textbf{ jump\+Left}, 
+\textbf{ jump\+Attack\+Left}, 
+\textbf{ walk\+Right}, 
+\newline
+\textbf{ run\+Right}, 
+\textbf{ jump\+Right}, 
+\textbf{ jump\+Attack\+Right}
+ \}
+\item 
+enum \textbf{ animations} \{ \newline
+\textbf{ idle}, 
+\textbf{ jump}, 
+\textbf{ jumpattack}, 
+\textbf{ run}, 
+\newline
+\textbf{ swingA}, 
+\textbf{ swingB}, 
+\textbf{ swingC}, 
+\textbf{ walk}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Atrybuty prywatne}
+\begin{DoxyCompactItemize}
+\item 
+Vector2u \textbf{ idle\+Animation\+Sprite\+Sheet\+Pos}
+\item 
+vector$<$ Vector2f $>$ \textbf{ directions}
+\item 
+int \textbf{ facing} = 2
+\begin{DoxyCompactList}\small\item\em From General Stuff. \end{DoxyCompactList}\item 
+int \textbf{ action} = 1
+\begin{DoxyCompactList}\small\item\em enum direction \end{DoxyCompactList}\item 
+int \textbf{ fight} = 0
+\begin{DoxyCompactList}\small\item\em enum actions \end{DoxyCompactList}\item 
+float \textbf{ jump\+Cooldown} = 1.f
+\begin{DoxyCompactList}\small\item\em enum fight \end{DoxyCompactList}\item 
+float \textbf{ jump\+Time} = 0.f
+\end{DoxyCompactItemize}
+\doxysubsection*{Dodatkowe Dziedziczone Składowe}
+
+
+\doxysubsection{Opis szczegółowy}
+Klasa gracza, która obsługuje animacje oraz klawiaturę i myszkę. 
+
+\doxysubsection{Dokumentacja składowych wyliczanych}
+\mbox{\label{classgame_objects_1_1_player_a70f12832a9ccd12089713177ba7dcced}} 
+\index{gameObjects::Player@{gameObjects::Player}!animations@{animations}}
+\index{animations@{animations}!gameObjects::Player@{gameObjects::Player}}
+\doxysubsubsection{animations}
+{\footnotesize\ttfamily enum \textbf{ game\+Objects\+::\+Player\+::animations}\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Wartości wyliczeń}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{idle@{idle}!gameObjects::Player@{gameObjects::Player}}\index{gameObjects::Player@{gameObjects::Player}!idle@{idle}}}\mbox{\label{classgame_objects_1_1_player_a70f12832a9ccd12089713177ba7dccedad6d39ed043fa485e5a40eb82706a9f4c}} 
+idle&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{jump@{jump}!gameObjects::Player@{gameObjects::Player}}\index{gameObjects::Player@{gameObjects::Player}!jump@{jump}}}\mbox{\label{classgame_objects_1_1_player_a70f12832a9ccd12089713177ba7dcceda222126073ab85c6c6d93c6ae6425c3c5}} 
+jump&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{jumpattack@{jumpattack}!gameObjects::Player@{gameObjects::Player}}\index{gameObjects::Player@{gameObjects::Player}!jumpattack@{jumpattack}}}\mbox{\label{classgame_objects_1_1_player_a70f12832a9ccd12089713177ba7dccedac0170c3231058b956e0c1f623d57ab63}} 
+jumpattack&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{run@{run}!gameObjects::Player@{gameObjects::Player}}\index{gameObjects::Player@{gameObjects::Player}!run@{run}}}\mbox{\label{classgame_objects_1_1_player_a70f12832a9ccd12089713177ba7dccedade91dfc1b11befd67b891fd62101b6d2}} 
+run&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{swingA@{swingA}!gameObjects::Player@{gameObjects::Player}}\index{gameObjects::Player@{gameObjects::Player}!swingA@{swingA}}}\mbox{\label{classgame_objects_1_1_player_a70f12832a9ccd12089713177ba7dccedabe27aad3b98f126c09bb926c950c1209}} 
+swingA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{swingB@{swingB}!gameObjects::Player@{gameObjects::Player}}\index{gameObjects::Player@{gameObjects::Player}!swingB@{swingB}}}\mbox{\label{classgame_objects_1_1_player_a70f12832a9ccd12089713177ba7dcceda65769bcc62899640ef53dcc6a1ace96e}} 
+swingB&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{swingC@{swingC}!gameObjects::Player@{gameObjects::Player}}\index{gameObjects::Player@{gameObjects::Player}!swingC@{swingC}}}\mbox{\label{classgame_objects_1_1_player_a70f12832a9ccd12089713177ba7dcceda6bbc06aa2f501e9c83124c641b1a02f6}} 
+swingC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{walk@{walk}!gameObjects::Player@{gameObjects::Player}}\index{gameObjects::Player@{gameObjects::Player}!walk@{walk}}}\mbox{\label{classgame_objects_1_1_player_a70f12832a9ccd12089713177ba7dcceda2762a6424a5aac815c7d5a5c570f34d3}} 
+walk&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\label{classgame_objects_1_1_player_a347fe6938fec4b1c7bfc918445e263e7}} 
+\index{gameObjects::Player@{gameObjects::Player}!movement@{movement}}
+\index{movement@{movement}!gameObjects::Player@{gameObjects::Player}}
+\doxysubsubsection{movement}
+{\footnotesize\ttfamily enum \textbf{ game\+Objects\+::\+Player\+::movement}\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Wartości wyliczeń}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{none@{none}!gameObjects::Player@{gameObjects::Player}}\index{gameObjects::Player@{gameObjects::Player}!none@{none}}}\mbox{\label{classgame_objects_1_1_player_a347fe6938fec4b1c7bfc918445e263e7a8eb974a3862e8e2dc5b023e6db77e80f}} 
+none&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{jumpUP@{jumpUP}!gameObjects::Player@{gameObjects::Player}}\index{gameObjects::Player@{gameObjects::Player}!jumpUP@{jumpUP}}}\mbox{\label{classgame_objects_1_1_player_a347fe6938fec4b1c7bfc918445e263e7abb36e0f8be486b1839cbdd228a25b13a}} 
+jump\+UP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{backFromJump@{backFromJump}!gameObjects::Player@{gameObjects::Player}}\index{gameObjects::Player@{gameObjects::Player}!backFromJump@{backFromJump}}}\mbox{\label{classgame_objects_1_1_player_a347fe6938fec4b1c7bfc918445e263e7acc246ab8992d3f077c7a4a2e7961d491}} 
+back\+From\+Jump&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{walkLeft@{walkLeft}!gameObjects::Player@{gameObjects::Player}}\index{gameObjects::Player@{gameObjects::Player}!walkLeft@{walkLeft}}}\mbox{\label{classgame_objects_1_1_player_a347fe6938fec4b1c7bfc918445e263e7a1c688f015d56f15352fb4cb1587ba172}} 
+walk\+Left&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{runLeft@{runLeft}!gameObjects::Player@{gameObjects::Player}}\index{gameObjects::Player@{gameObjects::Player}!runLeft@{runLeft}}}\mbox{\label{classgame_objects_1_1_player_a347fe6938fec4b1c7bfc918445e263e7ac4ad8bfb5c75f622f2c00520c7abbab8}} 
+run\+Left&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{jumpLeft@{jumpLeft}!gameObjects::Player@{gameObjects::Player}}\index{gameObjects::Player@{gameObjects::Player}!jumpLeft@{jumpLeft}}}\mbox{\label{classgame_objects_1_1_player_a347fe6938fec4b1c7bfc918445e263e7af28ccc8c720c260eac4447535cedd4c8}} 
+jump\+Left&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{jumpAttackLeft@{jumpAttackLeft}!gameObjects::Player@{gameObjects::Player}}\index{gameObjects::Player@{gameObjects::Player}!jumpAttackLeft@{jumpAttackLeft}}}\mbox{\label{classgame_objects_1_1_player_a347fe6938fec4b1c7bfc918445e263e7aa106c10365f73054a137be1257842c4d}} 
+jump\+Attack\+Left&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{walkRight@{walkRight}!gameObjects::Player@{gameObjects::Player}}\index{gameObjects::Player@{gameObjects::Player}!walkRight@{walkRight}}}\mbox{\label{classgame_objects_1_1_player_a347fe6938fec4b1c7bfc918445e263e7a5f90cf9ebe8f3d149428e77121e32892}} 
+walk\+Right&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{runRight@{runRight}!gameObjects::Player@{gameObjects::Player}}\index{gameObjects::Player@{gameObjects::Player}!runRight@{runRight}}}\mbox{\label{classgame_objects_1_1_player_a347fe6938fec4b1c7bfc918445e263e7a5139c3804ca34cdcecc116ff391b73d7}} 
+run\+Right&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{jumpRight@{jumpRight}!gameObjects::Player@{gameObjects::Player}}\index{gameObjects::Player@{gameObjects::Player}!jumpRight@{jumpRight}}}\mbox{\label{classgame_objects_1_1_player_a347fe6938fec4b1c7bfc918445e263e7ada2481371078dd0cd81aa67eb3308e7e}} 
+jump\+Right&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{jumpAttackRight@{jumpAttackRight}!gameObjects::Player@{gameObjects::Player}}\index{gameObjects::Player@{gameObjects::Player}!jumpAttackRight@{jumpAttackRight}}}\mbox{\label{classgame_objects_1_1_player_a347fe6938fec4b1c7bfc918445e263e7a59112fd654e3ad8317440c153ec2d215}} 
+jump\+Attack\+Right&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Dokumentacja konstruktora i destruktora}
+\mbox{\label{classgame_objects_1_1_player_ac014be724a26436f040ecf6fcdc14917}} 
+\index{gameObjects::Player@{gameObjects::Player}!Player@{Player}}
+\index{Player@{Player}!gameObjects::Player@{gameObjects::Player}}
+\doxysubsubsection{Player()}
+{\footnotesize\ttfamily game\+Objects\+::\+Player\+::\+Player (\begin{DoxyParamCaption}\item[{string}]{texture\+Path,  }\item[{Vector2u}]{animation\+Size,  }\item[{Vector2u}]{idle\+Animation\+Sprite\+Sheet\+Pos,  }\item[{float}]{animation\+Speed,  }\item[{Vector2f}]{start\+Position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Konstruktor inicjujący klasy bazowe oraz ruchy gracza. 
+
+Indexes of this directions are in enum movement
+
+\doxysubsection{Dokumentacja funkcji składowych}
+\mbox{\label{classgame_objects_1_1_player_a104f4175f0d88dc687c1f305d6c27a2d}} 
+\index{gameObjects::Player@{gameObjects::Player}!animateIdle@{animateIdle}}
+\index{animateIdle@{animateIdle}!gameObjects::Player@{gameObjects::Player}}
+\doxysubsubsection{animateIdle()}
+{\footnotesize\ttfamily void game\+Objects\+::\+Player\+::animate\+Idle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Metoda aktualizująca animację spoczynku. 
+
+\mbox{\label{classgame_objects_1_1_player_ae27b34c89e9e0189243c5a3577f3d599}} 
+\index{gameObjects::Player@{gameObjects::Player}!update@{update}}
+\index{update@{update}!gameObjects::Player@{gameObjects::Player}}
+\doxysubsubsection{update()}
+{\footnotesize\ttfamily void game\+Objects\+::\+Player\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Metoda animująca gracza poprzez pobieranie aktualnego obrazka ze spritesheet\textquotesingle{}u. 
+
+\mbox{\label{classgame_objects_1_1_player_a8d3218fdce0a16e51a7fee3f40a29c98}} 
+\index{gameObjects::Player@{gameObjects::Player}!updateMovement@{updateMovement}}
+\index{updateMovement@{updateMovement}!gameObjects::Player@{gameObjects::Player}}
+\doxysubsubsection{updateMovement()}
+{\footnotesize\ttfamily void game\+Objects\+::\+Player\+::update\+Movement (\begin{DoxyParamCaption}\item[{int}]{direction,  }\item[{int}]{action,  }\item[{int}]{fight }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Metoda aktualizująca kierunek poruszania się gracza oraz określone akcje. 
+
+
+
+\doxysubsection{Dokumentacja atrybutów składowych}
+\mbox{\label{classgame_objects_1_1_player_ae9ab8fc028ee99162500ad9784c84a36}} 
+\index{gameObjects::Player@{gameObjects::Player}!action@{action}}
+\index{action@{action}!gameObjects::Player@{gameObjects::Player}}
+\doxysubsubsection{action}
+{\footnotesize\ttfamily int game\+Objects\+::\+Player\+::action = 1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+enum direction 
+
+\mbox{\label{classgame_objects_1_1_player_a5e8e3ee0b99949ac8ff3f6f64287f34c}} 
+\index{gameObjects::Player@{gameObjects::Player}!directions@{directions}}
+\index{directions@{directions}!gameObjects::Player@{gameObjects::Player}}
+\doxysubsubsection{directions}
+{\footnotesize\ttfamily vector$<$Vector2f$>$ game\+Objects\+::\+Player\+::directions\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classgame_objects_1_1_player_ab6e1c15087ac31a21da345300097972b}} 
+\index{gameObjects::Player@{gameObjects::Player}!facing@{facing}}
+\index{facing@{facing}!gameObjects::Player@{gameObjects::Player}}
+\doxysubsubsection{facing}
+{\footnotesize\ttfamily int game\+Objects\+::\+Player\+::facing = 2\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+From General Stuff. 
+
+\mbox{\label{classgame_objects_1_1_player_af3b825bfaa06c21271dec01054e17cf1}} 
+\index{gameObjects::Player@{gameObjects::Player}!fight@{fight}}
+\index{fight@{fight}!gameObjects::Player@{gameObjects::Player}}
+\doxysubsubsection{fight}
+{\footnotesize\ttfamily int game\+Objects\+::\+Player\+::fight = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+enum actions 
+
+\mbox{\label{classgame_objects_1_1_player_a0378602069b313c4a6411ab4605e69de}} 
+\index{gameObjects::Player@{gameObjects::Player}!idleAnimationSpriteSheetPos@{idleAnimationSpriteSheetPos}}
+\index{idleAnimationSpriteSheetPos@{idleAnimationSpriteSheetPos}!gameObjects::Player@{gameObjects::Player}}
+\doxysubsubsection{idleAnimationSpriteSheetPos}
+{\footnotesize\ttfamily Vector2u game\+Objects\+::\+Player\+::idle\+Animation\+Sprite\+Sheet\+Pos\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classgame_objects_1_1_player_ab1da1367b66b15d7061b9fac21d11edd}} 
+\index{gameObjects::Player@{gameObjects::Player}!jumpCooldown@{jumpCooldown}}
+\index{jumpCooldown@{jumpCooldown}!gameObjects::Player@{gameObjects::Player}}
+\doxysubsubsection{jumpCooldown}
+{\footnotesize\ttfamily float game\+Objects\+::\+Player\+::jump\+Cooldown = 1.f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+enum fight 
+
+\mbox{\label{classgame_objects_1_1_player_a74a2fb03c3af3dc1b4a2c0cbf0e1e8b7}} 
+\index{gameObjects::Player@{gameObjects::Player}!jumpTime@{jumpTime}}
+\index{jumpTime@{jumpTime}!gameObjects::Player@{gameObjects::Player}}
+\doxysubsubsection{jumpTime}
+{\footnotesize\ttfamily float game\+Objects\+::\+Player\+::jump\+Time = 0.f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Chomik/source/repos/\+Snake\+S\+F\+M\+Lv1/\+Snake\+S\+F\+M\+L/src/\textbf{ Game\+Objects.\+ixx}\end{DoxyCompactItemize}

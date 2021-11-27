@@ -1,0 +1,146 @@
+.TH "effects::Snow" 3 "So, 27 lis 2021" "Silnik graficzny" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+effects::Snow
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Dziedziczy Shape\&.
+.SS "Metody publiczne"
+
+.in +1c
+.ti -1c
+.RI "\fBSnow\fP ()"
+.br
+.ti -1c
+.RI "\fBSnow\fP (Vector2f position)"
+.br
+.ti -1c
+.RI "\fB~Snow\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdate\fP (float rawTime, Vector2f windowSize)"
+.br
+.ti -1c
+.RI "virtual std::size_t \fBgetPointCount\fP () const override"
+.br
+.ti -1c
+.RI "virtual Vector2f \fBgetPoint\fP (std::size_t index) const override"
+.br
+.in -1c
+.SS "Metody prywatne"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBdraw\fP (sf::RenderTarget &target, sf::RenderStates states) const override"
+.br
+.ti -1c
+.RI "void \fBcalculateVertices\fP ()"
+.br
+.ti -1c
+.RI "void \fBreset\fP (Vector2f windowSize)"
+.br
+.ti -1c
+.RI "void \fBmove\fP (float x, float y)"
+.br
+.in -1c
+.SS "Atrybuty prywatne"
+
+.in +1c
+.ti -1c
+.RI "VertexArray \fBm_vertices\fP"
+.br
+.ti -1c
+.RI "VertexArray \fBm_outlineVertices\fP"
+.br
+.ti -1c
+.RI "int \fBsize\fP"
+.br
+.ti -1c
+.RI "float \fBdeltaTime\fP = 0\&.f"
+.br
+.ti -1c
+.RI "Vector2f \fBm_origin\fP"
+.br
+.RI "Origin of translation/rotation/scaling of the object\&. "
+.ti -1c
+.RI "Vector2f \fBoriginalPosition\fP"
+.br
+.ti -1c
+.RI "Vector2f \fBm_position\fP"
+.br
+.RI "Position of the object in the 2D world\&. "
+.ti -1c
+.RI "float \fBm_rotation\fP = 0\&.f"
+.br
+.RI "Orientation of the object, in degrees\&. "
+.ti -1c
+.RI "Vector2f \fBm_scale\fP"
+.br
+.ti -1c
+.RI "float \fBvelocity\fP = 0\&.f"
+.br
+.ti -1c
+.RI "FloatRect \fBglobalBounds\fP"
+.br
+.in -1c
+.SH "Dokumentacja konstruktora i destruktora"
+.PP 
+.SS "effects::Snow::Snow ()\fC [inline]\fP"
+
+.SS "effects::Snow::Snow (Vector2f position)\fC [inline]\fP"
+
+.SS "effects::Snow::~Snow ()\fC [inline]\fP"
+
+.SH "Dokumentacja funkcji składowych"
+.PP 
+.SS "void effects::Snow::calculateVertices ()\fC [inline]\fP, \fC [private]\fP"
+
+.SS "virtual void effects::Snow::draw (sf::RenderTarget & target, sf::RenderStates states) const\fC [inline]\fP, \fC [override]\fP, \fC [private]\fP, \fC [virtual]\fP"
+
+.SS "virtual Vector2f effects::Snow::getPoint (std::size_t index) const\fC [inline]\fP, \fC [override]\fP, \fC [virtual]\fP"
+
+.SS "virtual std::size_t effects::Snow::getPointCount () const\fC [inline]\fP, \fC [override]\fP, \fC [virtual]\fP"
+
+.SS "void effects::Snow::move (float x, float y)\fC [inline]\fP, \fC [private]\fP"
+
+.SS "void effects::Snow::reset (Vector2f windowSize)\fC [inline]\fP, \fC [private]\fP"
+
+.SS "void effects::Snow::update (float rawTime, Vector2f windowSize)\fC [inline]\fP"
+
+.SH "Dokumentacja atrybutów składowych"
+.PP 
+.SS "float effects::Snow::deltaTime = 0\&.f\fC [private]\fP"
+
+.SS "FloatRect effects::Snow::globalBounds\fC [private]\fP"
+
+.SS "Vector2f effects::Snow::m_origin\fC [private]\fP"
+
+.PP
+Origin of translation/rotation/scaling of the object\&. 
+.SS "VertexArray effects::Snow::m_outlineVertices\fC [private]\fP"
+
+.SS "Vector2f effects::Snow::m_position\fC [private]\fP"
+
+.PP
+Position of the object in the 2D world\&. 
+.SS "float effects::Snow::m_rotation = 0\&.f\fC [private]\fP"
+
+.PP
+Orientation of the object, in degrees\&. 
+.SS "Vector2f effects::Snow::m_scale\fC [private]\fP"
+
+.SS "VertexArray effects::Snow::m_vertices\fC [private]\fP"
+
+.SS "Vector2f effects::Snow::originalPosition\fC [private]\fP"
+
+.SS "int effects::Snow::size\fC [private]\fP"
+
+.SS "float effects::Snow::velocity = 0\&.f\fC [private]\fP"
+
+
+.SH "Autor"
+.PP 
+Wygenerowano automatycznie z kodu źródłowego programem Doxygen dla Silnik graficzny\&.

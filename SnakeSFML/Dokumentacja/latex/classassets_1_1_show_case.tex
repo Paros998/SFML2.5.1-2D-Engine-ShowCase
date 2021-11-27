@@ -1,0 +1,272 @@
+\doxysection{Dokumentacja klasy assets\+::Show\+Case}
+\label{classassets_1_1_show_case}\index{assets::ShowCase@{assets::ShowCase}}
+\doxysubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Show\+Case} (Render\+Window $\ast$\textbf{ window})
+\item 
+void \textbf{ load} ()
+\item 
+void \textbf{ draw} ()
+\item 
+void \textbf{ update} ()
+\item 
+void \textbf{ update\+Snow} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Atrybuty publiczne}
+\begin{DoxyCompactItemize}
+\item 
+std\+::atomic$<$ bool $>$ \textbf{ loading\+Completed}
+\end{DoxyCompactItemize}
+\doxysubsection*{Metody prywatne}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ move\+Background\+Sky} (float raw\+Time)
+\end{DoxyCompactItemize}
+\doxysubsection*{Atrybuty prywatne}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \textbf{ Line\+Segment} $>$ \textbf{ lines}
+\item 
+std\+::vector$<$ Vector2f $>$ \textbf{ Sky\+Polygon\+Points}
+\item 
+std\+::vector$<$ Vector2f $>$ \textbf{ Forest\+Polygon\+Points}
+\item 
+std\+::vector$<$ Vector2f $>$ \textbf{ Snow\+Polygon\+Points}
+\item 
+std\+::vector$<$ Color $>$ \textbf{ moon\+Colors}
+\item 
+\textbf{ Circle} $\ast$ \textbf{ kolo}
+\item 
+\textbf{ Circle} $\ast$ \textbf{ kolo2}
+\item 
+\textbf{ Circle} $\ast$ \textbf{ moon}
+\item 
+\textbf{ Polygon} \textbf{ sky}
+\item 
+\textbf{ Polygon} \textbf{ forest\+Background}
+\item 
+\textbf{ Polygon} \textbf{ walking\+Background}
+\item 
+sf\+::\+Convex\+Shape \textbf{ convex}
+\item 
+\textbf{ Stars\+Particle\+System} $\ast$ \textbf{ stars}
+\item 
+\textbf{ Snow\+Particle\+System} $\ast$ \textbf{ snows}
+\item 
+Texture \textbf{ sky\+Texture}
+\begin{DoxyCompactList}\small\item\em Textures. \end{DoxyCompactList}\item 
+Texture \textbf{ forest\+Texture}
+\item 
+Texture \textbf{ snow\+Texture}
+\item 
+Clock \textbf{ update\+Clock}
+\item 
+Clock \textbf{ update\+Clock2}
+\item 
+Render\+Window $\ast$ \textbf{ window}
+\item 
+int \textbf{ direction} = 1
+\item 
+float \textbf{ max\+Sky\+Offset} = 100.f
+\item 
+float \textbf{ actual\+Sky\+Offset} = 0.f
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Dokumentacja konstruktora i destruktora}
+\mbox{\label{classassets_1_1_show_case_a510ba5bdb50d20f0dc65c433b13e4c7e}} 
+\index{assets::ShowCase@{assets::ShowCase}!ShowCase@{ShowCase}}
+\index{ShowCase@{ShowCase}!assets::ShowCase@{assets::ShowCase}}
+\doxysubsubsection{ShowCase()}
+{\footnotesize\ttfamily assets\+::\+Show\+Case\+::\+Show\+Case (\begin{DoxyParamCaption}\item[{Render\+Window $\ast$}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Dokumentacja funkcji składowych}
+\mbox{\label{classassets_1_1_show_case_a29bf397e9a9ae60d59ae9391a834269b}} 
+\index{assets::ShowCase@{assets::ShowCase}!draw@{draw}}
+\index{draw@{draw}!assets::ShowCase@{assets::ShowCase}}
+\doxysubsubsection{draw()}
+{\footnotesize\ttfamily void assets\+::\+Show\+Case\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classassets_1_1_show_case_a65e6dca65ef2f452940378d4dd465486}} 
+\index{assets::ShowCase@{assets::ShowCase}!load@{load}}
+\index{load@{load}!assets::ShowCase@{assets::ShowCase}}
+\doxysubsubsection{load()}
+{\footnotesize\ttfamily void assets\+::\+Show\+Case\+::load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+dont change the order here\mbox{\label{classassets_1_1_show_case_a6ee85fbad76a3463734c1b1b2115955f}} 
+\index{assets::ShowCase@{assets::ShowCase}!moveBackgroundSky@{moveBackgroundSky}}
+\index{moveBackgroundSky@{moveBackgroundSky}!assets::ShowCase@{assets::ShowCase}}
+\doxysubsubsection{moveBackgroundSky()}
+{\footnotesize\ttfamily void assets\+::\+Show\+Case\+::move\+Background\+Sky (\begin{DoxyParamCaption}\item[{float}]{raw\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\label{classassets_1_1_show_case_ab4776ab8e3420b57447e53762cd3d7f7}} 
+\index{assets::ShowCase@{assets::ShowCase}!update@{update}}
+\index{update@{update}!assets::ShowCase@{assets::ShowCase}}
+\doxysubsubsection{update()}
+{\footnotesize\ttfamily void assets\+::\+Show\+Case\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\label{classassets_1_1_show_case_a0a79a324786a5a0c2cd6de9bf207984e}} 
+\index{assets::ShowCase@{assets::ShowCase}!updateSnow@{updateSnow}}
+\index{updateSnow@{updateSnow}!assets::ShowCase@{assets::ShowCase}}
+\doxysubsubsection{updateSnow()}
+{\footnotesize\ttfamily void assets\+::\+Show\+Case\+::update\+Snow (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Dokumentacja atrybutów składowych}
+\mbox{\label{classassets_1_1_show_case_aa946e020f1010183eea570856d4f7085}} 
+\index{assets::ShowCase@{assets::ShowCase}!actualSkyOffset@{actualSkyOffset}}
+\index{actualSkyOffset@{actualSkyOffset}!assets::ShowCase@{assets::ShowCase}}
+\doxysubsubsection{actualSkyOffset}
+{\footnotesize\ttfamily float assets\+::\+Show\+Case\+::actual\+Sky\+Offset = 0.f\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classassets_1_1_show_case_a05c12834bce68483dd5a5a6ce7e4b846}} 
+\index{assets::ShowCase@{assets::ShowCase}!convex@{convex}}
+\index{convex@{convex}!assets::ShowCase@{assets::ShowCase}}
+\doxysubsubsection{convex}
+{\footnotesize\ttfamily sf\+::\+Convex\+Shape assets\+::\+Show\+Case\+::convex\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classassets_1_1_show_case_ab98cb7875495a2a5af40e64d0b8c3bb6}} 
+\index{assets::ShowCase@{assets::ShowCase}!direction@{direction}}
+\index{direction@{direction}!assets::ShowCase@{assets::ShowCase}}
+\doxysubsubsection{direction}
+{\footnotesize\ttfamily int assets\+::\+Show\+Case\+::direction = 1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classassets_1_1_show_case_a899fe492b5bfefda2f1c1c1d4aa87f78}} 
+\index{assets::ShowCase@{assets::ShowCase}!forestBackground@{forestBackground}}
+\index{forestBackground@{forestBackground}!assets::ShowCase@{assets::ShowCase}}
+\doxysubsubsection{forestBackground}
+{\footnotesize\ttfamily \textbf{ Polygon} assets\+::\+Show\+Case\+::forest\+Background\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classassets_1_1_show_case_aa3a224f2a18089a704e2dca5c57f198f}} 
+\index{assets::ShowCase@{assets::ShowCase}!ForestPolygonPoints@{ForestPolygonPoints}}
+\index{ForestPolygonPoints@{ForestPolygonPoints}!assets::ShowCase@{assets::ShowCase}}
+\doxysubsubsection{ForestPolygonPoints}
+{\footnotesize\ttfamily std\+::vector$<$Vector2f$>$ assets\+::\+Show\+Case\+::\+Forest\+Polygon\+Points\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classassets_1_1_show_case_a9831cd31892951d6231dccfdcabb85a8}} 
+\index{assets::ShowCase@{assets::ShowCase}!forestTexture@{forestTexture}}
+\index{forestTexture@{forestTexture}!assets::ShowCase@{assets::ShowCase}}
+\doxysubsubsection{forestTexture}
+{\footnotesize\ttfamily Texture assets\+::\+Show\+Case\+::forest\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classassets_1_1_show_case_a041b7b361b05f42363052a1df4667b7f}} 
+\index{assets::ShowCase@{assets::ShowCase}!kolo@{kolo}}
+\index{kolo@{kolo}!assets::ShowCase@{assets::ShowCase}}
+\doxysubsubsection{kolo}
+{\footnotesize\ttfamily \textbf{ Circle}$\ast$ assets\+::\+Show\+Case\+::kolo\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classassets_1_1_show_case_ac30fed38095c2bf47ed3660b8124adb3}} 
+\index{assets::ShowCase@{assets::ShowCase}!kolo2@{kolo2}}
+\index{kolo2@{kolo2}!assets::ShowCase@{assets::ShowCase}}
+\doxysubsubsection{kolo2}
+{\footnotesize\ttfamily \textbf{ Circle}$\ast$ assets\+::\+Show\+Case\+::kolo2\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classassets_1_1_show_case_a47e4f1762acae51ab805d388c16db94b}} 
+\index{assets::ShowCase@{assets::ShowCase}!lines@{lines}}
+\index{lines@{lines}!assets::ShowCase@{assets::ShowCase}}
+\doxysubsubsection{lines}
+{\footnotesize\ttfamily std\+::vector$<$\textbf{ Line\+Segment}$>$ assets\+::\+Show\+Case\+::lines\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classassets_1_1_show_case_a3567966d61e3d64706013bdfa733ee41}} 
+\index{assets::ShowCase@{assets::ShowCase}!loadingCompleted@{loadingCompleted}}
+\index{loadingCompleted@{loadingCompleted}!assets::ShowCase@{assets::ShowCase}}
+\doxysubsubsection{loadingCompleted}
+{\footnotesize\ttfamily std\+::atomic$<$bool$>$ assets\+::\+Show\+Case\+::loading\+Completed}
+
+\mbox{\label{classassets_1_1_show_case_a42b32d65c3e4af41f8b583959f962ee2}} 
+\index{assets::ShowCase@{assets::ShowCase}!maxSkyOffset@{maxSkyOffset}}
+\index{maxSkyOffset@{maxSkyOffset}!assets::ShowCase@{assets::ShowCase}}
+\doxysubsubsection{maxSkyOffset}
+{\footnotesize\ttfamily float assets\+::\+Show\+Case\+::max\+Sky\+Offset = 100.f\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classassets_1_1_show_case_a08ceef11b1ac89ab5408a9acd68f5bf7}} 
+\index{assets::ShowCase@{assets::ShowCase}!moon@{moon}}
+\index{moon@{moon}!assets::ShowCase@{assets::ShowCase}}
+\doxysubsubsection{moon}
+{\footnotesize\ttfamily \textbf{ Circle}$\ast$ assets\+::\+Show\+Case\+::moon\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classassets_1_1_show_case_a412d0155eb1e3c682a55ef903c4d7fca}} 
+\index{assets::ShowCase@{assets::ShowCase}!moonColors@{moonColors}}
+\index{moonColors@{moonColors}!assets::ShowCase@{assets::ShowCase}}
+\doxysubsubsection{moonColors}
+{\footnotesize\ttfamily std\+::vector$<$Color$>$ assets\+::\+Show\+Case\+::moon\+Colors\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classassets_1_1_show_case_a8bf4cee056120860b7415996a45e6046}} 
+\index{assets::ShowCase@{assets::ShowCase}!sky@{sky}}
+\index{sky@{sky}!assets::ShowCase@{assets::ShowCase}}
+\doxysubsubsection{sky}
+{\footnotesize\ttfamily \textbf{ Polygon} assets\+::\+Show\+Case\+::sky\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classassets_1_1_show_case_aaee2a0d4e798c8c0f08231004598c245}} 
+\index{assets::ShowCase@{assets::ShowCase}!SkyPolygonPoints@{SkyPolygonPoints}}
+\index{SkyPolygonPoints@{SkyPolygonPoints}!assets::ShowCase@{assets::ShowCase}}
+\doxysubsubsection{SkyPolygonPoints}
+{\footnotesize\ttfamily std\+::vector$<$Vector2f$>$ assets\+::\+Show\+Case\+::\+Sky\+Polygon\+Points\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classassets_1_1_show_case_a900d9adc9de5fc785228ba3052791ece}} 
+\index{assets::ShowCase@{assets::ShowCase}!skyTexture@{skyTexture}}
+\index{skyTexture@{skyTexture}!assets::ShowCase@{assets::ShowCase}}
+\doxysubsubsection{skyTexture}
+{\footnotesize\ttfamily Texture assets\+::\+Show\+Case\+::sky\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Textures. 
+
+\mbox{\label{classassets_1_1_show_case_aaac522383b74fdc9e3a3f07128d89984}} 
+\index{assets::ShowCase@{assets::ShowCase}!SnowPolygonPoints@{SnowPolygonPoints}}
+\index{SnowPolygonPoints@{SnowPolygonPoints}!assets::ShowCase@{assets::ShowCase}}
+\doxysubsubsection{SnowPolygonPoints}
+{\footnotesize\ttfamily std\+::vector$<$Vector2f$>$ assets\+::\+Show\+Case\+::\+Snow\+Polygon\+Points\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classassets_1_1_show_case_a44ee6e5ba7cdcb9b587eaf33a34c919c}} 
+\index{assets::ShowCase@{assets::ShowCase}!snows@{snows}}
+\index{snows@{snows}!assets::ShowCase@{assets::ShowCase}}
+\doxysubsubsection{snows}
+{\footnotesize\ttfamily \textbf{ Snow\+Particle\+System}$\ast$ assets\+::\+Show\+Case\+::snows\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classassets_1_1_show_case_a487d9ce4a241ded07d5ac6ec0fde2808}} 
+\index{assets::ShowCase@{assets::ShowCase}!snowTexture@{snowTexture}}
+\index{snowTexture@{snowTexture}!assets::ShowCase@{assets::ShowCase}}
+\doxysubsubsection{snowTexture}
+{\footnotesize\ttfamily Texture assets\+::\+Show\+Case\+::snow\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classassets_1_1_show_case_a3b83eb8c087eaa36b4e16fe5f8fb3f6d}} 
+\index{assets::ShowCase@{assets::ShowCase}!stars@{stars}}
+\index{stars@{stars}!assets::ShowCase@{assets::ShowCase}}
+\doxysubsubsection{stars}
+{\footnotesize\ttfamily \textbf{ Stars\+Particle\+System}$\ast$ assets\+::\+Show\+Case\+::stars\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classassets_1_1_show_case_a6c9b9e167db4120406c2459feefbbed0}} 
+\index{assets::ShowCase@{assets::ShowCase}!updateClock@{updateClock}}
+\index{updateClock@{updateClock}!assets::ShowCase@{assets::ShowCase}}
+\doxysubsubsection{updateClock}
+{\footnotesize\ttfamily Clock assets\+::\+Show\+Case\+::update\+Clock\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classassets_1_1_show_case_a930efeca82e1842109a33d46a1cf70a9}} 
+\index{assets::ShowCase@{assets::ShowCase}!updateClock2@{updateClock2}}
+\index{updateClock2@{updateClock2}!assets::ShowCase@{assets::ShowCase}}
+\doxysubsubsection{updateClock2}
+{\footnotesize\ttfamily Clock assets\+::\+Show\+Case\+::update\+Clock2\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classassets_1_1_show_case_a74624f329d9c290751584c0a7fdf0b8d}} 
+\index{assets::ShowCase@{assets::ShowCase}!walkingBackground@{walkingBackground}}
+\index{walkingBackground@{walkingBackground}!assets::ShowCase@{assets::ShowCase}}
+\doxysubsubsection{walkingBackground}
+{\footnotesize\ttfamily \textbf{ Polygon} assets\+::\+Show\+Case\+::walking\+Background\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{classassets_1_1_show_case_aee8a3b9df01d818d1a570243585382e5}} 
+\index{assets::ShowCase@{assets::ShowCase}!window@{window}}
+\index{window@{window}!assets::ShowCase@{assets::ShowCase}}
+\doxysubsubsection{window}
+{\footnotesize\ttfamily Render\+Window$\ast$ assets\+::\+Show\+Case\+::window\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Chomik/source/repos/\+Snake\+S\+F\+M\+Lv1/\+Snake\+S\+F\+M\+L/src/\textbf{ Demo.\+ixx}\end{DoxyCompactItemize}

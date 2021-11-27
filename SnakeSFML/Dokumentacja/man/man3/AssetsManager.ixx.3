@@ -1,0 +1,152 @@
+.TH "C:/Users/Chomik/source/repos/SnakeSFMLv1/SnakeSFML/src/AssetsManager.ixx" 3 "So, 27 lis 2021" "Silnik graficzny" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+C:/Users/Chomik/source/repos/SnakeSFMLv1/SnakeSFML/src/AssetsManager.ixx
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <SFML/System\&.hpp>\fP
+.br
+\fC#include <SFML/Graphics\&.hpp>\fP
+.br
+\fC#include <SFML/Audio\&.hpp>\fP
+.br
+\fC#include <thread>\fP
+.br
+\fC#include <future>\fP
+.br
+\fC#include <iostream>\fP
+.br
+
+.SS "Komponenty"
+
+.in +1c
+.ti -1c
+.RI "class \fBmanager::AssetManager\fP"
+.br
+.in -1c
+.SS "Przestrzenie nazw"
+
+.in +1c
+.ti -1c
+.RI " \fBmanager\fP"
+.br
+.ti -1c
+.RI " \fBmanager::menuElements\fP"
+.br
+.ti -1c
+.RI " \fBmanager::gameLevelsElements\fP"
+.br
+.in -1c
+.SS "Zmienne"
+
+.in +1c
+.ti -1c
+.RI "import \fBGeneralStuff\fP"
+.br
+.ti -1c
+.RI "import \fBAnimation\fP"
+.br
+.ti -1c
+.RI "export module \fBAssetsManager\fP"
+.br
+.ti -1c
+.RI "static std::atomic< bool > \fBmenuLoadingCompleted\fP = false"
+.br
+.ti -1c
+.RI "static std::atomic< bool > \fBgameLoadingCompleted\fP = false"
+.br
+.ti -1c
+.RI "static std::atomic< bool > \fBalreadyLoading\fP = false"
+.br
+.ti -1c
+.RI "Font \fBmanager::menuElements::font\fP"
+.br
+.ti -1c
+.RI "Music * \fBmanager::menuElements::menuSongs\fP"
+.br
+.ti -1c
+.RI "Sound \fBmanager::menuElements::menuClickSound\fP"
+.br
+.ti -1c
+.RI "SoundBuffer \fBmanager::menuElements::menuClickSoundBuffer\fP"
+.br
+.ti -1c
+.RI "sf::Texture \fBmanager::menuElements::menuPointerTexture\fP"
+.br
+.ti -1c
+.RI "Sprite \fBmanager::menuElements::menuPointerSprite\fP"
+.br
+.ti -1c
+.RI "\fBAnimator\fP * \fBmanager::menuElements::menuPointerAnimator\fP"
+.br
+.ti -1c
+.RI "sf::Texture \fBmanager::menuElements::menuBackgroundTexture\fP"
+.br
+.ti -1c
+.RI "Sprite \fBmanager::menuElements::menuBackgroundSprite\fP"
+.br
+.ti -1c
+.RI "sf::Texture \fBmanager::menuElements::menuLogoTexture\fP"
+.br
+.ti -1c
+.RI "Sprite \fBmanager::menuElements::menuLogoSprite\fP"
+.br
+.ti -1c
+.RI "Text * \fBmanager::menuElements::menuTextButtons\fP"
+.br
+.ti -1c
+.RI "Text * \fBmanager::menuElements::tipsText\fP"
+.br
+.ti -1c
+.RI "Text * \fBmanager::menuElements::startTextButtons\fP"
+.br
+.ti -1c
+.RI "sf::Texture * \fBmanager::menuElements::optionsSymbolsTextures\fP"
+.br
+.ti -1c
+.RI "Sprite * \fBmanager::menuElements::optionsSymbolsSprites\fP"
+.br
+.ti -1c
+.RI "sf::Texture * \fBmanager::menuElements::optionsButtonsTextures\fP"
+.br
+.ti -1c
+.RI "Sprite * \fBmanager::menuElements::optionsButtonsSprites\fP"
+.br
+.ti -1c
+.RI "Text * \fBmanager::menuElements::optionsTextLabels\fP"
+.br
+.ti -1c
+.RI "Text * \fBmanager::menuElements::optionsTextButtons\fP"
+.br
+.ti -1c
+.RI "Text \fBmanager::menuElements::optionsMusicLevelText\fP"
+.br
+.ti -1c
+.RI "Text \fBmanager::menuElements::backButtonText\fP"
+.br
+.ti -1c
+.RI "Text * \fBmanager::menuElements::creaditsText\fP"
+.br
+.ti -1c
+.RI "Font \fBmanager::gameLevelsElements::font\fP"
+.br
+.in -1c
+.SH "Dokumentacja zmiennych"
+.PP 
+.SS "std::atomic<bool> alreadyLoading = false\fC [static]\fP"
+
+.SS "import Animation"
+
+.SS "export module AssetsManager"
+
+.SS "std::atomic<bool> gameLoadingCompleted = false\fC [static]\fP"
+
+.SS "import GeneralStuff"
+
+.SS "std::atomic<bool> menuLoadingCompleted = false\fC [static]\fP"
+
+.SH "Autor"
+.PP 
+Wygenerowano automatycznie z kodu źródłowego programem Doxygen dla Silnik graficzny\&.
